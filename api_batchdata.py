@@ -121,26 +121,23 @@ def search_foreclosures(city: str, state: str,
                         property_type: str = "Single Family Residential") -> Optional[List[Dict]]:
     """
     Search for properties with pre-foreclosure filings in a given area.
+    Uses the searchCriteria/query format that BatchData requires.
 
     Returns:
         List of property dicts with address and foreclosure info
     """
-    request = {
-        "address": {
-            "city": city,
-            "state": state,
+    # Build query string — BatchData uses free-text location search
+    query = f"{city}, {state}"
+
+    body = {
+        "searchCriteria": {
+            "query": query,
         },
-        "propertyType": property_type,
+        "options": {
+            "skip": 0,
+            "take": 25,
+        }
     }
-
-    if min_value or max_value:
-        request["marketValueRange"] = {}
-        if min_value:
-            request["marketValueRange"]["min"] = min_value
-        if max_value:
-            request["marketValueRange"]["max"] = max_value
-
-    body = {"requests": [request]}
 
     data = _make_request("property/search", body)
     if not data:
@@ -151,20 +148,133 @@ def search_foreclosures(city: str, state: str,
         properties = []
         for prop in results:
             addr = prop.get("address", {})
-            foreclosure = prop.get("preForeclosure", {}) or {}
+
+            # Extract foreclosure data from the correct field names
+            foreclosure = prop.get("foreclosure", {}) or {}
+            mortgage_history = prop.get("mortgageHistory", []) or []
+            open_lien = prop.get("openLien", {}) or {}
+            involuntary_lien = prop.get("involuntaryLien", {}) or {}
+
+            # Get mortgage info from history
+            latest_mortgage = mortgage_history[0] if mortgage_history else {}
+
+            # Skip if not in our target area (sandbox returns random data)
+            prop_state = addr.get("state", "")
+            if prop_state and prop_state != state:
+                continue
+
+            # Determine sale price from deed history
+            deed_history = prop.get("deedHistory", []) or []
+            latest_sale = deed_history[0] if deed_history else {}
+            sale_price = latest_sale.get("salePrice", 0) or 0
+
+            # Get property details
+            prop_details = prop.get("propertyDetails", {}) or {}
+            building = prop_details.get("building", {}) or {}
+
             properties.append({
                 "address": addr.get("street", ""),
                 "city": addr.get("city", ""),
                 "state": addr.get("state", ""),
                 "zip_code": addr.get("zip", ""),
-                "foreclosing_entity": foreclosure.get("trusteeName"),
-                "default_amount": foreclosure.get("defaultAmount"),
-                "filing_type": foreclosure.get("filingType"),
+                "foreclosing_entity": (
+                    foreclosure.get("documentType")
+                    or latest_mortgage.get("lenderName")
+                ),
+                "default_amount": (
+                    involuntary_lien.get("amount")
+                    or foreclosure.get("amount")
+                ),
+                "total_debt": latest_mortgage.get("amount"),
+                "filing_type": foreclosure.get("documentType"),
+                "foreclosure_stage": foreclosure.get("status"),
                 "recording_date": foreclosure.get("recordingDate"),
                 "auction_date": foreclosure.get("auctionDate"),
+                "sale_amount": sale_price,
+                "loan_type": latest_mortgage.get("loanType"),
+                "lender_name": latest_mortgage.get("lenderName"),
+                "bedrooms": building.get("beds"),
+                "bathrooms": building.get("baths"),
+                "sqft": building.get("size"),
+                "year_built": building.get("yearBuilt"),
+                "assessed_value": prop.get("valuation", {}).get("assessedValue"),
+                "market_value": prop.get("valuation", {}).get("estimatedValue"),
             })
         return properties if properties else None
-    except (KeyError, TypeError):
+    except (KeyError, TypeError, IndexError):
+        return None
+
+
+def search_properties_by_area(query: str,
+                                take: int = 25,
+                                skip: int = 0,
+                                session_id: str = None) -> Optional[List[Dict]]:
+    """
+    Search for properties using a free-text location query.
+    Supports city+state, zip code, or full address.
+
+    Args:
+        query: Location query, e.g. "Portland, OR" or "97201"
+        take: Number of results per page (max 1000, recommended max 500)
+        skip: Number of results to skip (for pagination)
+        session_id: Session ID for paginated requests
+
+    Returns:
+        List of property dicts or None
+    """
+    body = {
+        "searchCriteria": {
+            "query": query,
+        },
+        "options": {
+            "skip": skip,
+            "take": min(take, 500),
+        }
+    }
+    if session_id:
+        body["options"]["sessionId"] = session_id
+
+    data = _make_request("property/search", body)
+    if not data:
+        return None
+
+    try:
+        results = data.get("results", {}).get("properties", [])
+        meta = data.get("results", {}).get("meta", {})
+
+        properties = []
+        for prop in results:
+            addr = prop.get("address", {})
+            foreclosure = prop.get("foreclosure", {}) or {}
+            deed_history = prop.get("deedHistory", []) or []
+            mortgage_history = prop.get("mortgageHistory", []) or []
+            latest_sale = deed_history[0] if deed_history else {}
+            latest_mortgage = mortgage_history[0] if mortgage_history else {}
+            building = prop.get("propertyDetails", {}).get("building", {}) or {}
+
+            properties.append({
+                "address": addr.get("street", ""),
+                "city": addr.get("city", ""),
+                "state": addr.get("state", ""),
+                "zip_code": addr.get("zip", ""),
+                "sale_amount": latest_sale.get("salePrice", 0),
+                "sale_date": latest_sale.get("saleDate"),
+                "foreclosure_status": foreclosure.get("status"),
+                "foreclosure_date": foreclosure.get("recordingDate"),
+                "lender_name": latest_mortgage.get("lenderName"),
+                "loan_amount": latest_mortgage.get("amount"),
+                "loan_type": latest_mortgage.get("loanType"),
+                "bedrooms": building.get("beds"),
+                "bathrooms": building.get("baths"),
+                "sqft": building.get("size"),
+                "year_built": building.get("yearBuilt"),
+                "assessed_value": prop.get("valuation", {}).get("assessedValue"),
+                "market_value": prop.get("valuation", {}).get("estimatedValue"),
+                "latitude": addr.get("latitude"),
+                "longitude": addr.get("longitude"),
+            })
+        return properties if properties else None
+    except (KeyError, TypeError, IndexError):
         return None
 
 

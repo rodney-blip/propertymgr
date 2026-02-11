@@ -13,6 +13,7 @@ from analyzer import PropertyAnalyzer
 from data_generator import generate_mock_data
 from data_fetcher import DataFetcher
 from exporter import export_all_formats, DataExporter
+from auction_fetcher import fetch_real_properties
 import config
 
 
@@ -25,15 +26,19 @@ class AuctionAnalyzerCLI:
     
     def run_full_analysis(self,
                          use_mock_data: bool = True,
+                         use_real_data: bool = False,
                          property_count: int = None,
-                         enrich: bool = False) -> None:
+                         enrich: bool = False,
+                         max_zips: int = 12) -> None:
         """
         Run complete analysis pipeline
 
         Args:
             use_mock_data: Use generated mock data
-            property_count: Number of properties to generate
-            enrich: Enrich data with live API calls (ATTOM, BatchData, Census)
+            use_real_data: Fetch real properties from ATTOM/BatchData APIs
+            property_count: Number of properties to generate/fetch
+            enrich: Enrich mock data with live API calls (ATTOM, BatchData, Census)
+            max_zips: Number of ZIP codes to scan in real-data mode
         """
         print("=" * 80)
         print("AUCTION PROPERTY ANALYZER")
@@ -42,17 +47,46 @@ class AuctionAnalyzerCLI:
         print()
 
         # Step 1: Load data
-        if use_mock_data:
+        if use_real_data:
+            print("🏠 Fetching REAL auction & foreclosure data...")
+            print("   Sources: ATTOM Property API + BatchData Pre-Foreclosure")
+            print()
+            count = property_count or config.MOCK_DATA_COUNT
+            self.properties = fetch_real_properties(
+                limit=count, max_zips=max_zips, progress=True
+            )
+            if not self.properties:
+                print("\n   ⚠️  No real properties found (APIs may be rate-limited).")
+                print("   Falling back to mock data with Census enrichment...\n")
+                self.properties = generate_mock_data(count)
+                # Enrich mock data with Census (real neighborhood scores)
+                fetcher = DataFetcher()
+                self.properties = fetcher.enrich_properties(
+                    self.properties, skip_arv=True, skip_foreclosure=True
+                )
+            elif len(self.properties) < count // 2:
+                # Got some real data but not enough — supplement with mock
+                shortfall = count - len(self.properties)
+                print(f"\n   ℹ️  Only {len(self.properties)} real properties found.")
+                print(f"   Supplementing with {shortfall} enriched mock properties...\n")
+                mock_props = generate_mock_data(shortfall)
+                fetcher = DataFetcher()
+                mock_props = fetcher.enrich_properties(
+                    mock_props, skip_arv=True, skip_foreclosure=True
+                )
+                self.properties.extend(mock_props)
+            print(f"   🏠 Loaded {len(self.properties)} total properties\n")
+        elif use_mock_data:
             print("📊 Generating mock auction data...")
             self.properties = generate_mock_data(property_count)
             print(f"   Generated {len(self.properties)} properties")
         else:
-            print("❌ Real data loading not implemented yet")
-            print("   Use --mock flag to generate test data")
+            print("❌ No data source specified")
+            print("   Use --mock for test data or --real for live auction data")
             return
 
-        # Step 1.5: Enrich with live APIs if requested
-        if enrich:
+        # Step 1.5: Enrich with live APIs if requested (mock data only)
+        if enrich and use_mock_data and not use_real_data:
             print()
             print("🌐 Enriching with live API data...")
             fetcher = DataFetcher()
@@ -179,6 +213,12 @@ Examples:
   # Run full analysis with mock data
   python main.py --mock
 
+  # Fetch REAL auction/foreclosure data from APIs
+  python main.py --real
+
+  # Real data with more ZIP codes scanned
+  python main.py --real --max-zips 20 --count 100
+
   # Enrich mock data with live API data (ATTOM, BatchData, Census)
   python main.py --mock --enrich
 
@@ -195,25 +235,31 @@ Examples:
   python main.py --mock --compare-states
         """
     )
-    
+
     parser.add_argument('--mock', action='store_true',
                        help='Use mock data for testing')
-    
+
+    parser.add_argument('--real', action='store_true',
+                       help='Fetch REAL auction/foreclosure data from ATTOM & BatchData APIs')
+
     parser.add_argument('--count', type=int, default=None,
-                       help='Number of properties to generate (default: from config)')
-    
+                       help='Number of properties to generate/fetch (default: from config)')
+
+    parser.add_argument('--max-zips', type=int, default=12,
+                       help='Number of ZIP codes to scan in --real mode (default: 12)')
+
     parser.add_argument('--min-margin', type=float, default=config.MIN_PROFIT_MARGIN,
                        help=f'Minimum profit margin %% (default: {config.MIN_PROFIT_MARGIN})')
-    
+
     parser.add_argument('--max-price', type=int, default=config.MAX_AUCTION_PRICE,
                        help=f'Maximum auction price (default: {config.MAX_AUCTION_PRICE})')
-    
+
     parser.add_argument('--max-repairs', type=int, default=config.MAX_REPAIR_COST,
                        help=f'Maximum repair cost (default: {config.MAX_REPAIR_COST})')
-    
+
     parser.add_argument('--states', nargs='+', default=config.TARGET_STATES,
                        help=f'Target states (default: {" ".join(config.TARGET_STATES)})')
-    
+
     parser.add_argument('--enrich', action='store_true',
                        help='Enrich mock data with live API calls (ATTOM, BatchData, Census)')
 
@@ -253,19 +299,29 @@ Examples:
         return
 
     # Run analysis
-    if args.mock:
-        cli.run_full_analysis(use_mock_data=True, property_count=args.count,
-                              enrich=args.enrich)
-        
+    if args.real:
+        cli.run_full_analysis(
+            use_mock_data=False, use_real_data=True,
+            property_count=args.count, max_zips=args.max_zips
+        )
+
         # Additional operations
         if args.compare_states:
             print("\n")
             cli.compare_states()
-    
+
+    elif args.mock:
+        cli.run_full_analysis(use_mock_data=True, property_count=args.count,
+                              enrich=args.enrich)
+
+        # Additional operations
+        if args.compare_states:
+            print("\n")
+            cli.compare_states()
+
     else:
         parser.print_help()
-        print("\n⚠️  Please specify --mock to use test data")
-        print("Real data integration coming soon!")
+        print("\n⚠️  Please specify --mock for test data or --real for live auction data")
 
 
 if __name__ == "__main__":
