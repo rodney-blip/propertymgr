@@ -327,24 +327,26 @@ def _build_property_from_raw(raw: Dict, source: str,
     default_date = raw.get("default_date") or raw.get("recording_date")
     foreclosure_stage = raw.get("foreclosure_stage") or raw.get("filing_type")
 
-    # Determine source platform
-    platform = "Bank Foreclosure"
+    # Determine source platform / data origin
+    platform = "ATTOM Property"
     if source == "batchdata":
         platform = "BatchData Pre-Foreclosure"
     elif source == "attom_sale":
         sale_type = raw.get("sale_type", "")
         if sale_type and "foreclosure" in str(sale_type).lower():
-            platform = "Bank Foreclosure"
+            platform = "ATTOM Foreclosure"
         elif sale_type and "reo" in str(sale_type).lower():
-            platform = "Bank Foreclosure"
+            platform = "ATTOM REO"
         else:
-            platform = "Auction.com"  # likely auction source
+            platform = "ATTOM Sale"
     elif source == "attom_prop":
-        platform = "Auction.com"
+        platform = "ATTOM Property"
 
-    # Determine platform URL
-    platform_url = config.AUCTION_PLATFORM_URLS.get(platform)
-    property_url = f"{platform_url}/listing/REAL-{index}" if platform_url else None
+    # Build a useful search URL rather than a fake listing link.
+    # Use Zillow address search — works for any property and shows comps/history.
+    import urllib.parse
+    search_addr = f"{address}, {city}, {state} {zip_code}"
+    property_url = "https://www.zillow.com/homes/" + urllib.parse.quote(search_addr) + "_rb/"
 
     # Bank contact URL
     bank_contact_url = None

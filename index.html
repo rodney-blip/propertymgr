@@ -307,6 +307,7 @@
             margin-bottom: 15px;
             cursor: pointer;
             transition: transform 0.2s;
+            position: relative;
         }
 
         .alert-item:hover {
@@ -321,10 +322,36 @@
             background: linear-gradient(135deg, #4facfe, #00f2fe);
         }
 
+        .alert-dismiss {
+            position: absolute;
+            top: 10px;
+            right: 12px;
+            background: rgba(255,255,255,0.25);
+            border: none;
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            font-size: 18px;
+            line-height: 26px;
+            text-align: center;
+            cursor: pointer;
+            transition: background 0.2s;
+            padding: 0;
+        }
+
+        .alert-dismiss:hover {
+            background: rgba(255,255,255,0.5);
+        }
+
         .alert-level {
             font-size: 1.2em;
             font-weight: bold;
-            margin-bottom: 10px;
+            margin-bottom: 6px;
+        }
+
+        .alert-address {
+            margin-bottom: 4px;
         }
 
         .alert-details {
@@ -332,6 +359,40 @@
             grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
             gap: 10px;
             margin-top: 10px;
+        }
+
+        .alert-cta {
+            margin-top: 10px;
+            font-size: 0.85em;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+
+        .alert-item:hover .alert-cta {
+            opacity: 0.8;
+        }
+
+        .alerts-empty {
+            text-align: center;
+            padding: 20px;
+            color: var(--text-secondary, #888);
+            font-size: 0.95em;
+        }
+
+        .restore-alerts-btn {
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 6px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9em;
+            margin-left: 10px;
+            transition: opacity 0.2s;
+        }
+
+        .restore-alerts-btn:hover {
+            opacity: 0.85;
         }
 
         .alerts-toggle {
@@ -343,6 +404,7 @@
             cursor: pointer;
             font-size: 0.9em;
             margin-top: 10px;
+            margin-right: 8px;
             font-weight: 600;
             transition: all 0.2s;
         }
@@ -692,6 +754,19 @@
             font-size: 1.3em;
         }
 
+        .metric-value.max-bid {
+            font-size: 1.2em;
+            font-weight: 700;
+        }
+
+        .metric-value.under-max {
+            color: var(--profit-green, #27ae60);
+        }
+
+        .metric-value.over-max {
+            color: #e74c3c;
+        }
+
         .property-details {
             display: flex;
             gap: 20px;
@@ -1011,6 +1086,13 @@
                         <p>On ATTOM's paid tier, debt is pulled from mortgage and lien records. On the free tier (current), foreclosure context is <strong>modeled from property data</strong>: total debt is set at 70-95% of ARV (typical for distressed properties), lenders are drawn from the top national servicers, and loan type / foreclosure stage are representative of the market mix. These fields will upgrade to live data with a paid ATTOM or BatchData key.</p>
                     </div>
                     <div class="method-block">
+                        <h4>Max Bid Price (91% Rule)</h4>
+                        <p>Based on the <strong>70% rule</strong> with a 91% safety cushion:<br>
+                        <code>Step 1: 70% Base = ARV &times; 0.70 &minus; Repairs</code><br>
+                        <code>Step 2: Max Bid = 70% Base &times; 0.91</code><br>
+                        This gives you a ~9% bidding cushion below the standard 70% rule. If the auction price is <strong style="color:var(--profit-green, #27ae60);">at or below</strong> the max bid, the deal has room; if it's <strong style="color:#e74c3c;">above</strong>, you'd be overpaying relative to the rule.</p>
+                    </div>
+                    <div class="method-block">
                         <h4>Profit Formula</h4>
                         <p><code>Total Investment = Auction Price + Repairs + Closing (3%) + Holding (ARV &times; 1% &times; 6 mo)</code><br>
                         <code>Profit = ARV &minus; Total Investment &minus; Selling Costs (ARV &times; 8%)</code><br>
@@ -1171,7 +1253,7 @@
             ]
         };
 
-        // Fallback URL mappings (used if JSON fields are null)
+        // Fallback URL mappings (used if JSON property_url is null)
         const PLATFORM_URLS = {
             "Auction.com": "https://www.auction.com",
             "Hubzu": "https://www.hubzu.com",
@@ -1183,7 +1265,12 @@
             "ServiceLink": "https://www.svclnk.com",
             "Foreclosure.com": "https://www.foreclosure.com",
             "RealtyTrac": "https://www.realtytrac.com",
-            "Bid4Assets": "https://www.bid4assets.com"
+            "Bid4Assets": "https://www.bid4assets.com",
+            "ATTOM Sale": "https://www.zillow.com",
+            "ATTOM Property": "https://www.zillow.com",
+            "ATTOM Foreclosure": "https://www.zillow.com",
+            "ATTOM REO": "https://www.zillow.com",
+            "BatchData Pre-Foreclosure": "https://www.zillow.com"
         };
 
         const BANK_CONTACT_URLS = {
@@ -1251,6 +1338,25 @@
         }
         function getPropertyStatus(propId) {
             return getPropertyStatuses()[propId] || 'not_reviewed';
+        }
+
+        // ─── Dismissed alerts management ───
+        const DISMISSED_ALERTS_KEY = 'dismissedAlerts';
+
+        function getDismissedAlerts() {
+            try { return JSON.parse(localStorage.getItem(DISMISSED_ALERTS_KEY)) || {}; }
+            catch(e) { return {}; }
+        }
+        function dismissAlert(propId, event) {
+            event.stopPropagation();
+            var dismissed = getDismissedAlerts();
+            dismissed[propId] = Date.now();
+            localStorage.setItem(DISMISSED_ALERTS_KEY, JSON.stringify(dismissed));
+            displayAlerts(allAlerts);
+        }
+        function restoreAllAlerts() {
+            localStorage.removeItem(DISMISSED_ALERTS_KEY);
+            displayAlerts(allAlerts);
         }
 
         // ─── Notes management ───
@@ -1692,34 +1798,69 @@
         function displayAlerts(alerts) {
             if (!alerts || alerts.length === 0) return;
 
-            document.getElementById('alertsSection').style.display = 'block';
+            var section = document.getElementById('alertsSection');
+            section.style.display = 'block';
             var container = document.getElementById('alertsContainer');
             var toggleBtn = document.getElementById('alertsToggle');
 
-            var displayCount = alertsExpanded ? alerts.length : 10;
-            var visibleAlerts = alerts.slice(0, displayCount);
+            // Filter out dismissed alerts
+            var dismissed = getDismissedAlerts();
+            var activeAlerts = alerts.filter(function(a) { return !dismissed[a.property_id]; });
+            var dismissedCount = alerts.length - activeAlerts.length;
+
+            if (activeAlerts.length === 0) {
+                container.innerHTML = '<div class="alerts-empty">All alerts reviewed. <button class="restore-alerts-btn" onclick="restoreAllAlerts()">Restore All</button></div>';
+                toggleBtn.style.display = 'none';
+                return;
+            }
+
+            var displayCount = alertsExpanded ? activeAlerts.length : 10;
+            var visibleAlerts = activeAlerts.slice(0, displayCount);
 
             container.innerHTML = visibleAlerts.map(function(alert) {
                 var className = 'alert-item';
                 if (alert.level.indexOf('EXCELLENT') !== -1) className += ' excellent';
                 else if (alert.level.indexOf('GOOD') !== -1) className += ' good';
 
+                var countdown = getAuctionCountdown(alert.auction_date);
+                var countdownHtml = '<span class="auction-countdown ' + countdown.cls + '">' + countdown.html + '</span>';
+
                 return '<div class="' + className + '" onclick="scrollToProperty(\'' + alert.property_id + '\')">'
+                    + '<button class="alert-dismiss" onclick="dismissAlert(\'' + alert.property_id + '\', event)" title="Dismiss &mdash; mark as reviewed">&times;</button>'
                     + '<div class="alert-level">' + alert.level + '</div>'
-                    + '<div><strong>' + alert.address + '</strong></div>'
+                    + '<div class="alert-address"><strong>' + alert.address + '</strong></div>'
                     + '<div class="alert-details">'
                     + '<div>Profit: <strong>' + alert.profit_potential + '</strong></div>'
                     + '<div>Margin: <strong>' + alert.profit_margin + '</strong></div>'
                     + '<div>Score: <strong>' + alert.deal_score.toFixed(1) + '/100</strong></div>'
-                    + '<div>Auction: <strong>' + alert.auction_date + '</strong></div>'
-                    + '</div></div>';
+                    + '<div>Auction: <strong>' + alert.auction_date + '</strong> ' + countdownHtml + '</div>'
+                    + '</div>'
+                    + '<div class="alert-cta">Click to view full details &rarr;</div>'
+                    + '</div>';
             }).join('');
 
-            if (alerts.length > 10) {
+            // Footer: show all / restore dismissed
+            var footerHtml = '';
+            if (activeAlerts.length > 10) {
                 toggleBtn.style.display = 'inline-block';
-                toggleBtn.textContent = alertsExpanded ? 'Show Less' : 'Show All (' + alerts.length + ')';
+                toggleBtn.textContent = alertsExpanded ? 'Show Less' : 'Show All (' + activeAlerts.length + ')';
             } else {
                 toggleBtn.style.display = 'none';
+            }
+            if (dismissedCount > 0) {
+                var restoreBtn = document.getElementById('restoreAlertsBtn');
+                if (!restoreBtn) {
+                    restoreBtn = document.createElement('button');
+                    restoreBtn.id = 'restoreAlertsBtn';
+                    restoreBtn.className = 'alerts-toggle';
+                    restoreBtn.onclick = restoreAllAlerts;
+                    toggleBtn.parentNode.insertBefore(restoreBtn, toggleBtn.nextSibling);
+                }
+                restoreBtn.style.display = 'inline-block';
+                restoreBtn.textContent = 'Restore ' + dismissedCount + ' Dismissed';
+            } else {
+                var restoreBtn = document.getElementById('restoreAlertsBtn');
+                if (restoreBtn) restoreBtn.style.display = 'none';
             }
         }
 
@@ -1810,8 +1951,11 @@
                                     currentStatus === 'not_interested' ? ' not-interested' : '';
 
                 var auctionUrl = prop.property_url || PLATFORM_URLS[prop.auction_platform] || null;
+                var linkLabel = auctionUrl && auctionUrl.indexOf('zillow.com') !== -1
+                    ? 'View on Zillow' : prop.auction_platform;
                 var platformHtml = auctionUrl
-                    ? '<a href="' + auctionUrl + '" target="_blank" rel="noopener">' + prop.auction_platform + '</a>'
+                    ? '<a href="' + auctionUrl + '" target="_blank" rel="noopener">' + linkLabel + '</a>'
+                    + ' <span style="opacity:0.6;font-size:0.85em;">(' + prop.auction_platform + ')</span>'
                     : prop.auction_platform;
 
                 var countdown = getAuctionCountdown(prop.auction_date);
@@ -1837,6 +1981,7 @@
                     + '<div class="metric"><div class="metric-label">Auction Price</div><div class="metric-value">$' + prop.auction_price.toLocaleString() + '</div></div>'
                     + '<div class="metric"><div class="metric-label">Est. ARV</div><div class="metric-value">$' + prop.estimated_arv.toLocaleString() + '</div></div>'
                     + '<div class="metric"><div class="metric-label">Est. Repairs</div><div class="metric-value">$' + prop.estimated_repairs.toLocaleString() + '</div></div>'
+                    + '<div class="metric"><div class="metric-label">Max Bid (91% Rule)</div><div class="metric-value max-bid ' + (prop.auction_price <= (prop.max_bid_price || 0) ? 'under-max' : 'over-max') + '">$' + (prop.max_bid_price || 0).toLocaleString() + '</div></div>'
                     + '<div class="metric"><div class="metric-label">Profit Potential</div><div class="metric-value profit">$' + prop.profit_potential.toLocaleString() + '</div></div>'
                     + '<div class="metric"><div class="metric-label">Profit Margin</div><div class="metric-value profit">' + prop.profit_margin.toFixed(1) + '%</div></div>'
                     + '<div class="metric"><div class="metric-label">Deal Score</div><div class="metric-value">' + prop.deal_score.toFixed(1) + '/100</div><div class="progress-bar"><div class="progress-fill" style="width: ' + prop.deal_score + '%"></div></div></div>'

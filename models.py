@@ -45,6 +45,7 @@ class Property:
     profit_potential: float = 0.0
     profit_margin: float = 0.0
     total_investment: float = 0.0
+    max_bid_price: float = 0.0
     deal_score: float = 0.0
     recommended: bool = False
     
@@ -100,9 +101,15 @@ class Property:
         
         # Profit calculation
         self.profit_potential = self.estimated_arv - self.total_investment - selling_costs
-        self.profit_margin = ((self.profit_potential / self.estimated_arv) * 100 
+        self.profit_margin = ((self.profit_potential / self.estimated_arv) * 100
                              if self.estimated_arv > 0 else 0)
-        
+
+        # Max bid price — 70% rule at 91% safety margin
+        # Step 1: 70% rule base = ARV × 0.70 − Repairs
+        # Step 2: Apply 91% safety factor for bidding cushion
+        seventy_pct_base = self.estimated_arv * 0.70 - self.estimated_repairs
+        self.max_bid_price = round(max(0, seventy_pct_base * 0.91), 2)
+
         # Deal scoring
         self.deal_score = self._calculate_deal_score()
         
