@@ -129,6 +129,7 @@ class PropertyAnalyzer:
                     "address": f"{prop.address}, {prop.city}, {prop.state}",
                     "profit_margin": f"{prop.profit_margin:.1f}%",
                     "profit_potential": f"${prop.profit_potential:,.0f}",
+                    "max_bid_price": prop.max_bid_price,
                     "auction_date": prop.auction_date,
                     "deal_score": prop.deal_score
                 })

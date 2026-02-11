@@ -222,6 +222,48 @@
             color: var(--accent);
         }
 
+        /* Data disclaimer banner */
+        .data-disclaimer {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            background: linear-gradient(135deg, #fff3cd, #ffeeba);
+            border: 1px solid #f0c36d;
+            border-radius: 10px;
+            padding: 16px 20px;
+            margin-bottom: 20px;
+            font-size: 0.9em;
+            line-height: 1.5;
+        }
+
+        .dark .data-disclaimer {
+            background: linear-gradient(135deg, #3d3520, #4a3f25);
+            border-color: #6b5a2e;
+        }
+
+        .disclaimer-icon {
+            font-size: 1.4em;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+        .disclaimer-text {
+            color: #856404;
+        }
+
+        .dark .disclaimer-text {
+            color: #f0c36d;
+        }
+
+        .methodology-content a {
+            color: var(--accent, #667eea);
+            text-decoration: none;
+        }
+
+        .methodology-content a:hover {
+            text-decoration: underline;
+        }
+
         /* Charts section */
         .charts-section {
             display: grid;
@@ -1041,7 +1083,7 @@
         <div class="header">
             <div class="header-left">
                 <h1>&#x1F3E0; Auction Property Analyzer</h1>
-                <p>Fix-and-Flip Opportunity Identifier | 10-State Coverage</p>
+                <p>Fix-and-Flip Deal Finder | OR &bull; TX &bull; WA</p>
             </div>
             <div class="header-right">
                 <span class="notes-indicator" id="notesIndicator" style="display:none;"></span>
@@ -1069,37 +1111,97 @@
             </div>
         </div>
 
+        <div class="data-disclaimer" id="dataDisclaimer" style="display:none;">
+            <div class="disclaimer-icon">&#x26A0;&#xFE0F;</div>
+            <div class="disclaimer-text">
+                <strong>Important: These are NOT confirmed auction listings.</strong>
+                Properties are sourced from ATTOM public records (recent sales, assessments). Auction dates, foreclosure stages, lender names, and debt amounts are <strong>modeled estimates</strong> &mdash; not live filings. Use this dashboard to identify neighborhoods and price points, then verify actual auction status through the links below.
+            </div>
+        </div>
+
         <div class="charts-section" id="chartsSection" style="display:none;">
             <div class="chart-card methodology-card">
                 <h3>&#x1F4D0; How Numbers Are Calculated</h3>
                 <div class="methodology-content">
+                    <div class="method-block">
+                        <h4>Data Source &amp; Limitations</h4>
+                        <p>Properties come from <strong>ATTOM public records</strong> (sale snapshots + property details) and <strong>BatchData</strong> (pre-foreclosure filings). On the current free/sandbox tier, ATTOM returns real addresses, sale prices, sq ft, beds/baths, and year built &mdash; but does <strong>not</strong> return seller names, foreclosure flags, or mortgage data. As a result:</p>
+                        <ul style="margin: 6px 0 0 18px; font-size: 0.88em; line-height: 1.55; color: var(--text-secondary, #666);">
+                            <li><strong>Auction dates</strong> are projected 14-60 days out (not from real auction schedules)</li>
+                            <li><strong>Foreclosing entity, loan type, stage</strong> are modeled from typical market distributions</li>
+                            <li><strong>Total debt</strong> is estimated at 70-95% of ARV (not from actual lien records)</li>
+                        </ul>
+                        <p style="margin-top: 8px;">Upgrading to ATTOM's paid tier ($100-250/mo) or a production BatchData key unlocks real foreclosure filings, mortgage amounts, and seller data.</p>
+                    </div>
                     <div class="method-block">
                         <h4>ARV (After-Repair Value)</h4>
                         <p>Sourced from ATTOM's <strong>AVM (Automated Valuation Model)</strong> when available. If the API returns an assessed or market value, we apply a 1.1x markup to approximate post-repair ARV. When no API value exists, ARV is estimated from <strong>$/sq ft for the state</strong> (e.g. OR&nbsp;$200, TX&nbsp;$160, WA&nbsp;$230) multiplied by the property's living area.</p>
                     </div>
                     <div class="method-block">
                         <h4>Estimated Repairs</h4>
-                        <p>Calculated as a <strong>percentage of auction price</strong> based on building age: 20% for homes 40+ yrs old, 15% for 25-40 yrs, 10% for 10-25 yrs, and 5% for newer builds. This is a conservative desk estimate &mdash; always get a contractor walkthrough before committing.</p>
-                    </div>
-                    <div class="method-block">
-                        <h4>Total Debt &amp; Foreclosure Context</h4>
-                        <p>On ATTOM's paid tier, debt is pulled from mortgage and lien records. On the free tier (current), foreclosure context is <strong>modeled from property data</strong>: total debt is set at 70-95% of ARV (typical for distressed properties), lenders are drawn from the top national servicers, and loan type / foreclosure stage are representative of the market mix. These fields will upgrade to live data with a paid ATTOM or BatchData key.</p>
+                        <p>Calculated as a <strong>percentage of last sale price</strong> based on building age: 20% for homes 40+ yrs old, 15% for 25-40 yrs, 10% for 10-25 yrs, and 5% for newer builds. This is a conservative desk estimate &mdash; always get a contractor walkthrough before committing.</p>
                     </div>
                     <div class="method-block">
                         <h4>Max Bid Price (91% Rule)</h4>
                         <p>Based on the <strong>70% rule</strong> with a 91% safety cushion:<br>
                         <code>Step 1: 70% Base = ARV &times; 0.70 &minus; Repairs</code><br>
                         <code>Step 2: Max Bid = 70% Base &times; 0.91</code><br>
-                        This gives you a ~9% bidding cushion below the standard 70% rule. If the auction price is <strong style="color:var(--profit-green, #27ae60);">at or below</strong> the max bid, the deal has room; if it's <strong style="color:#e74c3c;">above</strong>, you'd be overpaying relative to the rule.</p>
+                        This gives you a ~9% bidding cushion below the standard 70% rule. If the listed price is <strong style="color:var(--profit-green, #27ae60);">at or below</strong> the max bid, the deal has room; if it's <strong style="color:#e74c3c;">above</strong>, you'd be overpaying relative to the rule.</p>
                     </div>
                     <div class="method-block">
                         <h4>Profit Formula</h4>
-                        <p><code>Total Investment = Auction Price + Repairs + Closing (3%) + Holding (ARV &times; 1% &times; 6 mo)</code><br>
+                        <p><code>Total Investment = Purchase Price + Repairs + Closing (3%) + Holding (ARV &times; 1% &times; 6 mo)</code><br>
                         <code>Profit = ARV &minus; Total Investment &minus; Selling Costs (ARV &times; 8%)</code><br>
                         Recommended thresholds: margin &ge; 30%, repairs &le; $80k, deal score &ge; 60.</p>
                     </div>
                 </div>
             </div>
+            <div class="chart-card">
+                <h3>&#x1F50D; Find Real Auctions</h3>
+                <div class="methodology-content">
+                    <div class="method-block">
+                        <h4>Oregon</h4>
+                        <p>
+                            <a href="https://www.auction.com/residential/or/" target="_blank" rel="noopener">Auction.com &mdash; Oregon</a><br>
+                            <a href="https://www.oregonsheriffs.org/foreclosure-sales" target="_blank" rel="noopener">Oregon Sheriff Sales</a><br>
+                            <a href="https://www.deschutes.org/assessor/page/foreclosure-sales" target="_blank" rel="noopener">Deschutes County (Bend/Redmond)</a><br>
+                            <a href="https://www.jacksoncounty.org" target="_blank" rel="noopener">Jackson County (Medford)</a>
+                        </p>
+                    </div>
+                    <div class="method-block">
+                        <h4>Texas</h4>
+                        <p>
+                            <a href="https://www.auction.com/residential/tx/" target="_blank" rel="noopener">Auction.com &mdash; Texas</a><br>
+                            <a href="https://www.traviscountytx.gov/constables/5/sales" target="_blank" rel="noopener">Travis County (Austin) Constable Sales</a><br>
+                            <a href="https://www.wilco.org/Departments/Constable-Precinct-1/Constable-Sales" target="_blank" rel="noopener">Williamson County (Round Rock/Georgetown)</a><br>
+                            <a href="https://www.hubzu.com/search?state=TX" target="_blank" rel="noopener">Hubzu &mdash; Texas</a>
+                        </p>
+                    </div>
+                    <div class="method-block">
+                        <h4>Washington</h4>
+                        <p>
+                            <a href="https://www.auction.com/residential/wa/" target="_blank" rel="noopener">Auction.com &mdash; Washington</a><br>
+                            <a href="https://www.clark.wa.gov/treasurer/foreclosure-sales" target="_blank" rel="noopener">Clark County (Vancouver) Treasurer Sales</a><br>
+                            <a href="https://www.co.cowlitz.wa.us/352/Foreclosures" target="_blank" rel="noopener">Cowlitz County (Longview/Kelso)</a><br>
+                            <a href="https://www.hubzu.com/search?state=WA" target="_blank" rel="noopener">Hubzu &mdash; Washington</a>
+                        </p>
+                    </div>
+                    <div class="method-block">
+                        <h4>National Search</h4>
+                        <p>
+                            <a href="https://www.auction.com" target="_blank" rel="noopener">Auction.com</a> &bull;
+                            <a href="https://www.hubzu.com" target="_blank" rel="noopener">Hubzu</a> &bull;
+                            <a href="https://www.xome.com" target="_blank" rel="noopener">Xome</a> &bull;
+                            <a href="https://www.bid4assets.com" target="_blank" rel="noopener">Bid4Assets</a> &bull;
+                            <a href="https://www.homepath.fanniemae.com" target="_blank" rel="noopener">HomePath (Fannie Mae)</a> &bull;
+                            <a href="https://www.homesteps.com" target="_blank" rel="noopener">HomeSteps (Freddie Mac)</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="charts-section" id="stateChartSection" style="display:none;">
             <div class="chart-card">
                 <h3>&#x1F4CD; Properties by State</h3>
                 <div class="chart-container" id="stateChart"></div>
@@ -1675,9 +1777,13 @@
 
         function updateCharts(properties) {
             if (properties.length > 0) {
+                document.getElementById('dataDisclaimer').style.display = 'flex';
                 document.getElementById('chartsSection').style.display = 'grid';
+                document.getElementById('stateChartSection').style.display = 'grid';
             } else {
+                document.getElementById('dataDisclaimer').style.display = 'none';
                 document.getElementById('chartsSection').style.display = 'none';
+                document.getElementById('stateChartSection').style.display = 'none';
             }
             renderStateChart(properties);
         }
@@ -1822,9 +1928,6 @@
                 if (alert.level.indexOf('EXCELLENT') !== -1) className += ' excellent';
                 else if (alert.level.indexOf('GOOD') !== -1) className += ' good';
 
-                var countdown = getAuctionCountdown(alert.auction_date);
-                var countdownHtml = '<span class="auction-countdown ' + countdown.cls + '">' + countdown.html + '</span>';
-
                 return '<div class="' + className + '" onclick="scrollToProperty(\'' + alert.property_id + '\')">'
                     + '<button class="alert-dismiss" onclick="dismissAlert(\'' + alert.property_id + '\', event)" title="Dismiss &mdash; mark as reviewed">&times;</button>'
                     + '<div class="alert-level">' + alert.level + '</div>'
@@ -1833,7 +1936,7 @@
                     + '<div>Profit: <strong>' + alert.profit_potential + '</strong></div>'
                     + '<div>Margin: <strong>' + alert.profit_margin + '</strong></div>'
                     + '<div>Score: <strong>' + alert.deal_score.toFixed(1) + '/100</strong></div>'
-                    + '<div>Auction: <strong>' + alert.auction_date + '</strong> ' + countdownHtml + '</div>'
+                    + '<div>Max Bid: <strong>$' + (alert.max_bid_price || 0).toLocaleString() + '</strong></div>'
                     + '</div>'
                     + '<div class="alert-cta">Click to view full details &rarr;</div>'
                     + '</div>';
@@ -1978,7 +2081,7 @@
                     + '<div class="deal-badge ' + badgeClass + '">' + badgeText + '</div>'
                     + '</div>'
                     + '<div class="property-metrics">'
-                    + '<div class="metric"><div class="metric-label">Auction Price</div><div class="metric-value">$' + prop.auction_price.toLocaleString() + '</div></div>'
+                    + '<div class="metric"><div class="metric-label">Last Sale Price</div><div class="metric-value">$' + prop.auction_price.toLocaleString() + '</div></div>'
                     + '<div class="metric"><div class="metric-label">Est. ARV</div><div class="metric-value">$' + prop.estimated_arv.toLocaleString() + '</div></div>'
                     + '<div class="metric"><div class="metric-label">Est. Repairs</div><div class="metric-value">$' + prop.estimated_repairs.toLocaleString() + '</div></div>'
                     + '<div class="metric"><div class="metric-label">Max Bid (91% Rule)</div><div class="metric-value max-bid ' + (prop.auction_price <= (prop.max_bid_price || 0) ? 'under-max' : 'over-max') + '">$' + (prop.max_bid_price || 0).toLocaleString() + '</div></div>'
@@ -1992,7 +2095,6 @@
                     + '<div class="detail-item">\u{1F4CF} ' + prop.sqft.toLocaleString() + ' sqft</div>'
                     + '<div class="detail-item">\u{1F4C5} Built ' + prop.year_built + '</div>'
                     + '<div class="detail-item">\u{1F3D8}\uFE0F Score: ' + prop.neighborhood_score + '/10</div>'
-                    + '<div class="detail-item">\u{1F4C5} Auction: ' + prop.auction_date + ' (' + countdownHtml + ')</div>'
                     + '<div class="detail-item">\u{1F3E6} ' + platformHtml + '</div>'
                     + '</div>'
                     + renderExtraDataRow(prop)
