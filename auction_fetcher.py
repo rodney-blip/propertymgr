@@ -483,6 +483,16 @@ def fetch_real_properties(limit: int = 75,
             raw, source, city, state, zip_code, region, index=idx + 1
         )
         if prop is not None:
+            # State/region filter — skip properties outside our active scan
+            # (e.g. BatchData sandbox returning random Phoenix, AZ results)
+            active_regions = getattr(config, "ACTIVE_REGIONS", {})
+            prop_allowed = active_regions.get(prop.state)
+            if prop_allowed is not None and prop.state not in [
+                s for s, regions in active_regions.items()
+                if regions is None or len(regions) > 0
+            ]:
+                continue  # State is disabled (empty list)
+
             # Price filter
             if prop.auction_price < config.MIN_AUCTION_PRICE:
                 continue

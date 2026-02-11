@@ -101,16 +101,16 @@ MOCK_DATA_COUNT = 150
 # Set to a list of region names to restrict scanning to just those regions.
 # This is useful for concentrating API calls on your target market.
 ACTIVE_REGIONS = {
-    "Oregon": None,
+    "Oregon": ["Central Oregon", "Southern Oregon"],  # Bend/Redmond + Medford
     "Texas": ["Greater Austin"],
-    "Washington": None,
-    "Florida": None,
-    "Arizona": None,
-    "Georgia": None,
-    "North Carolina": None,
-    "Ohio": None,
-    "Tennessee": None,
-    "California": None,
+    "Washington": ["Southern Washington / Vancouver"],
+    "Florida": [],          # Disabled
+    "Arizona": [],          # Disabled
+    "Georgia": [],          # Disabled
+    "North Carolina": [],   # Disabled
+    "Ohio": [],             # Disabled
+    "Tennessee": [],        # Disabled
+    "California": [],       # Disabled
 }
 
 # Region definitions: state -> region_name -> list of (city, zip_code) tuples

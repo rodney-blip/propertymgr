@@ -2,780 +2,783 @@
 TOP 20 AUCTION PROPERTY DEALS
 ================================================================================
 
-#1 - 115 REMINGTON DR, KYLE (Greater Austin), Texas
+#1 - 904 DANSWORTH CV, PFLUGERVILLE (Greater Austin), Texas
 ────────────────────────────────────────────────────────────────────────────────
-Property ID: REAL-0028
-Auction Date: 2026-03-31
-Platform: Auction.com
-
-FORECLOSURE CONTEXT:
-  Foreclosing Entity:  Freedom Mortgage
-  Total Debt:          $     291,139
-  Loan Type:           ARM
-  Default Date:        2025-07-31
-  Stage:               Short Sale
-
-PRICING:
-  Auction Price:     $     127,500
-  Estimated ARV:     $     374,400
-  Estimated Repairs: $      19,125
-  Total Investment:  $     172,914
-  Profit Potential:  $     171,534
-
-METRICS:
-  Profit Margin:            45.8%
-  Deal Score:               94.0/100
-  Recommended:                  Yes
-
-PROPERTY DETAILS:
-  3 bed / 2.0 bath | 2,340 sqft | Built 1990
-  Neighborhood Score: 8/10
-
-COST BREAKDOWN:
-  Purchase:      $     127,500
-  Repairs:       $      19,125
-  Closing:       $       3,825
-  Holding:       $      22,464
-  Selling:       $      29,952
-  ────────────────────────────────────────
-  Total:         $     172,914
-
-
-#2 - 3085 CRESTMONT LN, KYLE (Greater Austin), Texas
-────────────────────────────────────────────────────────────────────────────────
-Property ID: REAL-0031
-Auction Date: 2026-02-25
-Platform: Auction.com
-
-FORECLOSURE CONTEXT:
-  Foreclosing Entity:  Shellpoint Mortgage
-  Total Debt:          $     334,449
-  Loan Type:           Fixed 15yr
-  Default Date:        2025-01-23
-  Stage:               Lis Pendens
-
-PRICING:
-  Auction Price:     $     180,656
-  Estimated ARV:     $     468,480
-  Estimated Repairs: $      27,098
-  Total Investment:  $     241,283
-  Profit Potential:  $     189,719
-
-METRICS:
-  Profit Margin:            40.5%
-  Deal Score:               94.0/100
-  Recommended:                  Yes
-
-PROPERTY DETAILS:
-  3 bed / 2.0 bath | 2,928 sqft | Built 1990
-  Neighborhood Score: 8/10
-
-COST BREAKDOWN:
-  Purchase:      $     180,656
-  Repairs:       $      27,098
-  Closing:       $       5,420
-  Holding:       $      28,109
-  Selling:       $      37,478
-  ────────────────────────────────────────
-  Total:         $     241,283
-
-
-#3 - 287 ROLLING MEADOWS LN, KYLE (Greater Austin), Texas
-────────────────────────────────────────────────────────────────────────────────
-Property ID: REAL-0034
-Auction Date: 2026-04-07
-Platform: Auction.com
-
-FORECLOSURE CONTEXT:
-  Foreclosing Entity:  PNC Bank
-  Total Debt:          $     289,879
-  Loan Type:           USDA
-  Default Date:        2025-02-25
-  Stage:               REO / Bank Owned
-
-PRICING:
-  Auction Price:     $     107,175
-  Estimated ARV:     $     318,400
-  Estimated Repairs: $      16,076
-  Total Investment:  $     145,570
-  Profit Potential:  $     147,358
-
-METRICS:
-  Profit Margin:            46.3%
-  Deal Score:               94.0/100
-  Recommended:                  Yes
-
-PROPERTY DETAILS:
-  3 bed / 2.0 bath | 1,990 sqft | Built 1990
-  Neighborhood Score: 8/10
-
-COST BREAKDOWN:
-  Purchase:      $     107,175
-  Repairs:       $      16,076
-  Closing:       $       3,215
-  Holding:       $      19,104
-  Selling:       $      25,472
-  ────────────────────────────────────────
-  Total:         $     145,570
-
-
-#4 - 181 WARD RD, LONGVIEW (Southern Washington / Vancouver), Washington
-────────────────────────────────────────────────────────────────────────────────
-Property ID: REAL-0055
-Auction Date: 2026-04-10
-Platform: Auction.com
-
-FORECLOSURE CONTEXT:
-  Foreclosing Entity:  Freedom Mortgage
-  Total Debt:          $     358,258
-  Loan Type:           Jumbo
-  Default Date:        2025-06-17
-  Stage:               Pre-Foreclosure
-
-PRICING:
-  Auction Price:     $     133,900
-  Estimated ARV:     $     392,040
-  Estimated Repairs: $      20,085
-  Total Investment:  $     181,524
-  Profit Potential:  $     179,152
-
-METRICS:
-  Profit Margin:            45.7%
-  Deal Score:               90.0/100
-  Recommended:                  Yes
-
-PROPERTY DETAILS:
-  3 bed / 2.0 bath | 1,782 sqft | Built 1990
-  Neighborhood Score: 6/10
-
-COST BREAKDOWN:
-  Purchase:      $     133,900
-  Repairs:       $      20,085
-  Closing:       $       4,017
-  Holding:       $      23,522
-  Selling:       $      31,363
-  ────────────────────────────────────────
-  Total:         $     181,524
-
-
-#5 - 151 FREDDIE LN, LONGVIEW (Southern Washington / Vancouver), Washington
-────────────────────────────────────────────────────────────────────────────────
-Property ID: REAL-0069
-Auction Date: 2026-03-15
-Platform: Auction.com
-
-FORECLOSURE CONTEXT:
-  Foreclosing Entity:  Flagstar Bank
-  Total Debt:          $     291,595
-  Loan Type:           Conventional
-  Default Date:        2025-05-14
-  Stage:               Auction Scheduled
-
-PRICING:
-  Auction Price:     $     114,000
-  Estimated ARV:     $     344,960
-  Estimated Repairs: $      17,100
-  Total Investment:  $     155,218
-  Profit Potential:  $     162,146
-
-METRICS:
-  Profit Margin:            47.0%
-  Deal Score:               88.0/100
-  Recommended:                  Yes
-
-PROPERTY DETAILS:
-  5 bed / 3.0 bath | 1,568 sqft | Built 1990
-  Neighborhood Score: 6/10
-
-COST BREAKDOWN:
-  Purchase:      $     114,000
-  Repairs:       $      17,100
-  Closing:       $       3,420
-  Holding:       $      20,698
-  Selling:       $      27,597
-  ────────────────────────────────────────
-  Total:         $     155,218
-
-
-#6 - 330 CODY LN, KYLE (Greater Austin), Texas
-────────────────────────────────────────────────────────────────────────────────
-Property ID: REAL-0040
-Auction Date: 2026-03-01
-Platform: Auction.com
-
-FORECLOSURE CONTEXT:
-  Foreclosing Entity:  Wells Fargo
-  Total Debt:          $     188,560
-  Loan Type:           USDA
-  Default Date:        2025-10-02
-  Stage:               Notice of Default
-
-PRICING:
-  Auction Price:     $     104,524
-  Estimated ARV:     $     259,840
-  Estimated Repairs: $      15,679
-  Total Investment:  $     138,929
-  Profit Potential:  $     100,124
-
-METRICS:
-  Profit Margin:            38.5%
-  Deal Score:               86.1/100
-  Recommended:                  Yes
-
-PROPERTY DETAILS:
-  3 bed / 2.0 bath | 1,624 sqft | Built 1990
-  Neighborhood Score: 8/10
-
-COST BREAKDOWN:
-  Purchase:      $     104,524
-  Repairs:       $      15,679
-  Closing:       $       3,136
-  Holding:       $      15,590
-  Selling:       $      20,787
-  ────────────────────────────────────────
-  Total:         $     138,929
-
-
-#7 - 165 SAMPSON, KYLE (Greater Austin), Texas
-────────────────────────────────────────────────────────────────────────────────
-Property ID: REAL-0044
+Property ID: REAL-0033
 Auction Date: 2026-03-12
 Platform: Auction.com
 
 FORECLOSURE CONTEXT:
-  Foreclosing Entity:  Capital One
-  Total Debt:          $     203,648
-  Loan Type:           FHA
-  Default Date:        2024-10-14
+  Foreclosing Entity:  Shellpoint Mortgage
+  Total Debt:          $     268,165
+  Loan Type:           Jumbo
+  Default Date:        2024-10-18
   Stage:               Lis Pendens
 
 PRICING:
-  Auction Price:     $     126,170
-  Estimated ARV:     $     270,560
-  Estimated Repairs: $      18,926
-  Total Investment:  $     165,114
-  Profit Potential:  $      83,801
+  Auction Price:     $     145,000
+  Estimated ARV:     $     378,240
+  Estimated Repairs: $      21,750
+  Total Investment:  $     193,794
+  Profit Potential:  $     154,186
 
 METRICS:
-  Profit Margin:            31.0%
-  Deal Score:               84.2/100
+  Profit Margin:            40.8%
+  Deal Score:               94.0/100
   Recommended:                  Yes
 
 PROPERTY DETAILS:
-  3 bed / 2.0 bath | 1,691 sqft | Built 1990
+  3 bed / 3.0 bath | 2,364 sqft | Built 1990
   Neighborhood Score: 8/10
 
 COST BREAKDOWN:
-  Purchase:      $     126,170
-  Repairs:       $      18,926
-  Closing:       $       3,785
-  Holding:       $      16,234
-  Selling:       $      21,645
+  Purchase:      $     145,000
+  Repairs:       $      21,750
+  Closing:       $       4,350
+  Holding:       $      22,694
+  Selling:       $      30,259
   ────────────────────────────────────────
-  Total:         $     165,114
+  Total:         $     193,794
 
 
-#8 - 1996 BREWER AVE, EUGENE (Eugene / Lane County), Oregon
-────────────────────────────────────────────────────────────────────────────────
-Property ID: REAL-0015
-Auction Date: 2026-03-22
-Platform: Auction.com
-
-FORECLOSURE CONTEXT:
-  Foreclosing Entity:  Wells Fargo
-  Total Debt:          $     436,377
-  Loan Type:           VA
-  Default Date:        2024-09-12
-  Stage:               Notice of Default
-
-PRICING:
-  Auction Price:     $     226,000
-  Estimated ARV:     $     563,136
-  Estimated Repairs: $      33,900
-  Total Investment:  $     300,468
-  Profit Potential:  $     217,617
-
-METRICS:
-  Profit Margin:            38.6%
-  Deal Score:               82.2/100
-  Recommended:                  Yes
-
-PROPERTY DETAILS:
-  3 bed / 3.0 bath | 1,879 sqft | Built 1990
-  Neighborhood Score: 6/10
-
-COST BREAKDOWN:
-  Purchase:      $     226,000
-  Repairs:       $      33,900
-  Closing:       $       6,780
-  Holding:       $      33,788
-  Selling:       $      45,051
-  ────────────────────────────────────────
-  Total:         $     300,468
-
-
-#9 - 1097 OAKWAY RD, EUGENE (Eugene / Lane County), Oregon
-────────────────────────────────────────────────────────────────────────────────
-Property ID: REAL-0005
-Auction Date: 2026-04-09
-Platform: Auction.com
-
-FORECLOSURE CONTEXT:
-  Foreclosing Entity:  Shellpoint Mortgage
-  Total Debt:          $     461,806
-  Loan Type:           ARM
-  Default Date:        2025-05-08
-  Stage:               Notice of Default
-
-PRICING:
-  Auction Price:     $     270,000
-  Estimated ARV:     $     640,793
-  Estimated Repairs: $      40,500
-  Total Investment:  $     357,048
-  Profit Potential:  $     232,482
-
-METRICS:
-  Profit Margin:            36.3%
-  Deal Score:               81.6/100
-  Recommended:                  Yes
-
-PROPERTY DETAILS:
-  3 bed / 2.0 bath | 1,666 sqft | Built 1990
-  Neighborhood Score: 6/10
-
-COST BREAKDOWN:
-  Purchase:      $     270,000
-  Repairs:       $      40,500
-  Closing:       $       8,100
-  Holding:       $      38,448
-  Selling:       $      51,263
-  ────────────────────────────────────────
-  Total:         $     357,048
-
-
-#10 - 4522 W Ravina Ln, Phoenix (Phoenix Metro), Arizona
-────────────────────────────────────────────────────────────────────────────────
-Property ID: REAL-0001
-Auction Date: 2026-03-18
-Platform: BatchData Pre-Foreclosure
-
-FORECLOSURE CONTEXT:
-  Foreclosing Entity:  GREENPOINT MORTGAGE FUNDING INC
-  Loan Type:           Credit Line (Revolving)
-
-PRICING:
-  Auction Price:     $     252,492
-  Estimated ARV:     $     553,066
-  Estimated Repairs: $      37,874
-  Total Investment:  $     331,125
-  Profit Potential:  $     177,696
-
-METRICS:
-  Profit Margin:            32.1%
-  Deal Score:               81.5/100
-  Recommended:                  Yes
-
-PROPERTY DETAILS:
-  3 bed / 2.0 bath | 1,800 sqft | Built 1990
-  Neighborhood Score: 9/10
-
-COST BREAKDOWN:
-  Purchase:      $     252,492
-  Repairs:       $      37,874
-  Closing:       $       7,575
-  Holding:       $      33,184
-  Selling:       $      44,245
-  ────────────────────────────────────────
-  Total:         $     331,125
-
-
-#11 - 1974 FINCH LN, EUGENE (Eugene / Lane County), Oregon
-────────────────────────────────────────────────────────────────────────────────
-Property ID: REAL-0003
-Auction Date: 2026-03-22
-Platform: Auction.com
-
-FORECLOSURE CONTEXT:
-  Foreclosing Entity:  Shellpoint Mortgage
-  Total Debt:          $     381,113
-  Loan Type:           USDA
-  Default Date:        2024-11-23
-  Stage:               Notice of Default
-
-PRICING:
-  Auction Price:     $     242,000
-  Estimated ARV:     $     514,750
-  Estimated Repairs: $      36,300
-  Total Investment:  $     316,445
-  Profit Potential:  $     157,125
-
-METRICS:
-  Profit Margin:            30.5%
-  Deal Score:               80.1/100
-  Recommended:                  Yes
-
-PROPERTY DETAILS:
-  3 bed / 2.0 bath | 1,518 sqft | Built 1990
-  Neighborhood Score: 6/10
-
-COST BREAKDOWN:
-  Purchase:      $     242,000
-  Repairs:       $      36,300
-  Closing:       $       7,260
-  Holding:       $      30,885
-  Selling:       $      41,180
-  ────────────────────────────────────────
-  Total:         $     316,445
-
-
-#12 - 16 ALPHA DR, LONGVIEW (Southern Washington / Vancouver), Washington
-────────────────────────────────────────────────────────────────────────────────
-Property ID: REAL-0070
-Auction Date: 2026-03-15
-Platform: Auction.com
-
-FORECLOSURE CONTEXT:
-  Foreclosing Entity:  NewRez LLC
-  Total Debt:          $     278,073
-  Loan Type:           Fixed 15yr
-  Default Date:        2025-01-23
-  Stage:               Notice of Default
-
-PRICING:
-  Auction Price:     $     133,000
-  Estimated ARV:     $     313,500
-  Estimated Repairs: $      19,950
-  Total Investment:  $     175,750
-  Profit Potential:  $     112,670
-
-METRICS:
-  Profit Margin:            35.9%
-  Deal Score:               79.5/100
-  Recommended:                  Yes
-
-PROPERTY DETAILS:
-  3 bed / 2.0 bath | 1,425 sqft | Built 1990
-  Neighborhood Score: 6/10
-
-COST BREAKDOWN:
-  Purchase:      $     133,000
-  Repairs:       $      19,950
-  Closing:       $       3,990
-  Holding:       $      18,810
-  Selling:       $      25,080
-  ────────────────────────────────────────
-  Total:         $     175,750
-
-
-#13 - 1305 BRANDI CIR, KYLE (Greater Austin), Texas
-────────────────────────────────────────────────────────────────────────────────
-Property ID: REAL-0041
-Auction Date: 2026-03-31
-Platform: Auction.com
-
-FORECLOSURE CONTEXT:
-  Foreclosing Entity:  PHH Mortgage
-  Total Debt:          $     242,158
-  Loan Type:           FHA
-  Default Date:        2024-12-29
-  Stage:               Pre-Foreclosure
-
-PRICING:
-  Auction Price:     $     154,688
-  Estimated ARV:     $     296,800
-  Estimated Repairs: $      23,203
-  Total Investment:  $     200,340
-  Profit Potential:  $      72,716
-
-METRICS:
-  Profit Margin:            24.5%
-  Deal Score:               78.5/100
-  Recommended:                   No
-
-PROPERTY DETAILS:
-  3 bed / 2.0 bath | 1,855 sqft | Built 1990
-  Neighborhood Score: 8/10
-
-COST BREAKDOWN:
-  Purchase:      $     154,688
-  Repairs:       $      23,203
-  Closing:       $       4,641
-  Holding:       $      17,808
-  Selling:       $      23,744
-  ────────────────────────────────────────
-  Total:         $     200,340
-
-
-#14 - 3465 WESTERN DR, EUGENE (Eugene / Lane County), Oregon
-────────────────────────────────────────────────────────────────────────────────
-Property ID: REAL-0006
-Auction Date: 2026-03-13
-Platform: Auction.com
-
-FORECLOSURE CONTEXT:
-  Foreclosing Entity:  Truist Bank
-  Total Debt:          $     370,637
-  Loan Type:           Fixed 15yr
-  Default Date:        2025-01-23
-  Stage:               Notice of Default
-
-PRICING:
-  Auction Price:     $     215,000
-  Estimated ARV:     $     448,502
-  Estimated Repairs: $      32,250
-  Total Investment:  $     280,610
-  Profit Potential:  $     132,012
-
-METRICS:
-  Profit Margin:            29.4%
-  Deal Score:               77.4/100
-  Recommended:                   No
-
-PROPERTY DETAILS:
-  4 bed / 2.0 bath | 1,316 sqft | Built 1990
-  Neighborhood Score: 6/10
-
-COST BREAKDOWN:
-  Purchase:      $     215,000
-  Repairs:       $      32,250
-  Closing:       $       6,450
-  Holding:       $      26,910
-  Selling:       $      35,880
-  ────────────────────────────────────────
-  Total:         $     280,610
-
-
-#15 - 1168 VALLEY BUTTE DR, EUGENE (Eugene / Lane County), Oregon
-────────────────────────────────────────────────────────────────────────────────
-Property ID: REAL-0008
-Auction Date: 2026-04-06
-Platform: Auction.com
-
-FORECLOSURE CONTEXT:
-  Foreclosing Entity:  US Bank
-  Total Debt:          $     382,370
-  Loan Type:           Jumbo
-  Default Date:        2025-05-16
-  Stage:               Auction Scheduled
-
-PRICING:
-  Auction Price:     $     189,000
-  Estimated ARV:     $     424,204
-  Estimated Repairs: $      28,350
-  Total Investment:  $     248,472
-  Profit Potential:  $     141,795
-
-METRICS:
-  Profit Margin:            33.4%
-  Deal Score:               75.9/100
-  Recommended:                  Yes
-
-PROPERTY DETAILS:
-  3 bed / 2.0 bath | 1,101 sqft | Built 1990
-  Neighborhood Score: 6/10
-
-COST BREAKDOWN:
-  Purchase:      $     189,000
-  Repairs:       $      28,350
-  Closing:       $       5,670
-  Holding:       $      25,452
-  Selling:       $      33,936
-  ────────────────────────────────────────
-  Total:         $     248,472
-
-
-#16 - 125 SALADO DR, KYLE (Greater Austin), Texas
+#2 - 816 TAPESTRY CV, PFLUGERVILLE (Greater Austin), Texas
 ────────────────────────────────────────────────────────────────────────────────
 Property ID: REAL-0039
-Auction Date: 2026-04-02
-Platform: Auction.com
-
-FORECLOSURE CONTEXT:
-  Foreclosing Entity:  Shellpoint Mortgage
-  Total Debt:          $     178,522
-  Loan Type:           Jumbo
-  Default Date:        2025-09-25
-  Stage:               Short Sale
-
-PRICING:
-  Auction Price:     $     104,941
-  Estimated ARV:     $     198,400
-  Estimated Repairs: $      15,741
-  Total Investment:  $     135,734
-  Profit Potential:  $      46,794
-
-METRICS:
-  Profit Margin:            23.6%
-  Deal Score:               75.6/100
-  Recommended:                   No
-
-PROPERTY DETAILS:
-  3 bed / 2.0 bath | 1,240 sqft | Built 1990
-  Neighborhood Score: 8/10
-
-COST BREAKDOWN:
-  Purchase:      $     104,941
-  Repairs:       $      15,741
-  Closing:       $       3,148
-  Holding:       $      11,904
-  Selling:       $      15,872
-  ────────────────────────────────────────
-  Total:         $     135,734
-
-
-#17 - 140 LELAND RD, LONGVIEW (Southern Washington / Vancouver), Washington
-────────────────────────────────────────────────────────────────────────────────
-Property ID: REAL-0068
-Auction Date: 2026-03-06
-Platform: Auction.com
-
-FORECLOSURE CONTEXT:
-  Foreclosing Entity:  Bank of America
-  Total Debt:          $     218,855
-  Loan Type:           VA
-  Default Date:        2025-06-06
-  Stage:               REO / Bank Owned
-
-PRICING:
-  Auction Price:     $     142,969
-  Estimated ARV:     $     285,120
-  Estimated Repairs: $      21,445
-  Total Investment:  $     185,811
-  Profit Potential:  $      76,500
-
-METRICS:
-  Profit Margin:            26.8%
-  Deal Score:               74.8/100
-  Recommended:                   No
-
-PROPERTY DETAILS:
-  3 bed / 2.0 bath | 1,296 sqft | Built 1990
-  Neighborhood Score: 6/10
-
-COST BREAKDOWN:
-  Purchase:      $     142,969
-  Repairs:       $      21,445
-  Closing:       $       4,289
-  Holding:       $      17,107
-  Selling:       $      22,810
-  ────────────────────────────────────────
-  Total:         $     185,811
-
-
-#18 - 1166 LORELLA AVE, EUGENE (Eugene / Lane County), Oregon
-────────────────────────────────────────────────────────────────────────────────
-Property ID: REAL-0009
-Auction Date: 2026-04-09
-Platform: Auction.com
-
-FORECLOSURE CONTEXT:
-  Foreclosing Entity:  Bank of America
-  Total Debt:          $     343,333
-  Loan Type:           FHA
-  Default Date:        2025-07-13
-  Stage:               Short Sale
-
-PRICING:
-  Auction Price:     $     197,000
-  Estimated ARV:     $     413,768
-  Estimated Repairs: $      29,550
-  Total Investment:  $     257,286
-  Profit Potential:  $     123,380
-
-METRICS:
-  Profit Margin:            29.8%
-  Deal Score:               74.8/100
-  Recommended:                   No
-
-PROPERTY DETAILS:
-  3 bed / 2.0 bath | 1,066 sqft | Built 1990
-  Neighborhood Score: 6/10
-
-COST BREAKDOWN:
-  Purchase:      $     197,000
-  Repairs:       $      29,550
-  Closing:       $       5,910
-  Holding:       $      24,826
-  Selling:       $      33,101
-  ────────────────────────────────────────
-  Total:         $     257,286
-
-
-#19 - 132 MAPLEWOOD N, KYLE (Greater Austin), Texas
-────────────────────────────────────────────────────────────────────────────────
-Property ID: REAL-0035
-Auction Date: 2026-03-26
-Platform: Auction.com
-
-FORECLOSURE CONTEXT:
-  Foreclosing Entity:  US Bank
-  Total Debt:          $     231,461
-  Loan Type:           VA
-  Default Date:        2024-08-28
-  Stage:               Pre-Foreclosure
-
-PRICING:
-  Auction Price:     $     146,983
-  Estimated ARV:     $     257,920
-  Estimated Repairs: $      22,047
-  Total Investment:  $     188,915
-  Profit Potential:  $      48,371
-
-METRICS:
-  Profit Margin:            18.8%
-  Deal Score:               72.8/100
-  Recommended:                   No
-
-PROPERTY DETAILS:
-  3 bed / 2.0 bath | 1,612 sqft | Built 1990
-  Neighborhood Score: 8/10
-
-COST BREAKDOWN:
-  Purchase:      $     146,983
-  Repairs:       $      22,047
-  Closing:       $       4,409
-  Holding:       $      15,475
-  Selling:       $      20,634
-  ────────────────────────────────────────
-  Total:         $     188,915
-
-
-#20 - 108 PARK SOUTH DR, KYLE (Greater Austin), Texas
-────────────────────────────────────────────────────────────────────────────────
-Property ID: REAL-0052
-Auction Date: 2026-04-07
+Auction Date: 2026-03-28
 Platform: Auction.com
 
 FORECLOSURE CONTEXT:
   Foreclosing Entity:  Ocwen Financial
-  Total Debt:          $     212,105
-  Loan Type:           FHA
-  Default Date:        2024-08-20
-  Stage:               Auction Scheduled
+  Total Debt:          $     276,284
+  Loan Type:           Conventional
+  Default Date:        2024-12-24
+  Stage:               Pre-Foreclosure
 
 PRICING:
-  Auction Price:     $     147,882
-  Estimated ARV:     $     249,920
-  Estimated Repairs: $      22,182
-  Total Investment:  $     189,496
-  Profit Potential:  $      40,431
+  Auction Price:     $     147,000
+  Estimated ARV:     $     385,760
+  Estimated Repairs: $      22,050
+  Total Investment:  $     196,606
+  Profit Potential:  $     158,294
 
 METRICS:
-  Profit Margin:            16.2%
-  Deal Score:               70.2/100
-  Recommended:                   No
+  Profit Margin:            41.0%
+  Deal Score:               94.0/100
+  Recommended:                  Yes
 
 PROPERTY DETAILS:
-  3 bed / 2.0 bath | 1,562 sqft | Built 1990
+  3 bed / 3.0 bath | 2,411 sqft | Built 1990
   Neighborhood Score: 8/10
 
 COST BREAKDOWN:
-  Purchase:      $     147,882
-  Repairs:       $      22,182
-  Closing:       $       4,436
-  Holding:       $      14,995
-  Selling:       $      19,994
+  Purchase:      $     147,000
+  Repairs:       $      22,050
+  Closing:       $       4,410
+  Holding:       $      23,146
+  Selling:       $      30,861
   ────────────────────────────────────────
-  Total:         $     189,496
+  Total:         $     196,606
+
+
+#3 - 803 YALE DR, PFLUGERVILLE (Greater Austin), Texas
+────────────────────────────────────────────────────────────────────────────────
+Property ID: REAL-0051
+Auction Date: 2026-02-28
+Platform: Auction.com
+
+FORECLOSURE CONTEXT:
+  Foreclosing Entity:  Caliber Home Loans
+  Total Debt:          $     451,713
+  Loan Type:           VA
+  Default Date:        2025-08-13
+  Stage:               Lis Pendens
+
+PRICING:
+  Auction Price:     $     190,000
+  Estimated ARV:     $     499,840
+  Estimated Repairs: $      28,500
+  Total Investment:  $     254,190
+  Profit Potential:  $     205,662
+
+METRICS:
+  Profit Margin:            41.1%
+  Deal Score:               92.0/100
+  Recommended:                  Yes
+
+PROPERTY DETAILS:
+  3 bed / 3.0 bath | 3,124 sqft | Built 1990
+  Neighborhood Score: 8/10
+
+COST BREAKDOWN:
+  Purchase:      $     190,000
+  Repairs:       $      28,500
+  Closing:       $       5,700
+  Holding:       $      29,990
+  Selling:       $      39,987
+  ────────────────────────────────────────
+  Total:         $     254,190
+
+
+#4 - 626 N 18TH PL, RIDGEFIELD (Southern Washington / Vancouver), Washington
+────────────────────────────────────────────────────────────────────────────────
+Property ID: REAL-0066
+Auction Date: 2026-04-02
+Platform: Auction.com
+
+FORECLOSURE CONTEXT:
+  Foreclosing Entity:  NewRez LLC
+  Total Debt:          $     397,325
+  Loan Type:           Jumbo
+  Default Date:        2025-10-21
+  Stage:               Lis Pendens
+
+PRICING:
+  Auction Price:     $     215,157
+  Estimated ARV:     $     468,380
+  Estimated Repairs: $      32,274
+  Total Investment:  $     281,988
+  Profit Potential:  $     148,922
+
+METRICS:
+  Profit Margin:            31.8%
+  Deal Score:               86.4/100
+  Recommended:                  Yes
+
+PROPERTY DETAILS:
+  3 bed / 3.0 bath | 2,129 sqft | Built 1990
+  Neighborhood Score: 9/10
+
+COST BREAKDOWN:
+  Purchase:      $     215,157
+  Repairs:       $      32,274
+  Closing:       $       6,455
+  Holding:       $      28,103
+  Selling:       $      37,470
+  ────────────────────────────────────────
+  Total:         $     281,988
+
+
+#5 - 17532 TOBERMORY DR, PFLUGERVILLE (Greater Austin), Texas
+────────────────────────────────────────────────────────────────────────────────
+Property ID: REAL-0044
+Auction Date: 2026-04-04
+Platform: Auction.com
+
+FORECLOSURE CONTEXT:
+  Foreclosing Entity:  Truist Bank
+  Total Debt:          $     206,315
+  Loan Type:           FHA
+  Default Date:        2025-10-13
+  Stage:               Short Sale
+
+PRICING:
+  Auction Price:     $     105,577
+  Estimated ARV:     $     263,840
+  Estimated Repairs: $      15,837
+  Total Investment:  $     140,411
+  Profit Potential:  $     102,322
+
+METRICS:
+  Profit Margin:            38.8%
+  Deal Score:               86.2/100
+  Recommended:                  Yes
+
+PROPERTY DETAILS:
+  3 bed / 2.0 bath | 1,649 sqft | Built 1990
+  Neighborhood Score: 8/10
+
+COST BREAKDOWN:
+  Purchase:      $     105,577
+  Repairs:       $      15,837
+  Closing:       $       3,167
+  Holding:       $      15,830
+  Selling:       $      21,107
+  ────────────────────────────────────────
+  Total:         $     140,411
+
+
+#6 - 1238 GAZANIA DR, PFLUGERVILLE (Greater Austin), Texas
+────────────────────────────────────────────────────────────────────────────────
+Property ID: REAL-0047
+Auction Date: 2026-03-15
+Platform: Auction.com
+
+FORECLOSURE CONTEXT:
+  Foreclosing Entity:  Ocwen Financial
+  Total Debt:          $     270,864
+  Loan Type:           Fixed 30yr
+  Default Date:        2024-12-05
+  Stage:               Short Sale
+
+PRICING:
+  Auction Price:     $     137,000
+  Estimated ARV:     $     338,400
+  Estimated Repairs: $      20,550
+  Total Investment:  $     181,964
+  Profit Potential:  $     129,364
+
+METRICS:
+  Profit Margin:            38.2%
+  Deal Score:               86.1/100
+  Recommended:                  Yes
+
+PROPERTY DETAILS:
+  3 bed / 3.0 bath | 2,115 sqft | Built 1990
+  Neighborhood Score: 8/10
+
+COST BREAKDOWN:
+  Purchase:      $     137,000
+  Repairs:       $      20,550
+  Closing:       $       4,110
+  Holding:       $      20,304
+  Selling:       $      27,072
+  ────────────────────────────────────────
+  Total:         $     181,964
+
+
+#7 - 17804 RICHELLE CV, PFLUGERVILLE (Greater Austin), Texas
+────────────────────────────────────────────────────────────────────────────────
+Property ID: REAL-0046
+Auction Date: 2026-03-05
+Platform: Auction.com
+
+FORECLOSURE CONTEXT:
+  Foreclosing Entity:  Flagstar Bank
+  Total Debt:          $     371,878
+  Loan Type:           USDA
+  Default Date:        2025-03-31
+  Stage:               Pre-Foreclosure
+
+PRICING:
+  Auction Price:     $     180,994
+  Estimated ARV:     $     413,760
+  Estimated Repairs: $      27,149
+  Total Investment:  $     238,399
+  Profit Potential:  $     142,261
+
+METRICS:
+  Profit Margin:            34.4%
+  Deal Score:               85.1/100
+  Recommended:                  Yes
+
+PROPERTY DETAILS:
+  3 bed / 3.0 bath | 2,586 sqft | Built 1990
+  Neighborhood Score: 8/10
+
+COST BREAKDOWN:
+  Purchase:      $     180,994
+  Repairs:       $      27,149
+  Closing:       $       5,430
+  Holding:       $      24,826
+  Selling:       $      33,101
+  ────────────────────────────────────────
+  Total:         $     238,399
+
+
+#8 - 4875 SUNSET RIDGE RD, KLAMATH FALLS (Southern Oregon), Oregon
+────────────────────────────────────────────────────────────────────────────────
+Property ID: REAL-0018
+Auction Date: 2026-03-15
+Platform: Auction.com
+
+FORECLOSURE CONTEXT:
+  Foreclosing Entity:  Chase Bank
+  Total Debt:          $   1,050,251
+  Loan Type:           Fixed 30yr
+  Default Date:        2024-10-26
+  Stage:               Short Sale
+
+PRICING:
+  Auction Price:     $     475,000
+  Estimated ARV:     $   1,376,919
+  Estimated Repairs: $      71,250
+  Total Investment:  $     643,115
+  Profit Potential:  $     623,650
+
+METRICS:
+  Profit Margin:            45.3%
+  Deal Score:               81.0/100
+  Recommended:                  Yes
+
+PROPERTY DETAILS:
+  5 bed / 4.0 bath | 3,946 sqft | Built 1990
+  Neighborhood Score: 5/10
+
+COST BREAKDOWN:
+  Purchase:      $     475,000
+  Repairs:       $      71,250
+  Closing:       $      14,250
+  Holding:       $      82,615
+  Selling:       $     110,154
+  ────────────────────────────────────────
+  Total:         $     643,115
+
+
+#9 - 6161 WOCUS RD, KLAMATH FALLS (Southern Oregon), Oregon
+────────────────────────────────────────────────────────────────────────────────
+Property ID: REAL-0017
+Auction Date: 2026-04-03
+Platform: Auction.com
+
+FORECLOSURE CONTEXT:
+  Foreclosing Entity:  PNC Bank
+  Total Debt:          $     558,908
+  Loan Type:           VA
+  Default Date:        2025-09-16
+  Stage:               Auction Scheduled
+
+PRICING:
+  Auction Price:     $     299,950
+  Estimated ARV:     $     730,253
+  Estimated Repairs: $      44,992
+  Total Investment:  $     397,756
+  Profit Potential:  $     274,077
+
+METRICS:
+  Profit Margin:            37.5%
+  Deal Score:               79.9/100
+  Recommended:                  Yes
+
+PROPERTY DETAILS:
+  4 bed / 3.0 bath | 1,740 sqft | Built 1990
+  Neighborhood Score: 5/10
+
+COST BREAKDOWN:
+  Purchase:      $     299,950
+  Repairs:       $      44,992
+  Closing:       $       8,998
+  Holding:       $      43,815
+  Selling:       $      58,420
+  ────────────────────────────────────────
+  Total:         $     397,756
+
+
+#10 - 125 W OREGON AVE, KLAMATH FALLS (Southern Oregon), Oregon
+────────────────────────────────────────────────────────────────────────────────
+Property ID: REAL-0002
+Auction Date: 2026-03-02
+Platform: Auction.com
+
+FORECLOSURE CONTEXT:
+  Foreclosing Entity:  Flagstar Bank
+  Total Debt:          $     237,278
+  Loan Type:           ARM
+  Default Date:        2025-08-12
+  Stage:               Auction Scheduled
+
+PRICING:
+  Auction Price:     $     116,000
+  Estimated ARV:     $     280,800
+  Estimated Repairs: $      17,400
+  Total Investment:  $     153,728
+  Profit Potential:  $     104,608
+
+METRICS:
+  Profit Margin:            37.3%
+  Deal Score:               77.8/100
+  Recommended:                  Yes
+
+PROPERTY DETAILS:
+  3 bed / 4.0 bath | 1,404 sqft | Built 1990
+  Neighborhood Score: 5/10
+
+COST BREAKDOWN:
+  Purchase:      $     116,000
+  Repairs:       $      17,400
+  Closing:       $       3,480
+  Holding:       $      16,848
+  Selling:       $      22,464
+  ────────────────────────────────────────
+  Total:         $     153,728
+
+
+#11 - 14916 ANTIQUE FINISH DR, PFLUGERVILLE (Greater Austin), Texas
+────────────────────────────────────────────────────────────────────────────────
+Property ID: REAL-0035
+Auction Date: 2026-02-25
+Platform: Auction.com
+
+FORECLOSURE CONTEXT:
+  Foreclosing Entity:  Chase Bank
+  Total Debt:          $     189,468
+  Loan Type:           Jumbo
+  Default Date:        2025-07-18
+  Stage:               Auction Scheduled
+
+PRICING:
+  Auction Price:     $     121,520
+  Estimated ARV:     $     236,960
+  Estimated Repairs: $      18,228
+  Total Investment:  $     157,611
+  Profit Potential:  $      60,392
+
+METRICS:
+  Profit Margin:            25.5%
+  Deal Score:               77.5/100
+  Recommended:                   No
+
+PROPERTY DETAILS:
+  3 bed / 2.0 bath | 1,481 sqft | Built 1990
+  Neighborhood Score: 8/10
+
+COST BREAKDOWN:
+  Purchase:      $     121,520
+  Repairs:       $      18,228
+  Closing:       $       3,646
+  Holding:       $      14,218
+  Selling:       $      18,957
+  ────────────────────────────────────────
+  Total:         $     157,611
+
+
+#12 - 600 CEDAR RIDGE DR, PFLUGERVILLE (Greater Austin), Texas
+────────────────────────────────────────────────────────────────────────────────
+Property ID: REAL-0045
+Auction Date: 2026-02-28
+Platform: Auction.com
+
+FORECLOSURE CONTEXT:
+  Foreclosing Entity:  Nationstar Mortgage
+  Total Debt:          $     194,399
+  Loan Type:           USDA
+  Default Date:        2025-04-02
+  Stage:               Pre-Foreclosure
+
+PRICING:
+  Auction Price:     $     136,563
+  Estimated ARV:     $     256,960
+  Estimated Repairs: $      20,484
+  Total Investment:  $     176,562
+  Profit Potential:  $      59,841
+
+METRICS:
+  Profit Margin:            23.3%
+  Deal Score:               77.3/100
+  Recommended:                   No
+
+PROPERTY DETAILS:
+  3 bed / 3.0 bath | 1,606 sqft | Built 1990
+  Neighborhood Score: 8/10
+
+COST BREAKDOWN:
+  Purchase:      $     136,563
+  Repairs:       $      20,484
+  Closing:       $       4,097
+  Holding:       $      15,418
+  Selling:       $      20,557
+  ────────────────────────────────────────
+  Total:         $     176,562
+
+
+#13 - 400 CATUMET DR, PFLUGERVILLE (Greater Austin), Texas
+────────────────────────────────────────────────────────────────────────────────
+Property ID: REAL-0041
+Auction Date: 2026-03-13
+Platform: Auction.com
+
+FORECLOSURE CONTEXT:
+  Foreclosing Entity:  PNC Bank
+  Total Debt:          $     262,243
+  Loan Type:           ARM
+  Default Date:        2024-11-30
+  Stage:               Notice of Default
+
+PRICING:
+  Auction Price:     $     173,268
+  Estimated ARV:     $     319,040
+  Estimated Repairs: $      25,990
+  Total Investment:  $     223,599
+  Profit Potential:  $      69,918
+
+METRICS:
+  Profit Margin:            21.9%
+  Deal Score:               75.9/100
+  Recommended:                   No
+
+PROPERTY DETAILS:
+  3 bed / 3.0 bath | 1,994 sqft | Built 1990
+  Neighborhood Score: 8/10
+
+COST BREAKDOWN:
+  Purchase:      $     173,268
+  Repairs:       $      25,990
+  Closing:       $       5,198
+  Holding:       $      19,142
+  Selling:       $      25,523
+  ────────────────────────────────────────
+  Total:         $     223,599
+
+
+#14 - 1000 GAZANIA DR, PFLUGERVILLE (Greater Austin), Texas
+────────────────────────────────────────────────────────────────────────────────
+Property ID: REAL-0048
+Auction Date: 2026-03-06
+Platform: Auction.com
+
+FORECLOSURE CONTEXT:
+  Foreclosing Entity:  Mr. Cooper
+  Total Debt:          $     405,145
+  Loan Type:           USDA
+  Default Date:        2024-09-18
+  Stage:               Auction Scheduled
+
+PRICING:
+  Auction Price:     $     244,125
+  Estimated ARV:     $     438,400
+  Estimated Repairs: $      36,619
+  Total Investment:  $     314,372
+  Profit Potential:  $      88,956
+
+METRICS:
+  Profit Margin:            20.3%
+  Deal Score:               74.3/100
+  Recommended:                   No
+
+PROPERTY DETAILS:
+  3 bed / 3.0 bath | 2,740 sqft | Built 1990
+  Neighborhood Score: 8/10
+
+COST BREAKDOWN:
+  Purchase:      $     244,125
+  Repairs:       $      36,619
+  Closing:       $       7,324
+  Holding:       $      26,304
+  Selling:       $      35,072
+  ────────────────────────────────────────
+  Total:         $     314,372
+
+
+#15 - 5825 WOCUS RD, KLAMATH FALLS (Southern Oregon), Oregon
+────────────────────────────────────────────────────────────────────────────────
+Property ID: REAL-0016
+Auction Date: 2026-03-14
+Platform: Auction.com
+
+FORECLOSURE CONTEXT:
+  Foreclosing Entity:  Caliber Home Loans
+  Total Debt:          $     251,110
+  Loan Type:           Fixed 15yr
+  Default Date:        2025-06-23
+  Stage:               Short Sale
+
+PRICING:
+  Auction Price:     $     135,000
+  Estimated ARV:     $     271,595
+  Estimated Repairs: $      20,250
+  Total Investment:  $     175,596
+  Profit Potential:  $      74,272
+
+METRICS:
+  Profit Margin:            27.3%
+  Deal Score:               73.3/100
+  Recommended:                   No
+
+PROPERTY DETAILS:
+  3 bed / 2.0 bath | 1,311 sqft | Built 1990
+  Neighborhood Score: 5/10
+
+COST BREAKDOWN:
+  Purchase:      $     135,000
+  Repairs:       $      20,250
+  Closing:       $       4,050
+  Holding:       $      16,296
+  Selling:       $      21,728
+  ────────────────────────────────────────
+  Total:         $     175,596
+
+
+#16 - 14013 GOLDEN FLAX TRL, PFLUGERVILLE (Greater Austin), Texas
+────────────────────────────────────────────────────────────────────────────────
+Property ID: REAL-0055
+Auction Date: 2026-03-25
+Platform: Auction.com
+
+FORECLOSURE CONTEXT:
+  Foreclosing Entity:  Bank of America
+  Total Debt:          $     155,268
+  Loan Type:           Conventional
+  Default Date:        2025-10-18
+  Stage:               Auction Scheduled
+
+PRICING:
+  Auction Price:     $     105,709
+  Estimated ARV:     $     192,000
+  Estimated Repairs: $      15,856
+  Total Investment:  $     136,257
+  Profit Potential:  $      40,383
+
+METRICS:
+  Profit Margin:            21.0%
+  Deal Score:               73.0/100
+  Recommended:                   No
+
+PROPERTY DETAILS:
+  3 bed / 2.0 bath | 1,200 sqft | Built 1990
+  Neighborhood Score: 8/10
+
+COST BREAKDOWN:
+  Purchase:      $     105,709
+  Repairs:       $      15,856
+  Closing:       $       3,171
+  Holding:       $      11,520
+  Selling:       $      15,360
+  ────────────────────────────────────────
+  Total:         $     136,257
+
+
+#17 - 1827 JOHNSON AVE, KLAMATH FALLS (Southern Oregon), Oregon
+────────────────────────────────────────────────────────────────────────────────
+Property ID: REAL-0004
+Auction Date: 2026-04-04
+Platform: Auction.com
+
+FORECLOSURE CONTEXT:
+  Foreclosing Entity:  PNC Bank
+  Total Debt:          $     288,686
+  Loan Type:           Jumbo
+  Default Date:        2025-02-23
+  Stage:               Lis Pendens
+
+PRICING:
+  Auction Price:     $     188,000
+  Estimated ARV:     $     394,750
+  Estimated Repairs: $      28,200
+  Total Investment:  $     245,525
+  Profit Potential:  $     117,645
+
+METRICS:
+  Profit Margin:            29.8%
+  Deal Score:               72.8/100
+  Recommended:                   No
+
+PROPERTY DETAILS:
+  4 bed / 3.0 bath | 1,060 sqft | Built 1990
+  Neighborhood Score: 5/10
+
+COST BREAKDOWN:
+  Purchase:      $     188,000
+  Repairs:       $      28,200
+  Closing:       $       5,640
+  Holding:       $      23,685
+  Selling:       $      31,580
+  ────────────────────────────────────────
+  Total:         $     245,525
+
+
+#18 - 17204 NE 27TH AVE, RIDGEFIELD (Southern Washington / Vancouver), Washington
+────────────────────────────────────────────────────────────────────────────────
+Property ID: REAL-0075
+Auction Date: 2026-03-19
+Platform: Auction.com
+
+FORECLOSURE CONTEXT:
+  Foreclosing Entity:  Shellpoint Mortgage
+  Total Debt:          $     580,840
+  Loan Type:           ARM
+  Default Date:        2025-09-16
+  Stage:               Lis Pendens
+
+PRICING:
+  Auction Price:     $     395,000
+  Estimated ARV:     $     674,080
+  Estimated Repairs: $      59,250
+  Total Investment:  $     506,545
+  Profit Potential:  $     113,609
+
+METRICS:
+  Profit Margin:            16.9%
+  Deal Score:               70.9/100
+  Recommended:                   No
+
+PROPERTY DETAILS:
+  4 bed / 3.0 bath | 3,064 sqft | Built 1990
+  Neighborhood Score: 9/10
+
+COST BREAKDOWN:
+  Purchase:      $     395,000
+  Repairs:       $      59,250
+  Closing:       $      11,850
+  Holding:       $      40,445
+  Selling:       $      53,926
+  ────────────────────────────────────────
+  Total:         $     506,545
+
+
+#19 - 100 DIVISION ST, RIDGEFIELD (Southern Washington / Vancouver), Washington
+────────────────────────────────────────────────────────────────────────────────
+Property ID: REAL-0060
+Auction Date: 2026-03-10
+Platform: Auction.com
+
+FORECLOSURE CONTEXT:
+  Foreclosing Entity:  Bank of America
+  Total Debt:          $     225,781
+  Loan Type:           USDA
+  Default Date:        2025-01-06
+  Stage:               Pre-Foreclosure
+
+PRICING:
+  Auction Price:     $     165,000
+  Estimated ARV:     $     299,640
+  Estimated Repairs: $      24,750
+  Total Investment:  $     212,678
+  Profit Potential:  $      62,990
+
+METRICS:
+  Profit Margin:            21.0%
+  Deal Score:               70.0/100
+  Recommended:                   No
+
+PROPERTY DETAILS:
+  3 bed / 1.0 bath | 1,362 sqft | Built 1990
+  Neighborhood Score: 9/10
+
+COST BREAKDOWN:
+  Purchase:      $     165,000
+  Repairs:       $      24,750
+  Closing:       $       4,950
+  Holding:       $      17,978
+  Selling:       $      23,971
+  ────────────────────────────────────────
+  Total:         $     212,678
+
+
+#20 - 25117 NE 29TH AVE, RIDGEFIELD (Southern Washington / Vancouver), Washington
+────────────────────────────────────────────────────────────────────────────────
+Property ID: REAL-0065
+Auction Date: 2026-04-07
+Platform: Auction.com
+
+FORECLOSURE CONTEXT:
+  Foreclosing Entity:  Chase Bank
+  Total Debt:          $     391,521
+  Loan Type:           VA
+  Default Date:        2025-03-31
+  Stage:               Lis Pendens
+
+PRICING:
+  Auction Price:     $     300,000
+  Estimated ARV:     $     485,760
+  Estimated Repairs: $      45,000
+  Total Investment:  $     383,146
+  Profit Potential:  $      63,754
+
+METRICS:
+  Profit Margin:            13.1%
+  Deal Score:               69.1/100
+  Recommended:                   No
+
+PROPERTY DETAILS:
+  4 bed / 3.0 bath | 2,208 sqft | Built 1990
+  Neighborhood Score: 9/10
+
+COST BREAKDOWN:
+  Purchase:      $     300,000
+  Repairs:       $      45,000
+  Closing:       $       9,000
+  Holding:       $      29,146
+  Selling:       $      38,861
+  ────────────────────────────────────────
+  Total:         $     383,146
 
 
