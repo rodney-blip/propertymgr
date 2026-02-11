@@ -87,39 +87,48 @@ class DataFetcher:
 
         # 1. ATTOM — Real ARV from Automated Valuation Model
         if not skip_arv and self.attom_available:
-            attom = _get_attom()
-            avm = attom.get_avm(prop.address, city_state_zip)
-            if avm and avm.get("value"):
-                prop.estimated_arv = float(avm["value"])
-                # Recalculate metrics with the real ARV
-                prop.calculate_metrics()
+            try:
+                attom = _get_attom()
+                avm = attom.get_avm(prop.address, city_state_zip)
+                if avm and avm.get("value"):
+                    prop.estimated_arv = float(avm["value"])
+                    # Recalculate metrics with the real ARV
+                    prop.calculate_metrics()
+            except Exception as e:
+                print(f"   ⚠️  ATTOM enrichment failed for {prop.address}: {e}")
 
         # 2. BatchData — Real foreclosure context
         if not skip_foreclosure and self.batchdata_available:
-            bd = _get_batchdata()
-            fc = bd.enrich_foreclosure_context(
-                prop.address, prop.city, prop.state, prop.zip_code
-            )
-            if fc:
-                if fc.get("foreclosing_entity"):
-                    prop.foreclosing_entity = fc["foreclosing_entity"]
-                if fc.get("total_debt"):
-                    prop.total_debt = fc["total_debt"]
-                if fc.get("loan_type"):
-                    prop.loan_type = fc["loan_type"]
-                if fc.get("default_date"):
-                    prop.default_date = fc["default_date"]
-                if fc.get("foreclosure_stage"):
-                    prop.foreclosure_stage = fc["foreclosure_stage"]
+            try:
+                bd = _get_batchdata()
+                fc = bd.enrich_foreclosure_context(
+                    prop.address, prop.city, prop.state, prop.zip_code
+                )
+                if fc:
+                    if fc.get("foreclosing_entity"):
+                        prop.foreclosing_entity = fc["foreclosing_entity"]
+                    if fc.get("total_debt"):
+                        prop.total_debt = fc["total_debt"]
+                    if fc.get("loan_type"):
+                        prop.loan_type = fc["loan_type"]
+                    if fc.get("default_date"):
+                        prop.default_date = fc["default_date"]
+                    if fc.get("foreclosure_stage"):
+                        prop.foreclosure_stage = fc["foreclosure_stage"]
+            except Exception as e:
+                print(f"   ⚠️  BatchData enrichment failed for {prop.address}: {e}")
 
         # 3. Census — Real neighborhood score
         if not skip_neighborhood and self.census_available:
-            census = _get_census()
-            score = census.calculate_neighborhood_score(prop.zip_code)
-            if score is not None:
-                prop.neighborhood_score = score
-                # Recalculate deal score with real neighborhood data
-                prop.calculate_metrics()
+            try:
+                census = _get_census()
+                score = census.calculate_neighborhood_score(prop.zip_code)
+                if score is not None:
+                    prop.neighborhood_score = score
+                    # Recalculate deal score with real neighborhood data
+                    prop.calculate_metrics()
+            except Exception as e:
+                print(f"   ⚠️  Census enrichment failed for ZIP {prop.zip_code}: {e}")
 
         return prop
 

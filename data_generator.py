@@ -38,42 +38,52 @@ class MockDataGenerator:
             "Pre-Foreclosure", "Notice of Default", "Lis Pendens",
             "Auction Scheduled", "Bank Owned (REO)", "Short Sale",
         ]
-    
+
+        self.occupancy_choices = [
+            ("Vacant", 40), ("Owner Occupied", 25),
+            ("Tenant Occupied", 20), ("Unknown", 15),
+        ]
+
     def generate_properties(self, count: int = None) -> List[Property]:
         """Generate mock properties"""
         if count is None:
             count = config.MOCK_DATA_COUNT
-        
+
         properties = []
-        
+
         for i in range(count):
             prop = self._generate_single_property(i)
             prop.calculate_metrics()
             properties.append(prop)
-        
+
         return properties
-    
+
+    def _weighted_choice(self, choices):
+        """Pick from a list of (value, weight) tuples."""
+        values, weights = zip(*choices)
+        return random.choices(values, weights=weights, k=1)[0]
+
     def _generate_single_property(self, index: int) -> Property:
         """Generate a single property"""
-        
+
         # Select state, region, then city within region
         state = random.choice(config.TARGET_STATES)
         regions = config.REGION_DEFINITIONS[state]
         region = random.choice(list(regions.keys()))
         city, zip_code = random.choice(regions[region])
-        
+
         # Property details
         bedrooms = random.randint(2, 5)
         bathrooms = random.choice([1.0, 1.5, 2.0, 2.5, 3.0, 3.5])
         sqft = random.randint(1000, 3500)
         year_built = random.randint(1960, 2020)
         lot_size = round(random.uniform(0.1, 0.5), 2)
-        
+
         # Generate pricing based on deal quality
         base_price_per_sqft = config.PRICE_PER_SQFT.get(state, 180)
         price_variation = random.uniform(0.9, 1.2)
         estimated_arv = sqft * base_price_per_sqft * price_variation
-        
+
         # Create distribution of deal qualities
         deal_type = random.random()
         if deal_type < 0.25:  # 25% hot deals
@@ -88,29 +98,39 @@ class MockDataGenerator:
         else:  # 25% mediocre deals
             discount_factor = random.uniform(0.70, 0.85)
             repair_factor = random.choice([0.15, 0.20, 0.25, 0.30])
-        
+
         auction_price = estimated_arv * discount_factor
         estimated_repairs = auction_price * repair_factor
-        
+
         # Ensure within bounds
-        auction_price = max(config.MIN_AUCTION_PRICE, 
+        auction_price = max(config.MIN_AUCTION_PRICE,
                           min(config.MAX_AUCTION_PRICE, auction_price))
-        
+
         # Generate dates
         days_ahead = random.randint(1, 45)
         auction_date = (datetime.now() + timedelta(days=days_ahead)).strftime("%Y-%m-%d")
-        
+
         # Address
         address = (f"{random.randint(100, 9999)} "
                   f"{random.choice(self.street_names)} "
                   f"{random.choice(self.street_types)}")
-        
+
         # Neighborhood score (influenced by region and year built)
         base_neighborhood = 5
-        if region in ("Portland Metro", "Greater Austin", "Dallas / Fort Worth",
-                       "Southern Washington / Vancouver"):
+        high_desirability = (
+            "Portland Metro", "Greater Austin", "Dallas / Fort Worth",
+            "Southern Washington / Vancouver", "Metro Atlanta",
+            "Phoenix Metro", "Nashville Metro", "Charlotte Metro",
+            "Raleigh-Durham", "Sacramento Metro",
+        )
+        low_desirability = (
+            "Central Oregon", "El Paso Area", "Tucson Area",
+            "Augusta / Savannah", "Cleveland / Akron", "Memphis Area",
+            "Central Valley",
+        )
+        if region in high_desirability:
             base_neighborhood += 1
-        elif region in ("Central Oregon", "El Paso Area"):
+        elif region in low_desirability:
             base_neighborhood -= 1
         if year_built > 2000:
             base_neighborhood += 1
@@ -123,17 +143,28 @@ class MockDataGenerator:
         foreclosing_entity = random.choice(self.foreclosing_entities)
         loan_type = random.choice(self.loan_types)
         foreclosure_stage = random.choice(self.foreclosure_stages)
-        # Total debt is typically higher than auction price
         debt_ratio = random.uniform(1.1, 1.8)
         total_debt = round(auction_price * debt_ratio, 2)
-        # Default date is 3-18 months before auction
         months_ago = random.randint(3, 18)
         default_date = (datetime.now() - timedelta(days=months_ago * 30)).strftime("%Y-%m-%d")
-        
+
+        # Condition category (derived from repair_factor)
+        if repair_factor <= 0.08:
+            condition_category = "Cosmetic Only"
+        elif repair_factor <= 0.15:
+            condition_category = "Light Rehab"
+        elif repair_factor <= 0.22:
+            condition_category = "Moderate Rehab"
+        else:
+            condition_category = "Heavy Rehab"
+
+        # Occupancy status (weighted random)
+        occupancy_status = self._weighted_choice(self.occupancy_choices)
+
         # Description
-        condition = "light cosmetic" if repair_factor <= 0.15 else "moderate"
+        condition_desc = "light cosmetic" if repair_factor <= 0.15 else "moderate"
         description = (f"Single family home in {city}, {state}. "
-                      f"Property needs {condition} updates and repairs. "
+                      f"Property needs {condition_desc} updates and repairs. "
                       f"Great opportunity in a {neighborhood_score}/10 neighborhood.")
 
         # Auction platform and URL
@@ -143,6 +174,32 @@ class MockDataGenerator:
 
         # Bank contact URL
         bank_contact_url = config.BANK_CONTACT_URLS.get(foreclosing_entity)
+
+        # Tax data (state-specific rates)
+        tax_low, tax_high = config.STATE_TAX_RATES.get(state, (0.008, 0.015))
+        annual_property_tax = round(estimated_arv * random.uniform(tax_low, tax_high), 2)
+
+        # HOA (20% of properties)
+        hoa_monthly = random.choice([150, 200, 250, 300, 350]) if random.random() < 0.20 else None
+
+        # Estimated monthly rent
+        estimated_monthly_rent = round(estimated_arv * random.uniform(0.005, 0.008), 2)
+
+        # Previous sale history (70% of properties)
+        last_sale_price = None
+        last_sale_date = None
+        if random.random() < 0.70:
+            years_ago = random.randint(2, 10)
+            last_sale_date = (datetime.now() - timedelta(days=years_ago * 365)).strftime("%Y-%m-%d")
+            last_sale_price = round(auction_price * random.uniform(1.2, 2.0), 2)
+
+        # Geolocation (from config coordinates + random offset)
+        latitude = None
+        longitude = None
+        coords = config.CITY_COORDINATES.get((city, state))
+        if coords:
+            latitude = round(coords[0] + random.uniform(-0.03, 0.03), 6)
+            longitude = round(coords[1] + random.uniform(-0.03, 0.03), 6)
 
         return Property(
             id=f"PROP-{index + 1001}",
@@ -171,6 +228,16 @@ class MockDataGenerator:
             foreclosure_stage=foreclosure_stage,
             property_url=property_url,
             bank_contact_url=bank_contact_url,
+            occupancy_status=occupancy_status,
+            condition_category=condition_category,
+            annual_property_tax=annual_property_tax,
+            hoa_monthly=hoa_monthly,
+            estimated_monthly_rent=estimated_monthly_rent,
+            last_sale_price=last_sale_price,
+            last_sale_date=last_sale_date,
+            latitude=latitude,
+            longitude=longitude,
+            data_source="mock",
         )
 
 

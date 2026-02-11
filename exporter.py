@@ -6,6 +6,7 @@ import json
 import csv
 from typing import List
 from pathlib import Path
+from dataclasses import fields as dc_fields
 from models import Property, AnalysisResult
 import config
 
@@ -57,18 +58,8 @@ class DataExporter:
         if not properties:
             raise ValueError("No properties to export")
         
-        # Define CSV columns
-        columns = [
-            'id', 'address', 'city', 'state', 'zip_code', 'region',
-            'auction_price', 'estimated_arv', 'estimated_repairs',
-            'bedrooms', 'bathrooms', 'sqft', 'lot_size', 'year_built',
-            'property_type', 'auction_date', 'auction_platform',
-            'foreclosing_entity', 'total_debt', 'loan_type',
-            'default_date', 'foreclosure_stage',
-            'neighborhood_score', 'profit_potential', 'profit_margin',
-            'total_investment', 'deal_score', 'recommended',
-            'property_url', 'bank_contact_url'
-        ]
+        # Define CSV columns dynamically from dataclass fields
+        columns = [f.name for f in dc_fields(Property)]
         
         with open(filepath, 'w', newline='') as f:
             writer = csv.DictWriter(f, fieldnames=columns)
@@ -81,7 +72,7 @@ class DataExporter:
         return str(filepath)
     
     @staticmethod
-    def export_top_deals(properties: List[Property],
+    def export_to_text(properties: List[Property],
                         count: int = 20,
                         filename: str = "top_deals.txt") -> str:
         """
@@ -150,7 +141,7 @@ class DataExporter:
         return str(filepath)
     
     @staticmethod
-    def export_alerts_email(alerts: List[dict],
+    def export_to_html(alerts: List[dict],
                            filename: str = "deal_alerts.html") -> str:
         """
         Export alerts as HTML email template
@@ -244,10 +235,10 @@ def export_all_formats(analysis: AnalysisResult,
     
     # Top deals report
     sorted_props = sorted(properties, key=lambda x: x.deal_score, reverse=True)
-    files['report'] = exporter.export_top_deals(sorted_props)
+    files['report'] = exporter.export_to_text(sorted_props)
     
     # Email alerts
     if analysis.alerts:
-        files['email'] = exporter.export_alerts_email(analysis.alerts)
+        files['email'] = exporter.export_to_html(analysis.alerts)
     
     return files

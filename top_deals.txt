@@ -2,643 +2,780 @@
 TOP 20 AUCTION PROPERTY DEALS
 ================================================================================
 
-#1 - 778 DALE ST, WOODLAND (Southern Washington / Vancouver), Washington
-────────────────────────────────────────────────────────────────────────────────
-Property ID: REAL-0061
-Auction Date: 2012-02-28
-Platform: Auction.com
-
-PRICING:
-  Auction Price:     $     134,114
-  Estimated ARV:     $     448,800
-  Estimated Repairs: $      20,117
-  Total Investment:  $     185,183
-  Profit Potential:  $     227,713
-
-METRICS:
-  Profit Margin:            50.7%
-  Deal Score:               96.0/100
-  Recommended:                  Yes
-
-PROPERTY DETAILS:
-  3 bed / 2.0 bath | 2,040 sqft | Built 1990
-  Neighborhood Score: 9/10
-
-COST BREAKDOWN:
-  Purchase:      $     134,114
-  Repairs:       $      20,117
-  Closing:       $       4,023
-  Holding:       $      26,928
-  Selling:       $      35,904
-  ────────────────────────────────────────
-  Total:         $     185,183
-
-
-#2 - 24893 ELK LN, BEND (Central Oregon), Oregon
-────────────────────────────────────────────────────────────────────────────────
-Property ID: REAL-0007
-Auction Date: 2009-09-29
-Platform: Auction.com
-
-PRICING:
-  Auction Price:     $     169,900
-  Estimated ARV:     $     435,851
-  Estimated Repairs: $      25,485
-  Total Investment:  $     226,633
-  Profit Potential:  $     174,350
-
-METRICS:
-  Profit Margin:            40.0%
-  Deal Score:               92.0/100
-  Recommended:                  Yes
-
-PROPERTY DETAILS:
-  4 bed / 2.0 bath | 1,920 sqft | Built 1990
-  Neighborhood Score: 7/10
-
-COST BREAKDOWN:
-  Purchase:      $     169,900
-  Repairs:       $      25,485
-  Closing:       $       5,097
-  Holding:       $      26,151
-  Selling:       $      34,868
-  ────────────────────────────────────────
-  Total:         $     226,633
-
-
-#3 - 20773 LIBERTY LN, BEND (Central Oregon), Oregon
-────────────────────────────────────────────────────────────────────────────────
-Property ID: REAL-0009
-Auction Date: 2005-03-21
-Platform: Auction.com
-
-PRICING:
-  Auction Price:     $     176,650
-  Estimated ARV:     $     597,250
-  Estimated Repairs: $      26,498
-  Total Investment:  $     244,282
-  Profit Potential:  $     305,188
-
-METRICS:
-  Profit Margin:            51.1%
-  Deal Score:               92.0/100
-  Recommended:                  Yes
-
-PROPERTY DETAILS:
-  3 bed / 4.0 bath | 1,920 sqft | Built 1990
-  Neighborhood Score: 7/10
-
-COST BREAKDOWN:
-  Purchase:      $     176,650
-  Repairs:       $      26,498
-  Closing:       $       5,300
-  Holding:       $      35,835
-  Selling:       $      47,780
-  ────────────────────────────────────────
-  Total:         $     244,282
-
-
-#4 - 24965 DEER LN, BEND (Central Oregon), Oregon
-────────────────────────────────────────────────────────────────────────────────
-Property ID: REAL-0006
-Auction Date: 2005-12-09
-Platform: Auction.com
-
-PRICING:
-  Auction Price:     $     235,000
-  Estimated ARV:     $     943,019
-  Estimated Repairs: $      35,250
-  Total Investment:  $     333,881
-  Profit Potential:  $     533,696
-
-METRICS:
-  Profit Margin:            56.6%
-  Deal Score:               90.0/100
-  Recommended:                  Yes
-
-PROPERTY DETAILS:
-  2 bed / 3.0 bath | 2,467 sqft | Built 1990
-  Neighborhood Score: 7/10
-
-COST BREAKDOWN:
-  Purchase:      $     235,000
-  Repairs:       $      35,250
-  Closing:       $       7,050
-  Holding:       $      56,581
-  Selling:       $      75,442
-  ────────────────────────────────────────
-  Total:         $     333,881
-
-
-#5 - 63345 BRODY LN, BEND (Central Oregon), Oregon
-────────────────────────────────────────────────────────────────────────────────
-Property ID: REAL-0020
-Auction Date: 2009-08-10
-Platform: Auction.com
-
-PRICING:
-  Auction Price:     $     140,000
-  Estimated ARV:     $     416,000
-  Estimated Repairs: $      21,000
-  Total Investment:  $     190,160
-  Profit Potential:  $     192,560
-
-METRICS:
-  Profit Margin:            46.3%
-  Deal Score:               90.0/100
-  Recommended:                  Yes
-
-PROPERTY DETAILS:
-  5 bed / 4.0 bath | 2,080 sqft | Built 1990
-  Neighborhood Score: 7/10
-
-COST BREAKDOWN:
-  Purchase:      $     140,000
-  Repairs:       $      21,000
-  Closing:       $       4,200
-  Holding:       $      24,960
-  Selling:       $      33,280
-  ────────────────────────────────────────
-  Total:         $     190,160
-
-
-#6 - 802 NE 12TH ST # 1, BEND (Central Oregon), Oregon
+#1 - 21755 SW 109TH TER, TUALATIN (Portland Metro), Oregon
 ────────────────────────────────────────────────────────────────────────────────
 Property ID: REAL-0004
-Auction Date: 2014-09-09
+Auction Date: 2010-10-01
 Platform: Auction.com
 
+FORECLOSURE CONTEXT:
+  Foreclosing Entity:  Truist Bank
+  Total Debt:          $     793,331
+  Loan Type:           Jumbo
+  Default Date:        2025-07-26
+  Stage:               Notice of Default
+
 PRICING:
-  Auction Price:     $     204,900
-  Estimated ARV:     $     775,358
-  Estimated Repairs: $      30,735
-  Total Investment:  $     288,303
-  Profit Potential:  $     425,026
+  Auction Price:     $     346,500
+  Estimated ARV:     $     904,591
+  Estimated Repairs: $      51,975
+  Total Investment:  $     463,145
+  Profit Potential:  $     369,078
 
 METRICS:
-  Profit Margin:            54.8%
-  Deal Score:               88.0/100
+  Profit Margin:            40.8%
+  Deal Score:               94.0/100
   Recommended:                  Yes
 
 PROPERTY DETAILS:
-  2 bed / 2.0 bath | 1,359 sqft | Built 1990
-  Neighborhood Score: 7/10
+  3 bed / 3.0 bath | 2,632 sqft | Built 1990
+  Neighborhood Score: 8/10
 
 COST BREAKDOWN:
-  Purchase:      $     204,900
-  Repairs:       $      30,735
-  Closing:       $       6,147
-  Holding:       $      46,521
-  Selling:       $      62,029
+  Purchase:      $     346,500
+  Repairs:       $      51,975
+  Closing:       $      10,395
+  Holding:       $      54,275
+  Selling:       $      72,367
   ────────────────────────────────────────
-  Total:         $     288,303
+  Total:         $     463,145
 
 
-#7 - 2303 SHARON DR, CEDAR PARK (Greater Austin), Texas
+#2 - 9715 SW SIUSLAW LN, TUALATIN (Portland Metro), Oregon
 ────────────────────────────────────────────────────────────────────────────────
-Property ID: REAL-0026
-Auction Date: 2011-10-19
+Property ID: REAL-0008
+Auction Date: 1994-05-27
 Platform: Auction.com
 
+FORECLOSURE CONTEXT:
+  Foreclosing Entity:  NewRez LLC
+  Total Debt:          $     490,812
+  Loan Type:           Fixed 15yr
+  Default Date:        2025-09-30
+  Stage:               REO / Bank Owned
+
 PRICING:
-  Auction Price:     $     175,000
-  Estimated ARV:     $     427,200
-  Estimated Repairs: $      26,250
-  Total Investment:  $     232,132
-  Profit Potential:  $     160,892
+  Auction Price:     $     113,000
+  Estimated ARV:     $     528,720
+  Estimated Repairs: $      16,950
+  Total Investment:  $     165,063
+  Profit Potential:  $     321,359
 
 METRICS:
-  Profit Margin:            37.7%
+  Profit Margin:            60.8%
+  Deal Score:               92.0/100
+  Recommended:                  Yes
+
+PROPERTY DETAILS:
+  3 bed / 2.0 bath | 1,484 sqft | Built 1990
+  Neighborhood Score: 8/10
+
+COST BREAKDOWN:
+  Purchase:      $     113,000
+  Repairs:       $      16,950
+  Closing:       $       3,390
+  Holding:       $      31,723
+  Selling:       $      42,298
+  ────────────────────────────────────────
+  Total:         $     165,063
+
+
+#3 - 21383 SW 91ST CT, TUALATIN (Portland Metro), Oregon
+────────────────────────────────────────────────────────────────────────────────
+Property ID: REAL-0009
+Auction Date: 2001-04-30
+Platform: Auction.com
+
+FORECLOSURE CONTEXT:
+  Foreclosing Entity:  Flagstar Bank
+  Total Debt:          $     447,874
+  Loan Type:           Fixed 15yr
+  Default Date:        2025-07-17
+  Stage:               Notice of Default
+
+PRICING:
+  Auction Price:     $     168,500
+  Estimated ARV:     $     566,750
+  Estimated Repairs: $      25,275
+  Total Investment:  $     232,835
+  Profit Potential:  $     288,575
+
+METRICS:
+  Profit Margin:            50.9%
+  Deal Score:               92.0/100
+  Recommended:                  Yes
+
+PROPERTY DETAILS:
+  3 bed / 2.0 bath | 1,358 sqft | Built 1990
+  Neighborhood Score: 8/10
+
+COST BREAKDOWN:
+  Purchase:      $     168,500
+  Repairs:       $      25,275
+  Closing:       $       5,055
+  Holding:       $      34,005
+  Selling:       $      45,340
+  ────────────────────────────────────────
+  Total:         $     232,835
+
+
+#4 - 9675 SW ARIKARA DR, TUALATIN (Portland Metro), Oregon
+────────────────────────────────────────────────────────────────────────────────
+Property ID: REAL-0010
+Auction Date: 2005-05-17
+Platform: Auction.com
+
+FORECLOSURE CONTEXT:
+  Foreclosing Entity:  Nationstar Mortgage
+  Total Debt:          $     395,860
+  Loan Type:           ARM
+  Default Date:        2024-11-01
+  Stage:               Notice of Default
+
+PRICING:
+  Auction Price:     $     177,000
+  Estimated ARV:     $     492,408
+  Estimated Repairs: $      26,550
+  Total Investment:  $     238,404
+  Profit Potential:  $     214,611
+
+METRICS:
+  Profit Margin:            43.6%
+  Deal Score:               89.0/100
+  Recommended:                  Yes
+
+PROPERTY DETAILS:
+  3 bed / 2.0 bath | 1,148 sqft | Built 1990
+  Neighborhood Score: 8/10
+
+COST BREAKDOWN:
+  Purchase:      $     177,000
+  Repairs:       $      26,550
+  Closing:       $       5,310
+  Holding:       $      29,544
+  Selling:       $      39,393
+  ────────────────────────────────────────
+  Total:         $     238,404
+
+
+#5 - 2712 TURTLE RIVER DR, LEANDER (Greater Austin), Texas
+────────────────────────────────────────────────────────────────────────────────
+Property ID: REAL-0025
+Auction Date: 2007-07-12
+Platform: Auction.com
+
+FORECLOSURE CONTEXT:
+  Foreclosing Entity:  Ocwen Financial
+  Total Debt:          $     249,088
+  Loan Type:           VA
+  Default Date:        2025-06-01
+  Stage:               Short Sale
+
+PRICING:
+  Auction Price:     $     128,438
+  Estimated ARV:     $     285,760
+  Estimated Repairs: $      19,266
+  Total Investment:  $     168,702
+  Profit Potential:  $      94,197
+
+METRICS:
+  Profit Margin:            33.0%
+  Deal Score:               88.7/100
+  Recommended:                  Yes
+
+PROPERTY DETAILS:
+  3 bed / 3.0 bath | 1,786 sqft | Built 1990
+  Neighborhood Score: 10/10
+
+COST BREAKDOWN:
+  Purchase:      $     128,438
+  Repairs:       $      19,266
+  Closing:       $       3,853
+  Holding:       $      17,146
+  Selling:       $      22,861
+  ────────────────────────────────────────
+  Total:         $     168,702
+
+
+#6 - 33817 SE 27TH ST, WASHOUGAL (Southern Washington / Vancouver), Washington
+────────────────────────────────────────────────────────────────────────────────
+Property ID: REAL-0065
+Auction Date: 2001-12-06
+Platform: Auction.com
+
+FORECLOSURE CONTEXT:
+  Foreclosing Entity:  Ocwen Financial
+  Total Debt:          $     306,675
+  Loan Type:           VA
+  Default Date:        2024-10-19
+  Stage:               Notice of Default
+
+PRICING:
+  Auction Price:     $     179,495
+  Estimated ARV:     $     392,040
+  Estimated Repairs: $      26,924
+  Total Investment:  $     235,326
+  Profit Potential:  $     125,350
+
+METRICS:
+  Profit Margin:            32.0%
+  Deal Score:               88.5/100
+  Recommended:                  Yes
+
+PROPERTY DETAILS:
+  4 bed / 3.0 bath | 1,782 sqft | Built 1990
+  Neighborhood Score: 10/10
+
+COST BREAKDOWN:
+  Purchase:      $     179,495
+  Repairs:       $      26,924
+  Closing:       $       5,385
+  Holding:       $      23,522
+  Selling:       $      31,363
+  ────────────────────────────────────────
+  Total:         $     235,326
+
+
+#7 - 3373 I ST, WASHOUGAL (Southern Washington / Vancouver), Washington
+────────────────────────────────────────────────────────────────────────────────
+Property ID: REAL-0069
+Auction Date: 2005-03-31
+Platform: Auction.com
+
+FORECLOSURE CONTEXT:
+  Foreclosing Entity:  Flagstar Bank
+  Total Debt:          $     301,791
+  Loan Type:           Fixed 30yr
+  Default Date:        2025-01-26
+  Stage:               Auction Scheduled
+
+PRICING:
+  Auction Price:     $     156,000
+  Estimated ARV:     $     380,160
+  Estimated Repairs: $      23,400
+  Total Investment:  $     206,890
+  Profit Potential:  $     142,858
+
+METRICS:
+  Profit Margin:            37.6%
   Deal Score:               87.9/100
   Recommended:                  Yes
 
 PROPERTY DETAILS:
-  3 bed / 2.0 bath | 2,670 sqft | Built 1990
-  Neighborhood Score: 9/10
+  2 bed / 2.0 bath | 1,728 sqft | Built 1990
+  Neighborhood Score: 10/10
 
 COST BREAKDOWN:
-  Purchase:      $     175,000
-  Repairs:       $      26,250
-  Closing:       $       5,250
-  Holding:       $      25,632
-  Selling:       $      34,176
+  Purchase:      $     156,000
+  Repairs:       $      23,400
+  Closing:       $       4,680
+  Holding:       $      22,810
+  Selling:       $      30,413
   ────────────────────────────────────────
-  Total:         $     232,132
+  Total:         $     206,890
 
 
-#8 - 197 HAWKS VIEW RD, WOODLAND (Southern Washington / Vancouver), Washington
-────────────────────────────────────────────────────────────────────────────────
-Property ID: REAL-0054
-Auction Date: 2005-04-18
-Platform: Auction.com
-
-PRICING:
-  Auction Price:     $     170,000
-  Estimated ARV:     $     392,040
-  Estimated Repairs: $      25,500
-  Total Investment:  $     224,122
-  Profit Potential:  $     136,554
-
-METRICS:
-  Profit Margin:            34.8%
-  Deal Score:               87.2/100
-  Recommended:                  Yes
-
-PROPERTY DETAILS:
-  3 bed / 2.0 bath | 1,782 sqft | Built 1990
-  Neighborhood Score: 9/10
-
-COST BREAKDOWN:
-  Purchase:      $     170,000
-  Repairs:       $      25,500
-  Closing:       $       5,100
-  Holding:       $      23,522
-  Selling:       $      31,363
-  ────────────────────────────────────────
-  Total:         $     224,122
-
-
-#9 - 1801 ASCOT LN, CEDAR PARK (Greater Austin), Texas
-────────────────────────────────────────────────────────────────────────────────
-Property ID: REAL-0042
-Auction Date: 2009-11-20
-Platform: Auction.com
-
-PRICING:
-  Auction Price:     $     137,073
-  Estimated ARV:     $     279,200
-  Estimated Repairs: $      20,561
-  Total Investment:  $     178,498
-  Profit Potential:  $      78,366
-
-METRICS:
-  Profit Margin:            28.1%
-  Deal Score:               84.1/100
-  Recommended:                   No
-
-PROPERTY DETAILS:
-  3 bed / 2.0 bath | 1,745 sqft | Built 1990
-  Neighborhood Score: 9/10
-
-COST BREAKDOWN:
-  Purchase:      $     137,073
-  Repairs:       $      20,561
-  Closing:       $       4,112
-  Holding:       $      16,752
-  Selling:       $      22,336
-  ────────────────────────────────────────
-  Total:         $     178,498
-
-
-#10 - 21348 OAKVIEW DR, BEND (Central Oregon), Oregon
-────────────────────────────────────────────────────────────────────────────────
-Property ID: REAL-0008
-Auction Date: 2005-01-10
-Platform: Auction.com
-
-PRICING:
-  Auction Price:     $     244,950
-  Estimated ARV:     $     569,844
-  Estimated Repairs: $      36,742
-  Total Investment:  $     323,232
-  Profit Potential:  $     201,025
-
-METRICS:
-  Profit Margin:            35.3%
-  Deal Score:               83.3/100
-  Recommended:                  Yes
-
-PROPERTY DETAILS:
-  4 bed / 3.0 bath | 2,280 sqft | Built 1990
-  Neighborhood Score: 7/10
-
-COST BREAKDOWN:
-  Purchase:      $     244,950
-  Repairs:       $      36,742
-  Closing:       $       7,348
-  Holding:       $      34,191
-  Selling:       $      45,588
-  ────────────────────────────────────────
-  Total:         $     323,232
-
-
-#11 - 287 MAKI RD, WOODLAND (Southern Washington / Vancouver), Washington
-────────────────────────────────────────────────────────────────────────────────
-Property ID: REAL-0048
-Auction Date: 2005-07-26
-Platform: Auction.com
-
-PRICING:
-  Auction Price:     $     110,796
-  Estimated ARV:     $     321,200
-  Estimated Repairs: $      16,619
-  Total Investment:  $     150,011
-  Profit Potential:  $     145,493
-
-METRICS:
-  Profit Margin:            45.3%
-  Deal Score:               82.0/100
-  Recommended:                  Yes
-
-PROPERTY DETAILS:
-  2 bed / 1.0 bath | 1,460 sqft | Built 1990
-  Neighborhood Score: 9/10
-
-COST BREAKDOWN:
-  Purchase:      $     110,796
-  Repairs:       $      16,619
-  Closing:       $       3,324
-  Holding:       $      19,272
-  Selling:       $      25,696
-  ────────────────────────────────────────
-  Total:         $     150,011
-
-
-#12 - 163 LAHTI RD, WOODLAND (Southern Washington / Vancouver), Washington
-────────────────────────────────────────────────────────────────────────────────
-Property ID: REAL-0055
-Auction Date: 2004-10-29
-Platform: Auction.com
-
-PRICING:
-  Auction Price:     $     155,000
-  Estimated ARV:     $     331,320
-  Estimated Repairs: $      23,250
-  Total Investment:  $     202,779
-  Profit Potential:  $     102,035
-
-METRICS:
-  Profit Margin:            30.8%
-  Deal Score:               81.2/100
-  Recommended:                  Yes
-
-PROPERTY DETAILS:
-  3 bed / 1.0 bath | 1,506 sqft | Built 1990
-  Neighborhood Score: 9/10
-
-COST BREAKDOWN:
-  Purchase:      $     155,000
-  Repairs:       $      23,250
-  Closing:       $       4,650
-  Holding:       $      19,879
-  Selling:       $      26,506
-  ────────────────────────────────────────
-  Total:         $     202,779
-
-
-#13 - 1106 CEDAR HILLS BLVD, CEDAR PARK (Greater Austin), Texas
-────────────────────────────────────────────────────────────────────────────────
-Property ID: REAL-0033
-Auction Date: 2005-06-13
-Platform: Auction.com
-
-PRICING:
-  Auction Price:     $     107,500
-  Estimated ARV:     $     215,200
-  Estimated Repairs: $      16,125
-  Total Investment:  $     139,762
-  Profit Potential:  $      58,222
-
-METRICS:
-  Profit Margin:            27.1%
-  Deal Score:               81.1/100
-  Recommended:                   No
-
-PROPERTY DETAILS:
-  3 bed / 2.0 bath | 1,345 sqft | Built 1990
-  Neighborhood Score: 9/10
-
-COST BREAKDOWN:
-  Purchase:      $     107,500
-  Repairs:       $      16,125
-  Closing:       $       3,225
-  Holding:       $      12,912
-  Selling:       $      17,216
-  ────────────────────────────────────────
-  Total:         $     139,762
-
-
-#14 - 2415 NE LIBBY PL, BEND (Central Oregon), Oregon
+#8 - 20047 SW 71ST AVE, TUALATIN (Portland Metro), Oregon
 ────────────────────────────────────────────────────────────────────────────────
 Property ID: REAL-0015
-Auction Date: 2014-03-21
+Auction Date: 2005-04-15
 Platform: Auction.com
+
+FORECLOSURE CONTEXT:
+  Foreclosing Entity:  Flagstar Bank
+  Total Debt:          $     538,920
+  Loan Type:           Conventional
+  Default Date:        2025-06-15
+  Stage:               Short Sale
 
 PRICING:
   Auction Price:     $     230,000
-  Estimated ARV:     $     503,250
+  Estimated ARV:     $     571,664
   Estimated Repairs: $      34,500
-  Total Investment:  $     301,595
-  Profit Potential:  $     161,395
+  Total Investment:  $     305,700
+  Profit Potential:  $     220,231
 
 METRICS:
-  Profit Margin:            32.1%
-  Deal Score:               80.5/100
+  Profit Margin:            38.5%
+  Deal Score:               86.1/100
   Recommended:                  Yes
 
 PROPERTY DETAILS:
-  3 bed / 2.0 bath | 1,406 sqft | Built 1990
-  Neighborhood Score: 7/10
+  3 bed / 2.0 bath | 1,813 sqft | Built 1990
+  Neighborhood Score: 8/10
 
 COST BREAKDOWN:
   Purchase:      $     230,000
   Repairs:       $      34,500
   Closing:       $       6,900
-  Holding:       $      30,195
-  Selling:       $      40,260
+  Holding:       $      34,300
+  Selling:       $      45,733
   ────────────────────────────────────────
-  Total:         $     301,595
+  Total:         $     305,700
 
 
-#15 - 219 N PEACH ST, MEDFORD (Southern Oregon), Oregon
+#9 - 4219 B ST, WASHOUGAL (Southern Washington / Vancouver), Washington
 ────────────────────────────────────────────────────────────────────────────────
-Property ID: REAL-0075
-Auction Date: 2017-04-21
+Property ID: REAL-0067
+Auction Date: 2005-03-24
 Platform: Auction.com
 
+FORECLOSURE CONTEXT:
+  Foreclosing Entity:  US Bank
+  Total Debt:          $     233,508
+  Loan Type:           Conventional
+  Default Date:        2024-11-02
+  Stage:               Pre-Foreclosure
+
 PRICING:
-  Auction Price:     $     175,000
-  Estimated ARV:     $     364,800
-  Estimated Repairs: $      26,250
-  Total Investment:  $     228,388
-  Profit Potential:  $     107,228
+  Auction Price:     $     144,000
+  Estimated ARV:     $     297,000
+  Estimated Repairs: $      21,600
+  Total Investment:  $     187,740
+  Profit Potential:  $      85,500
 
 METRICS:
-  Profit Margin:            29.4%
-  Deal Score:               77.4/100
+  Profit Margin:            28.8%
+  Deal Score:               84.8/100
   Recommended:                   No
 
 PROPERTY DETAILS:
-  2 bed / 2.0 bath | 1,824 sqft | Built 1990
-  Neighborhood Score: 6/10
+  3 bed / 2.0 bath | 1,350 sqft | Built 1990
+  Neighborhood Score: 10/10
 
 COST BREAKDOWN:
-  Purchase:      $     175,000
-  Repairs:       $      26,250
-  Closing:       $       5,250
-  Holding:       $      21,888
-  Selling:       $      29,184
+  Purchase:      $     144,000
+  Repairs:       $      21,600
+  Closing:       $       4,320
+  Holding:       $      17,820
+  Selling:       $      23,760
   ────────────────────────────────────────
-  Total:         $     228,388
+  Total:         $     187,740
 
 
-#16 - 64846 CASA CT, BEND (Central Oregon), Oregon
+#10 - 21856 SW MANDAN CT, TUALATIN (Portland Metro), Oregon
 ────────────────────────────────────────────────────────────────────────────────
 Property ID: REAL-0011
-Auction Date: 2005-03-28
+Auction Date: 2005-07-14
 Platform: Auction.com
 
+FORECLOSURE CONTEXT:
+  Foreclosing Entity:  Shellpoint Mortgage
+  Total Debt:          $     461,428
+  Loan Type:           ARM
+  Default Date:        2025-05-20
+  Stage:               Auction Scheduled
+
 PRICING:
-  Auction Price:     $     479,900
-  Estimated ARV:     $     963,572
-  Estimated Repairs: $      71,985
-  Total Investment:  $     624,096
-  Profit Potential:  $     262,390
+  Auction Price:     $     269,621
+  Estimated ARV:     $     600,508
+  Estimated Repairs: $      40,443
+  Total Investment:  $     354,183
+  Profit Potential:  $     198,284
 
 METRICS:
-  Profit Margin:            27.2%
-  Deal Score:               77.2/100
-  Recommended:                   No
+  Profit Margin:            33.0%
+  Deal Score:               84.8/100
+  Recommended:                  Yes
 
 PROPERTY DETAILS:
-  4 bed / 3.0 bath | 3,053 sqft | Built 1990
-  Neighborhood Score: 7/10
+  4 bed / 3.0 bath | 2,036 sqft | Built 1990
+  Neighborhood Score: 8/10
 
 COST BREAKDOWN:
-  Purchase:      $     479,900
-  Repairs:       $      71,985
-  Closing:       $      14,397
-  Holding:       $      57,814
-  Selling:       $      77,086
+  Purchase:      $     269,621
+  Repairs:       $      40,443
+  Closing:       $       8,089
+  Holding:       $      36,030
+  Selling:       $      48,041
   ────────────────────────────────────────
-  Total:         $     624,096
+  Total:         $     354,183
 
 
-#17 - 386 MAPLE ST, WOODLAND (Southern Washington / Vancouver), Washington
+#11 - 14104 LAYNE LOOP, CEDAR PARK (Greater Austin), Texas
 ────────────────────────────────────────────────────────────────────────────────
-Property ID: REAL-0057
-Auction Date: 2005-04-26
+Property ID: REAL-0026
+Auction Date: 2008-04-28
 Platform: Auction.com
 
+FORECLOSURE CONTEXT:
+  Foreclosing Entity:  Nationstar Mortgage
+  Total Debt:          $     165,858
+  Loan Type:           VA
+  Default Date:        2025-06-22
+  Stage:               Notice of Default
+
 PRICING:
-  Auction Price:     $     170,500
-  Estimated ARV:     $     320,320
-  Estimated Repairs: $      25,575
-  Total Investment:  $     220,409
-  Profit Potential:  $      74,285
+  Auction Price:     $     113,750
+  Estimated ARV:     $     232,960
+  Estimated Repairs: $      17,062
+  Total Investment:  $     148,203
+  Profit Potential:  $      66,121
 
 METRICS:
-  Profit Margin:            23.2%
-  Deal Score:               77.2/100
+  Profit Margin:            28.4%
+  Deal Score:               84.4/100
   Recommended:                   No
 
 PROPERTY DETAILS:
   3 bed / 2.0 bath | 1,456 sqft | Built 1990
-  Neighborhood Score: 9/10
+  Neighborhood Score: 10/10
 
 COST BREAKDOWN:
-  Purchase:      $     170,500
-  Repairs:       $      25,575
-  Closing:       $       5,115
-  Holding:       $      19,219
-  Selling:       $      25,626
+  Purchase:      $     113,750
+  Repairs:       $      17,062
+  Closing:       $       3,412
+  Holding:       $      13,978
+  Selling:       $      18,637
   ────────────────────────────────────────
-  Total:         $     220,409
+  Total:         $     148,203
 
 
-#18 - 506 COLUMBINE AVE, CEDAR PARK (Greater Austin), Texas
+#12 - 527 53RD ST, WASHOUGAL (Southern Washington / Vancouver), Washington
 ────────────────────────────────────────────────────────────────────────────────
-Property ID: REAL-0031
-Auction Date: 2007-02-12
+Property ID: REAL-0070
+Auction Date: 2013-08-29
 Platform: Auction.com
 
+FORECLOSURE CONTEXT:
+  Foreclosing Entity:  PNC Bank
+  Total Debt:          $     343,717
+  Loan Type:           ARM
+  Default Date:        2024-09-24
+  Stage:               Auction Scheduled
+
 PRICING:
-  Auction Price:     $     123,000
-  Estimated ARV:     $     224,320
-  Estimated Repairs: $      18,450
-  Total Investment:  $     158,599
-  Profit Potential:  $      47,775
+  Auction Price:     $     243,438
+  Estimated ARV:     $     476,740
+  Estimated Repairs: $      36,516
+  Total Investment:  $     315,861
+  Profit Potential:  $     122,740
 
 METRICS:
-  Profit Margin:            21.3%
-  Deal Score:               75.3/100
+  Profit Margin:            25.7%
+  Deal Score:               83.7/100
   Recommended:                   No
 
 PROPERTY DETAILS:
-  3 bed / 2.0 bath | 1,402 sqft | Built 1990
+  3 bed / 3.0 bath | 2,167 sqft | Built 1990
+  Neighborhood Score: 10/10
+
+COST BREAKDOWN:
+  Purchase:      $     243,438
+  Repairs:       $      36,516
+  Closing:       $       7,303
+  Holding:       $      28,604
+  Selling:       $      38,139
+  ────────────────────────────────────────
+  Total:         $     315,861
+
+
+#13 - 4522 W Ravina Ln, Phoenix (Phoenix Metro), Arizona
+────────────────────────────────────────────────────────────────────────────────
+Property ID: REAL-0001
+Auction Date: 2005-03-04T00:00:00.000Z
+Platform: BatchData Pre-Foreclosure
+
+FORECLOSURE CONTEXT:
+  Foreclosing Entity:  GREENPOINT MORTGAGE FUNDING INC
+  Loan Type:           Credit Line (Revolving)
+
+PRICING:
+  Auction Price:     $     252,492
+  Estimated ARV:     $     553,066
+  Estimated Repairs: $      37,874
+  Total Investment:  $     331,125
+  Profit Potential:  $     177,696
+
+METRICS:
+  Profit Margin:            32.1%
+  Deal Score:               81.5/100
+  Recommended:                  Yes
+
+PROPERTY DETAILS:
+  3 bed / 2.0 bath | 1,800 sqft | Built 1990
   Neighborhood Score: 9/10
 
 COST BREAKDOWN:
-  Purchase:      $     123,000
-  Repairs:       $      18,450
-  Closing:       $       3,690
-  Holding:       $      13,459
-  Selling:       $      17,946
+  Purchase:      $     252,492
+  Repairs:       $      37,874
+  Closing:       $       7,575
+  Holding:       $      33,184
+  Selling:       $      44,245
   ────────────────────────────────────────
-  Total:         $     158,599
+  Total:         $     331,125
 
 
-#19 - 1600 PAPER MOON DR, CEDAR PARK (Greater Austin), Texas
+#14 - 21540 SW 78TH AVE, TUALATIN (Portland Metro), Oregon
 ────────────────────────────────────────────────────────────────────────────────
-Property ID: REAL-0044
-Auction Date: 2026-03-06
+Property ID: REAL-0007
+Auction Date: 2021-07-15
 Platform: Auction.com
 
+FORECLOSURE CONTEXT:
+  Foreclosing Entity:  PHH Mortgage
+  Total Debt:          $     579,156
+  Loan Type:           VA
+  Default Date:        2025-05-17
+  Stage:               Lis Pendens
+
 PRICING:
-  Auction Price:     $     221,631
-  Estimated ARV:     $     392,000
-  Estimated Repairs: $      33,245
-  Total Investment:  $     285,044
-  Profit Potential:  $      75,596
+  Auction Price:     $     345,000
+  Estimated ARV:     $     811,683
+  Estimated Repairs: $      51,750
+  Total Investment:  $     455,801
+  Profit Potential:  $     290,947
 
 METRICS:
-  Profit Margin:            19.3%
-  Deal Score:               75.3/100
+  Profit Margin:            35.8%
+  Deal Score:               80.5/100
+  Recommended:                  Yes
+
+PROPERTY DETAILS:
+  3 bed / 1.0 bath | 1,608 sqft | Built 1990
+  Neighborhood Score: 8/10
+
+COST BREAKDOWN:
+  Purchase:      $     345,000
+  Repairs:       $      51,750
+  Closing:       $      10,350
+  Holding:       $      48,701
+  Selling:       $      64,935
+  ────────────────────────────────────────
+  Total:         $     455,801
+
+
+#15 - 2502 KATHLEEN CV, LEANDER (Greater Austin), Texas
+────────────────────────────────────────────────────────────────────────────────
+Property ID: REAL-0049
+Auction Date: 2026-03-25
+Platform: Auction.com
+
+FORECLOSURE CONTEXT:
+  Foreclosing Entity:  Flagstar Bank
+  Total Debt:          $     240,845
+  Loan Type:           VA
+  Default Date:        2025-02-11
+  Stage:               Lis Pendens
+
+PRICING:
+  Auction Price:     $     146,076
+  Estimated ARV:     $     259,200
+  Estimated Repairs: $      21,911
+  Total Investment:  $     187,922
+  Profit Potential:  $      50,542
+
+METRICS:
+  Profit Margin:            19.5%
+  Deal Score:               77.5/100
   Recommended:                   No
 
 PROPERTY DETAILS:
-  3 bed / 2.0 bath | 2,450 sqft | Built 1990
-  Neighborhood Score: 9/10
+  3 bed / 2.0 bath | 1,620 sqft | Built 1990
+  Neighborhood Score: 10/10
 
 COST BREAKDOWN:
-  Purchase:      $     221,631
-  Repairs:       $      33,245
-  Closing:       $       6,649
-  Holding:       $      23,520
-  Selling:       $      31,360
+  Purchase:      $     146,076
+  Repairs:       $      21,911
+  Closing:       $       4,382
+  Holding:       $      15,552
+  Selling:       $      20,736
   ────────────────────────────────────────
-  Total:         $     285,044
+  Total:         $     187,922
 
 
-#20 - 285 FIR AVE, WOODLAND (Southern Washington / Vancouver), Washington
+#16 - 1306 CHARDONNAY XING, LEANDER (Greater Austin), Texas
 ────────────────────────────────────────────────────────────────────────────────
-Property ID: REAL-0066
-Auction Date: 2017-05-24
+Property ID: REAL-0039
+Auction Date: 2022-07-22
 Platform: Auction.com
 
+FORECLOSURE CONTEXT:
+  Foreclosing Entity:  Flagstar Bank
+  Total Debt:          $     331,638
+  Loan Type:           USDA
+  Default Date:        2025-04-30
+  Stage:               Short Sale
+
 PRICING:
-  Auction Price:     $     275,000
-  Estimated ARV:     $     477,840
-  Estimated Repairs: $      41,250
-  Total Investment:  $     353,170
-  Profit Potential:  $      86,442
+  Auction Price:     $     237,871
+  Estimated ARV:     $     416,960
+  Estimated Repairs: $      35,681
+  Total Investment:  $     305,705
+  Profit Potential:  $      77,898
 
 METRICS:
-  Profit Margin:            18.1%
-  Deal Score:               74.1/100
+  Profit Margin:            18.7%
+  Deal Score:               76.7/100
   Recommended:                   No
 
 PROPERTY DETAILS:
-  4 bed / 3.0 bath | 2,172 sqft | Built 1990
-  Neighborhood Score: 9/10
+  3 bed / 3.0 bath | 2,606 sqft | Built 1990
+  Neighborhood Score: 10/10
 
 COST BREAKDOWN:
-  Purchase:      $     275,000
-  Repairs:       $      41,250
-  Closing:       $       8,250
-  Holding:       $      28,670
-  Selling:       $      38,227
+  Purchase:      $     237,871
+  Repairs:       $      35,681
+  Closing:       $       7,136
+  Holding:       $      25,018
+  Selling:       $      33,357
   ────────────────────────────────────────
-  Total:         $     353,170
+  Total:         $     305,705
+
+
+#17 - 626 23RD ST, WASHOUGAL (Southern Washington / Vancouver), Washington
+────────────────────────────────────────────────────────────────────────────────
+Property ID: REAL-0074
+Auction Date: 2026-03-15
+Platform: Auction.com
+
+FORECLOSURE CONTEXT:
+  Foreclosing Entity:  Truist Bank
+  Total Debt:          $     258,173
+  Loan Type:           FHA
+  Default Date:        2025-07-13
+  Stage:               Lis Pendens
+
+PRICING:
+  Auction Price:     $     168,383
+  Estimated ARV:     $     295,900
+  Estimated Repairs: $      25,258
+  Total Investment:  $     216,446
+  Profit Potential:  $      55,782
+
+METRICS:
+  Profit Margin:            18.9%
+  Deal Score:               74.9/100
+  Recommended:                   No
+
+PROPERTY DETAILS:
+  3 bed / 3.0 bath | 1,345 sqft | Built 1990
+  Neighborhood Score: 10/10
+
+COST BREAKDOWN:
+  Purchase:      $     168,383
+  Repairs:       $      25,258
+  Closing:       $       5,052
+  Holding:       $      17,754
+  Selling:       $      23,672
+  ────────────────────────────────────────
+  Total:         $     216,446
+
+
+#18 - 40208 NE MILLER RD, WASHOUGAL (Southern Washington / Vancouver), Washington
+────────────────────────────────────────────────────────────────────────────────
+Property ID: REAL-0055
+Auction Date: 2005-12-30
+Platform: Auction.com
+
+FORECLOSURE CONTEXT:
+  Foreclosing Entity:  Chase Bank
+  Total Debt:          $     282,386
+  Loan Type:           Fixed 15yr
+  Default Date:        2025-05-20
+  Stage:               Notice of Default
+
+PRICING:
+  Auction Price:     $     188,000
+  Estimated ARV:     $     328,240
+  Estimated Repairs: $      28,200
+  Total Investment:  $     241,534
+  Profit Potential:  $      60,446
+
+METRICS:
+  Profit Margin:            18.4%
+  Deal Score:               74.4/100
+  Recommended:                   No
+
+PROPERTY DETAILS:
+  3 bed / 2.0 bath | 1,492 sqft | Built 1990
+  Neighborhood Score: 10/10
+
+COST BREAKDOWN:
+  Purchase:      $     188,000
+  Repairs:       $      28,200
+  Closing:       $       5,640
+  Holding:       $      19,694
+  Selling:       $      26,259
+  ────────────────────────────────────────
+  Total:         $     241,534
+
+
+#19 - 3306 NE 360TH AVE, WASHOUGAL (Southern Washington / Vancouver), Washington
+────────────────────────────────────────────────────────────────────────────────
+Property ID: REAL-0061
+Auction Date: 2017-05-26
+Platform: Auction.com
+
+FORECLOSURE CONTEXT:
+  Foreclosing Entity:  Chase Bank
+  Total Debt:          $     349,672
+  Loan Type:           Jumbo
+  Default Date:        2025-04-27
+  Stage:               Pre-Foreclosure
+
+PRICING:
+  Auction Price:     $     233,520
+  Estimated ARV:     $     386,760
+  Estimated Repairs: $      35,028
+  Total Investment:  $     298,759
+  Profit Potential:  $      57,060
+
+METRICS:
+  Profit Margin:            14.8%
+  Deal Score:               72.8/100
+  Recommended:                   No
+
+PROPERTY DETAILS:
+  3 bed / 2.0 bath | 1,758 sqft | Built 1990
+  Neighborhood Score: 10/10
+
+COST BREAKDOWN:
+  Purchase:      $     233,520
+  Repairs:       $      35,028
+  Closing:       $       7,006
+  Holding:       $      23,206
+  Selling:       $      30,941
+  ────────────────────────────────────────
+  Total:         $     298,759
+
+
+#20 - 11080 SW LUCAS DR, TUALATIN (Portland Metro), Oregon
+────────────────────────────────────────────────────────────────────────────────
+Property ID: REAL-0019
+Auction Date: 2010-09-20
+Platform: Auction.com
+
+FORECLOSURE CONTEXT:
+  Foreclosing Entity:  Citibank
+  Total Debt:          $     392,814
+  Loan Type:           Jumbo
+  Default Date:        2025-03-16
+  Stage:               Auction Scheduled
+
+PRICING:
+  Auction Price:     $     309,400
+  Estimated ARV:     $     539,200
+  Estimated Repairs: $      46,410
+  Total Investment:  $     397,444
+  Profit Potential:  $      98,620
+
+METRICS:
+  Profit Margin:            18.3%
+  Deal Score:               72.3/100
+  Recommended:                   No
+
+PROPERTY DETAILS:
+  3 bed / 3.0 bath | 2,696 sqft | Built 1990
+  Neighborhood Score: 8/10
+
+COST BREAKDOWN:
+  Purchase:      $     309,400
+  Repairs:       $      46,410
+  Closing:       $       9,282
+  Holding:       $      32,352
+  Selling:       $      43,136
+  ────────────────────────────────────────
+  Total:         $     397,444
 
 

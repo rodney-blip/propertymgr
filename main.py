@@ -5,6 +5,7 @@ Command-line interface for analyzing fix-and-flip opportunities
 """
 
 import argparse
+import json
 import sys
 from typing import Optional
 
@@ -236,11 +237,11 @@ Examples:
         """
     )
 
-    parser.add_argument('--mock', action='store_true',
-                       help='Use mock data for testing')
-
-    parser.add_argument('--real', action='store_true',
-                       help='Fetch REAL auction/foreclosure data from ATTOM & BatchData APIs')
+    data_source = parser.add_mutually_exclusive_group()
+    data_source.add_argument('--mock', action='store_true',
+                             help='Use mock data for testing')
+    data_source.add_argument('--real', action='store_true',
+                             help='Fetch REAL auction/foreclosure data from ATTOM & BatchData APIs')
 
     parser.add_argument('--count', type=int, default=None,
                        help='Number of properties to generate/fetch (default: from config)')
@@ -294,8 +295,46 @@ Examples:
 
     # Handle export-only mode
     if args.export_only:
-        print("Export-only mode not yet implemented")
-        print("Run full analysis first with --mock")
+        import os
+        json_path = config.OUTPUT_JSON_FILE
+        if not os.path.exists(json_path):
+            print(f"❌ No existing data found at {json_path}")
+            print("   Run a full analysis first with --mock or --real")
+            return
+
+        print("📂 Loading existing analysis data...")
+        with open(json_path, 'r') as f:
+            data = json.load(f)
+
+        # Reconstruct Property objects from the saved JSON
+        all_props = data.get("all_properties", [])
+        properties = []
+        for p in all_props:
+            prop = Property(
+                id=p["id"], address=p["address"], city=p["city"],
+                state=p["state"], zip_code=p["zip_code"], region=p["region"],
+                auction_price=p["auction_price"], estimated_arv=p["estimated_arv"],
+                estimated_repairs=p["estimated_repairs"], bedrooms=p["bedrooms"],
+                bathrooms=p["bathrooms"], sqft=p["sqft"], lot_size=p["lot_size"],
+                year_built=p["year_built"], property_type=p["property_type"],
+                auction_date=p["auction_date"], auction_platform=p["auction_platform"],
+                description=p.get("description", ""), neighborhood_score=p["neighborhood_score"],
+            )
+            prop.calculate_metrics()
+            properties.append(prop)
+
+        print(f"   Loaded {len(properties)} properties")
+
+        # Run through analyzer to produce AnalysisResult
+        cli.analyzer.load_properties(properties)
+        filtered = cli.analyzer.filter_properties()
+        analysis = cli.analyzer.analyze()
+
+        print("💾 Re-exporting results...")
+        files = export_all_formats(analysis, filtered)
+        for format_type, filename in files.items():
+            print(f"   ✅ {format_type.upper()}: {filename}")
+        print("\nExport complete!")
         return
 
     # Run analysis
@@ -304,24 +343,18 @@ Examples:
             use_mock_data=False, use_real_data=True,
             property_count=args.count, max_zips=args.max_zips
         )
-
-        # Additional operations
-        if args.compare_states:
-            print("\n")
-            cli.compare_states()
-
     elif args.mock:
         cli.run_full_analysis(use_mock_data=True, property_count=args.count,
                               enrich=args.enrich)
-
-        # Additional operations
-        if args.compare_states:
-            print("\n")
-            cli.compare_states()
-
     else:
         parser.print_help()
         print("\n⚠️  Please specify --mock for test data or --real for live auction data")
+        return
+
+    # Additional operations (shared across --mock and --real)
+    if args.compare_states:
+        print("\n")
+        cli.compare_states()
 
 
 if __name__ == "__main__":

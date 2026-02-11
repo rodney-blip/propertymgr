@@ -60,6 +60,27 @@ class Property:
     bank_contact_url: Optional[str] = None
     image_url: Optional[str] = None
     notes: Optional[str] = None
+
+    # Property condition and occupancy
+    occupancy_status: Optional[str] = None       # "Vacant", "Owner Occupied", "Tenant Occupied", "Unknown"
+    condition_category: Optional[str] = None     # "Cosmetic Only", "Light Rehab", "Moderate Rehab", "Heavy Rehab"
+
+    # Tax and financial data
+    annual_property_tax: Optional[float] = None
+    hoa_monthly: Optional[float] = None
+    estimated_monthly_rent: Optional[float] = None
+
+    # Previous sale history
+    last_sale_price: Optional[float] = None
+    last_sale_date: Optional[str] = None
+
+    # Geolocation
+    latitude: Optional[float] = None
+    longitude: Optional[float] = None
+
+    # Additional metadata
+    county: Optional[str] = None
+    data_source: Optional[str] = None            # "mock", "attom", "batchdata", "manual"
     
     def calculate_metrics(self) -> None:
         """Calculate all investment metrics and scoring"""
@@ -95,63 +116,64 @@ class Property:
     def _calculate_deal_score(self) -> float:
         """Calculate deal quality score (0-100)"""
         score = 0
-        
+        t = config.SCORING_THRESHOLDS
+
         # 1. Profit Margin Score (40 points max)
         margin_weight = config.SCORE_WEIGHTS["profit_margin"]
-        if self.profit_margin >= 40:
+        if self.profit_margin >= t["margin_excellent"]:
             score += margin_weight
-        elif self.profit_margin >= 30:
-            score += margin_weight * 0.75 + (self.profit_margin - 30) * 0.25
+        elif self.profit_margin >= t["margin_good"]:
+            score += margin_weight * 0.75 + (self.profit_margin - t["margin_good"]) * 0.25
         else:
-            score += self.profit_margin * (margin_weight / 40)
-        
+            score += self.profit_margin * (margin_weight / t["margin_excellent"])
+
         # 2. Repair Efficiency Score (20 points max)
         repair_weight = config.SCORE_WEIGHTS["repair_efficiency"]
-        repair_ratio = self.estimated_repairs / self.auction_price
-        if repair_ratio <= 0.15:
+        repair_ratio = self.estimated_repairs / self.auction_price if self.auction_price > 0 else 1
+        if repair_ratio <= t["repair_ratio_excellent"]:
             score += repair_weight
-        elif repair_ratio <= 0.30:
+        elif repair_ratio <= t["repair_ratio_good"]:
             score += repair_weight * 0.75
         else:
-            score += max(0, repair_weight * 0.5 - (repair_ratio - 0.30) * 50)
-        
+            score += max(0, repair_weight * 0.5 - (repair_ratio - t["repair_ratio_good"]) * 50)
+
         # 3. Neighborhood Score (20 points max)
         neighborhood_weight = config.SCORE_WEIGHTS["neighborhood"]
         score += (self.neighborhood_score / 10) * neighborhood_weight
-        
+
         # 4. Property Characteristics Score (20 points max)
         char_weight = config.SCORE_WEIGHTS["property_characteristics"]
         char_score = 0
-        
+
         # Ideal square footage
-        if 1500 <= self.sqft <= 3000:
+        if t["sqft_ideal_min"] <= self.sqft <= t["sqft_ideal_max"]:
             char_score += 5
-        elif 1200 <= self.sqft < 1500 or 3000 < self.sqft <= 3500:
+        elif t["sqft_acceptable_min"] <= self.sqft < t["sqft_ideal_min"] or t["sqft_ideal_max"] < self.sqft <= t["sqft_acceptable_max"]:
             char_score += 3
-        
+
         # Bedroom count
-        if 3 <= self.bedrooms <= 4:
+        if t["beds_ideal_min"] <= self.bedrooms <= t["beds_ideal_max"]:
             char_score += 5
-        elif self.bedrooms == 2 or self.bedrooms == 5:
+        elif self.bedrooms in t["beds_acceptable"]:
             char_score += 3
-        
+
         # Bathroom count
-        if self.bathrooms >= 2:
+        if self.bathrooms >= t["baths_good"]:
             char_score += 5
-        elif self.bathrooms >= 1.5:
+        elif self.bathrooms >= t["baths_acceptable"]:
             char_score += 3
-        
+
         # Age of home
         age = datetime.now().year - self.year_built
-        if age <= 20:
+        if age <= t["age_new"]:
             char_score += 5
-        elif age <= 40:
+        elif age <= t["age_mid"]:
             char_score += 3
-        elif age <= 60:
+        elif age <= t["age_old"]:
             char_score += 1
-        
+
         score += char_score
-        
+
         return min(100, max(0, score))
     
     def get_alert_level(self) -> Optional[str]:
