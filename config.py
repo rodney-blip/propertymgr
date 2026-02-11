@@ -32,7 +32,7 @@ def _load_local_keys():
 _local_keys = _load_local_keys()
 
 # Geographic targeting
-TARGET_STATES = ["Oregon", "Texas"]
+TARGET_STATES = ["Oregon", "Texas", "Washington"]
 
 # Price filters
 MIN_AUCTION_PRICE = 100000
@@ -121,6 +121,13 @@ REGION_DEFINITIONS = {
             ("El Paso", "79901"), ("Socorro", "79927"), ("Horizon City", "79928"),
         ],
     },
+    "Washington": {
+        "Southern Washington / Vancouver": [
+            ("Vancouver", "98660"), ("Camas", "98607"), ("Washougal", "98671"),
+            ("Battle Ground", "98604"), ("Ridgefield", "98642"), ("Woodland", "98674"),
+            ("Longview", "98632"), ("Kelso", "98626"),
+        ],
+    },
 }
 
 # Build reverse lookup: (state, city) -> region_name
@@ -131,13 +138,16 @@ for _state, _regions in REGION_DEFINITIONS.items():
             CITY_TO_REGION[(_state, _city_name)] = _region_name
 
 # Build flat city lists from region definitions (single source of truth)
-OREGON_CITIES = []
-for _region_cities in REGION_DEFINITIONS["Oregon"].values():
-    OREGON_CITIES.extend(_region_cities)
+STATE_CITIES = {}
+for _state_name, _state_regions in REGION_DEFINITIONS.items():
+    STATE_CITIES[_state_name] = []
+    for _region_cities in _state_regions.values():
+        STATE_CITIES[_state_name].extend(_region_cities)
 
-TEXAS_CITIES = []
-for _region_cities in REGION_DEFINITIONS["Texas"].values():
-    TEXAS_CITIES.extend(_region_cities)
+# Legacy aliases for backward compatibility
+OREGON_CITIES = STATE_CITIES.get("Oregon", [])
+TEXAS_CITIES = STATE_CITIES.get("Texas", [])
+WASHINGTON_CITIES = STATE_CITIES.get("Washington", [])
 
 # Auction platforms
 AUCTION_PLATFORMS = [
@@ -149,6 +159,38 @@ AUCTION_PLATFORMS = [
     "Hudson & Marshall",
     "Williams & Williams"
 ]
+
+# Auction platform URLs
+AUCTION_PLATFORM_URLS = {
+    "Auction.com": "https://www.auction.com",
+    "Hubzu": "https://www.hubzu.com",
+    "RealtyBid": "https://www.realtybid.com",
+    "HomePath": "https://www.homepath.fanniemae.com",
+    "Bank Foreclosure": None,
+    "Hudson & Marshall": "https://www.hudsonandmarshall.com",
+    "Williams & Williams": "https://www.williamsauction.com",
+}
+
+# Bank / servicer REO contact URLs
+BANK_CONTACT_URLS = {
+    "Bank of America": "https://realestatecenter.bankofamerica.com",
+    "Wells Fargo": "https://reo.wellsfargo.com",
+    "Chase Bank": "https://www.chase.com/personal/mortgage/reo",
+    "US Bank": "https://www.usbank.com/home-loans/reo.html",
+    "Citibank": "https://www.citibank.com/reo",
+    "PNC Bank": "https://www.pnc.com/en/personal-banking/home-lending.html",
+    "Truist Bank": "https://www.truist.com/mortgage/reo",
+    "Capital One": "https://www.capitalone.com",
+    "Flagstar Bank": "https://www.flagstar.com/reo",
+    "Mr. Cooper": "https://www.mrcooper.com",
+    "Nationstar Mortgage": "https://www.mrcooper.com",
+    "Ocwen Financial": "https://www.phhmortgage.com",
+    "PHH Mortgage": "https://www.phhmortgage.com",
+    "Shellpoint Mortgage": "https://www.shellpointmtg.com",
+    "Freedom Mortgage": "https://www.freedommortgage.com",
+    "Caliber Home Loans": "https://www.newrez.com",
+    "NewRez LLC": "https://www.newrez.com",
+}
 
 # Price per square foot by state (for ARV estimation)
 PRICE_PER_SQFT = {
@@ -183,4 +225,4 @@ ENABLE_CSV_EXPORT = True
 
 # Web server settings
 DEFAULT_PORT = 8000
-DASHBOARD_FILE = "dashboard.html"
+DASHBOARD_FILE = "index.html"

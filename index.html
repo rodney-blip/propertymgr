@@ -10,19 +10,19 @@
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             padding: 20px;
             min-height: 100vh;
         }
-        
+
         .container {
             max-width: 1400px;
             margin: 0 auto;
         }
-        
+
         .header {
             background: white;
             padding: 30px;
@@ -30,25 +30,25 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.2);
             margin-bottom: 30px;
         }
-        
+
         .header h1 {
             color: #667eea;
             font-size: 2.5em;
             margin-bottom: 10px;
         }
-        
+
         .header p {
             color: #666;
             font-size: 1.1em;
         }
-        
+
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 20px;
             margin-bottom: 30px;
         }
-        
+
         .stat-card {
             background: white;
             padding: 25px;
@@ -56,11 +56,11 @@
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             transition: transform 0.2s;
         }
-        
+
         .stat-card:hover {
             transform: translateY(-5px);
         }
-        
+
         .stat-card .label {
             color: #888;
             font-size: 0.9em;
@@ -68,17 +68,17 @@
             letter-spacing: 1px;
             margin-bottom: 10px;
         }
-        
+
         .stat-card .value {
             color: #333;
             font-size: 2em;
             font-weight: bold;
         }
-        
+
         .stat-card.highlight .value {
             color: #667eea;
         }
-        
+
         .alerts-section {
             background: white;
             padding: 25px;
@@ -86,7 +86,7 @@
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             margin-bottom: 30px;
         }
-        
+
         .alerts-section h2 {
             color: #333;
             margin-bottom: 20px;
@@ -94,7 +94,7 @@
             align-items: center;
             gap: 10px;
         }
-        
+
         .alert-item {
             background: linear-gradient(135deg, #ff6b6b, #ee5a6f);
             color: white;
@@ -104,32 +104,32 @@
             cursor: pointer;
             transition: transform 0.2s;
         }
-        
+
         .alert-item:hover {
             transform: scale(1.02);
         }
-        
+
         .alert-item.excellent {
             background: linear-gradient(135deg, #f093fb, #f5576c);
         }
-        
+
         .alert-item.good {
             background: linear-gradient(135deg, #4facfe, #00f2fe);
         }
-        
+
         .alert-level {
             font-size: 1.2em;
             font-weight: bold;
             margin-bottom: 10px;
         }
-        
+
         .alert-details {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
             gap: 10px;
             margin-top: 10px;
         }
-        
+
         .filters {
             background: white;
             padding: 25px;
@@ -137,30 +137,30 @@
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             margin-bottom: 30px;
         }
-        
+
         .filters h3 {
             color: #333;
             margin-bottom: 20px;
         }
-        
+
         .filter-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
         }
-        
+
         .filter-group {
             display: flex;
             flex-direction: column;
             gap: 8px;
         }
-        
+
         .filter-group label {
             color: #666;
             font-size: 0.9em;
             font-weight: 600;
         }
-        
+
         .filter-group select,
         .filter-group input {
             padding: 10px;
@@ -169,65 +169,194 @@
             font-size: 1em;
             transition: border-color 0.2s;
         }
-        
+
         .filter-group select:focus,
         .filter-group input:focus {
             outline: none;
             border-color: #667eea;
         }
-        
+
+        /* Price range slider */
+        .range-slider-container {
+            position: relative;
+            height: 36px;
+            display: flex;
+            align-items: center;
+        }
+        .range-slider-container input[type="range"] {
+            position: absolute;
+            width: 100%;
+            -webkit-appearance: none;
+            appearance: none;
+            height: 6px;
+            background: transparent;
+            pointer-events: none;
+        }
+        .range-slider-container input[type="range"]:first-child {
+            background: linear-gradient(90deg, #e0e0e0, #667eea);
+            border-radius: 3px;
+        }
+        .range-slider-container input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            height: 22px;
+            width: 22px;
+            border-radius: 50%;
+            background: #667eea;
+            cursor: pointer;
+            pointer-events: all;
+            border: 3px solid white;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+        }
+        .range-slider-container input[type="range"]::-moz-range-thumb {
+            height: 22px;
+            width: 22px;
+            border-radius: 50%;
+            background: #667eea;
+            cursor: pointer;
+            pointer-events: all;
+            border: 3px solid white;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+        }
+        .range-display {
+            text-align: center;
+            font-weight: 600;
+            color: #333;
+            font-size: 0.95em;
+            margin-top: 2px;
+        }
+
+        /* Multi-select region dropdown */
+        .multi-select {
+            position: relative;
+        }
+        .multi-select-trigger {
+            padding: 10px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: white;
+            font-size: 1em;
+            transition: border-color 0.2s;
+            user-select: none;
+        }
+        .multi-select-trigger:hover {
+            border-color: #667eea;
+        }
+        .multi-select-dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: white;
+            border: 2px solid #667eea;
+            border-radius: 8px;
+            margin-top: 4px;
+            max-height: 300px;
+            overflow-y: auto;
+            z-index: 100;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+        }
+        .multi-select-options label {
+            display: flex;
+            align-items: center;
+            padding: 8px 12px;
+            cursor: pointer;
+            gap: 8px;
+            font-size: 0.95em;
+        }
+        .multi-select-options label:hover {
+            background: #f0f0ff;
+        }
+        .multi-select-options .region-group-header {
+            font-weight: 700;
+            color: #667eea;
+            padding: 8px 12px 4px;
+            font-size: 0.85em;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .multi-select-options hr {
+            margin: 4px 0;
+            border: none;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        /* Status select */
+        .status-select {
+            padding: 5px 8px;
+            border-radius: 6px;
+            border: 2px solid #e0e0e0;
+            font-size: 0.8em;
+            cursor: pointer;
+            background: white;
+            flex-shrink: 0;
+        }
+        .status-select.interested {
+            border-color: #4caf50;
+            background: #f1f8f4;
+            color: #2e7d32;
+        }
+        .status-select.not-interested {
+            border-color: #ff6b6b;
+            background: #fff5f5;
+            color: #c62828;
+        }
+
         .properties-section {
             background: white;
             padding: 25px;
             border-radius: 12px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
-        
+
         .properties-section h2 {
             color: #333;
             margin-bottom: 20px;
         }
-        
+
         .property-card {
             border: 2px solid #e0e0e0;
             border-radius: 10px;
             padding: 20px;
             margin-bottom: 20px;
             transition: all 0.3s;
-            cursor: pointer;
         }
-        
+
         .property-card:hover {
             border-color: #667eea;
             box-shadow: 0 5px 20px rgba(102, 126, 234, 0.2);
         }
-        
+
         .property-card.recommended {
             border-color: #4caf50;
             background: #f1f8f4;
         }
-        
+
         .property-header {
             display: flex;
             justify-content: space-between;
             align-items: start;
             margin-bottom: 15px;
+            gap: 10px;
         }
-        
+
         .property-address {
             flex: 1;
         }
-        
+
         .property-address h3 {
             color: #333;
             margin-bottom: 5px;
         }
-        
+
         .property-address p {
             color: #666;
             font-size: 0.9em;
         }
-        
+
         .deal-badge {
             background: #667eea;
             color: white;
@@ -235,49 +364,50 @@
             border-radius: 20px;
             font-weight: bold;
             font-size: 0.9em;
+            flex-shrink: 0;
         }
-        
+
         .deal-badge.hot {
             background: #ff6b6b;
             animation: pulse 2s infinite;
         }
-        
+
         @keyframes pulse {
             0%, 100% { transform: scale(1); }
             50% { transform: scale(1.05); }
         }
-        
+
         .property-metrics {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
             gap: 15px;
             margin-bottom: 15px;
         }
-        
+
         .metric {
             display: flex;
             flex-direction: column;
             gap: 5px;
         }
-        
+
         .metric-label {
             color: #888;
             font-size: 0.85em;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
-        
+
         .metric-value {
             color: #333;
             font-size: 1.1em;
             font-weight: bold;
         }
-        
+
         .metric-value.profit {
             color: #4caf50;
             font-size: 1.3em;
         }
-        
+
         .property-details {
             display: flex;
             gap: 20px;
@@ -287,13 +417,22 @@
             color: #666;
             font-size: 0.9em;
         }
-        
+
         .detail-item {
             display: flex;
             align-items: center;
             gap: 5px;
         }
-        
+
+        .detail-item a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .detail-item a:hover {
+            text-decoration: underline;
+        }
+
         .progress-bar {
             width: 100%;
             height: 8px;
@@ -302,24 +441,24 @@
             overflow: hidden;
             margin-top: 5px;
         }
-        
+
         .progress-fill {
             height: 100%;
             background: linear-gradient(90deg, #667eea, #764ba2);
             transition: width 0.3s;
         }
-        
+
         .no-results {
             text-align: center;
             padding: 60px 20px;
             color: #999;
         }
-        
+
         .no-results h3 {
             font-size: 1.5em;
             margin-bottom: 10px;
         }
-        
+
         button {
             background: linear-gradient(135deg, #667eea, #764ba2);
             color: white;
@@ -331,11 +470,11 @@
             cursor: pointer;
             transition: transform 0.2s;
         }
-        
+
         button:hover {
             transform: translateY(-2px);
         }
-        
+
         .loading {
             text-align: center;
             padding: 40px;
@@ -347,9 +486,9 @@
     <div class="container">
         <div class="header">
             <h1>🏠 Auction Property Analyzer</h1>
-            <p>Fix-and-Flip Opportunity Identifier | Oregon & Texas</p>
+            <p>Fix-and-Flip Opportunity Identifier | Oregon, Texas & Washington</p>
         </div>
-        
+
         <div class="stats-grid" id="statsGrid">
             <div class="stat-card">
                 <div class="label">Total Properties</div>
@@ -368,12 +507,12 @@
                 <div class="value" id="hotDeals">-</div>
             </div>
         </div>
-        
+
         <div class="alerts-section" id="alertsSection" style="display:none;">
             <h2>🚨 High-Value Deal Alerts</h2>
             <div id="alertsContainer"></div>
         </div>
-        
+
         <div class="filters">
             <h3>🔍 Filter Properties</h3>
             <div class="filter-grid">
@@ -383,26 +522,32 @@
                         <option value="all">All States</option>
                         <option value="Oregon">Oregon</option>
                         <option value="Texas">Texas</option>
+                        <option value="Washington">Washington</option>
                     </select>
                 </div>
                 <div class="filter-group">
-                    <label>Region</label>
-                    <select id="regionFilter">
-                        <option value="all">All Regions</option>
-                    </select>
+                    <label>Regions</label>
+                    <div class="multi-select" id="regionMultiSelect">
+                        <div class="multi-select-trigger" onclick="toggleRegionDropdown()">
+                            <span id="regionSelectionText">All Regions</span>
+                            <span>&#9662;</span>
+                        </div>
+                        <div class="multi-select-dropdown" id="regionDropdown" style="display:none;">
+                            <div class="multi-select-options" id="regionOptions"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="filter-group">
+                    <label>Price Range</label>
+                    <div class="range-slider-container">
+                        <input type="range" id="minPrice" min="0" max="2000000" step="100000" value="0" oninput="updatePriceRange()">
+                        <input type="range" id="maxPrice" min="0" max="2000000" step="100000" value="2000000" oninput="updatePriceRange()">
+                    </div>
+                    <div class="range-display" id="priceRangeDisplay">$0 &ndash; $2.0M</div>
                 </div>
                 <div class="filter-group">
                     <label>Min Profit Margin (%)</label>
                     <input type="number" id="minMargin" value="0" min="0" max="100">
-                </div>
-                <div class="filter-group">
-                    <label>Max Auction Price</label>
-                    <select id="maxPrice">
-                        <option value="1200000">$1.2M (All)</option>
-                        <option value="300000">$300K</option>
-                        <option value="500000">$500K</option>
-                        <option value="800000">$800K</option>
-                    </select>
                 </div>
                 <div class="filter-group">
                     <label>Min Deal Score</label>
@@ -417,12 +562,21 @@
                         <option value="auction_date">Auction Date</option>
                     </select>
                 </div>
+                <div class="filter-group">
+                    <label>Review Status</label>
+                    <select id="statusFilter">
+                        <option value="all">All Statuses</option>
+                        <option value="not_reviewed">Not Reviewed</option>
+                        <option value="interested">Interested</option>
+                        <option value="not_interested">Not Interested</option>
+                    </select>
+                </div>
                 <div class="filter-group" style="display:flex; align-items:flex-end;">
                     <button onclick="applyFilters()">Apply Filters</button>
                 </div>
             </div>
         </div>
-        
+
         <div class="properties-section">
             <h2>📋 Property Listings (<span id="propertyCount">0</span>)</h2>
             <div id="propertiesContainer" class="loading">Loading properties...</div>
@@ -432,6 +586,7 @@
     <script>
         let allProperties = [];
         let currentProperties = [];
+        let selectedRegions = [];
 
         const REGION_DEFINITIONS = {
             "Oregon": [
@@ -447,77 +602,208 @@
                 "Houston Metro",
                 "San Antonio Area",
                 "El Paso Area"
+            ],
+            "Washington": [
+                "Southern Washington / Vancouver"
             ]
         };
 
-        // Cascading region dropdown
-        document.getElementById('stateFilter').addEventListener('change', function() {
-            const state = this.value;
-            const regionSelect = document.getElementById('regionFilter');
-            regionSelect.innerHTML = '<option value="all">All Regions</option>';
+        // Fallback URL mappings (used if JSON fields are null)
+        const PLATFORM_URLS = {
+            "Auction.com": "https://www.auction.com",
+            "Hubzu": "https://www.hubzu.com",
+            "RealtyBid": "https://www.realtybid.com",
+            "HomePath": "https://www.homepath.fanniemae.com",
+            "Hudson & Marshall": "https://www.hudsonandmarshall.com",
+            "Williams & Williams": "https://www.williamsauction.com"
+        };
 
-            if (state === 'all') {
-                Object.entries(REGION_DEFINITIONS).forEach(([stateName, regions]) => {
-                    const group = document.createElement('optgroup');
-                    group.label = stateName;
-                    regions.forEach(region => {
-                        const option = document.createElement('option');
-                        option.value = region;
-                        option.textContent = region;
-                        group.appendChild(option);
-                    });
-                    regionSelect.appendChild(group);
+        const BANK_CONTACT_URLS = {
+            "Bank of America": "https://realestatecenter.bankofamerica.com",
+            "Wells Fargo": "https://reo.wellsfargo.com",
+            "Chase Bank": "https://www.chase.com/personal/mortgage/reo",
+            "US Bank": "https://www.usbank.com/home-loans/reo.html",
+            "Citibank": "https://www.citibank.com/reo",
+            "PNC Bank": "https://www.pnc.com/en/personal-banking/home-lending.html",
+            "Truist Bank": "https://www.truist.com/mortgage/reo",
+            "Capital One": "https://www.capitalone.com",
+            "Flagstar Bank": "https://www.flagstar.com/reo",
+            "Mr. Cooper": "https://www.mrcooper.com",
+            "Nationstar Mortgage": "https://www.mrcooper.com",
+            "Ocwen Financial": "https://www.phhmortgage.com",
+            "PHH Mortgage": "https://www.phhmortgage.com",
+            "Shellpoint Mortgage": "https://www.shellpointmtg.com",
+            "Freedom Mortgage": "https://www.freedommortgage.com",
+            "Caliber Home Loans": "https://www.newrez.com",
+            "NewRez LLC": "https://www.newrez.com"
+        };
+
+        // ─── localStorage status management ───
+        const STATUS_KEY = 'propertyStatuses';
+
+        function getPropertyStatuses() {
+            try { return JSON.parse(localStorage.getItem(STATUS_KEY)) || {}; }
+            catch(e) { return {}; }
+        }
+        function setPropertyStatus(propId, status) {
+            var statuses = getPropertyStatuses();
+            if (status === 'not_reviewed') { delete statuses[propId]; }
+            else { statuses[propId] = status; }
+            localStorage.setItem(STATUS_KEY, JSON.stringify(statuses));
+        }
+        function getPropertyStatus(propId) {
+            return getPropertyStatuses()[propId] || 'not_reviewed';
+        }
+
+        // ─── Price range slider ───
+        function updatePriceRange() {
+            var minEl = document.getElementById('minPrice');
+            var maxEl = document.getElementById('maxPrice');
+            var minVal = parseInt(minEl.value);
+            var maxVal = parseInt(maxEl.value);
+            if (minVal > maxVal) {
+                var tmp = minVal; minVal = maxVal; maxVal = tmp;
+                minEl.value = minVal;
+                maxEl.value = maxVal;
+            }
+            function fmt(v) {
+                if (v >= 1000000) return '$' + (v / 1000000).toFixed(1) + 'M';
+                if (v > 0) return '$' + (v / 1000).toFixed(0) + 'K';
+                return '$0';
+            }
+            document.getElementById('priceRangeDisplay').textContent = fmt(minVal) + ' \u2013 ' + fmt(maxVal);
+        }
+
+        // ─── Multi-select region dropdown ───
+        function populateRegionCheckboxes() {
+            var state = document.getElementById('stateFilter').value;
+            var container = document.getElementById('regionOptions');
+            container.innerHTML = '';
+
+            // "All Regions" master checkbox
+            var allLabel = document.createElement('label');
+            allLabel.innerHTML = '<input type="checkbox" id="regionAll" checked onchange="toggleAllRegions(this)"> <strong>All Regions</strong>';
+            container.appendChild(allLabel);
+            var hr = document.createElement('hr');
+            container.appendChild(hr);
+
+            var states = state === 'all' ? Object.keys(REGION_DEFINITIONS) : [state];
+            states.forEach(function(st) {
+                if (!REGION_DEFINITIONS[st]) return;
+                if (states.length > 1) {
+                    var header = document.createElement('div');
+                    header.className = 'region-group-header';
+                    header.textContent = st;
+                    container.appendChild(header);
+                }
+                REGION_DEFINITIONS[st].forEach(function(region) {
+                    var label = document.createElement('label');
+                    label.innerHTML = '<input type="checkbox" value="' + region + '" class="region-cb" checked onchange="updateRegionSelection()"> ' + region;
+                    container.appendChild(label);
                 });
-            } else if (REGION_DEFINITIONS[state]) {
-                REGION_DEFINITIONS[state].forEach(region => {
-                    const option = document.createElement('option');
-                    option.value = region;
-                    option.textContent = region;
-                    regionSelect.appendChild(option);
-                });
+            });
+
+            selectedRegions = [];
+            updateRegionDisplayText();
+        }
+
+        function toggleAllRegions(masterCb) {
+            var cbs = document.querySelectorAll('.region-cb');
+            cbs.forEach(function(cb) { cb.checked = masterCb.checked; });
+            updateRegionSelection();
+        }
+
+        function updateRegionSelection() {
+            var checkboxes = document.querySelectorAll('.region-cb');
+            var allChecked = Array.from(checkboxes).every(function(cb) { return cb.checked; });
+            var noneChecked = Array.from(checkboxes).every(function(cb) { return !cb.checked; });
+            document.getElementById('regionAll').checked = allChecked;
+            if (allChecked || noneChecked) {
+                selectedRegions = [];
+            } else {
+                selectedRegions = Array.from(checkboxes).filter(function(cb) { return cb.checked; }).map(function(cb) { return cb.value; });
+            }
+            updateRegionDisplayText();
+        }
+
+        function updateRegionDisplayText() {
+            var text = document.getElementById('regionSelectionText');
+            if (selectedRegions.length === 0) {
+                text.textContent = 'All Regions';
+            } else if (selectedRegions.length <= 2) {
+                text.textContent = selectedRegions.join(', ');
+            } else {
+                text.textContent = selectedRegions.length + ' regions selected';
+            }
+        }
+
+        function toggleRegionDropdown() {
+            var dd = document.getElementById('regionDropdown');
+            dd.style.display = dd.style.display === 'none' ? 'block' : 'none';
+        }
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('#regionMultiSelect')) {
+                document.getElementById('regionDropdown').style.display = 'none';
             }
         });
 
-        // Initialize region dropdown
-        document.getElementById('stateFilter').dispatchEvent(new Event('change'));
+        // State filter change repopulates regions
+        document.getElementById('stateFilter').addEventListener('change', function() {
+            populateRegionCheckboxes();
+        });
 
-        // Load data
+        // Initialize region checkboxes
+        populateRegionCheckboxes();
+
+        // ─── Status change handler ───
+        function handleStatusChange(selectEl) {
+            var propId = selectEl.getAttribute('data-prop-id');
+            var status = selectEl.value;
+            setPropertyStatus(propId, status);
+            selectEl.className = 'status-select';
+            if (status === 'interested') selectEl.classList.add('interested');
+            if (status === 'not_interested') selectEl.classList.add('not-interested');
+        }
+
+        // ─── Load data ───
         async function loadData() {
             try {
                 const response = await fetch('property_analysis.json');
                 const data = await response.json();
-                
+
                 allProperties = data.all_properties;
                 currentProperties = [...allProperties];
-                
+
                 updateStats(data);
                 displayAlerts(data.alerts);
                 displayProperties(currentProperties);
             } catch (error) {
                 console.error('Error loading data:', error);
-                document.getElementById('propertiesContainer').innerHTML = 
-                    '<div class="no-results"><h3>Error loading data</h3><p>Please run the analyzer first: python3 property_analyzer.py</p></div>';
+                document.getElementById('propertiesContainer').innerHTML =
+                    '<div class="no-results"><h3>Error loading data</h3><p>Please run the analyzer first: python3 main.py --mock</p></div>';
             }
         }
-        
+
         function updateStats(data) {
             document.getElementById('totalProperties').textContent = data.total_properties;
             document.getElementById('recommendedDeals').textContent = data.recommended_deals;
             document.getElementById('avgMargin').textContent = data.avg_profit_margin.toFixed(1) + '%';
             document.getElementById('hotDeals').textContent = data.statistics.deals_over_40_percent;
         }
-        
+
         function displayAlerts(alerts) {
             if (!alerts || alerts.length === 0) return;
-            
+
             document.getElementById('alertsSection').style.display = 'block';
             const container = document.getElementById('alertsContainer');
-            
+
             container.innerHTML = alerts.slice(0, 5).map(alert => {
                 let className = 'alert-item';
                 if (alert.level.includes('EXCELLENT')) className += ' excellent';
                 else if (alert.level.includes('GOOD')) className += ' good';
-                
+
                 return `
                     <div class="${className}" onclick="scrollToProperty('${alert.property_id}')">
                         <div class="alert-level">${alert.level}</div>
@@ -532,15 +818,20 @@
                 `;
             }).join('');
         }
-        
+
+        // ─── Foreclosure section renderer (no nested template literals) ───
         function renderForeclosureSection(prop) {
             if (!prop.foreclosing_entity) return '';
+            var bankUrl = prop.bank_contact_url || BANK_CONTACT_URLS[prop.foreclosing_entity] || null;
+            var entityHtml = bankUrl
+                ? '<a href="' + bankUrl + '" target="_blank" rel="noopener">' + prop.foreclosing_entity + '</a>'
+                : prop.foreclosing_entity;
             var debt = prop.total_debt ? '$' + prop.total_debt.toLocaleString() : 'N/A';
             var loanType = prop.loan_type || 'N/A';
             var stage = prop.foreclosure_stage || 'N/A';
             var defaultDate = prop.default_date || 'N/A';
             return '<div class="property-details" style="margin-top: 10px; padding-top: 10px; border-top: 1px solid #e0e0e0;">'
-                + '<div class="detail-item">🏛️ <strong>' + prop.foreclosing_entity + '</strong></div>'
+                + '<div class="detail-item">🏛️ <strong>' + entityHtml + '</strong></div>'
                 + '<div class="detail-item">💰 Debt: ' + debt + '</div>'
                 + '<div class="detail-item">📋 ' + loanType + '</div>'
                 + '<div class="detail-item">⚖️ ' + stage + '</div>'
@@ -548,6 +839,7 @@
                 + '</div>';
         }
 
+        // ─── Property card renderer ───
         function displayProperties(properties) {
             const container = document.getElementById('propertiesContainer');
             document.getElementById('propertyCount').textContent = properties.length;
@@ -563,6 +855,15 @@
                                  prop.profit_margin >= 35 ? '⭐ EXCELLENT' :
                                  prop.recommended ? '✅ GOOD' : '📊 ' + prop.deal_score.toFixed(0);
 
+                const currentStatus = getPropertyStatus(prop.id);
+                const statusClass = currentStatus === 'interested' ? ' interested' :
+                                    currentStatus === 'not_interested' ? ' not-interested' : '';
+
+                const auctionUrl = prop.property_url || PLATFORM_URLS[prop.auction_platform] || null;
+                const platformHtml = auctionUrl
+                    ? '<a href="' + auctionUrl + '" target="_blank" rel="noopener">' + prop.auction_platform + '</a>'
+                    : prop.auction_platform;
+
                 return `
                     <div class="property-card ${prop.recommended ? 'recommended' : ''}" id="${prop.id}">
                         <div class="property-header">
@@ -570,6 +871,11 @@
                                 <h3>${prop.address}</h3>
                                 <p>${prop.city}, ${prop.state} ${prop.zip_code}${prop.region ? ' &mdash; ' + prop.region : ''}</p>
                             </div>
+                            <select class="status-select${statusClass}" data-prop-id="${prop.id}" onchange="handleStatusChange(this)">
+                                <option value="not_reviewed"${currentStatus === 'not_reviewed' ? ' selected' : ''}>-- Not Reviewed --</option>
+                                <option value="interested"${currentStatus === 'interested' ? ' selected' : ''}>⭐ Interested</option>
+                                <option value="not_interested"${currentStatus === 'not_interested' ? ' selected' : ''}>✗ Not Interested</option>
+                            </select>
                             <div class="deal-badge ${badgeClass}">${badgeText}</div>
                         </div>
 
@@ -610,33 +916,37 @@
                             <div class="detail-item">📅 Built ${prop.year_built}</div>
                             <div class="detail-item">🏘️ Score: ${prop.neighborhood_score}/10</div>
                             <div class="detail-item">📅 Auction: ${prop.auction_date}</div>
-                            <div class="detail-item">🏦 ${prop.auction_platform}</div>
+                            <div class="detail-item">🏦 ` + platformHtml + `</div>
                         </div>
                         ` + renderForeclosureSection(prop) + `
                     </div>
                 `;
             }).join('');
         }
-        
+
+        // ─── Filter logic ───
         function applyFilters() {
             const state = document.getElementById('stateFilter').value;
-            const region = document.getElementById('regionFilter').value;
-            const minMargin = parseFloat(document.getElementById('minMargin').value);
-            const maxPrice = parseFloat(document.getElementById('maxPrice').value);
-            const minScore = parseFloat(document.getElementById('minScore').value);
+            const minMargin = parseFloat(document.getElementById('minMargin').value) || 0;
+            const minAuctionPrice = parseFloat(document.getElementById('minPrice').value) || 0;
+            const maxAuctionPrice = parseFloat(document.getElementById('maxPrice').value) || 2000000;
+            const minScore = parseFloat(document.getElementById('minScore').value) || 0;
             const sortBy = document.getElementById('sortBy').value;
+            const statusFilter = document.getElementById('statusFilter').value;
 
-            // Filter
             currentProperties = allProperties.filter(prop => {
                 if (state !== 'all' && prop.state !== state) return false;
-                if (region !== 'all' && prop.region !== region) return false;
+                if (selectedRegions.length > 0 && !selectedRegions.includes(prop.region)) return false;
                 if (prop.profit_margin < minMargin) return false;
-                if (prop.auction_price > maxPrice) return false;
+                if (prop.auction_price < minAuctionPrice || prop.auction_price > maxAuctionPrice) return false;
                 if (prop.deal_score < minScore) return false;
+                if (statusFilter !== 'all') {
+                    var propStatus = getPropertyStatus(prop.id);
+                    if (propStatus !== statusFilter) return false;
+                }
                 return true;
             });
 
-            // Sort
             currentProperties.sort((a, b) => {
                 if (sortBy === 'auction_date') {
                     return new Date(a.auction_date) - new Date(b.auction_date);
@@ -646,7 +956,7 @@
 
             displayProperties(currentProperties);
         }
-        
+
         function scrollToProperty(id) {
             const element = document.getElementById(id);
             if (element) {
@@ -655,7 +965,7 @@
                 setTimeout(() => element.style.animation = '', 1000);
             }
         }
-        
+
         // Initialize
         loadData();
     </script>

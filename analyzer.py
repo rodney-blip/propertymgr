@@ -141,9 +141,14 @@ class PropertyAnalyzer:
         if not properties:
             return {}
         
+        # Dynamic per-state counts
+        state_counts = {}
+        for state in config.TARGET_STATES:
+            key = f"{state.lower().replace(' ', '_')}_count"
+            state_counts[key] = len([p for p in properties if p.state == state])
+
         return {
-            "oregon_count": len([p for p in properties if p.state == "Oregon"]),
-            "texas_count": len([p for p in properties if p.state == "Texas"]),
+            **state_counts,
             "avg_auction_price": statistics.mean([p.auction_price for p in properties]),
             "median_auction_price": statistics.median([p.auction_price for p in properties]),
             "avg_repairs": statistics.mean([p.estimated_repairs for p in properties]),
@@ -226,8 +231,9 @@ class PropertyAnalyzer:
         
         stats = result.statistics
         print("MARKET BREAKDOWN:")
-        print(f"  Oregon: {stats.get('oregon_count', 0)} properties")
-        print(f"  Texas: {stats.get('texas_count', 0)} properties")
+        for state in config.TARGET_STATES:
+            key = f"{state.lower().replace(' ', '_')}_count"
+            print(f"  {state}: {stats.get(key, 0)} properties")
         print()
         print(f"  Hot Deals (40%+): {stats.get('deals_over_40_percent', 0)}")
         print(f"  Excellent (30-40%): {stats.get('deals_30_to_40_percent', 0)}")

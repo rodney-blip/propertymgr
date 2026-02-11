@@ -57,6 +57,7 @@ class Property:
 
     # Optional fields
     property_url: Optional[str] = None
+    bank_contact_url: Optional[str] = None
     image_url: Optional[str] = None
     notes: Optional[str] = None
     

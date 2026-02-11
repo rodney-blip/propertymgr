@@ -107,7 +107,8 @@ class MockDataGenerator:
         
         # Neighborhood score (influenced by region and year built)
         base_neighborhood = 5
-        if region in ("Portland Metro", "Greater Austin", "Dallas / Fort Worth"):
+        if region in ("Portland Metro", "Greater Austin", "Dallas / Fort Worth",
+                       "Southern Washington / Vancouver"):
             base_neighborhood += 1
         elif region in ("Central Oregon", "El Paso Area"):
             base_neighborhood -= 1
@@ -134,7 +135,15 @@ class MockDataGenerator:
         description = (f"Single family home in {city}, {state}. "
                       f"Property needs {condition} updates and repairs. "
                       f"Great opportunity in a {neighborhood_score}/10 neighborhood.")
-        
+
+        # Auction platform and URL
+        auction_platform = random.choice(config.AUCTION_PLATFORMS)
+        platform_base = config.AUCTION_PLATFORM_URLS.get(auction_platform)
+        property_url = f"{platform_base}/listing/{index + 1001}" if platform_base else None
+
+        # Bank contact URL
+        bank_contact_url = config.BANK_CONTACT_URLS.get(foreclosing_entity)
+
         return Property(
             id=f"PROP-{index + 1001}",
             address=address,
@@ -152,7 +161,7 @@ class MockDataGenerator:
             year_built=year_built,
             property_type="Single Family",
             auction_date=auction_date,
-            auction_platform=random.choice(config.AUCTION_PLATFORMS),
+            auction_platform=auction_platform,
             description=description,
             neighborhood_score=neighborhood_score,
             foreclosing_entity=foreclosing_entity,
@@ -160,6 +169,8 @@ class MockDataGenerator:
             loan_type=loan_type,
             default_date=default_date,
             foreclosure_stage=foreclosure_stage,
+            property_url=property_url,
+            bank_contact_url=bank_contact_url,
         )
 
 

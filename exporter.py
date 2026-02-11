@@ -66,7 +66,8 @@ class DataExporter:
             'foreclosing_entity', 'total_debt', 'loan_type',
             'default_date', 'foreclosure_stage',
             'neighborhood_score', 'profit_potential', 'profit_margin',
-            'total_investment', 'deal_score', 'recommended'
+            'total_investment', 'deal_score', 'recommended',
+            'property_url', 'bank_contact_url'
         ]
         
         with open(filepath, 'w', newline='') as f:

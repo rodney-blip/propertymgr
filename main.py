@@ -94,7 +94,7 @@ class AuctionAnalyzerCLI:
         self.analyzer.print_top_deals(5)
 
         print("=" * 80)
-        print("Analysis complete! View dashboard.html for interactive exploration.")
+        print("Analysis complete! View index.html for interactive exploration.")
         print("=" * 80)
     
     def analyze_custom(self, 
