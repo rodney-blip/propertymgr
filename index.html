@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auction Property Analyzer - Dashboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-bottom: 30px;
+        }
+        
+        .header h1 {
+            color: #667eea;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            color: #666;
+            font-size: 1.1em;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .stat-card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .stat-card .label {
+            color: #888;
+            font-size: 0.9em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+        
+        .stat-card .value {
+            color: #333;
+            font-size: 2em;
+            font-weight: bold;
+        }
+        
+        .stat-card.highlight .value {
+            color: #667eea;
+        }
+        
+        .alerts-section {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        
+        .alerts-section h2 {
+            color: #333;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .alert-item {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a6f);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        
+        .alert-item:hover {
+            transform: scale(1.02);
+        }
+        
+        .alert-item.excellent {
+            background: linear-gradient(135deg, #f093fb, #f5576c);
+        }
+        
+        .alert-item.good {
+            background: linear-gradient(135deg, #4facfe, #00f2fe);
+        }
+        
+        .alert-level {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .alert-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 10px;
+            margin-top: 10px;
+        }
+        
+        .filters {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        
+        .filters h3 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        
+        .filter-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        
+        .filter-group label {
+            color: #666;
+            font-size: 0.9em;
+            font-weight: 600;
+        }
+        
+        .filter-group select,
+        .filter-group input {
+            padding: 10px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1em;
+            transition: border-color 0.2s;
+        }
+        
+        .filter-group select:focus,
+        .filter-group input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        
+        .properties-section {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .properties-section h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        
+        .property-card {
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        
+        .property-card:hover {
+            border-color: #667eea;
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.2);
+        }
+        
+        .property-card.recommended {
+            border-color: #4caf50;
+            background: #f1f8f4;
+        }
+        
+        .property-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 15px;
+        }
+        
+        .property-address {
+            flex: 1;
+        }
+        
+        .property-address h3 {
+            color: #333;
+            margin-bottom: 5px;
+        }
+        
+        .property-address p {
+            color: #666;
+            font-size: 0.9em;
+        }
+        
+        .deal-badge {
+            background: #667eea;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+        
+        .deal-badge.hot {
+            background: #ff6b6b;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        .property-metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        
+        .metric {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        
+        .metric-label {
+            color: #888;
+            font-size: 0.85em;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .metric-value {
+            color: #333;
+            font-size: 1.1em;
+            font-weight: bold;
+        }
+        
+        .metric-value.profit {
+            color: #4caf50;
+            font-size: 1.3em;
+        }
+        
+        .property-details {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            padding-top: 15px;
+            border-top: 1px solid #e0e0e0;
+            color: #666;
+            font-size: 0.9em;
+        }
+        
+        .detail-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: #e0e0e0;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-top: 5px;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            transition: width 0.3s;
+        }
+        
+        .no-results {
+            text-align: center;
+            padding: 60px 20px;
+            color: #999;
+        }
+        
+        .no-results h3 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+        
+        button {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        
+        button:hover {
+            transform: translateY(-2px);
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🏠 Auction Property Analyzer</h1>
+            <p>Fix-and-Flip Opportunity Identifier | Oregon & Texas</p>
+        </div>
+        
+        <div class="stats-grid" id="statsGrid">
+            <div class="stat-card">
+                <div class="label">Total Properties</div>
+                <div class="value" id="totalProperties">-</div>
+            </div>
+            <div class="stat-card highlight">
+                <div class="label">Recommended Deals</div>
+                <div class="value" id="recommendedDeals">-</div>
+            </div>
+            <div class="stat-card">
+                <div class="label">Avg Profit Margin</div>
+                <div class="value" id="avgMargin">-</div>
+            </div>
+            <div class="stat-card">
+                <div class="label">Hot Deals (40%+)</div>
+                <div class="value" id="hotDeals">-</div>
+            </div>
+        </div>
+        
+        <div class="alerts-section" id="alertsSection" style="display:none;">
+            <h2>🚨 High-Value Deal Alerts</h2>
+            <div id="alertsContainer"></div>
+        </div>
+        
+        <div class="filters">
+            <h3>🔍 Filter Properties</h3>
+            <div class="filter-grid">
+                <div class="filter-group">
+                    <label>State</label>
+                    <select id="stateFilter">
+                        <option value="all">All States</option>
+                        <option value="Oregon">Oregon</option>
+                        <option value="Texas">Texas</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Region</label>
+                    <select id="regionFilter">
+                        <option value="all">All Regions</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Min Profit Margin (%)</label>
+                    <input type="number" id="minMargin" value="0" min="0" max="100">
+                </div>
+                <div class="filter-group">
+                    <label>Max Auction Price</label>
+                    <select id="maxPrice">
+                        <option value="1200000">$1.2M (All)</option>
+                        <option value="300000">$300K</option>
+                        <option value="500000">$500K</option>
+                        <option value="800000">$800K</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Min Deal Score</label>
+                    <input type="number" id="minScore" value="0" min="0" max="100">
+                </div>
+                <div class="filter-group">
+                    <label>Sort By</label>
+                    <select id="sortBy">
+                        <option value="deal_score">Deal Score</option>
+                        <option value="profit_margin">Profit Margin</option>
+                        <option value="profit_potential">Profit Amount</option>
+                        <option value="auction_date">Auction Date</option>
+                    </select>
+                </div>
+                <div class="filter-group" style="display:flex; align-items:flex-end;">
+                    <button onclick="applyFilters()">Apply Filters</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="properties-section">
+            <h2>📋 Property Listings (<span id="propertyCount">0</span>)</h2>
+            <div id="propertiesContainer" class="loading">Loading properties...</div>
+        </div>
+    </div>
+
+    <script>
+        let allProperties = [];
+        let currentProperties = [];
+
+        const REGION_DEFINITIONS = {
+            "Oregon": [
+                "Portland Metro",
+                "Salem / Mid-Valley",
+                "Eugene / Lane County",
+                "Central Oregon",
+                "Southern Oregon"
+            ],
+            "Texas": [
+                "Greater Austin",
+                "Dallas / Fort Worth",
+                "Houston Metro",
+                "San Antonio Area",
+                "El Paso Area"
+            ]
+        };
+
+        // Cascading region dropdown
+        document.getElementById('stateFilter').addEventListener('change', function() {
+            const state = this.value;
+            const regionSelect = document.getElementById('regionFilter');
+            regionSelect.innerHTML = '<option value="all">All Regions</option>';
+
+            if (state === 'all') {
+                Object.entries(REGION_DEFINITIONS).forEach(([stateName, regions]) => {
+                    const group = document.createElement('optgroup');
+                    group.label = stateName;
+                    regions.forEach(region => {
+                        const option = document.createElement('option');
+                        option.value = region;
+                        option.textContent = region;
+                        group.appendChild(option);
+                    });
+                    regionSelect.appendChild(group);
+                });
+            } else if (REGION_DEFINITIONS[state]) {
+                REGION_DEFINITIONS[state].forEach(region => {
+                    const option = document.createElement('option');
+                    option.value = region;
+                    option.textContent = region;
+                    regionSelect.appendChild(option);
+                });
+            }
+        });
+
+        // Initialize region dropdown
+        document.getElementById('stateFilter').dispatchEvent(new Event('change'));
+
+        // Load data
+        async function loadData() {
+            try {
+                const response = await fetch('property_analysis.json');
+                const data = await response.json();
+                
+                allProperties = data.all_properties;
+                currentProperties = [...allProperties];
+                
+                updateStats(data);
+                displayAlerts(data.alerts);
+                displayProperties(currentProperties);
+            } catch (error) {
+                console.error('Error loading data:', error);
+                document.getElementById('propertiesContainer').innerHTML = 
+                    '<div class="no-results"><h3>Error loading data</h3><p>Please run the analyzer first: python3 property_analyzer.py</p></div>';
+            }
+        }
+        
+        function updateStats(data) {
+            document.getElementById('totalProperties').textContent = data.total_properties;
+            document.getElementById('recommendedDeals').textContent = data.recommended_deals;
+            document.getElementById('avgMargin').textContent = data.avg_profit_margin.toFixed(1) + '%';
+            document.getElementById('hotDeals').textContent = data.statistics.deals_over_40_percent;
+        }
+        
+        function displayAlerts(alerts) {
+            if (!alerts || alerts.length === 0) return;
+            
+            document.getElementById('alertsSection').style.display = 'block';
+            const container = document.getElementById('alertsContainer');
+            
+            container.innerHTML = alerts.slice(0, 5).map(alert => {
+                let className = 'alert-item';
+                if (alert.level.includes('EXCELLENT')) className += ' excellent';
+                else if (alert.level.includes('GOOD')) className += ' good';
+                
+                return `
+                    <div class="${className}" onclick="scrollToProperty('${alert.property_id}')">
+                        <div class="alert-level">${alert.level}</div>
+                        <div><strong>${alert.address}</strong></div>
+                        <div class="alert-details">
+                            <div>Profit: <strong>${alert.profit_potential}</strong></div>
+                            <div>Margin: <strong>${alert.profit_margin}</strong></div>
+                            <div>Score: <strong>${alert.deal_score.toFixed(1)}/100</strong></div>
+                            <div>Auction: <strong>${alert.auction_date}</strong></div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+        
+        function renderForeclosureSection(prop) {
+            if (!prop.foreclosing_entity) return '';
+            var debt = prop.total_debt ? '$' + prop.total_debt.toLocaleString() : 'N/A';
+            var loanType = prop.loan_type || 'N/A';
+            var stage = prop.foreclosure_stage || 'N/A';
+            var defaultDate = prop.default_date || 'N/A';
+            return '<div class="property-details" style="margin-top: 10px; padding-top: 10px; border-top: 1px solid #e0e0e0;">'
+                + '<div class="detail-item">🏛️ <strong>' + prop.foreclosing_entity + '</strong></div>'
+                + '<div class="detail-item">💰 Debt: ' + debt + '</div>'
+                + '<div class="detail-item">📋 ' + loanType + '</div>'
+                + '<div class="detail-item">⚖️ ' + stage + '</div>'
+                + '<div class="detail-item">📅 Default: ' + defaultDate + '</div>'
+                + '</div>';
+        }
+
+        function displayProperties(properties) {
+            const container = document.getElementById('propertiesContainer');
+            document.getElementById('propertyCount').textContent = properties.length;
+
+            if (properties.length === 0) {
+                container.innerHTML = '<div class="no-results"><h3>No properties match your filters</h3><p>Try adjusting your search criteria</p></div>';
+                return;
+            }
+
+            container.innerHTML = properties.map(prop => {
+                const badgeClass = prop.profit_margin >= 40 ? 'hot' : '';
+                const badgeText = prop.profit_margin >= 40 ? '🔥 HOT DEAL' :
+                                 prop.profit_margin >= 35 ? '⭐ EXCELLENT' :
+                                 prop.recommended ? '✅ GOOD' : '📊 ' + prop.deal_score.toFixed(0);
+
+                return `
+                    <div class="property-card ${prop.recommended ? 'recommended' : ''}" id="${prop.id}">
+                        <div class="property-header">
+                            <div class="property-address">
+                                <h3>${prop.address}</h3>
+                                <p>${prop.city}, ${prop.state} ${prop.zip_code}${prop.region ? ' &mdash; ' + prop.region : ''}</p>
+                            </div>
+                            <div class="deal-badge ${badgeClass}">${badgeText}</div>
+                        </div>
+
+                        <div class="property-metrics">
+                            <div class="metric">
+                                <div class="metric-label">Auction Price</div>
+                                <div class="metric-value">$${prop.auction_price.toLocaleString()}</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-label">Est. ARV</div>
+                                <div class="metric-value">$${prop.estimated_arv.toLocaleString()}</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-label">Est. Repairs</div>
+                                <div class="metric-value">$${prop.estimated_repairs.toLocaleString()}</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-label">Profit Potential</div>
+                                <div class="metric-value profit">$${prop.profit_potential.toLocaleString()}</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-label">Profit Margin</div>
+                                <div class="metric-value profit">${prop.profit_margin.toFixed(1)}%</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-label">Deal Score</div>
+                                <div class="metric-value">${prop.deal_score.toFixed(1)}/100</div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: ${prop.deal_score}%"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="property-details">
+                            <div class="detail-item">🛏️ ${prop.bedrooms} bed</div>
+                            <div class="detail-item">🛁 ${prop.bathrooms} bath</div>
+                            <div class="detail-item">📏 ${prop.sqft.toLocaleString()} sqft</div>
+                            <div class="detail-item">📅 Built ${prop.year_built}</div>
+                            <div class="detail-item">🏘️ Score: ${prop.neighborhood_score}/10</div>
+                            <div class="detail-item">📅 Auction: ${prop.auction_date}</div>
+                            <div class="detail-item">🏦 ${prop.auction_platform}</div>
+                        </div>
+                        ` + renderForeclosureSection(prop) + `
+                    </div>
+                `;
+            }).join('');
+        }
+        
+        function applyFilters() {
+            const state = document.getElementById('stateFilter').value;
+            const region = document.getElementById('regionFilter').value;
+            const minMargin = parseFloat(document.getElementById('minMargin').value);
+            const maxPrice = parseFloat(document.getElementById('maxPrice').value);
+            const minScore = parseFloat(document.getElementById('minScore').value);
+            const sortBy = document.getElementById('sortBy').value;
+
+            // Filter
+            currentProperties = allProperties.filter(prop => {
+                if (state !== 'all' && prop.state !== state) return false;
+                if (region !== 'all' && prop.region !== region) return false;
+                if (prop.profit_margin < minMargin) return false;
+                if (prop.auction_price > maxPrice) return false;
+                if (prop.deal_score < minScore) return false;
+                return true;
+            });
+
+            // Sort
+            currentProperties.sort((a, b) => {
+                if (sortBy === 'auction_date') {
+                    return new Date(a.auction_date) - new Date(b.auction_date);
+                }
+                return b[sortBy] - a[sortBy];
+            });
+
+            displayProperties(currentProperties);
+        }
+        
+        function scrollToProperty(id) {
+            const element = document.getElementById(id);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                element.style.animation = 'pulse 1s';
+                setTimeout(() => element.style.animation = '', 1000);
+            }
+        }
+        
+        // Initialize
+        loadData();
+    </script>
+</body>
+</html>

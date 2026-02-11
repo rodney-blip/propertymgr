@@ -1,0 +1,784 @@
+================================================================================
+TOP 20 AUCTION PROPERTY DEALS
+================================================================================
+
+#1 - 2689 Oak Ave, Boerne (San Antonio Area), Texas
+────────────────────────────────────────────────────────────────────────────────
+Property ID: PROP-1053
+Auction Date: 2026-02-23
+Platform: HomePath
+
+FORECLOSURE CONTEXT:
+  Foreclosing Entity:  Caliber Home Loans
+  Total Debt:          $     265,762
+  Loan Type:           Conventional
+  Default Date:        2025-09-14
+  Stage:               Notice of Default
+
+PRICING:
+  Auction Price:     $     182,431
+  Estimated ARV:     $     452,983
+  Estimated Repairs: $      18,243
+  Total Investment:  $     233,325
+  Profit Potential:  $     183,419
+
+METRICS:
+  Profit Margin:            40.5%
+  Deal Score:               86.0/100
+  Recommended:                  Yes
+
+PROPERTY DETAILS:
+  2 bed / 1.5 bath | 2,809 sqft | Built 1978
+  Neighborhood Score: 9/10
+
+COST BREAKDOWN:
+  Purchase:      $     182,431
+  Repairs:       $      18,243
+  Closing:       $       5,473
+  Holding:       $      27,179
+  Selling:       $      36,239
+  ────────────────────────────────────────
+  Total:         $     233,325
+
+
+#2 - 7764 Garden Ct, Medford (Southern Oregon), Oregon
+────────────────────────────────────────────────────────────────────────────────
+Property ID: PROP-1068
+Auction Date: 2026-03-07
+Platform: Auction.com
+
+FORECLOSURE CONTEXT:
+  Foreclosing Entity:  Mr. Cooper
+  Total Debt:          $     176,915
+  Loan Type:           VA
+  Default Date:        2025-04-17
+  Stage:               Pre-Foreclosure
+
+PRICING:
+  Auction Price:     $     114,312
+  Estimated ARV:     $     284,146
+  Estimated Repairs: $      11,431
+  Total Investment:  $     146,221
+  Profit Potential:  $     115,193
+
+METRICS:
+  Profit Margin:            40.5%
+  Deal Score:               86.0/100
+  Recommended:                  Yes
+
+PROPERTY DETAILS:
+  3 bed / 3.5 bath | 1,226 sqft | Built 1967
+  Neighborhood Score: 6/10
+
+COST BREAKDOWN:
+  Purchase:      $     114,312
+  Repairs:       $      11,431
+  Closing:       $       3,429
+  Holding:       $      17,049
+  Selling:       $      22,732
+  ────────────────────────────────────────
+  Total:         $     146,221
+
+
+#3 - 903 Main Ave, New Braunfels (San Antonio Area), Texas
+────────────────────────────────────────────────────────────────────────────────
+Property ID: PROP-1012
+Auction Date: 2026-03-17
+Platform: Auction.com
+
+FORECLOSURE CONTEXT:
+  Foreclosing Entity:  Ocwen Financial
+  Total Debt:          $     358,984
+  Loan Type:           Fixed-Rate
+  Default Date:        2024-11-18
+  Stage:               Auction Scheduled
+
+PRICING:
+  Auction Price:     $     228,488
+  Estimated ARV:     $     439,225
+  Estimated Repairs: $      18,279
+  Total Investment:  $     279,975
+  Profit Potential:  $     124,112
+
+METRICS:
+  Profit Margin:            28.3%
+  Deal Score:               84.3/100
+  Recommended:                   No
+
+PROPERTY DETAILS:
+  2 bed / 2.5 bath | 2,431 sqft | Built 2013
+  Neighborhood Score: 6/10
+
+COST BREAKDOWN:
+  Purchase:      $     228,488
+  Repairs:       $      18,279
+  Closing:       $       6,855
+  Holding:       $      26,353
+  Selling:       $      35,138
+  ────────────────────────────────────────
+  Total:         $     279,975
+
+
+#4 - 691 River St, Georgetown (Greater Austin), Texas
+────────────────────────────────────────────────────────────────────────────────
+Property ID: PROP-1067
+Auction Date: 2026-03-22
+Platform: RealtyBid
+
+FORECLOSURE CONTEXT:
+  Foreclosing Entity:  Truist Bank
+  Total Debt:          $     223,471
+  Loan Type:           Jumbo
+  Default Date:        2025-06-16
+  Stage:               Lis Pendens
+
+PRICING:
+  Auction Price:     $     130,573
+  Estimated ARV:     $     308,857
+  Estimated Repairs: $      10,446
+  Total Investment:  $     163,467
+  Profit Potential:  $     120,682
+
+METRICS:
+  Profit Margin:            39.1%
+  Deal Score:               82.3/100
+  Recommended:                  Yes
+
+PROPERTY DETAILS:
+  4 bed / 2.0 bath | 1,691 sqft | Built 1989
+  Neighborhood Score: 6/10
+
+COST BREAKDOWN:
+  Purchase:      $     130,573
+  Repairs:       $      10,446
+  Closing:       $       3,917
+  Holding:       $      18,531
+  Selling:       $      24,709
+  ────────────────────────────────────────
+  Total:         $     163,467
+
+
+#5 - 1967 Oak Way, McMinnville (Salem / Mid-Valley), Oregon
+────────────────────────────────────────────────────────────────────────────────
+Property ID: PROP-1041
+Auction Date: 2026-03-27
+Platform: Bank Foreclosure
+
+FORECLOSURE CONTEXT:
+  Foreclosing Entity:  Freedom Mortgage
+  Total Debt:          $     466,664
+  Loan Type:           VA
+  Default Date:        2024-12-18
+  Stage:               Bank Owned (REO)
+
+PRICING:
+  Auction Price:     $     290,882
+  Estimated ARV:     $     624,904
+  Estimated Repairs: $      23,271
+  Total Investment:  $     360,374
+  Profit Potential:  $     214,538
+
+METRICS:
+  Profit Margin:            34.3%
+  Deal Score:               81.1/100
+  Recommended:                  Yes
+
+PROPERTY DETAILS:
+  2 bed / 2.0 bath | 3,140 sqft | Built 2017
+  Neighborhood Score: 7/10
+
+COST BREAKDOWN:
+  Purchase:      $     290,882
+  Repairs:       $      23,271
+  Closing:       $       8,726
+  Holding:       $      37,494
+  Selling:       $      49,992
+  ────────────────────────────────────────
+  Total:         $     360,374
+
+
+#6 - 8703 Maple Ln, Sugar Land (Houston Metro), Texas
+────────────────────────────────────────────────────────────────────────────────
+Property ID: PROP-1054
+Auction Date: 2026-02-17
+Platform: Williams & Williams
+
+FORECLOSURE CONTEXT:
+  Foreclosing Entity:  PHH Mortgage
+  Total Debt:          $     401,789
+  Loan Type:           FHA
+  Default Date:        2025-02-16
+  Stage:               Bank Owned (REO)
+
+PRICING:
+  Auction Price:     $     266,770
+  Estimated ARV:     $     539,889
+  Estimated Repairs: $      13,338
+  Total Investment:  $     320,505
+  Profit Potential:  $     176,193
+
+METRICS:
+  Profit Margin:            32.6%
+  Deal Score:               78.7/100
+  Recommended:                  Yes
+
+PROPERTY DETAILS:
+  3 bed / 3.0 bath | 3,326 sqft | Built 1995
+  Neighborhood Score: 10/10
+
+COST BREAKDOWN:
+  Purchase:      $     266,770
+  Repairs:       $      13,338
+  Closing:       $       8,003
+  Holding:       $      32,393
+  Selling:       $      43,191
+  ────────────────────────────────────────
+  Total:         $     320,505
+
+
+#7 - 2171 Highland Rd, Fort Worth (Dallas / Fort Worth), Texas
+────────────────────────────────────────────────────────────────────────────────
+Property ID: PROP-1051
+Auction Date: 2026-02-25
+Platform: Williams & Williams
+
+FORECLOSURE CONTEXT:
+  Foreclosing Entity:  Flagstar Bank
+  Total Debt:          $     458,508
+  Loan Type:           ARM
+  Default Date:        2025-09-14
+  Stage:               Notice of Default
+
+PRICING:
+  Auction Price:     $     267,856
+  Estimated ARV:     $     488,782
+  Estimated Repairs: $      26,786
+  Total Investment:  $     332,004
+  Profit Potential:  $     117,675
+
+METRICS:
+  Profit Margin:            24.1%
+  Deal Score:               78.1/100
+  Recommended:                   No
+
+PROPERTY DETAILS:
+  5 bed / 3.5 bath | 2,748 sqft | Built 1994
+  Neighborhood Score: 9/10
+
+COST BREAKDOWN:
+  Purchase:      $     267,856
+  Repairs:       $      26,786
+  Closing:       $       8,036
+  Holding:       $      29,327
+  Selling:       $      39,103
+  ────────────────────────────────────────
+  Total:         $     332,004
+
+
+#8 - 3134 Highland Ct, Bend (Central Oregon), Oregon
+────────────────────────────────────────────────────────────────────────────────
+Property ID: PROP-1064
+Auction Date: 2026-03-17
+Platform: Auction.com
+
+FORECLOSURE CONTEXT:
+  Foreclosing Entity:  PNC Bank
+  Total Debt:          $     158,496
+  Loan Type:           FHA
+  Default Date:        2025-01-17
+  Stage:               Bank Owned (REO)
+
+PRICING:
+  Auction Price:     $     100,779
+  Estimated ARV:     $     242,549
+  Estimated Repairs: $       8,062
+  Total Investment:  $     126,418
+  Profit Potential:  $      96,728
+
+METRICS:
+  Profit Margin:            39.9%
+  Deal Score:               77.5/100
+  Recommended:                  Yes
+
+PROPERTY DETAILS:
+  3 bed / 2.5 bath | 1,159 sqft | Built 1968
+  Neighborhood Score: 7/10
+
+COST BREAKDOWN:
+  Purchase:      $     100,779
+  Repairs:       $       8,062
+  Closing:       $       3,023
+  Holding:       $      14,553
+  Selling:       $      19,404
+  ────────────────────────────────────────
+  Total:         $     126,418
+
+
+#9 - 5598 Willow Dr, Schertz (San Antonio Area), Texas
+────────────────────────────────────────────────────────────────────────────────
+Property ID: PROP-1015
+Auction Date: 2026-02-15
+Platform: Hudson & Marshall
+
+FORECLOSURE CONTEXT:
+  Foreclosing Entity:  PHH Mortgage
+  Total Debt:          $     398,981
+  Loan Type:           Jumbo
+  Default Date:        2024-11-18
+  Stage:               Lis Pendens
+
+PRICING:
+  Auction Price:     $     239,426
+  Estimated ARV:     $     470,370
+  Estimated Repairs: $      28,731
+  Total Investment:  $     303,562
+  Profit Potential:  $     129,178
+
+METRICS:
+  Profit Margin:            27.5%
+  Deal Score:               77.5/100
+  Recommended:                   No
+
+PROPERTY DETAILS:
+  2 bed / 3.0 bath | 2,519 sqft | Built 1984
+  Neighborhood Score: 8/10
+
+COST BREAKDOWN:
+  Purchase:      $     239,426
+  Repairs:       $      28,731
+  Closing:       $       7,183
+  Holding:       $      28,222
+  Selling:       $      37,630
+  ────────────────────────────────────────
+  Total:         $     303,562
+
+
+#10 - 7424 Forest Ct, Garland (Dallas / Fort Worth), Texas
+────────────────────────────────────────────────────────────────────────────────
+Property ID: PROP-1003
+Auction Date: 2026-02-19
+Platform: Hudson & Marshall
+
+FORECLOSURE CONTEXT:
+  Foreclosing Entity:  PNC Bank
+  Total Debt:          $     164,972
+  Loan Type:           ARM
+  Default Date:        2025-10-14
+  Stage:               Notice of Default
+
+PRICING:
+  Auction Price:     $     116,765
+  Estimated ARV:     $     240,399
+  Estimated Repairs: $       5,838
+  Total Investment:  $     140,530
+  Profit Potential:  $      80,636
+
+METRICS:
+  Profit Margin:            33.5%
+  Deal Score:               76.9/100
+  Recommended:                  Yes
+
+PROPERTY DETAILS:
+  3 bed / 1.5 bath | 1,346 sqft | Built 2016
+  Neighborhood Score: 5/10
+
+COST BREAKDOWN:
+  Purchase:      $     116,765
+  Repairs:       $       5,838
+  Closing:       $       3,503
+  Holding:       $      14,424
+  Selling:       $      19,232
+  ────────────────────────────────────────
+  Total:         $     140,530
+
+
+#11 - 266 Ridge Dr, Mesquite (Dallas / Fort Worth), Texas
+────────────────────────────────────────────────────────────────────────────────
+Property ID: PROP-1044
+Auction Date: 2026-03-07
+Platform: Auction.com
+
+FORECLOSURE CONTEXT:
+  Foreclosing Entity:  Wells Fargo
+  Total Debt:          $     186,373
+  Loan Type:           FHA
+  Default Date:        2024-11-18
+  Stage:               Auction Scheduled
+
+PRICING:
+  Auction Price:     $     159,632
+  Estimated ARV:     $     310,161
+  Estimated Repairs: $      12,771
+  Total Investment:  $     195,801
+  Profit Potential:  $      89,547
+
+METRICS:
+  Profit Margin:            28.9%
+  Deal Score:               76.9/100
+  Recommended:                   No
+
+PROPERTY DETAILS:
+  5 bed / 1.5 bath | 1,742 sqft | Built 2020
+  Neighborhood Score: 6/10
+
+COST BREAKDOWN:
+  Purchase:      $     159,632
+  Repairs:       $      12,771
+  Closing:       $       4,789
+  Holding:       $      18,610
+  Selling:       $      24,813
+  ────────────────────────────────────────
+  Total:         $     195,801
+
+
+#12 - 9242 Garden Way, Madras (Central Oregon), Oregon
+────────────────────────────────────────────────────────────────────────────────
+Property ID: PROP-1009
+Auction Date: 2026-03-19
+Platform: Bank Foreclosure
+
+FORECLOSURE CONTEXT:
+  Foreclosing Entity:  Nationstar Mortgage
+  Total Debt:          $     405,446
+  Loan Type:           FHA
+  Default Date:        2025-01-17
+  Stage:               Notice of Default
+
+PRICING:
+  Auction Price:     $     227,462
+  Estimated ARV:     $     475,266
+  Estimated Repairs: $      22,746
+  Total Investment:  $     285,548
+  Profit Potential:  $     151,697
+
+METRICS:
+  Profit Margin:            31.9%
+  Deal Score:               76.5/100
+  Recommended:                  Yes
+
+PROPERTY DETAILS:
+  2 bed / 3.5 bath | 2,485 sqft | Built 1967
+  Neighborhood Score: 6/10
+
+COST BREAKDOWN:
+  Purchase:      $     227,462
+  Repairs:       $      22,746
+  Closing:       $       6,824
+  Holding:       $      28,516
+  Selling:       $      38,021
+  ────────────────────────────────────────
+  Total:         $     285,548
+
+
+#13 - 6670 Maple Dr, Ashland (Southern Oregon), Oregon
+────────────────────────────────────────────────────────────────────────────────
+Property ID: PROP-1062
+Auction Date: 2026-02-16
+Platform: Hubzu
+
+FORECLOSURE CONTEXT:
+  Foreclosing Entity:  PNC Bank
+  Total Debt:          $     343,910
+  Loan Type:           Interest-Only
+  Default Date:        2024-08-20
+  Stage:               Pre-Foreclosure
+
+PRICING:
+  Auction Price:     $     205,235
+  Estimated ARV:     $     412,486
+  Estimated Repairs: $      16,419
+  Total Investment:  $     252,560
+  Profit Potential:  $     126,927
+
+METRICS:
+  Profit Margin:            30.8%
+  Deal Score:               76.2/100
+  Recommended:                  Yes
+
+PROPERTY DETAILS:
+  5 bed / 2.0 bath | 2,073 sqft | Built 1980
+  Neighborhood Score: 6/10
+
+COST BREAKDOWN:
+  Purchase:      $     205,235
+  Repairs:       $      16,419
+  Closing:       $       6,157
+  Holding:       $      24,749
+  Selling:       $      32,999
+  ────────────────────────────────────────
+  Total:         $     252,560
+
+
+#14 - 2906 Main Pl, Sisters (Central Oregon), Oregon
+────────────────────────────────────────────────────────────────────────────────
+Property ID: PROP-1040
+Auction Date: 2026-03-13
+Platform: HomePath
+
+FORECLOSURE CONTEXT:
+  Foreclosing Entity:  Shellpoint Mortgage
+  Total Debt:          $     540,791
+  Loan Type:           FHA
+  Default Date:        2025-03-18
+  Stage:               Short Sale
+
+PRICING:
+  Auction Price:     $     314,400
+  Estimated ARV:     $     565,957
+  Estimated Repairs: $      37,728
+  Total Investment:  $     395,518
+  Profit Potential:  $     125,163
+
+METRICS:
+  Profit Margin:            22.1%
+  Deal Score:               76.1/100
+  Recommended:                   No
+
+PROPERTY DETAILS:
+  3 bed / 2.0 bath | 2,455 sqft | Built 1997
+  Neighborhood Score: 8/10
+
+COST BREAKDOWN:
+  Purchase:      $     314,400
+  Repairs:       $      37,728
+  Closing:       $       9,432
+  Holding:       $      33,957
+  Selling:       $      45,277
+  ────────────────────────────────────────
+  Total:         $     395,518
+
+
+#15 - 4220 Highland Ln, Klamath Falls (Southern Oregon), Oregon
+────────────────────────────────────────────────────────────────────────────────
+Property ID: PROP-1046
+Auction Date: 2026-03-05
+Platform: Auction.com
+
+FORECLOSURE CONTEXT:
+  Foreclosing Entity:  US Bank
+  Total Debt:          $     305,816
+  Loan Type:           VA
+  Default Date:        2025-08-15
+  Stage:               Lis Pendens
+
+PRICING:
+  Auction Price:     $     185,918
+  Estimated ARV:     $     383,760
+  Estimated Repairs: $       9,296
+  Total Investment:  $     223,817
+  Profit Potential:  $     129,242
+
+METRICS:
+  Profit Margin:            33.7%
+  Deal Score:               74.9/100
+  Recommended:                  Yes
+
+PROPERTY DETAILS:
+  5 bed / 3.0 bath | 2,037 sqft | Built 1966
+  Neighborhood Score: 5/10
+
+COST BREAKDOWN:
+  Purchase:      $     185,918
+  Repairs:       $       9,296
+  Closing:       $       5,578
+  Holding:       $      23,026
+  Selling:       $      30,701
+  ────────────────────────────────────────
+  Total:         $     223,817
+
+
+#16 - 6601 Hill Rd, Horizon City (El Paso Area), Texas
+────────────────────────────────────────────────────────────────────────────────
+Property ID: PROP-1023
+Auction Date: 2026-03-11
+Platform: RealtyBid
+
+FORECLOSURE CONTEXT:
+  Foreclosing Entity:  Caliber Home Loans
+  Total Debt:          $     118,609
+  Loan Type:           FHA
+  Default Date:        2024-11-18
+  Stage:               Bank Owned (REO)
+
+PRICING:
+  Auction Price:     $     100,000
+  Estimated ARV:     $     198,116
+  Estimated Repairs: $       7,508
+  Total Investment:  $     122,395
+  Profit Potential:  $      59,871
+
+METRICS:
+  Profit Margin:            30.2%
+  Deal Score:               74.1/100
+  Recommended:                  Yes
+
+PROPERTY DETAILS:
+  5 bed / 1.5 bath | 1,327 sqft | Built 2014
+  Neighborhood Score: 7/10
+
+COST BREAKDOWN:
+  Purchase:      $     100,000
+  Repairs:       $       7,508
+  Closing:       $       3,000
+  Holding:       $      11,887
+  Selling:       $      15,849
+  ────────────────────────────────────────
+  Total:         $     122,395
+
+
+#17 - 8828 Main Dr, Horizon City (El Paso Area), Texas
+────────────────────────────────────────────────────────────────────────────────
+Property ID: PROP-1028
+Auction Date: 2026-03-27
+Platform: RealtyBid
+
+FORECLOSURE CONTEXT:
+  Foreclosing Entity:  PNC Bank
+  Total Debt:          $     153,266
+  Loan Type:           Interest-Only
+  Default Date:        2025-04-17
+  Stage:               Bank Owned (REO)
+
+PRICING:
+  Auction Price:     $     100,000
+  Estimated ARV:     $     228,153
+  Estimated Repairs: $       7,949
+  Total Investment:  $     124,638
+  Profit Potential:  $      85,263
+
+METRICS:
+  Profit Margin:            37.4%
+  Deal Score:               73.8/100
+  Recommended:                  Yes
+
+PROPERTY DETAILS:
+  5 bed / 2.5 bath | 1,499 sqft | Built 2006
+  Neighborhood Score: 7/10
+
+COST BREAKDOWN:
+  Purchase:      $     100,000
+  Repairs:       $       7,949
+  Closing:       $       3,000
+  Holding:       $      13,689
+  Selling:       $      18,252
+  ────────────────────────────────────────
+  Total:         $     124,638
+
+
+#18 - 2360 Hill Ave, Prineville (Central Oregon), Oregon
+────────────────────────────────────────────────────────────────────────────────
+Property ID: PROP-1026
+Auction Date: 2026-02-16
+Platform: Auction.com
+
+FORECLOSURE CONTEXT:
+  Foreclosing Entity:  NewRez LLC
+  Total Debt:          $     175,472
+  Loan Type:           Fixed-Rate
+  Default Date:        2025-07-16
+  Stage:               Bank Owned (REO)
+
+PRICING:
+  Auction Price:     $     153,235
+  Estimated ARV:     $     282,730
+  Estimated Repairs: $      18,388
+  Total Investment:  $     193,184
+  Profit Potential:  $      66,928
+
+METRICS:
+  Profit Margin:            23.7%
+  Deal Score:               73.7/100
+  Recommended:                   No
+
+PROPERTY DETAILS:
+  2 bed / 3.0 bath | 1,205 sqft | Built 1990
+  Neighborhood Score: 8/10
+
+COST BREAKDOWN:
+  Purchase:      $     153,235
+  Repairs:       $      18,388
+  Closing:       $       4,597
+  Holding:       $      16,964
+  Selling:       $      22,618
+  ────────────────────────────────────────
+  Total:         $     193,184
+
+
+#19 - 6657 Hill Pl, Seguin (San Antonio Area), Texas
+────────────────────────────────────────────────────────────────────────────────
+Property ID: PROP-1065
+Auction Date: 2026-03-28
+Platform: Hubzu
+
+FORECLOSURE CONTEXT:
+  Foreclosing Entity:  Truist Bank
+  Total Debt:          $     265,391
+  Loan Type:           Interest-Only
+  Default Date:        2024-12-18
+  Stage:               Pre-Foreclosure
+
+PRICING:
+  Auction Price:     $     163,425
+  Estimated ARV:     $     300,108
+  Estimated Repairs: $      19,611
+  Total Investment:  $     205,945
+  Profit Potential:  $      70,155
+
+METRICS:
+  Profit Margin:            23.4%
+  Deal Score:               73.4/100
+  Recommended:                   No
+
+PROPERTY DETAILS:
+  2 bed / 2.5 bath | 1,740 sqft | Built 1993
+  Neighborhood Score: 6/10
+
+COST BREAKDOWN:
+  Purchase:      $     163,425
+  Repairs:       $      19,611
+  Closing:       $       4,903
+  Holding:       $      18,007
+  Selling:       $      24,009
+  ────────────────────────────────────────
+  Total:         $     205,945
+
+
+#20 - 2264 Valley St, Keizer (Salem / Mid-Valley), Oregon
+────────────────────────────────────────────────────────────────────────────────
+Property ID: PROP-1036
+Auction Date: 2026-02-18
+Platform: Hudson & Marshall
+
+FORECLOSURE CONTEXT:
+  Foreclosing Entity:  Freedom Mortgage
+  Total Debt:          $     502,865
+  Loan Type:           VA
+  Default Date:        2025-10-14
+  Stage:               Lis Pendens
+
+PRICING:
+  Auction Price:     $     284,076
+  Estimated ARV:     $     572,209
+  Estimated Repairs: $      22,726
+  Total Investment:  $     349,657
+  Profit Potential:  $     176,775
+
+METRICS:
+  Profit Margin:            30.9%
+  Deal Score:               73.2/100
+  Recommended:                  Yes
+
+PROPERTY DETAILS:
+  2 bed / 1.0 bath | 3,149 sqft | Built 1968
+  Neighborhood Score: 8/10
+
+COST BREAKDOWN:
+  Purchase:      $     284,076
+  Repairs:       $      22,726
+  Closing:       $       8,522
+  Holding:       $      34,333
+  Selling:       $      45,777
+  ────────────────────────────────────────
+  Total:         $     349,657
+
+
