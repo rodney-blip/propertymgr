@@ -58,6 +58,34 @@ def _get_census():
     return _census
 
 
+# State abbreviation → full name mapping
+STATE_ABBREV_TO_FULL = {
+    "AL": "Alabama", "AK": "Alaska", "AZ": "Arizona", "AR": "Arkansas",
+    "CA": "California", "CO": "Colorado", "CT": "Connecticut", "DE": "Delaware",
+    "FL": "Florida", "GA": "Georgia", "HI": "Hawaii", "ID": "Idaho",
+    "IL": "Illinois", "IN": "Indiana", "IA": "Iowa", "KS": "Kansas",
+    "KY": "Kentucky", "LA": "Louisiana", "ME": "Maine", "MD": "Maryland",
+    "MA": "Massachusetts", "MI": "Michigan", "MN": "Minnesota", "MS": "Mississippi",
+    "MO": "Missouri", "MT": "Montana", "NE": "Nebraska", "NV": "Nevada",
+    "NH": "New Hampshire", "NJ": "New Jersey", "NM": "New Mexico", "NY": "New York",
+    "NC": "North Carolina", "ND": "North Dakota", "OH": "Ohio", "OK": "Oklahoma",
+    "OR": "Oregon", "PA": "Pennsylvania", "RI": "Rhode Island", "SC": "South Carolina",
+    "SD": "South Dakota", "TN": "Tennessee", "TX": "Texas", "UT": "Utah",
+    "VT": "Vermont", "VA": "Virginia", "WA": "Washington", "WV": "West Virginia",
+    "WI": "Wisconsin", "WY": "Wyoming", "DC": "District of Columbia",
+}
+
+
+def _normalize_state(state_str: str) -> str:
+    """Convert state abbreviation to full name, or return as-is if already full."""
+    if not state_str:
+        return state_str
+    upper = state_str.strip().upper()
+    if upper in STATE_ABBREV_TO_FULL:
+        return STATE_ABBREV_TO_FULL[upper]
+    return state_str
+
+
 def _normalize_address(address: str) -> str:
     """Normalize an address string for dedup comparison."""
     return " ".join(address.upper().split())
@@ -153,7 +181,8 @@ def _build_property_from_raw(raw: Dict, source: str,
         return None
 
     city = raw.get("city", city_hint) or city_hint
-    state = raw.get("state", state_hint) or state_hint
+    raw_state = raw.get("state", state_hint) or state_hint
+    state = _normalize_state(raw_state)  # Convert "OR" → "Oregon", etc.
     zip_code = raw.get("zip_code", zip_hint) or zip_hint
 
     # Determine region from config lookup, fallback to hint

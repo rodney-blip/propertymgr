@@ -2,783 +2,643 @@
 TOP 20 AUCTION PROPERTY DEALS
 ================================================================================
 
-#1 - 2413 Mountain St, Cypress (Houston Metro), Texas
+#1 - 3095 SE WILLOW DR, HILLSBORO (Portland Metro), Oregon
 ────────────────────────────────────────────────────────────────────────────────
-Property ID: PROP-1024
-Auction Date: 2026-03-05
-Platform: RealtyBid
-
-FORECLOSURE CONTEXT:
-  Foreclosing Entity:  Flagstar Bank
-  Total Debt:          $     181,963
-  Loan Type:           ARM
-  Default Date:        2025-08-15
-  Stage:               Short Sale
+Property ID: REAL-0028
+Auction Date: 1994-06-10
+Platform: Auction.com
 
 PRICING:
-  Auction Price:     $     125,288
-  Estimated ARV:     $     312,655
-  Estimated Repairs: $      12,529
-  Total Investment:  $     160,335
-  Profit Potential:  $     127,307
+  Auction Price:     $     125,300
+  Estimated ARV:     $     410,400
+  Estimated Repairs: $      18,795
+  Total Investment:  $     172,478
+  Profit Potential:  $     205,090
 
 METRICS:
-  Profit Margin:            40.7%
+  Profit Margin:            50.0%
+  Deal Score:               96.0/100
+  Recommended:                  Yes
+
+PROPERTY DETAILS:
+  4 bed / 2.0 bath | 2,052 sqft | Built 1990
+  Neighborhood Score: 9/10
+
+COST BREAKDOWN:
+  Purchase:      $     125,300
+  Repairs:       $      18,795
+  Closing:       $       3,759
+  Holding:       $      24,624
+  Selling:       $      32,832
+  ────────────────────────────────────────
+  Total:         $     172,478
+
+
+#2 - 1700 MONTANA TRL, PLANO (Dallas / Fort Worth), Texas
+────────────────────────────────────────────────────────────────────────────────
+Property ID: REAL-0060
+Auction Date: 2000-06-05
+Platform: Auction.com
+
+PRICING:
+  Auction Price:     $     124,260
+  Estimated ARV:     $     338,080
+  Estimated Repairs: $      18,639
+  Total Investment:  $     166,912
+  Profit Potential:  $     144,122
+
+METRICS:
+  Profit Margin:            42.6%
   Deal Score:               94.0/100
   Recommended:                  Yes
 
 PROPERTY DETAILS:
-  2 bed / 2.0 bath | 1,841 sqft | Built 1966
-  Neighborhood Score: 10/10
+  3 bed / 2.0 bath | 2,113 sqft | Built 1990
+  Neighborhood Score: 8/10
 
 COST BREAKDOWN:
-  Purchase:      $     125,288
-  Repairs:       $      12,529
-  Closing:       $       3,759
-  Holding:       $      18,759
-  Selling:       $      25,012
+  Purchase:      $     124,260
+  Repairs:       $      18,639
+  Closing:       $       3,728
+  Holding:       $      20,285
+  Selling:       $      27,046
   ────────────────────────────────────────
-  Total:         $     160,335
+  Total:         $     166,912
 
 
-#2 - 2534 Sunset Ln, Battle Ground (Southern Washington / Vancouver), Washington
+#3 - 7210 NW COUNCIL TREE LN, CORVALLIS (Salem / Mid-Valley), Oregon
 ────────────────────────────────────────────────────────────────────────────────
-Property ID: PROP-1065
-Auction Date: 2026-02-21
-Platform: Bank Foreclosure
-
-FORECLOSURE CONTEXT:
-  Foreclosing Entity:  Nationstar Mortgage
-  Total Debt:          $     424,780
-  Loan Type:           Conventional
-  Default Date:        2025-11-13
-  Stage:               Pre-Foreclosure
+Property ID: REAL-0005
+Auction Date: 2005-02-17
+Platform: Auction.com
 
 PRICING:
-  Auction Price:     $     293,842
-  Estimated ARV:     $     671,770
-  Estimated Repairs: $      23,507
-  Total Investment:  $     366,471
-  Profit Potential:  $     251,557
+  Auction Price:     $     130,000
+  Estimated ARV:     $     369,600
+  Estimated Repairs: $      19,500
+  Total Investment:  $     175,576
+  Profit Potential:  $     164,456
 
 METRICS:
-  Profit Margin:            37.4%
-  Deal Score:               89.9/100
+  Profit Margin:            44.5%
+  Deal Score:               90.0/100
   Recommended:                  Yes
 
 PROPERTY DETAILS:
-  5 bed / 2.5 bath | 2,889 sqft | Built 2018
-  Neighborhood Score: 10/10
+  3 bed / 2.0 bath | 1,848 sqft | Built 1990
+  Neighborhood Score: 6/10
 
 COST BREAKDOWN:
-  Purchase:      $     293,842
-  Repairs:       $      23,507
-  Closing:       $       8,815
-  Holding:       $      40,306
-  Selling:       $      53,742
+  Purchase:      $     130,000
+  Repairs:       $      19,500
+  Closing:       $       3,900
+  Holding:       $      22,176
+  Selling:       $      29,568
   ────────────────────────────────────────
-  Total:         $     366,471
+  Total:         $     175,576
 
 
-#3 - 2679 Oak Ave, Woodland (Southern Washington / Vancouver), Washington
+#4 - 2404 WINTERSTONE DR, PLANO (Dallas / Fort Worth), Texas
 ────────────────────────────────────────────────────────────────────────────────
-Property ID: PROP-1048
-Auction Date: 2026-02-27
-Platform: Hubzu
-
-FORECLOSURE CONTEXT:
-  Foreclosing Entity:  US Bank
-  Total Debt:          $     231,630
-  Loan Type:           Conventional
-  Default Date:        2024-11-18
-  Stage:               Notice of Default
+Property ID: REAL-0066
+Auction Date: 1999-07-02
+Platform: Auction.com
 
 PRICING:
-  Auction Price:     $     191,440
-  Estimated ARV:     $     457,460
-  Estimated Repairs: $      19,144
-  Total Investment:  $     243,775
-  Profit Potential:  $     177,088
+  Auction Price:     $     123,229
+  Estimated ARV:     $     301,920
+  Estimated Repairs: $      18,484
+  Total Investment:  $     163,525
+  Profit Potential:  $     114,241
 
 METRICS:
-  Profit Margin:            38.7%
-  Deal Score:               88.2/100
-  Recommended:                  Yes
-
-PROPERTY DETAILS:
-  3 bed / 2.0 bath | 2,051 sqft | Built 1994
-  Neighborhood Score: 9/10
-
-COST BREAKDOWN:
-  Purchase:      $     191,440
-  Repairs:       $      19,144
-  Closing:       $       5,743
-  Holding:       $      27,448
-  Selling:       $      36,597
-  ────────────────────────────────────────
-  Total:         $     243,775
-
-
-#4 - 5553 Oak Way, Washougal (Southern Washington / Vancouver), Washington
-────────────────────────────────────────────────────────────────────────────────
-Property ID: PROP-1053
-Auction Date: 2026-03-23
-Platform: Williams & Williams
-
-FORECLOSURE CONTEXT:
-  Foreclosing Entity:  Ocwen Financial
-  Total Debt:          $     330,423
-  Loan Type:           Fixed-Rate
-  Default Date:        2025-02-16
-  Stage:               Short Sale
-
-PRICING:
-  Auction Price:     $     247,410
-  Estimated ARV:     $     539,115
-  Estimated Repairs: $      24,741
-  Total Investment:  $     311,921
-  Profit Potential:  $     184,065
-
-METRICS:
-  Profit Margin:            34.1%
-  Deal Score:               87.0/100
-  Recommended:                  Yes
-
-PROPERTY DETAILS:
-  5 bed / 3.0 bath | 2,387 sqft | Built 2009
-  Neighborhood Score: 10/10
-
-COST BREAKDOWN:
-  Purchase:      $     247,410
-  Repairs:       $      24,741
-  Closing:       $       7,422
-  Holding:       $      32,347
-  Selling:       $      43,129
-  ────────────────────────────────────────
-  Total:         $     311,921
-
-
-#5 - 1032 Valley St, Leander (Greater Austin), Texas
-────────────────────────────────────────────────────────────────────────────────
-Property ID: PROP-1002
-Auction Date: 2026-02-24
-Platform: Hubzu
-
-FORECLOSURE CONTEXT:
-  Foreclosing Entity:  Ocwen Financial
-  Total Debt:          $     222,489
-  Loan Type:           Jumbo
-  Default Date:        2025-09-14
-  Stage:               Short Sale
-
-PRICING:
-  Auction Price:     $     130,527
-  Estimated ARV:     $     305,526
-  Estimated Repairs: $      10,442
-  Total Investment:  $     163,217
-  Profit Potential:  $     117,867
-
-METRICS:
-  Profit Margin:            38.6%
-  Deal Score:               86.1/100
-  Recommended:                  Yes
-
-PROPERTY DETAILS:
-  4 bed / 1.5 bath | 1,741 sqft | Built 1978
-  Neighborhood Score: 10/10
-
-COST BREAKDOWN:
-  Purchase:      $     130,527
-  Repairs:       $      10,442
-  Closing:       $       3,916
-  Holding:       $      18,332
-  Selling:       $      24,442
-  ────────────────────────────────────────
-  Total:         $     163,217
-
-
-#6 - 2783 Hill Rd, Salem (Salem / Mid-Valley), Oregon
-────────────────────────────────────────────────────────────────────────────────
-Property ID: PROP-1029
-Auction Date: 2026-03-21
-Platform: Williams & Williams
-
-FORECLOSURE CONTEXT:
-  Foreclosing Entity:  US Bank
-  Total Debt:          $     347,984
-  Loan Type:           USDA
-  Default Date:        2025-03-18
-  Stage:               Lis Pendens
-
-PRICING:
-  Auction Price:     $     212,531
-  Estimated ARV:     $     527,096
-  Estimated Repairs: $      21,253
-  Total Investment:  $     271,785
-  Profit Potential:  $     213,143
-
-METRICS:
-  Profit Margin:            40.4%
+  Profit Margin:            37.8%
   Deal Score:               86.0/100
   Recommended:                  Yes
 
 PROPERTY DETAILS:
-  5 bed / 2.5 bath | 2,494 sqft | Built 1967
-  Neighborhood Score: 6/10
-
-COST BREAKDOWN:
-  Purchase:      $     212,531
-  Repairs:       $      21,253
-  Closing:       $       6,376
-  Holding:       $      31,626
-  Selling:       $      42,168
-  ────────────────────────────────────────
-  Total:         $     271,785
-
-
-#7 - 1487 River Rd, Vancouver (Southern Washington / Vancouver), Washington
-────────────────────────────────────────────────────────────────────────────────
-Property ID: PROP-1033
-Auction Date: 2026-02-23
-Platform: Williams & Williams
-
-FORECLOSURE CONTEXT:
-  Foreclosing Entity:  Bank of America
-  Total Debt:          $     188,003
-  Loan Type:           Conventional
-  Default Date:        2025-08-15
-  Stage:               Bank Owned (REO)
-
-PRICING:
-  Auction Price:     $     163,269
-  Estimated ARV:     $     332,500
-  Estimated Repairs: $       8,163
-  Total Investment:  $     196,281
-  Profit Potential:  $     109,620
-
-METRICS:
-  Profit Margin:            33.0%
-  Deal Score:               84.7/100
-  Recommended:                  Yes
-
-PROPERTY DETAILS:
-  4 bed / 1.5 bath | 1,495 sqft | Built 2014
-  Neighborhood Score: 6/10
-
-COST BREAKDOWN:
-  Purchase:      $     163,269
-  Repairs:       $       8,163
-  Closing:       $       4,898
-  Holding:       $      19,950
-  Selling:       $      26,600
-  ────────────────────────────────────────
-  Total:         $     196,281
-
-
-#8 - 3534 Garden Way, Camas (Southern Washington / Vancouver), Washington
-────────────────────────────────────────────────────────────────────────────────
-Property ID: PROP-1047
-Auction Date: 2026-02-16
-Platform: Hubzu
-
-FORECLOSURE CONTEXT:
-  Foreclosing Entity:  Wells Fargo
-  Total Debt:          $     203,689
-  Loan Type:           Jumbo
-  Default Date:        2025-01-17
-  Stage:               Pre-Foreclosure
-
-PRICING:
-  Auction Price:     $     159,112
-  Estimated ARV:     $     313,811
-  Estimated Repairs: $      12,729
-  Total Investment:  $     195,443
-  Profit Potential:  $      93,262
-
-METRICS:
-  Profit Margin:            29.7%
-  Deal Score:               83.7/100
-  Recommended:                   No
-
-PROPERTY DETAILS:
-  3 bed / 2.0 bath | 1,413 sqft | Built 2001
-  Neighborhood Score: 10/10
-
-COST BREAKDOWN:
-  Purchase:      $     159,112
-  Repairs:       $      12,729
-  Closing:       $       4,773
-  Holding:       $      18,829
-  Selling:       $      25,105
-  ────────────────────────────────────────
-  Total:         $     195,443
-
-
-#9 - 4663 Elm Way, Gresham (Portland Metro), Oregon
-────────────────────────────────────────────────────────────────────────────────
-Property ID: PROP-1034
-Auction Date: 2026-02-14
-Platform: Williams & Williams
-
-FORECLOSURE CONTEXT:
-  Foreclosing Entity:  Freedom Mortgage
-  Total Debt:          $     370,027
-  Loan Type:           Fixed-Rate
-  Default Date:        2025-05-17
-  Stage:               Bank Owned (REO)
-
-PRICING:
-  Auction Price:     $     262,796
-  Estimated ARV:     $     584,405
-  Estimated Repairs: $      13,140
-  Total Investment:  $     318,884
-  Profit Potential:  $     218,768
-
-METRICS:
-  Profit Margin:            37.4%
-  Deal Score:               82.9/100
-  Recommended:                  Yes
-
-PROPERTY DETAILS:
-  3 bed / 1.0 bath | 2,909 sqft | Built 1999
-  Neighborhood Score: 6/10
-
-COST BREAKDOWN:
-  Purchase:      $     262,796
-  Repairs:       $      13,140
-  Closing:       $       7,884
-  Holding:       $      35,064
-  Selling:       $      46,752
-  ────────────────────────────────────────
-  Total:         $     318,884
-
-
-#10 - 5176 Hill St, Oregon City (Portland Metro), Oregon
-────────────────────────────────────────────────────────────────────────────────
-Property ID: PROP-1057
-Auction Date: 2026-03-05
-Platform: Hudson & Marshall
-
-FORECLOSURE CONTEXT:
-  Foreclosing Entity:  Citibank
-  Total Debt:          $     180,364
-  Loan Type:           Interest-Only
-  Default Date:        2025-11-13
-  Stage:               Notice of Default
-
-PRICING:
-  Auction Price:     $     163,727
-  Estimated ARV:     $     317,946
-  Estimated Repairs: $      13,098
-  Total Investment:  $     200,814
-  Profit Potential:  $      91,696
-
-METRICS:
-  Profit Margin:            28.8%
-  Deal Score:               82.8/100
-  Recommended:                   No
-
-PROPERTY DETAILS:
-  2 bed / 3.0 bath | 1,652 sqft | Built 1976
-  Neighborhood Score: 10/10
-
-COST BREAKDOWN:
-  Purchase:      $     163,727
-  Repairs:       $      13,098
-  Closing:       $       4,912
-  Holding:       $      19,077
-  Selling:       $      25,436
-  ────────────────────────────────────────
-  Total:         $     200,814
-
-
-#11 - 946 Mountain Blvd, Vancouver (Southern Washington / Vancouver), Washington
-────────────────────────────────────────────────────────────────────────────────
-Property ID: PROP-1028
-Auction Date: 2026-03-19
-Platform: Hubzu
-
-FORECLOSURE CONTEXT:
-  Foreclosing Entity:  Wells Fargo
-  Total Debt:          $     361,866
-  Loan Type:           ARM
-  Default Date:        2024-11-18
-  Stage:               Short Sale
-
-PRICING:
-  Auction Price:     $     296,905
-  Estimated ARV:     $     613,848
-  Estimated Repairs: $      23,752
-  Total Investment:  $     366,395
-  Profit Potential:  $     198,344
-
-METRICS:
-  Profit Margin:            32.3%
-  Deal Score:               82.6/100
-  Recommended:                  Yes
-
-PROPERTY DETAILS:
-  3 bed / 1.5 bath | 2,682 sqft | Built 2006
-  Neighborhood Score: 6/10
-
-COST BREAKDOWN:
-  Purchase:      $     296,905
-  Repairs:       $      23,752
-  Closing:       $       8,907
-  Holding:       $      36,831
-  Selling:       $      49,108
-  ────────────────────────────────────────
-  Total:         $     366,395
-
-
-#12 - 4855 Forest Way, Schertz (San Antonio Area), Texas
-────────────────────────────────────────────────────────────────────────────────
-Property ID: PROP-1056
-Auction Date: 2026-03-11
-Platform: Hudson & Marshall
-
-FORECLOSURE CONTEXT:
-  Foreclosing Entity:  Capital One
-  Total Debt:          $     204,809
-  Loan Type:           Interest-Only
-  Default Date:        2024-09-19
-  Stage:               Notice of Default
-
-PRICING:
-  Auction Price:     $     140,027
-  Estimated ARV:     $     260,032
-  Estimated Repairs: $      11,202
-  Total Investment:  $     171,032
-  Profit Potential:  $      68,197
-
-METRICS:
-  Profit Margin:            26.2%
-  Deal Score:               82.2/100
-  Recommended:                   No
-
-PROPERTY DETAILS:
-  4 bed / 3.5 bath | 1,629 sqft | Built 2015
+  3 bed / 2.0 bath | 1,887 sqft | Built 1990
   Neighborhood Score: 8/10
 
 COST BREAKDOWN:
-  Purchase:      $     140,027
-  Repairs:       $      11,202
-  Closing:       $       4,201
-  Holding:       $      15,602
-  Selling:       $      20,803
+  Purchase:      $     123,229
+  Repairs:       $      18,484
+  Closing:       $       3,697
+  Holding:       $      18,115
+  Selling:       $      24,154
   ────────────────────────────────────────
-  Total:         $     171,032
+  Total:         $     163,525
 
 
-#13 - 1052 Lake Ln, Battle Ground (Southern Washington / Vancouver), Washington
+#5 - 1121 LOMBARDY DR, PLANO (Dallas / Fort Worth), Texas
 ────────────────────────────────────────────────────────────────────────────────
-Property ID: PROP-1072
-Auction Date: 2026-03-06
-Platform: Bank Foreclosure
-
-FORECLOSURE CONTEXT:
-  Foreclosing Entity:  Ocwen Financial
-  Total Debt:          $     561,538
-  Loan Type:           Jumbo
-  Default Date:        2025-08-15
-  Stage:               Lis Pendens
+Property ID: REAL-0061
+Auction Date: 2015-12-17
+Platform: Auction.com
 
 PRICING:
-  Auction Price:     $     351,370
-  Estimated ARV:     $     838,067
-  Estimated Repairs: $      35,137
-  Total Investment:  $     447,332
-  Profit Potential:  $     323,689
+  Auction Price:     $     143,750
+  Estimated ARV:     $     328,160
+  Estimated Repairs: $      21,562
+  Total Investment:  $     189,315
+  Profit Potential:  $     112,593
 
 METRICS:
-  Profit Margin:            38.6%
-  Deal Score:               82.2/100
+  Profit Margin:            34.3%
+  Deal Score:               85.1/100
   Recommended:                  Yes
 
 PROPERTY DETAILS:
-  2 bed / 2.0 bath | 3,372 sqft | Built 2018
-  Neighborhood Score: 10/10
+  3 bed / 2.0 bath | 2,051 sqft | Built 1990
+  Neighborhood Score: 8/10
 
 COST BREAKDOWN:
-  Purchase:      $     351,370
-  Repairs:       $      35,137
-  Closing:       $      10,541
-  Holding:       $      50,284
-  Selling:       $      67,045
+  Purchase:      $     143,750
+  Repairs:       $      21,562
+  Closing:       $       4,312
+  Holding:       $      19,690
+  Selling:       $      26,253
   ────────────────────────────────────────
-  Total:         $     447,332
+  Total:         $     189,315
 
 
-#14 - 340 Lake Ave, McMinnville (Salem / Mid-Valley), Oregon
+#6 - 1106 SE 65TH AVE, HILLSBORO (Portland Metro), Oregon
 ────────────────────────────────────────────────────────────────────────────────
-Property ID: PROP-1035
-Auction Date: 2026-03-11
-Platform: Hubzu
-
-FORECLOSURE CONTEXT:
-  Foreclosing Entity:  Ocwen Financial
-  Total Debt:          $     489,365
-  Loan Type:           Jumbo
-  Default Date:        2025-04-17
-  Stage:               Bank Owned (REO)
+Property ID: REAL-0035
+Auction Date: 2004-11-26
+Platform: Auction.com
 
 PRICING:
-  Auction Price:     $     276,632
-  Estimated ARV:     $     606,282
-  Estimated Repairs: $      22,131
-  Total Investment:  $     343,438
-  Profit Potential:  $     214,341
+  Auction Price:     $     134,415
+  Estimated ARV:     $     289,800
+  Estimated Repairs: $      20,162
+  Total Investment:  $     175,998
+  Profit Potential:  $      90,618
 
 METRICS:
-  Profit Margin:            35.4%
+  Profit Margin:            31.3%
+  Deal Score:               84.3/100
+  Recommended:                  Yes
+
+PROPERTY DETAILS:
+  3 bed / 3.0 bath | 1,449 sqft | Built 1990
+  Neighborhood Score: 9/10
+
+COST BREAKDOWN:
+  Purchase:      $     134,415
+  Repairs:       $      20,162
+  Closing:       $       4,032
+  Holding:       $      17,388
+  Selling:       $      23,184
+  ────────────────────────────────────────
+  Total:         $     175,998
+
+
+#7 - 29700 SW BUCKHAVEN RD, HILLSBORO (Portland Metro), Oregon
+────────────────────────────────────────────────────────────────────────────────
+Property ID: REAL-0043
+Auction Date: 2010-05-07
+Platform: Auction.com
+
+PRICING:
+  Auction Price:     $     500,000
+  Estimated ARV:     $   1,079,600
+  Estimated Repairs: $      75,000
+  Total Investment:  $     654,776
+  Profit Potential:  $     338,456
+
+METRICS:
+  Profit Margin:            31.4%
   Deal Score:               81.3/100
   Recommended:                  Yes
 
 PROPERTY DETAILS:
-  5 bed / 2.0 bath | 3,075 sqft | Built 2012
+  3 bed / 5.0 bath | 5,398 sqft | Built 1990
+  Neighborhood Score: 9/10
+
+COST BREAKDOWN:
+  Purchase:      $     500,000
+  Repairs:       $      75,000
+  Closing:       $      15,000
+  Holding:       $      64,776
+  Selling:       $      86,368
+  ────────────────────────────────────────
+  Total:         $     654,776
+
+
+#8 - 636 SE 8TH AVE, HILLSBORO (Portland Metro), Oregon
+────────────────────────────────────────────────────────────────────────────────
+Property ID: REAL-0032
+Auction Date: 2005-03-16
+Platform: Auction.com
+
+PRICING:
+  Auction Price:     $     160,000
+  Estimated ARV:     $     331,000
+  Estimated Repairs: $      24,000
+  Total Investment:  $     208,660
+  Profit Potential:  $      95,860
+
+METRICS:
+  Profit Margin:            29.0%
+  Deal Score:               80.0/100
+  Recommended:                   No
+
+PROPERTY DETAILS:
+  3 bed / 1.0 bath | 1,655 sqft | Built 1990
+  Neighborhood Score: 9/10
+
+COST BREAKDOWN:
+  Purchase:      $     160,000
+  Repairs:       $      24,000
+  Closing:       $       4,800
+  Holding:       $      19,860
+  Selling:       $      26,480
+  ────────────────────────────────────────
+  Total:         $     208,660
+
+
+#9 - 1136 SE BASELINE ST, HILLSBORO (Portland Metro), Oregon
+────────────────────────────────────────────────────────────────────────────────
+Property ID: REAL-0036
+Auction Date: 2011-07-27
+Platform: Auction.com
+
+PRICING:
+  Auction Price:     $     109,200
+  Estimated ARV:     $     240,800
+  Estimated Repairs: $      16,380
+  Total Investment:  $     143,304
+  Profit Potential:  $      78,232
+
+METRICS:
+  Profit Margin:            32.5%
+  Deal Score:               79.6/100
+  Recommended:                  Yes
+
+PROPERTY DETAILS:
+  6 bed / 4.0 bath | 1,204 sqft | Built 1990
+  Neighborhood Score: 9/10
+
+COST BREAKDOWN:
+  Purchase:      $     109,200
+  Repairs:       $      16,380
+  Closing:       $       3,276
+  Holding:       $      14,448
+  Selling:       $      19,264
+  ────────────────────────────────────────
+  Total:         $     143,304
+
+
+#10 - 521 CAP ROCK DR, RICHARDSON (Dallas / Fort Worth), Texas
+────────────────────────────────────────────────────────────────────────────────
+Property ID: REAL-0085
+Auction Date: 2006-10-26
+Platform: Auction.com
+
+PRICING:
+  Auction Price:     $     205,000
+  Estimated ARV:     $     411,520
+  Estimated Repairs: $      30,750
+  Total Investment:  $     266,591
+  Profit Potential:  $     112,007
+
+METRICS:
+  Profit Margin:            27.2%
+  Deal Score:               79.2/100
+  Recommended:                   No
+
+PROPERTY DETAILS:
+  4 bed / 3.0 bath | 2,572 sqft | Built 1990
   Neighborhood Score: 7/10
 
 COST BREAKDOWN:
-  Purchase:      $     276,632
-  Repairs:       $      22,131
-  Closing:       $       8,299
-  Holding:       $      36,377
-  Selling:       $      48,503
+  Purchase:      $     205,000
+  Repairs:       $      30,750
+  Closing:       $       6,150
+  Holding:       $      24,691
+  Selling:       $      32,922
   ────────────────────────────────────────
-  Total:         $     343,438
+  Total:         $     266,591
 
 
-#15 - 2740 Garden Pl, Washougal (Southern Washington / Vancouver), Washington
+#11 - 2624 BROWN DEER TRL, PLANO (Dallas / Fort Worth), Texas
 ────────────────────────────────────────────────────────────────────────────────
-Property ID: PROP-1043
-Auction Date: 2026-02-26
-Platform: Hudson & Marshall
-
-FORECLOSURE CONTEXT:
-  Foreclosing Entity:  Chase Bank
-  Total Debt:          $     614,788
-  Loan Type:           USDA
-  Default Date:        2025-05-17
-  Stage:               Short Sale
+Property ID: REAL-0053
+Auction Date: 2012-08-02
+Platform: Auction.com
 
 PRICING:
-  Auction Price:     $     386,462
-  Estimated ARV:     $     777,950
-  Estimated Repairs: $      30,917
-  Total Investment:  $     475,650
-  Profit Potential:  $     240,064
+  Auction Price:     $     248,599
+  Estimated ARV:     $     470,880
+  Estimated Repairs: $      37,290
+  Total Investment:  $     321,600
+  Profit Potential:  $     111,610
 
 METRICS:
-  Profit Margin:            30.9%
-  Deal Score:               81.2/100
-  Recommended:                  Yes
+  Profit Margin:            23.7%
+  Deal Score:               77.7/100
+  Recommended:                   No
 
 PROPERTY DETAILS:
-  2 bed / 1.0 bath | 3,298 sqft | Built 2013
-  Neighborhood Score: 10/10
-
-COST BREAKDOWN:
-  Purchase:      $     386,462
-  Repairs:       $      30,917
-  Closing:       $      11,594
-  Holding:       $      46,677
-  Selling:       $      62,236
-  ────────────────────────────────────────
-  Total:         $     475,650
-
-
-#16 - 9202 Park Rd, Kelso (Southern Washington / Vancouver), Washington
-────────────────────────────────────────────────────────────────────────────────
-Property ID: PROP-1040
-Auction Date: 2026-03-16
-Platform: Bank Foreclosure
-
-FORECLOSURE CONTEXT:
-  Foreclosing Entity:  Chase Bank
-  Total Debt:          $     259,939
-  Loan Type:           Interest-Only
-  Default Date:        2025-05-17
-  Stage:               Notice of Default
-
-PRICING:
-  Auction Price:     $     220,435
-  Estimated ARV:     $     463,507
-  Estimated Repairs: $      22,043
-  Total Investment:  $     276,902
-  Profit Potential:  $     149,524
-
-METRICS:
-  Profit Margin:            32.3%
-  Deal Score:               80.6/100
-  Recommended:                  Yes
-
-PROPERTY DETAILS:
-  5 bed / 3.5 bath | 1,999 sqft | Built 2015
-  Neighborhood Score: 6/10
-
-COST BREAKDOWN:
-  Purchase:      $     220,435
-  Repairs:       $      22,043
-  Closing:       $       6,613
-  Holding:       $      27,810
-  Selling:       $      37,081
-  ────────────────────────────────────────
-  Total:         $     276,902
-
-
-#17 - 7504 Ridge Ln, Houston (Houston Metro), Texas
-────────────────────────────────────────────────────────────────────────────────
-Property ID: PROP-1011
-Auction Date: 2026-02-26
-Platform: Williams & Williams
-
-FORECLOSURE CONTEXT:
-  Foreclosing Entity:  Bank of America
-  Total Debt:          $     214,046
-  Loan Type:           Jumbo
-  Default Date:        2025-08-15
-  Stage:               Pre-Foreclosure
-
-PRICING:
-  Auction Price:     $     124,631
-  Estimated ARV:     $     299,318
-  Estimated Repairs: $       9,970
-  Total Investment:  $     156,300
-  Profit Potential:  $     119,073
-
-METRICS:
-  Profit Margin:            39.8%
-  Deal Score:               80.4/100
-  Recommended:                  Yes
-
-PROPERTY DETAILS:
-  2 bed / 2.0 bath | 1,875 sqft | Built 2006
-  Neighborhood Score: 5/10
-
-COST BREAKDOWN:
-  Purchase:      $     124,631
-  Repairs:       $       9,970
-  Closing:       $       3,739
-  Holding:       $      17,959
-  Selling:       $      23,945
-  ────────────────────────────────────────
-  Total:         $     156,300
-
-
-#18 - 168 Hill St, Prineville (Central Oregon), Oregon
-────────────────────────────────────────────────────────────────────────────────
-Property ID: PROP-1019
-Auction Date: 2026-03-03
-Platform: Hudson & Marshall
-
-FORECLOSURE CONTEXT:
-  Foreclosing Entity:  PHH Mortgage
-  Total Debt:          $     273,859
-  Loan Type:           FHA
-  Default Date:        2025-04-17
-  Stage:               Notice of Default
-
-PRICING:
-  Auction Price:     $     226,938
-  Estimated ARV:     $     527,590
-  Estimated Repairs: $      22,694
-  Total Investment:  $     288,096
-  Profit Potential:  $     197,287
-
-METRICS:
-  Profit Margin:            37.4%
-  Deal Score:               78.8/100
-  Recommended:                  Yes
-
-PROPERTY DETAILS:
-  3 bed / 1.0 bath | 2,532 sqft | Built 1970
+  4 bed / 3.0 bath | 2,943 sqft | Built 1990
   Neighborhood Score: 8/10
 
 COST BREAKDOWN:
-  Purchase:      $     226,938
-  Repairs:       $      22,694
-  Closing:       $       6,808
-  Holding:       $      31,655
-  Selling:       $      42,207
+  Purchase:      $     248,599
+  Repairs:       $      37,290
+  Closing:       $       7,458
+  Holding:       $      28,253
+  Selling:       $      37,670
   ────────────────────────────────────────
-  Total:         $     288,096
+  Total:         $     321,600
 
 
-#19 - 7945 Willow Pl, Eugene (Eugene / Lane County), Oregon
+#12 - 1218 WOODLAND WAY, RICHARDSON (Dallas / Fort Worth), Texas
 ────────────────────────────────────────────────────────────────────────────────
-Property ID: PROP-1010
-Auction Date: 2026-03-11
+Property ID: REAL-0080
+Auction Date: 2011-11-16
 Platform: Auction.com
 
-FORECLOSURE CONTEXT:
-  Foreclosing Entity:  Capital One
-  Total Debt:          $     615,108
-  Loan Type:           FHA
-  Default Date:        2025-10-14
-  Stage:               Auction Scheduled
-
 PRICING:
-  Auction Price:     $     371,049
-  Estimated ARV:     $     709,179
-  Estimated Repairs: $      29,684
-  Total Investment:  $     454,415
-  Profit Potential:  $     198,030
+  Auction Price:     $     121,851
+  Estimated ARV:     $     266,400
+  Estimated Repairs: $      18,278
+  Total Investment:  $     159,768
+  Profit Potential:  $      85,320
 
 METRICS:
-  Profit Margin:            27.9%
-  Deal Score:               77.9/100
+  Profit Margin:            32.0%
+  Deal Score:               77.5/100
+  Recommended:                  Yes
+
+PROPERTY DETAILS:
+  3 bed / 2.0 bath | 1,665 sqft | Built 1990
+  Neighborhood Score: 7/10
+
+COST BREAKDOWN:
+  Purchase:      $     121,851
+  Repairs:       $      18,278
+  Closing:       $       3,656
+  Holding:       $      15,984
+  Selling:       $      21,312
+  ────────────────────────────────────────
+  Total:         $     159,768
+
+
+#13 - 21080 NE ORNDUFF RD, HILLSBORO (Portland Metro), Oregon
+────────────────────────────────────────────────────────────────────────────────
+Property ID: REAL-0034
+Auction Date: 2005-06-01
+Platform: Auction.com
+
+PRICING:
+  Auction Price:     $     294,500
+  Estimated ARV:     $     532,000
+  Estimated Repairs: $      44,175
+  Total Investment:  $     379,430
+  Profit Potential:  $     110,010
+
+METRICS:
+  Profit Margin:            20.7%
+  Deal Score:               76.7/100
   Recommended:                   No
 
 PROPERTY DETAILS:
-  3 bed / 3.0 bath | 2,988 sqft | Built 2000
+  3 bed / 2.0 bath | 2,660 sqft | Built 1990
+  Neighborhood Score: 9/10
+
+COST BREAKDOWN:
+  Purchase:      $     294,500
+  Repairs:       $      44,175
+  Closing:       $       8,835
+  Holding:       $      31,920
+  Selling:       $      42,560
+  ────────────────────────────────────────
+  Total:         $     379,430
+
+
+#14 - 502 SE 72ND AVE, HILLSBORO (Portland Metro), Oregon
+────────────────────────────────────────────────────────────────────────────────
+Property ID: REAL-0038
+Auction Date: 2005-03-11
+Platform: Auction.com
+
+PRICING:
+  Auction Price:     $     183,000
+  Estimated ARV:     $     324,800
+  Estimated Repairs: $      27,450
+  Total Investment:  $     235,428
+  Profit Potential:  $      63,388
+
+METRICS:
+  Profit Margin:            19.5%
+  Deal Score:               75.5/100
+  Recommended:                   No
+
+PROPERTY DETAILS:
+  3 bed / 3.0 bath | 1,624 sqft | Built 1990
+  Neighborhood Score: 9/10
+
+COST BREAKDOWN:
+  Purchase:      $     183,000
+  Repairs:       $      27,450
+  Closing:       $       5,490
+  Holding:       $      19,488
+  Selling:       $      25,984
+  ────────────────────────────────────────
+  Total:         $     235,428
+
+
+#15 - 1055 NW HARRISON BLVD, CORVALLIS (Salem / Mid-Valley), Oregon
+────────────────────────────────────────────────────────────────────────────────
+Property ID: REAL-0009
+Auction Date: 2011-10-07
+Platform: Auction.com
+
+PRICING:
+  Auction Price:     $     266,400
+  Estimated ARV:     $     507,600
+  Estimated Repairs: $      39,960
+  Total Investment:  $     344,808
+  Profit Potential:  $     122,184
+
+METRICS:
+  Profit Margin:            24.1%
+  Deal Score:               74.1/100
+  Recommended:                   No
+
+PROPERTY DETAILS:
+  4 bed / 2.0 bath | 2,538 sqft | Built 1990
   Neighborhood Score: 6/10
 
 COST BREAKDOWN:
-  Purchase:      $     371,049
-  Repairs:       $      29,684
-  Closing:       $      11,131
-  Holding:       $      42,551
-  Selling:       $      56,734
+  Purchase:      $     266,400
+  Repairs:       $      39,960
+  Closing:       $       7,992
+  Holding:       $      30,456
+  Selling:       $      40,608
   ────────────────────────────────────────
-  Total:         $     454,415
+  Total:         $     344,808
 
 
-#20 - 602 Elm Ave, Camas (Southern Washington / Vancouver), Washington
+#16 - 1424 SEQUOIA DR, PLANO (Dallas / Fort Worth), Texas
 ────────────────────────────────────────────────────────────────────────────────
-Property ID: PROP-1052
-Auction Date: 2026-03-22
+Property ID: REAL-0058
+Auction Date: 2013-07-22
 Platform: Auction.com
 
-FORECLOSURE CONTEXT:
-  Foreclosing Entity:  Flagstar Bank
-  Total Debt:          $     613,334
-  Loan Type:           FHA
-  Default Date:        2024-11-18
-  Stage:               Notice of Default
-
 PRICING:
-  Auction Price:     $     385,495
-  Estimated ARV:     $     750,020
-  Estimated Repairs: $      57,824
-  Total Investment:  $     499,885
-  Profit Potential:  $     190,133
+  Auction Price:     $     141,940
+  Estimated ARV:     $     244,160
+  Estimated Repairs: $      21,291
+  Total Investment:  $     182,139
+  Profit Potential:  $      42,488
 
 METRICS:
-  Profit Margin:            25.4%
-  Deal Score:               77.4/100
+  Profit Margin:            17.4%
+  Deal Score:               71.4/100
   Recommended:                   No
 
 PROPERTY DETAILS:
-  4 bed / 3.0 bath | 3,180 sqft | Built 1967
-  Neighborhood Score: 10/10
+  3 bed / 2.0 bath | 1,526 sqft | Built 1990
+  Neighborhood Score: 8/10
 
 COST BREAKDOWN:
-  Purchase:      $     385,495
-  Repairs:       $      57,824
-  Closing:       $      11,565
-  Holding:       $      45,001
-  Selling:       $      60,002
+  Purchase:      $     141,940
+  Repairs:       $      21,291
+  Closing:       $       4,258
+  Holding:       $      14,650
+  Selling:       $      19,533
   ────────────────────────────────────────
-  Total:         $     499,885
+  Total:         $     182,139
+
+
+#17 - 610 STARDUST LN, RICHARDSON (Dallas / Fort Worth), Texas
+────────────────────────────────────────────────────────────────────────────────
+Property ID: REAL-0079
+Auction Date: 2002-04-10
+Platform: Auction.com
+
+PRICING:
+  Auction Price:     $     119,471
+  Estimated ARV:     $     234,560
+  Estimated Repairs: $      17,921
+  Total Investment:  $     155,049
+  Profit Potential:  $      60,746
+
+METRICS:
+  Profit Margin:            25.9%
+  Deal Score:               70.9/100
+  Recommended:                   No
+
+PROPERTY DETAILS:
+  3 bed / 2.0 bath | 1,466 sqft | Built 1990
+  Neighborhood Score: 7/10
+
+COST BREAKDOWN:
+  Purchase:      $     119,471
+  Repairs:       $      17,921
+  Closing:       $       3,584
+  Holding:       $      14,074
+  Selling:       $      18,765
+  ────────────────────────────────────────
+  Total:         $     155,049
+
+
+#18 - 733 PINEHURST DR, RICHARDSON (Dallas / Fort Worth), Texas
+────────────────────────────────────────────────────────────────────────────────
+Property ID: REAL-0086
+Auction Date: 2000-08-29
+Platform: Auction.com
+
+PRICING:
+  Auction Price:     $     109,720
+  Estimated ARV:     $     198,400
+  Estimated Repairs: $      16,458
+  Total Investment:  $     141,374
+  Profit Potential:  $      41,154
+
+METRICS:
+  Profit Margin:            20.7%
+  Deal Score:               70.7/100
+  Recommended:                   No
+
+PROPERTY DETAILS:
+  3 bed / 2.0 bath | 1,240 sqft | Built 1990
+  Neighborhood Score: 7/10
+
+COST BREAKDOWN:
+  Purchase:      $     109,720
+  Repairs:       $      16,458
+  Closing:       $       3,292
+  Holding:       $      11,904
+  Selling:       $      15,872
+  ────────────────────────────────────────
+  Total:         $     141,374
+
+
+#19 - 6553 SE AUSTIN DR, HILLSBORO (Portland Metro), Oregon
+────────────────────────────────────────────────────────────────────────────────
+Property ID: REAL-0039
+Auction Date: 2005-06-13
+Platform: Auction.com
+
+PRICING:
+  Auction Price:     $     170,000
+  Estimated ARV:     $     284,400
+  Estimated Repairs: $      25,500
+  Total Investment:  $     217,664
+  Profit Potential:  $      43,984
+
+METRICS:
+  Profit Margin:            15.5%
+  Deal Score:               69.5/100
+  Recommended:                   No
+
+PROPERTY DETAILS:
+  3 bed / 3.0 bath | 1,422 sqft | Built 1990
+  Neighborhood Score: 9/10
+
+COST BREAKDOWN:
+  Purchase:      $     170,000
+  Repairs:       $      25,500
+  Closing:       $       5,100
+  Holding:       $      17,064
+  Selling:       $      22,752
+  ────────────────────────────────────────
+  Total:         $     217,664
+
+
+#20 - 2700 LAWNDALE DR, PLANO (Dallas / Fort Worth), Texas
+────────────────────────────────────────────────────────────────────────────────
+Property ID: REAL-0062
+Auction Date: 2007-07-24
+Platform: Auction.com
+
+PRICING:
+  Auction Price:     $     268,875
+  Estimated ARV:     $     462,560
+  Estimated Repairs: $      40,331
+  Total Investment:  $     345,026
+  Profit Potential:  $      80,529
+
+METRICS:
+  Profit Margin:            17.4%
+  Deal Score:               69.4/100
+  Recommended:                   No
+
+PROPERTY DETAILS:
+  5 bed / 3.0 bath | 2,891 sqft | Built 1990
+  Neighborhood Score: 8/10
+
+COST BREAKDOWN:
+  Purchase:      $     268,875
+  Repairs:       $      40,331
+  Closing:       $       8,066
+  Holding:       $      27,754
+  Selling:       $      37,005
+  ────────────────────────────────────────
+  Total:         $     345,026
 
 

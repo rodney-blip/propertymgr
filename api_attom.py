@@ -1,7 +1,9 @@
 """
 ATTOM Data API client for property valuations, details, and foreclosure data.
-Sign up at: https://rapidapi.com/attomdatasolutions/api/attom-property
-Or direct: https://api.developer.attomdata.com (30-day free trial, 500 calls/day)
+
+Uses ATTOM's direct gateway: https://api.gateway.attomdata.com
+Documentation: https://api.developer.attomdata.com
+Free trial: 30 days, 500 calls/day
 
 Endpoints used:
   - /avm/detail              — Automated Valuation Model (ARV estimation)
@@ -21,62 +23,52 @@ from typing import Optional, Dict, List
 import config
 
 
-# RapidAPI base — try both v1 and shorter paths
-RAPIDAPI_BASE = "https://attom-property.p.rapidapi.com/propertyapi/v1.0.0"
-RAPIDAPI_BASE_ALT = "https://attom-property.p.rapidapi.com"
+# ATTOM direct API gateway
+API_BASE = "https://api.gateway.attomdata.com/propertyapi/v1.0.0"
 
-# Rate limiting: track last request time to avoid 429s
+# Rate limiting: be polite to the API
 _last_request_time = 0.0
-_REQUEST_INTERVAL = 2.0  # seconds between requests (RapidAPI free tier)
+_REQUEST_INTERVAL = 0.5  # seconds between requests (direct API allows ~200/min)
 
 
 def _make_request(endpoint: str, params: Dict) -> Optional[Dict]:
-    """Make an authenticated request to ATTOM via RapidAPI.
-
-    Tries the v1 base path first, falls back to the shorter path on 404.
-    """
+    """Make an authenticated GET request to ATTOM's direct gateway."""
     global _last_request_time
 
     api_key = config.API_KEYS.get("attom_rapidapi")
     if not api_key:
         return None
 
-    headers = {
-        "X-RapidAPI-Key": api_key,
-        "X-RapidAPI-Host": "attom-property.p.rapidapi.com",
-        "Accept": "application/json",
-    }
+    # Rate limiting
+    elapsed = time.time() - _last_request_time
+    if elapsed < _REQUEST_INTERVAL:
+        time.sleep(_REQUEST_INTERVAL - elapsed)
+    _last_request_time = time.time()
 
     query = urllib.parse.urlencode(params)
+    url = f"{API_BASE}/{endpoint}?{query}"
 
-    # Try both base paths (API may have migrated)
-    for base in [RAPIDAPI_BASE, RAPIDAPI_BASE_ALT]:
-        # Rate limiting
-        elapsed = time.time() - _last_request_time
-        if elapsed < _REQUEST_INTERVAL:
-            time.sleep(_REQUEST_INTERVAL - elapsed)
-        _last_request_time = time.time()
+    req = urllib.request.Request(url, headers={
+        "apikey": api_key,
+        "Accept": "application/json",
+    })
 
-        url = f"{base}/{endpoint}?{query}"
-        req = urllib.request.Request(url, headers=headers)
-
-        try:
-            with urllib.request.urlopen(req, timeout=15) as resp:
-                return json.loads(resp.read().decode())
-        except urllib.error.HTTPError as e:
-            if e.code == 404 and base == RAPIDAPI_BASE:
-                # Try alternative path
-                continue
-            if e.code == 429:
-                print(f"   ATTOM API rate limited (429) — daily quota may be exhausted")
-            else:
-                print(f"   ATTOM API error {e.code}: {e.reason}")
-            return None
-        except Exception as e:
-            print(f"   ATTOM API error: {e}")
-            return None
-
-    return None
+    try:
+        with urllib.request.urlopen(req, timeout=20) as resp:
+            return json.loads(resp.read().decode())
+    except urllib.error.HTTPError as e:
+        if e.code == 429:
+            print(f"   ATTOM API rate limited (429) — daily quota may be exhausted")
+        elif e.code == 401:
+            print(f"   ATTOM API 401 — API key may be invalid or expired")
+        elif e.code == 404:
+            print(f"   ATTOM API 404 — endpoint '{endpoint}' not found or no results")
+        else:
+            print(f"   ATTOM API error {e.code}: {e.reason}")
+        return None
+    except Exception as e:
+        print(f"   ATTOM API error: {e}")
+        return None
 
 
 def get_avm(address: str, city_state_zip: str) -> Optional[Dict]:
@@ -228,7 +220,6 @@ def search_properties_by_zip(postal_code: str,
             rooms = building.get("rooms", {})
             lot = prop.get("lot", {})
             assessment = prop.get("assessment", {})
-            vintage = prop.get("vintage", {})
 
             properties.append({
                 "address": addr.get("line1", ""),
@@ -239,7 +230,7 @@ def search_properties_by_zip(postal_code: str,
                 "bathrooms": rooms.get("bathstotal") or rooms.get("bathsfull"),
                 "sqft": size.get("universalsize") or size.get("livingsize"),
                 "lot_size": lot.get("lotsize1"),
-                "year_built": vintage.get("lastModified") if not building.get("summary", {}).get("yearbuilt") else building.get("summary", {}).get("yearbuilt"),
+                "year_built": building.get("summary", {}).get("yearbuilt"),
                 "assessed_value": assessment.get("assessed", {}).get("assdttlvalue"),
                 "market_value": assessment.get("market", {}).get("mktttlvalue"),
                 "attom_id": prop.get("identifier", {}).get("attomId"),
@@ -289,7 +280,7 @@ def search_sales_by_zip(postal_code: str,
                 "state": addr.get("countrySubd", ""),
                 "zip_code": addr.get("postal1", postal_code),
                 "sale_amount": amount.get("saleamt"),
-                "sale_date": sale.get("amount", {}).get("salerecdate") or sale.get("salesSearchDate"),
+                "sale_date": amount.get("salerecdate") or sale.get("salesSearchDate"),
                 "sale_type": sale.get("calculation", {}).get("saletype"),
                 "seller_name": sale.get("calculation", {}).get("sellername"),
                 "bedrooms": rooms.get("beds"),
