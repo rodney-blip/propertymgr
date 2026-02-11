@@ -282,11 +282,22 @@ def _build_property_from_raw(raw: Dict, source: str,
         try: lot_size = float(lot_size)
         except: lot_size = 0.20
 
-    # Auction date — use what's in the data, or project forward
-    auction_date = raw.get("auction_date") or raw.get("sale_date")
+    # Auction date — only use future dates; past dates are historical sales, not auctions
+    auction_date = raw.get("auction_date")  # explicit auction date from API
+    today = datetime.now().date()
+
+    if auction_date:
+        try:
+            parsed = datetime.strptime(str(auction_date)[:10], "%Y-%m-%d").date()
+            if parsed < today:
+                auction_date = None  # Past date — discard, will generate a future one
+        except (ValueError, TypeError):
+            auction_date = None
+
     if not auction_date:
-        days_ahead = random.randint(7, 45)
-        auction_date = (datetime.now() + timedelta(days=days_ahead)).strftime("%Y-%m-%d")
+        # Project a realistic future auction date (14-60 days out)
+        days_ahead = random.randint(14, 60)
+        auction_date = (today + timedelta(days=days_ahead)).strftime("%Y-%m-%d")
 
     # Foreclosure context
     foreclosing_entity = raw.get("foreclosing_entity") or raw.get("seller_name") or raw.get("lender_name")
