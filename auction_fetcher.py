@@ -96,58 +96,77 @@ def _pick_zip_sample(max_zips: int = 12) -> List[tuple]:
     Pick a representative sample of (city, state, zip_code, region) tuples
     from REGION_DEFINITIONS so we don't exhaust API quotas scanning every ZIP.
 
+    Guarantees at least one ZIP from EVERY active region, then fills remaining
+    slots with additional ZIPs distributed across regions/states.
+
     Respects config.ACTIVE_REGIONS — if a state has a list of active regions,
     only ZIPs in those regions are included. If set to None or missing, all
-    regions for that state are included.
+    regions for that state are included.  Empty list = state disabled.
     """
     active_regions = getattr(config, "ACTIVE_REGIONS", {})
 
-    all_zips = []
+    # Group ZIPs by (state, region) so we can guarantee coverage
+    by_region: Dict[tuple, List[tuple]] = {}  # (state, region) -> [(city, state, zip, region), ...]
     for state, regions in config.REGION_DEFINITIONS.items():
-        allowed = active_regions.get(state)  # None = all, list = filter
+        allowed = active_regions.get(state)  # None = all, list = filter, [] = disabled
+        if allowed is not None and len(allowed) == 0:
+            continue  # State entirely disabled
         for region, cities in regions.items():
             if allowed is not None and region not in allowed:
                 continue  # Skip inactive regions
             for city, zip_code in cities:
-                all_zips.append((city, state, zip_code, region))
+                entry = (city, state, zip_code, region)
+                by_region.setdefault((state, region), []).append(entry)
+
+    # Shuffle within each region for variety
+    for entries in by_region.values():
+        random.shuffle(entries)
+
+    all_zips = [e for entries in by_region.values() for e in entries]
 
     # If we have fewer zips than the limit, use all of them
     if len(all_zips) <= max_zips:
         return all_zips
 
-    # Otherwise, take a balanced sample across states, interleaved so
-    # scanning alternates between states (prevents one state from filling
-    # the raw-candidate cap before others are scanned).
-    by_state = {}
-    for entry in all_zips:
-        by_state.setdefault(entry[1], []).append(entry)
-
-    per_state = max(1, max_zips // len(by_state))
-    for entries in by_state.values():
-        random.shuffle(entries)
-
-    # Build interleaved list: OR, TX, WA, OR, TX, WA, ...
-    state_iters = {s: iter(entries[:per_state + 2]) for s, entries in by_state.items()}
+    # Step 1: Guarantee at least one ZIP from every active region
     sample = []
-    state_order = list(by_state.keys())
-    while len(sample) < max_zips:
-        added_any = False
-        for s in state_order:
-            if len(sample) >= max_zips:
-                break
-            try:
-                sample.append(next(state_iters[s]))
-                added_any = True
-            except StopIteration:
-                continue
-        if not added_any:
-            break
+    sample_set = set()
+    for key, entries in by_region.items():
+        pick = entries[0]
+        sample.append(pick)
+        sample_set.add(pick)
 
-    # If still short, fill with remaining ZIPs from any state
+    # Step 2: Fill remaining slots, distributed evenly across regions,
+    # interleaved by state for balanced API usage.
     if len(sample) < max_zips:
-        remaining = [e for e in all_zips if e not in sample]
-        random.shuffle(remaining)
-        sample.extend(remaining[: max_zips - len(sample)])
+        # Build iterators for remaining ZIPs in each region (skip the one already picked)
+        region_iters = {}
+        for key, entries in by_region.items():
+            remaining = [e for e in entries if e not in sample_set]
+            if remaining:
+                region_iters[key] = iter(remaining)
+
+        # Interleave by state: cycle through states, then regions within each state
+        state_order = list(dict.fromkeys(k[0] for k in by_region.keys()))  # preserve order, dedup
+        while len(sample) < max_zips:
+            added_any = False
+            for state in state_order:
+                if len(sample) >= max_zips:
+                    break
+                # Find regions for this state that still have ZIPs
+                for key in list(region_iters.keys()):
+                    if key[0] != state:
+                        continue
+                    if len(sample) >= max_zips:
+                        break
+                    try:
+                        pick = next(region_iters[key])
+                        sample.append(pick)
+                        added_any = True
+                    except StopIteration:
+                        del region_iters[key]
+            if not added_any:
+                break
 
     return sample[:max_zips]
 
@@ -473,24 +492,22 @@ def fetch_real_properties(limit: int = 75,
     if progress:
         print(f"\n   Raw candidates found: {len(raw_results)}")
 
-    # --- Build Property objects ---
-    properties = []
-    for idx, (raw, source, city, state, zip_code, region) in enumerate(raw_results):
-        if len(properties) >= limit:
-            break
+    # --- Build ALL valid Property objects (no limit yet) ---
+    active_regions = getattr(config, "ACTIVE_REGIONS", {})
+    enabled_states = {
+        s for s, regions in active_regions.items()
+        if regions is None or len(regions) > 0
+    }
 
+    all_valid_properties = []
+    for idx, (raw, source, city, state, zip_code, region) in enumerate(raw_results):
         prop = _build_property_from_raw(
             raw, source, city, state, zip_code, region, index=idx + 1
         )
         if prop is not None:
             # State/region filter — skip properties outside our active scan
             # (e.g. BatchData sandbox returning random Phoenix, AZ results)
-            active_regions = getattr(config, "ACTIVE_REGIONS", {})
-            prop_allowed = active_regions.get(prop.state)
-            if prop_allowed is not None and prop.state not in [
-                s for s, regions in active_regions.items()
-                if regions is None or len(regions) > 0
-            ]:
+            if prop.state not in enabled_states:
                 continue  # State is disabled (empty list)
 
             # Price filter
@@ -498,7 +515,39 @@ def fetch_real_properties(limit: int = 75,
                 continue
             if prop.auction_price > config.MAX_AUCTION_PRICE:
                 continue
-            properties.append(prop)
+            all_valid_properties.append(prop)
+
+    # --- Apply limit proportionally across regions so every region is represented ---
+    if len(all_valid_properties) <= limit:
+        properties = all_valid_properties
+    else:
+        # Group by region, then take proportional shares
+        by_region: Dict[str, List] = {}
+        for p in all_valid_properties:
+            by_region.setdefault(p.region, []).append(p)
+
+        n_regions = len(by_region)
+        per_region = max(1, limit // n_regions)
+        properties = []
+
+        # First pass: give each region its fair share
+        leftover = []
+        for region_name, region_props in by_region.items():
+            random.shuffle(region_props)
+            properties.extend(region_props[:per_region])
+            if len(region_props) > per_region:
+                leftover.extend(region_props[per_region:])
+
+        # Second pass: fill remaining slots from leftover
+        if len(properties) < limit and leftover:
+            random.shuffle(leftover)
+            properties.extend(leftover[: limit - len(properties)])
+
+        properties = properties[:limit]
+
+    # Re-assign sequential IDs after proportional selection
+    for i, prop in enumerate(properties):
+        prop.id = f"REAL-{i + 1:04d}"
 
     if progress:
         print(f"   Properties after filtering: {len(properties)}")
