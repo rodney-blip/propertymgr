@@ -95,10 +95,19 @@ def _pick_zip_sample(max_zips: int = 12) -> List[tuple]:
     """
     Pick a representative sample of (city, state, zip_code, region) tuples
     from REGION_DEFINITIONS so we don't exhaust API quotas scanning every ZIP.
+
+    Respects config.ACTIVE_REGIONS — if a state has a list of active regions,
+    only ZIPs in those regions are included. If set to None or missing, all
+    regions for that state are included.
     """
+    active_regions = getattr(config, "ACTIVE_REGIONS", {})
+
     all_zips = []
     for state, regions in config.REGION_DEFINITIONS.items():
+        allowed = active_regions.get(state)  # None = all, list = filter
         for region, cities in regions.items():
+            if allowed is not None and region not in allowed:
+                continue  # Skip inactive regions
             for city, zip_code in cities:
                 all_zips.append((city, state, zip_code, region))
 
@@ -106,21 +115,39 @@ def _pick_zip_sample(max_zips: int = 12) -> List[tuple]:
     if len(all_zips) <= max_zips:
         return all_zips
 
-    # Otherwise, take a balanced sample across states
+    # Otherwise, take a balanced sample across states, interleaved so
+    # scanning alternates between states (prevents one state from filling
+    # the raw-candidate cap before others are scanned).
     by_state = {}
     for entry in all_zips:
         by_state.setdefault(entry[1], []).append(entry)
 
-    sample = []
     per_state = max(1, max_zips // len(by_state))
-    for state, entries in by_state.items():
+    for entries in by_state.values():
         random.shuffle(entries)
-        sample.extend(entries[:per_state])
 
-    # Fill remaining slots
-    remaining = [e for e in all_zips if e not in sample]
-    random.shuffle(remaining)
-    sample.extend(remaining[: max_zips - len(sample)])
+    # Build interleaved list: OR, TX, WA, OR, TX, WA, ...
+    state_iters = {s: iter(entries[:per_state + 2]) for s, entries in by_state.items()}
+    sample = []
+    state_order = list(by_state.keys())
+    while len(sample) < max_zips:
+        added_any = False
+        for s in state_order:
+            if len(sample) >= max_zips:
+                break
+            try:
+                sample.append(next(state_iters[s]))
+                added_any = True
+            except StopIteration:
+                continue
+        if not added_any:
+            break
+
+    # If still short, fill with remaining ZIPs from any state
+    if len(sample) < max_zips:
+        remaining = [e for e in all_zips if e not in sample]
+        random.shuffle(remaining)
+        sample.extend(remaining[: max_zips - len(sample)])
 
     return sample[:max_zips]
 
@@ -188,7 +215,7 @@ def _build_property_from_raw(raw: Dict, source: str,
     # Determine region from config lookup, fallback to hint
     region = config.CITY_TO_REGION.get((state, city), region_hint)
 
-    # Pricing — use what we have, mark for enrichment later
+    # Pricing — use what we have, fall back to $/sqft estimation
     auction_price = (
         raw.get("sale_amount")
         or raw.get("default_amount")
@@ -198,8 +225,15 @@ def _build_property_from_raw(raw: Dict, source: str,
     if auction_price:
         auction_price = float(auction_price)
     else:
-        # Can't price this property at all — skip it
-        return None
+        # No dollar value from API — estimate from sqft × price_per_sqft
+        # This happens often with Texas properties (county appraisal data
+        # isn't returned in ATTOM snapshots).  Use a discounted $/sqft
+        # to approximate a distressed/auction price.
+        sqft = raw.get("sqft") or 1800
+        price_per_sqft = config.PRICE_PER_SQFT.get(state, 180)
+        estimated_arv_from_sqft = float(sqft) * price_per_sqft
+        # Auction price ≈ 55-75% of estimated ARV (distressed discount)
+        auction_price = round(estimated_arv_from_sqft * random.uniform(0.55, 0.75), 2)
 
     # Estimated ARV: if we have market_value, use it; otherwise estimate
     estimated_arv = raw.get("market_value") or raw.get("assessed_value")
@@ -370,8 +404,8 @@ def fetch_real_properties(limit: int = 75,
     raw_results: List[tuple] = []  # (raw_dict, source_str, city, state, zip, region)
 
     for i, (city, state, zip_code, region) in enumerate(zip_sample):
-        if len(raw_results) >= limit * 2:
-            break  # We have enough candidates
+        if len(raw_results) >= limit * 3:
+            break  # We have plenty of candidates
 
         if progress:
             print(f"   [{i+1}/{len(zip_sample)}] Scanning {city}, {state} ({zip_code})...")
@@ -447,6 +481,28 @@ def fetch_real_properties(limit: int = 75,
 
     if progress:
         print(f"   Properties after filtering: {len(properties)}")
+
+    # --- Enrich with ATTOM AVM for properties without sale data ---
+    if has_attom and properties:
+        attom = _get_attom()
+        avm_count = 0
+        for prop in properties:
+            # Only enrich if the property had no real sale price (estimated)
+            if prop.description and "estimated" not in prop.description:
+                # Try AVM lookup for better ARV
+                try:
+                    city_state_zip = f"{prop.city}, {prop.state} {prop.zip_code}"
+                    avm = attom.get_avm(prop.address, city_state_zip)
+                    if avm and avm.get("value"):
+                        prop.estimated_arv = float(avm["value"])
+                        prop.calculate_metrics()
+                        avm_count += 1
+                except Exception:
+                    pass
+            if avm_count >= 15:
+                break  # Limit AVM calls to conserve API quota
+        if progress and avm_count > 0:
+            print(f"   Enriched {avm_count} properties with ATTOM AVM valuations")
 
     # --- Enrich with Census neighborhood scores ---
     if enrich_neighborhood and properties:

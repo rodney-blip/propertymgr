@@ -72,6 +72,16 @@ ALERT_LEVELS = {
 # Data generation (for mock data)
 MOCK_DATA_COUNT = 75
 
+# Active region filter: only scan these regions per state.
+# Set to None (or omit the state) to include ALL regions for that state.
+# Set to a list of region names to restrict scanning to just those regions.
+# This is useful for concentrating API calls on your target market.
+ACTIVE_REGIONS = {
+    "Oregon": ["Central Oregon", "Southern Oregon"],  # Bend/Redmond + Medford area only
+    "Texas": ["Greater Austin"],  # Focus on Austin — exclude DFW, Houston, SA, El Paso
+    "Washington": None,   # All Washington regions
+}
+
 # Region definitions: state -> region_name -> list of (city, zip_code) tuples
 REGION_DEFINITIONS = {
     "Oregon": {

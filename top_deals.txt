@@ -2,643 +2,643 @@
 TOP 20 AUCTION PROPERTY DEALS
 ================================================================================
 
-#1 - 3095 SE WILLOW DR, HILLSBORO (Portland Metro), Oregon
+#1 - 778 DALE ST, WOODLAND (Southern Washington / Vancouver), Washington
 ────────────────────────────────────────────────────────────────────────────────
-Property ID: REAL-0028
-Auction Date: 1994-06-10
+Property ID: REAL-0061
+Auction Date: 2012-02-28
 Platform: Auction.com
 
 PRICING:
-  Auction Price:     $     125,300
-  Estimated ARV:     $     410,400
-  Estimated Repairs: $      18,795
-  Total Investment:  $     172,478
-  Profit Potential:  $     205,090
+  Auction Price:     $     134,114
+  Estimated ARV:     $     448,800
+  Estimated Repairs: $      20,117
+  Total Investment:  $     185,183
+  Profit Potential:  $     227,713
 
 METRICS:
-  Profit Margin:            50.0%
+  Profit Margin:            50.7%
   Deal Score:               96.0/100
   Recommended:                  Yes
 
 PROPERTY DETAILS:
-  4 bed / 2.0 bath | 2,052 sqft | Built 1990
+  3 bed / 2.0 bath | 2,040 sqft | Built 1990
   Neighborhood Score: 9/10
 
 COST BREAKDOWN:
-  Purchase:      $     125,300
-  Repairs:       $      18,795
-  Closing:       $       3,759
-  Holding:       $      24,624
-  Selling:       $      32,832
+  Purchase:      $     134,114
+  Repairs:       $      20,117
+  Closing:       $       4,023
+  Holding:       $      26,928
+  Selling:       $      35,904
   ────────────────────────────────────────
-  Total:         $     172,478
+  Total:         $     185,183
 
 
-#2 - 1700 MONTANA TRL, PLANO (Dallas / Fort Worth), Texas
+#2 - 24893 ELK LN, BEND (Central Oregon), Oregon
 ────────────────────────────────────────────────────────────────────────────────
-Property ID: REAL-0060
-Auction Date: 2000-06-05
+Property ID: REAL-0007
+Auction Date: 2009-09-29
 Platform: Auction.com
 
 PRICING:
-  Auction Price:     $     124,260
-  Estimated ARV:     $     338,080
-  Estimated Repairs: $      18,639
-  Total Investment:  $     166,912
-  Profit Potential:  $     144,122
+  Auction Price:     $     169,900
+  Estimated ARV:     $     435,851
+  Estimated Repairs: $      25,485
+  Total Investment:  $     226,633
+  Profit Potential:  $     174,350
 
 METRICS:
-  Profit Margin:            42.6%
-  Deal Score:               94.0/100
+  Profit Margin:            40.0%
+  Deal Score:               92.0/100
   Recommended:                  Yes
 
 PROPERTY DETAILS:
-  3 bed / 2.0 bath | 2,113 sqft | Built 1990
-  Neighborhood Score: 8/10
+  4 bed / 2.0 bath | 1,920 sqft | Built 1990
+  Neighborhood Score: 7/10
 
 COST BREAKDOWN:
-  Purchase:      $     124,260
-  Repairs:       $      18,639
-  Closing:       $       3,728
-  Holding:       $      20,285
-  Selling:       $      27,046
+  Purchase:      $     169,900
+  Repairs:       $      25,485
+  Closing:       $       5,097
+  Holding:       $      26,151
+  Selling:       $      34,868
   ────────────────────────────────────────
-  Total:         $     166,912
+  Total:         $     226,633
 
 
-#3 - 7210 NW COUNCIL TREE LN, CORVALLIS (Salem / Mid-Valley), Oregon
+#3 - 20773 LIBERTY LN, BEND (Central Oregon), Oregon
 ────────────────────────────────────────────────────────────────────────────────
-Property ID: REAL-0005
-Auction Date: 2005-02-17
+Property ID: REAL-0009
+Auction Date: 2005-03-21
 Platform: Auction.com
 
 PRICING:
-  Auction Price:     $     130,000
-  Estimated ARV:     $     369,600
-  Estimated Repairs: $      19,500
-  Total Investment:  $     175,576
-  Profit Potential:  $     164,456
+  Auction Price:     $     176,650
+  Estimated ARV:     $     597,250
+  Estimated Repairs: $      26,498
+  Total Investment:  $     244,282
+  Profit Potential:  $     305,188
 
 METRICS:
-  Profit Margin:            44.5%
+  Profit Margin:            51.1%
+  Deal Score:               92.0/100
+  Recommended:                  Yes
+
+PROPERTY DETAILS:
+  3 bed / 4.0 bath | 1,920 sqft | Built 1990
+  Neighborhood Score: 7/10
+
+COST BREAKDOWN:
+  Purchase:      $     176,650
+  Repairs:       $      26,498
+  Closing:       $       5,300
+  Holding:       $      35,835
+  Selling:       $      47,780
+  ────────────────────────────────────────
+  Total:         $     244,282
+
+
+#4 - 24965 DEER LN, BEND (Central Oregon), Oregon
+────────────────────────────────────────────────────────────────────────────────
+Property ID: REAL-0006
+Auction Date: 2005-12-09
+Platform: Auction.com
+
+PRICING:
+  Auction Price:     $     235,000
+  Estimated ARV:     $     943,019
+  Estimated Repairs: $      35,250
+  Total Investment:  $     333,881
+  Profit Potential:  $     533,696
+
+METRICS:
+  Profit Margin:            56.6%
   Deal Score:               90.0/100
   Recommended:                  Yes
 
 PROPERTY DETAILS:
-  3 bed / 2.0 bath | 1,848 sqft | Built 1990
-  Neighborhood Score: 6/10
-
-COST BREAKDOWN:
-  Purchase:      $     130,000
-  Repairs:       $      19,500
-  Closing:       $       3,900
-  Holding:       $      22,176
-  Selling:       $      29,568
-  ────────────────────────────────────────
-  Total:         $     175,576
-
-
-#4 - 2404 WINTERSTONE DR, PLANO (Dallas / Fort Worth), Texas
-────────────────────────────────────────────────────────────────────────────────
-Property ID: REAL-0066
-Auction Date: 1999-07-02
-Platform: Auction.com
-
-PRICING:
-  Auction Price:     $     123,229
-  Estimated ARV:     $     301,920
-  Estimated Repairs: $      18,484
-  Total Investment:  $     163,525
-  Profit Potential:  $     114,241
-
-METRICS:
-  Profit Margin:            37.8%
-  Deal Score:               86.0/100
-  Recommended:                  Yes
-
-PROPERTY DETAILS:
-  3 bed / 2.0 bath | 1,887 sqft | Built 1990
-  Neighborhood Score: 8/10
-
-COST BREAKDOWN:
-  Purchase:      $     123,229
-  Repairs:       $      18,484
-  Closing:       $       3,697
-  Holding:       $      18,115
-  Selling:       $      24,154
-  ────────────────────────────────────────
-  Total:         $     163,525
-
-
-#5 - 1121 LOMBARDY DR, PLANO (Dallas / Fort Worth), Texas
-────────────────────────────────────────────────────────────────────────────────
-Property ID: REAL-0061
-Auction Date: 2015-12-17
-Platform: Auction.com
-
-PRICING:
-  Auction Price:     $     143,750
-  Estimated ARV:     $     328,160
-  Estimated Repairs: $      21,562
-  Total Investment:  $     189,315
-  Profit Potential:  $     112,593
-
-METRICS:
-  Profit Margin:            34.3%
-  Deal Score:               85.1/100
-  Recommended:                  Yes
-
-PROPERTY DETAILS:
-  3 bed / 2.0 bath | 2,051 sqft | Built 1990
-  Neighborhood Score: 8/10
-
-COST BREAKDOWN:
-  Purchase:      $     143,750
-  Repairs:       $      21,562
-  Closing:       $       4,312
-  Holding:       $      19,690
-  Selling:       $      26,253
-  ────────────────────────────────────────
-  Total:         $     189,315
-
-
-#6 - 1106 SE 65TH AVE, HILLSBORO (Portland Metro), Oregon
-────────────────────────────────────────────────────────────────────────────────
-Property ID: REAL-0035
-Auction Date: 2004-11-26
-Platform: Auction.com
-
-PRICING:
-  Auction Price:     $     134,415
-  Estimated ARV:     $     289,800
-  Estimated Repairs: $      20,162
-  Total Investment:  $     175,998
-  Profit Potential:  $      90,618
-
-METRICS:
-  Profit Margin:            31.3%
-  Deal Score:               84.3/100
-  Recommended:                  Yes
-
-PROPERTY DETAILS:
-  3 bed / 3.0 bath | 1,449 sqft | Built 1990
-  Neighborhood Score: 9/10
-
-COST BREAKDOWN:
-  Purchase:      $     134,415
-  Repairs:       $      20,162
-  Closing:       $       4,032
-  Holding:       $      17,388
-  Selling:       $      23,184
-  ────────────────────────────────────────
-  Total:         $     175,998
-
-
-#7 - 29700 SW BUCKHAVEN RD, HILLSBORO (Portland Metro), Oregon
-────────────────────────────────────────────────────────────────────────────────
-Property ID: REAL-0043
-Auction Date: 2010-05-07
-Platform: Auction.com
-
-PRICING:
-  Auction Price:     $     500,000
-  Estimated ARV:     $   1,079,600
-  Estimated Repairs: $      75,000
-  Total Investment:  $     654,776
-  Profit Potential:  $     338,456
-
-METRICS:
-  Profit Margin:            31.4%
-  Deal Score:               81.3/100
-  Recommended:                  Yes
-
-PROPERTY DETAILS:
-  3 bed / 5.0 bath | 5,398 sqft | Built 1990
-  Neighborhood Score: 9/10
-
-COST BREAKDOWN:
-  Purchase:      $     500,000
-  Repairs:       $      75,000
-  Closing:       $      15,000
-  Holding:       $      64,776
-  Selling:       $      86,368
-  ────────────────────────────────────────
-  Total:         $     654,776
-
-
-#8 - 636 SE 8TH AVE, HILLSBORO (Portland Metro), Oregon
-────────────────────────────────────────────────────────────────────────────────
-Property ID: REAL-0032
-Auction Date: 2005-03-16
-Platform: Auction.com
-
-PRICING:
-  Auction Price:     $     160,000
-  Estimated ARV:     $     331,000
-  Estimated Repairs: $      24,000
-  Total Investment:  $     208,660
-  Profit Potential:  $      95,860
-
-METRICS:
-  Profit Margin:            29.0%
-  Deal Score:               80.0/100
-  Recommended:                   No
-
-PROPERTY DETAILS:
-  3 bed / 1.0 bath | 1,655 sqft | Built 1990
-  Neighborhood Score: 9/10
-
-COST BREAKDOWN:
-  Purchase:      $     160,000
-  Repairs:       $      24,000
-  Closing:       $       4,800
-  Holding:       $      19,860
-  Selling:       $      26,480
-  ────────────────────────────────────────
-  Total:         $     208,660
-
-
-#9 - 1136 SE BASELINE ST, HILLSBORO (Portland Metro), Oregon
-────────────────────────────────────────────────────────────────────────────────
-Property ID: REAL-0036
-Auction Date: 2011-07-27
-Platform: Auction.com
-
-PRICING:
-  Auction Price:     $     109,200
-  Estimated ARV:     $     240,800
-  Estimated Repairs: $      16,380
-  Total Investment:  $     143,304
-  Profit Potential:  $      78,232
-
-METRICS:
-  Profit Margin:            32.5%
-  Deal Score:               79.6/100
-  Recommended:                  Yes
-
-PROPERTY DETAILS:
-  6 bed / 4.0 bath | 1,204 sqft | Built 1990
-  Neighborhood Score: 9/10
-
-COST BREAKDOWN:
-  Purchase:      $     109,200
-  Repairs:       $      16,380
-  Closing:       $       3,276
-  Holding:       $      14,448
-  Selling:       $      19,264
-  ────────────────────────────────────────
-  Total:         $     143,304
-
-
-#10 - 521 CAP ROCK DR, RICHARDSON (Dallas / Fort Worth), Texas
-────────────────────────────────────────────────────────────────────────────────
-Property ID: REAL-0085
-Auction Date: 2006-10-26
-Platform: Auction.com
-
-PRICING:
-  Auction Price:     $     205,000
-  Estimated ARV:     $     411,520
-  Estimated Repairs: $      30,750
-  Total Investment:  $     266,591
-  Profit Potential:  $     112,007
-
-METRICS:
-  Profit Margin:            27.2%
-  Deal Score:               79.2/100
-  Recommended:                   No
-
-PROPERTY DETAILS:
-  4 bed / 3.0 bath | 2,572 sqft | Built 1990
+  2 bed / 3.0 bath | 2,467 sqft | Built 1990
   Neighborhood Score: 7/10
 
 COST BREAKDOWN:
-  Purchase:      $     205,000
-  Repairs:       $      30,750
-  Closing:       $       6,150
-  Holding:       $      24,691
-  Selling:       $      32,922
+  Purchase:      $     235,000
+  Repairs:       $      35,250
+  Closing:       $       7,050
+  Holding:       $      56,581
+  Selling:       $      75,442
   ────────────────────────────────────────
-  Total:         $     266,591
+  Total:         $     333,881
 
 
-#11 - 2624 BROWN DEER TRL, PLANO (Dallas / Fort Worth), Texas
+#5 - 63345 BRODY LN, BEND (Central Oregon), Oregon
 ────────────────────────────────────────────────────────────────────────────────
-Property ID: REAL-0053
-Auction Date: 2012-08-02
+Property ID: REAL-0020
+Auction Date: 2009-08-10
 Platform: Auction.com
 
 PRICING:
-  Auction Price:     $     248,599
-  Estimated ARV:     $     470,880
-  Estimated Repairs: $      37,290
-  Total Investment:  $     321,600
-  Profit Potential:  $     111,610
+  Auction Price:     $     140,000
+  Estimated ARV:     $     416,000
+  Estimated Repairs: $      21,000
+  Total Investment:  $     190,160
+  Profit Potential:  $     192,560
 
 METRICS:
-  Profit Margin:            23.7%
-  Deal Score:               77.7/100
-  Recommended:                   No
-
-PROPERTY DETAILS:
-  4 bed / 3.0 bath | 2,943 sqft | Built 1990
-  Neighborhood Score: 8/10
-
-COST BREAKDOWN:
-  Purchase:      $     248,599
-  Repairs:       $      37,290
-  Closing:       $       7,458
-  Holding:       $      28,253
-  Selling:       $      37,670
-  ────────────────────────────────────────
-  Total:         $     321,600
-
-
-#12 - 1218 WOODLAND WAY, RICHARDSON (Dallas / Fort Worth), Texas
-────────────────────────────────────────────────────────────────────────────────
-Property ID: REAL-0080
-Auction Date: 2011-11-16
-Platform: Auction.com
-
-PRICING:
-  Auction Price:     $     121,851
-  Estimated ARV:     $     266,400
-  Estimated Repairs: $      18,278
-  Total Investment:  $     159,768
-  Profit Potential:  $      85,320
-
-METRICS:
-  Profit Margin:            32.0%
-  Deal Score:               77.5/100
+  Profit Margin:            46.3%
+  Deal Score:               90.0/100
   Recommended:                  Yes
 
 PROPERTY DETAILS:
-  3 bed / 2.0 bath | 1,665 sqft | Built 1990
+  5 bed / 4.0 bath | 2,080 sqft | Built 1990
   Neighborhood Score: 7/10
 
 COST BREAKDOWN:
-  Purchase:      $     121,851
-  Repairs:       $      18,278
-  Closing:       $       3,656
-  Holding:       $      15,984
-  Selling:       $      21,312
+  Purchase:      $     140,000
+  Repairs:       $      21,000
+  Closing:       $       4,200
+  Holding:       $      24,960
+  Selling:       $      33,280
   ────────────────────────────────────────
-  Total:         $     159,768
+  Total:         $     190,160
 
 
-#13 - 21080 NE ORNDUFF RD, HILLSBORO (Portland Metro), Oregon
+#6 - 802 NE 12TH ST # 1, BEND (Central Oregon), Oregon
 ────────────────────────────────────────────────────────────────────────────────
-Property ID: REAL-0034
-Auction Date: 2005-06-01
+Property ID: REAL-0004
+Auction Date: 2014-09-09
 Platform: Auction.com
 
 PRICING:
-  Auction Price:     $     294,500
-  Estimated ARV:     $     532,000
-  Estimated Repairs: $      44,175
-  Total Investment:  $     379,430
-  Profit Potential:  $     110,010
+  Auction Price:     $     204,900
+  Estimated ARV:     $     775,358
+  Estimated Repairs: $      30,735
+  Total Investment:  $     288,303
+  Profit Potential:  $     425,026
 
 METRICS:
-  Profit Margin:            20.7%
-  Deal Score:               76.7/100
-  Recommended:                   No
+  Profit Margin:            54.8%
+  Deal Score:               88.0/100
+  Recommended:                  Yes
 
 PROPERTY DETAILS:
-  3 bed / 2.0 bath | 2,660 sqft | Built 1990
+  2 bed / 2.0 bath | 1,359 sqft | Built 1990
+  Neighborhood Score: 7/10
+
+COST BREAKDOWN:
+  Purchase:      $     204,900
+  Repairs:       $      30,735
+  Closing:       $       6,147
+  Holding:       $      46,521
+  Selling:       $      62,029
+  ────────────────────────────────────────
+  Total:         $     288,303
+
+
+#7 - 2303 SHARON DR, CEDAR PARK (Greater Austin), Texas
+────────────────────────────────────────────────────────────────────────────────
+Property ID: REAL-0026
+Auction Date: 2011-10-19
+Platform: Auction.com
+
+PRICING:
+  Auction Price:     $     175,000
+  Estimated ARV:     $     427,200
+  Estimated Repairs: $      26,250
+  Total Investment:  $     232,132
+  Profit Potential:  $     160,892
+
+METRICS:
+  Profit Margin:            37.7%
+  Deal Score:               87.9/100
+  Recommended:                  Yes
+
+PROPERTY DETAILS:
+  3 bed / 2.0 bath | 2,670 sqft | Built 1990
   Neighborhood Score: 9/10
 
 COST BREAKDOWN:
-  Purchase:      $     294,500
-  Repairs:       $      44,175
-  Closing:       $       8,835
-  Holding:       $      31,920
-  Selling:       $      42,560
+  Purchase:      $     175,000
+  Repairs:       $      26,250
+  Closing:       $       5,250
+  Holding:       $      25,632
+  Selling:       $      34,176
   ────────────────────────────────────────
-  Total:         $     379,430
+  Total:         $     232,132
 
 
-#14 - 502 SE 72ND AVE, HILLSBORO (Portland Metro), Oregon
+#8 - 197 HAWKS VIEW RD, WOODLAND (Southern Washington / Vancouver), Washington
 ────────────────────────────────────────────────────────────────────────────────
-Property ID: REAL-0038
-Auction Date: 2005-03-11
-Platform: Auction.com
-
-PRICING:
-  Auction Price:     $     183,000
-  Estimated ARV:     $     324,800
-  Estimated Repairs: $      27,450
-  Total Investment:  $     235,428
-  Profit Potential:  $      63,388
-
-METRICS:
-  Profit Margin:            19.5%
-  Deal Score:               75.5/100
-  Recommended:                   No
-
-PROPERTY DETAILS:
-  3 bed / 3.0 bath | 1,624 sqft | Built 1990
-  Neighborhood Score: 9/10
-
-COST BREAKDOWN:
-  Purchase:      $     183,000
-  Repairs:       $      27,450
-  Closing:       $       5,490
-  Holding:       $      19,488
-  Selling:       $      25,984
-  ────────────────────────────────────────
-  Total:         $     235,428
-
-
-#15 - 1055 NW HARRISON BLVD, CORVALLIS (Salem / Mid-Valley), Oregon
-────────────────────────────────────────────────────────────────────────────────
-Property ID: REAL-0009
-Auction Date: 2011-10-07
-Platform: Auction.com
-
-PRICING:
-  Auction Price:     $     266,400
-  Estimated ARV:     $     507,600
-  Estimated Repairs: $      39,960
-  Total Investment:  $     344,808
-  Profit Potential:  $     122,184
-
-METRICS:
-  Profit Margin:            24.1%
-  Deal Score:               74.1/100
-  Recommended:                   No
-
-PROPERTY DETAILS:
-  4 bed / 2.0 bath | 2,538 sqft | Built 1990
-  Neighborhood Score: 6/10
-
-COST BREAKDOWN:
-  Purchase:      $     266,400
-  Repairs:       $      39,960
-  Closing:       $       7,992
-  Holding:       $      30,456
-  Selling:       $      40,608
-  ────────────────────────────────────────
-  Total:         $     344,808
-
-
-#16 - 1424 SEQUOIA DR, PLANO (Dallas / Fort Worth), Texas
-────────────────────────────────────────────────────────────────────────────────
-Property ID: REAL-0058
-Auction Date: 2013-07-22
-Platform: Auction.com
-
-PRICING:
-  Auction Price:     $     141,940
-  Estimated ARV:     $     244,160
-  Estimated Repairs: $      21,291
-  Total Investment:  $     182,139
-  Profit Potential:  $      42,488
-
-METRICS:
-  Profit Margin:            17.4%
-  Deal Score:               71.4/100
-  Recommended:                   No
-
-PROPERTY DETAILS:
-  3 bed / 2.0 bath | 1,526 sqft | Built 1990
-  Neighborhood Score: 8/10
-
-COST BREAKDOWN:
-  Purchase:      $     141,940
-  Repairs:       $      21,291
-  Closing:       $       4,258
-  Holding:       $      14,650
-  Selling:       $      19,533
-  ────────────────────────────────────────
-  Total:         $     182,139
-
-
-#17 - 610 STARDUST LN, RICHARDSON (Dallas / Fort Worth), Texas
-────────────────────────────────────────────────────────────────────────────────
-Property ID: REAL-0079
-Auction Date: 2002-04-10
-Platform: Auction.com
-
-PRICING:
-  Auction Price:     $     119,471
-  Estimated ARV:     $     234,560
-  Estimated Repairs: $      17,921
-  Total Investment:  $     155,049
-  Profit Potential:  $      60,746
-
-METRICS:
-  Profit Margin:            25.9%
-  Deal Score:               70.9/100
-  Recommended:                   No
-
-PROPERTY DETAILS:
-  3 bed / 2.0 bath | 1,466 sqft | Built 1990
-  Neighborhood Score: 7/10
-
-COST BREAKDOWN:
-  Purchase:      $     119,471
-  Repairs:       $      17,921
-  Closing:       $       3,584
-  Holding:       $      14,074
-  Selling:       $      18,765
-  ────────────────────────────────────────
-  Total:         $     155,049
-
-
-#18 - 733 PINEHURST DR, RICHARDSON (Dallas / Fort Worth), Texas
-────────────────────────────────────────────────────────────────────────────────
-Property ID: REAL-0086
-Auction Date: 2000-08-29
-Platform: Auction.com
-
-PRICING:
-  Auction Price:     $     109,720
-  Estimated ARV:     $     198,400
-  Estimated Repairs: $      16,458
-  Total Investment:  $     141,374
-  Profit Potential:  $      41,154
-
-METRICS:
-  Profit Margin:            20.7%
-  Deal Score:               70.7/100
-  Recommended:                   No
-
-PROPERTY DETAILS:
-  3 bed / 2.0 bath | 1,240 sqft | Built 1990
-  Neighborhood Score: 7/10
-
-COST BREAKDOWN:
-  Purchase:      $     109,720
-  Repairs:       $      16,458
-  Closing:       $       3,292
-  Holding:       $      11,904
-  Selling:       $      15,872
-  ────────────────────────────────────────
-  Total:         $     141,374
-
-
-#19 - 6553 SE AUSTIN DR, HILLSBORO (Portland Metro), Oregon
-────────────────────────────────────────────────────────────────────────────────
-Property ID: REAL-0039
-Auction Date: 2005-06-13
+Property ID: REAL-0054
+Auction Date: 2005-04-18
 Platform: Auction.com
 
 PRICING:
   Auction Price:     $     170,000
-  Estimated ARV:     $     284,400
+  Estimated ARV:     $     392,040
   Estimated Repairs: $      25,500
-  Total Investment:  $     217,664
-  Profit Potential:  $      43,984
+  Total Investment:  $     224,122
+  Profit Potential:  $     136,554
 
 METRICS:
-  Profit Margin:            15.5%
-  Deal Score:               69.5/100
-  Recommended:                   No
+  Profit Margin:            34.8%
+  Deal Score:               87.2/100
+  Recommended:                  Yes
 
 PROPERTY DETAILS:
-  3 bed / 3.0 bath | 1,422 sqft | Built 1990
+  3 bed / 2.0 bath | 1,782 sqft | Built 1990
   Neighborhood Score: 9/10
 
 COST BREAKDOWN:
   Purchase:      $     170,000
   Repairs:       $      25,500
   Closing:       $       5,100
-  Holding:       $      17,064
-  Selling:       $      22,752
+  Holding:       $      23,522
+  Selling:       $      31,363
   ────────────────────────────────────────
-  Total:         $     217,664
+  Total:         $     224,122
 
 
-#20 - 2700 LAWNDALE DR, PLANO (Dallas / Fort Worth), Texas
+#9 - 1801 ASCOT LN, CEDAR PARK (Greater Austin), Texas
 ────────────────────────────────────────────────────────────────────────────────
-Property ID: REAL-0062
-Auction Date: 2007-07-24
+Property ID: REAL-0042
+Auction Date: 2009-11-20
 Platform: Auction.com
 
 PRICING:
-  Auction Price:     $     268,875
-  Estimated ARV:     $     462,560
-  Estimated Repairs: $      40,331
-  Total Investment:  $     345,026
-  Profit Potential:  $      80,529
+  Auction Price:     $     137,073
+  Estimated ARV:     $     279,200
+  Estimated Repairs: $      20,561
+  Total Investment:  $     178,498
+  Profit Potential:  $      78,366
 
 METRICS:
-  Profit Margin:            17.4%
-  Deal Score:               69.4/100
+  Profit Margin:            28.1%
+  Deal Score:               84.1/100
   Recommended:                   No
 
 PROPERTY DETAILS:
-  5 bed / 3.0 bath | 2,891 sqft | Built 1990
-  Neighborhood Score: 8/10
+  3 bed / 2.0 bath | 1,745 sqft | Built 1990
+  Neighborhood Score: 9/10
 
 COST BREAKDOWN:
-  Purchase:      $     268,875
-  Repairs:       $      40,331
-  Closing:       $       8,066
-  Holding:       $      27,754
-  Selling:       $      37,005
+  Purchase:      $     137,073
+  Repairs:       $      20,561
+  Closing:       $       4,112
+  Holding:       $      16,752
+  Selling:       $      22,336
   ────────────────────────────────────────
-  Total:         $     345,026
+  Total:         $     178,498
+
+
+#10 - 21348 OAKVIEW DR, BEND (Central Oregon), Oregon
+────────────────────────────────────────────────────────────────────────────────
+Property ID: REAL-0008
+Auction Date: 2005-01-10
+Platform: Auction.com
+
+PRICING:
+  Auction Price:     $     244,950
+  Estimated ARV:     $     569,844
+  Estimated Repairs: $      36,742
+  Total Investment:  $     323,232
+  Profit Potential:  $     201,025
+
+METRICS:
+  Profit Margin:            35.3%
+  Deal Score:               83.3/100
+  Recommended:                  Yes
+
+PROPERTY DETAILS:
+  4 bed / 3.0 bath | 2,280 sqft | Built 1990
+  Neighborhood Score: 7/10
+
+COST BREAKDOWN:
+  Purchase:      $     244,950
+  Repairs:       $      36,742
+  Closing:       $       7,348
+  Holding:       $      34,191
+  Selling:       $      45,588
+  ────────────────────────────────────────
+  Total:         $     323,232
+
+
+#11 - 287 MAKI RD, WOODLAND (Southern Washington / Vancouver), Washington
+────────────────────────────────────────────────────────────────────────────────
+Property ID: REAL-0048
+Auction Date: 2005-07-26
+Platform: Auction.com
+
+PRICING:
+  Auction Price:     $     110,796
+  Estimated ARV:     $     321,200
+  Estimated Repairs: $      16,619
+  Total Investment:  $     150,011
+  Profit Potential:  $     145,493
+
+METRICS:
+  Profit Margin:            45.3%
+  Deal Score:               82.0/100
+  Recommended:                  Yes
+
+PROPERTY DETAILS:
+  2 bed / 1.0 bath | 1,460 sqft | Built 1990
+  Neighborhood Score: 9/10
+
+COST BREAKDOWN:
+  Purchase:      $     110,796
+  Repairs:       $      16,619
+  Closing:       $       3,324
+  Holding:       $      19,272
+  Selling:       $      25,696
+  ────────────────────────────────────────
+  Total:         $     150,011
+
+
+#12 - 163 LAHTI RD, WOODLAND (Southern Washington / Vancouver), Washington
+────────────────────────────────────────────────────────────────────────────────
+Property ID: REAL-0055
+Auction Date: 2004-10-29
+Platform: Auction.com
+
+PRICING:
+  Auction Price:     $     155,000
+  Estimated ARV:     $     331,320
+  Estimated Repairs: $      23,250
+  Total Investment:  $     202,779
+  Profit Potential:  $     102,035
+
+METRICS:
+  Profit Margin:            30.8%
+  Deal Score:               81.2/100
+  Recommended:                  Yes
+
+PROPERTY DETAILS:
+  3 bed / 1.0 bath | 1,506 sqft | Built 1990
+  Neighborhood Score: 9/10
+
+COST BREAKDOWN:
+  Purchase:      $     155,000
+  Repairs:       $      23,250
+  Closing:       $       4,650
+  Holding:       $      19,879
+  Selling:       $      26,506
+  ────────────────────────────────────────
+  Total:         $     202,779
+
+
+#13 - 1106 CEDAR HILLS BLVD, CEDAR PARK (Greater Austin), Texas
+────────────────────────────────────────────────────────────────────────────────
+Property ID: REAL-0033
+Auction Date: 2005-06-13
+Platform: Auction.com
+
+PRICING:
+  Auction Price:     $     107,500
+  Estimated ARV:     $     215,200
+  Estimated Repairs: $      16,125
+  Total Investment:  $     139,762
+  Profit Potential:  $      58,222
+
+METRICS:
+  Profit Margin:            27.1%
+  Deal Score:               81.1/100
+  Recommended:                   No
+
+PROPERTY DETAILS:
+  3 bed / 2.0 bath | 1,345 sqft | Built 1990
+  Neighborhood Score: 9/10
+
+COST BREAKDOWN:
+  Purchase:      $     107,500
+  Repairs:       $      16,125
+  Closing:       $       3,225
+  Holding:       $      12,912
+  Selling:       $      17,216
+  ────────────────────────────────────────
+  Total:         $     139,762
+
+
+#14 - 2415 NE LIBBY PL, BEND (Central Oregon), Oregon
+────────────────────────────────────────────────────────────────────────────────
+Property ID: REAL-0015
+Auction Date: 2014-03-21
+Platform: Auction.com
+
+PRICING:
+  Auction Price:     $     230,000
+  Estimated ARV:     $     503,250
+  Estimated Repairs: $      34,500
+  Total Investment:  $     301,595
+  Profit Potential:  $     161,395
+
+METRICS:
+  Profit Margin:            32.1%
+  Deal Score:               80.5/100
+  Recommended:                  Yes
+
+PROPERTY DETAILS:
+  3 bed / 2.0 bath | 1,406 sqft | Built 1990
+  Neighborhood Score: 7/10
+
+COST BREAKDOWN:
+  Purchase:      $     230,000
+  Repairs:       $      34,500
+  Closing:       $       6,900
+  Holding:       $      30,195
+  Selling:       $      40,260
+  ────────────────────────────────────────
+  Total:         $     301,595
+
+
+#15 - 219 N PEACH ST, MEDFORD (Southern Oregon), Oregon
+────────────────────────────────────────────────────────────────────────────────
+Property ID: REAL-0075
+Auction Date: 2017-04-21
+Platform: Auction.com
+
+PRICING:
+  Auction Price:     $     175,000
+  Estimated ARV:     $     364,800
+  Estimated Repairs: $      26,250
+  Total Investment:  $     228,388
+  Profit Potential:  $     107,228
+
+METRICS:
+  Profit Margin:            29.4%
+  Deal Score:               77.4/100
+  Recommended:                   No
+
+PROPERTY DETAILS:
+  2 bed / 2.0 bath | 1,824 sqft | Built 1990
+  Neighborhood Score: 6/10
+
+COST BREAKDOWN:
+  Purchase:      $     175,000
+  Repairs:       $      26,250
+  Closing:       $       5,250
+  Holding:       $      21,888
+  Selling:       $      29,184
+  ────────────────────────────────────────
+  Total:         $     228,388
+
+
+#16 - 64846 CASA CT, BEND (Central Oregon), Oregon
+────────────────────────────────────────────────────────────────────────────────
+Property ID: REAL-0011
+Auction Date: 2005-03-28
+Platform: Auction.com
+
+PRICING:
+  Auction Price:     $     479,900
+  Estimated ARV:     $     963,572
+  Estimated Repairs: $      71,985
+  Total Investment:  $     624,096
+  Profit Potential:  $     262,390
+
+METRICS:
+  Profit Margin:            27.2%
+  Deal Score:               77.2/100
+  Recommended:                   No
+
+PROPERTY DETAILS:
+  4 bed / 3.0 bath | 3,053 sqft | Built 1990
+  Neighborhood Score: 7/10
+
+COST BREAKDOWN:
+  Purchase:      $     479,900
+  Repairs:       $      71,985
+  Closing:       $      14,397
+  Holding:       $      57,814
+  Selling:       $      77,086
+  ────────────────────────────────────────
+  Total:         $     624,096
+
+
+#17 - 386 MAPLE ST, WOODLAND (Southern Washington / Vancouver), Washington
+────────────────────────────────────────────────────────────────────────────────
+Property ID: REAL-0057
+Auction Date: 2005-04-26
+Platform: Auction.com
+
+PRICING:
+  Auction Price:     $     170,500
+  Estimated ARV:     $     320,320
+  Estimated Repairs: $      25,575
+  Total Investment:  $     220,409
+  Profit Potential:  $      74,285
+
+METRICS:
+  Profit Margin:            23.2%
+  Deal Score:               77.2/100
+  Recommended:                   No
+
+PROPERTY DETAILS:
+  3 bed / 2.0 bath | 1,456 sqft | Built 1990
+  Neighborhood Score: 9/10
+
+COST BREAKDOWN:
+  Purchase:      $     170,500
+  Repairs:       $      25,575
+  Closing:       $       5,115
+  Holding:       $      19,219
+  Selling:       $      25,626
+  ────────────────────────────────────────
+  Total:         $     220,409
+
+
+#18 - 506 COLUMBINE AVE, CEDAR PARK (Greater Austin), Texas
+────────────────────────────────────────────────────────────────────────────────
+Property ID: REAL-0031
+Auction Date: 2007-02-12
+Platform: Auction.com
+
+PRICING:
+  Auction Price:     $     123,000
+  Estimated ARV:     $     224,320
+  Estimated Repairs: $      18,450
+  Total Investment:  $     158,599
+  Profit Potential:  $      47,775
+
+METRICS:
+  Profit Margin:            21.3%
+  Deal Score:               75.3/100
+  Recommended:                   No
+
+PROPERTY DETAILS:
+  3 bed / 2.0 bath | 1,402 sqft | Built 1990
+  Neighborhood Score: 9/10
+
+COST BREAKDOWN:
+  Purchase:      $     123,000
+  Repairs:       $      18,450
+  Closing:       $       3,690
+  Holding:       $      13,459
+  Selling:       $      17,946
+  ────────────────────────────────────────
+  Total:         $     158,599
+
+
+#19 - 1600 PAPER MOON DR, CEDAR PARK (Greater Austin), Texas
+────────────────────────────────────────────────────────────────────────────────
+Property ID: REAL-0044
+Auction Date: 2026-03-06
+Platform: Auction.com
+
+PRICING:
+  Auction Price:     $     221,631
+  Estimated ARV:     $     392,000
+  Estimated Repairs: $      33,245
+  Total Investment:  $     285,044
+  Profit Potential:  $      75,596
+
+METRICS:
+  Profit Margin:            19.3%
+  Deal Score:               75.3/100
+  Recommended:                   No
+
+PROPERTY DETAILS:
+  3 bed / 2.0 bath | 2,450 sqft | Built 1990
+  Neighborhood Score: 9/10
+
+COST BREAKDOWN:
+  Purchase:      $     221,631
+  Repairs:       $      33,245
+  Closing:       $       6,649
+  Holding:       $      23,520
+  Selling:       $      31,360
+  ────────────────────────────────────────
+  Total:         $     285,044
+
+
+#20 - 285 FIR AVE, WOODLAND (Southern Washington / Vancouver), Washington
+────────────────────────────────────────────────────────────────────────────────
+Property ID: REAL-0066
+Auction Date: 2017-05-24
+Platform: Auction.com
+
+PRICING:
+  Auction Price:     $     275,000
+  Estimated ARV:     $     477,840
+  Estimated Repairs: $      41,250
+  Total Investment:  $     353,170
+  Profit Potential:  $      86,442
+
+METRICS:
+  Profit Margin:            18.1%
+  Deal Score:               74.1/100
+  Recommended:                   No
+
+PROPERTY DETAILS:
+  4 bed / 3.0 bath | 2,172 sqft | Built 1990
+  Neighborhood Score: 9/10
+
+COST BREAKDOWN:
+  Purchase:      $     275,000
+  Repairs:       $      41,250
+  Closing:       $       8,250
+  Holding:       $      28,670
+  Selling:       $      38,227
+  ────────────────────────────────────────
+  Total:         $     353,170
 
 
