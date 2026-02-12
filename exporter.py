@@ -111,8 +111,7 @@ class DataExporter:
                 
                 f.write(f"PRICING:\n")
                 f.write(f"  Auction Price:     ${prop.auction_price:>12,.0f}\n")
-                f.write(f"  Estimated ARV:     ${prop.estimated_arv:>12,.0f}\n")
-                f.write(f"  Estimated Repairs: ${prop.estimated_repairs:>12,.0f}\n")
+                f.write(f"  Estimated Value:   ${prop.estimated_arv:>12,.0f}\n")
                 f.write(f"  Total Investment:  ${prop.total_investment:>12,.0f}\n")
                 f.write(f"  Profit Potential:  ${prop.profit_potential:>12,.0f}\n\n")
                 
@@ -129,7 +128,6 @@ class DataExporter:
                 cost_breakdown = prop.get_cost_breakdown()
                 f.write(f"COST BREAKDOWN:\n")
                 f.write(f"  Purchase:      ${cost_breakdown['auction_price']:>12,.0f}\n")
-                f.write(f"  Repairs:       ${cost_breakdown['repairs']:>12,.0f}\n")
                 f.write(f"  Closing:       ${cost_breakdown['closing_costs']:>12,.0f}\n")
                 f.write(f"  Holding:       ${cost_breakdown['holding_costs']:>12,.0f}\n")
                 f.write(f"  Selling:       ${cost_breakdown['selling_costs']:>12,.0f}\n")

@@ -32,7 +32,7 @@ class PropertyAnalyzer:
                     'states': ['Oregon', 'Texas'],
                     'min_price': 100000,
                     'max_price': 1200000,
-                    'max_repairs': 80000,
+                    'max_repairs': 999999999,  # no repair filter
                     'property_types': ['Single Family']
                 }
         """
@@ -42,7 +42,7 @@ class PropertyAnalyzer:
             'regions': None,  # None means all regions
             'min_price': config.MIN_AUCTION_PRICE,
             'max_price': config.MAX_AUCTION_PRICE,
-            'max_repairs': config.MAX_REPAIR_COST,
+            'max_repairs': config.MAX_REPAIR_COST,  # effectively disabled
             'property_types': config.ALLOWED_PROPERTY_TYPES
         }
         
@@ -152,7 +152,6 @@ class PropertyAnalyzer:
             **state_counts,
             "avg_auction_price": statistics.mean([p.auction_price for p in properties]),
             "median_auction_price": statistics.median([p.auction_price for p in properties]),
-            "avg_repairs": statistics.mean([p.estimated_repairs for p in properties]),
             "avg_arv": statistics.mean([p.estimated_arv for p in properties]),
             "avg_sqft": statistics.mean([p.sqft for p in properties]),
             "deals_over_40_percent": len([p for p in properties if p.profit_margin >= 40]),
@@ -273,9 +272,8 @@ class PropertyAnalyzer:
         for i, prop in enumerate(top_deals, 1):
             print(f"{i}. {prop.address}, {prop.city}, {prop.state}")
             print(f"   Auction Price: ${prop.auction_price:,.0f} | "
-                  f"ARV: ${prop.estimated_arv:,.0f}")
-            print(f"   Repairs: ${prop.estimated_repairs:,.0f} | "
-                  f"Profit: ${prop.profit_potential:,.0f}")
+                  f"Est. Value: ${prop.estimated_arv:,.0f}")
+            print(f"   Profit: ${prop.profit_potential:,.0f}")
             print(f"   Profit Margin: {prop.profit_margin:.1f}% | "
                   f"Score: {prop.deal_score:.1f}/100")
             print()

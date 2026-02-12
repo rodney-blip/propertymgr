@@ -332,16 +332,9 @@ def _build_property_from_raw(raw: Dict, source: str,
             year_built = int(year_built)
         except ValueError:
             year_built = 1990
-    age = datetime.now().year - year_built
-    if age > 40:
-        repair_pct = 0.20
-    elif age > 25:
-        repair_pct = 0.15
-    elif age > 10:
-        repair_pct = 0.10
-    else:
-        repair_pct = 0.05
-    estimated_repairs = auction_price * repair_pct
+    # Repairs removed — unknowable without physical inspection.
+    # Set to 0; users budget repairs separately after their own walkthrough.
+    estimated_repairs = 0.0
 
     # Property details
     bedrooms = raw.get("bedrooms") or 3

@@ -85,48 +85,57 @@ class Property:
     auction_date_is_past: bool = False            # True if auction already occurred
     
     def calculate_metrics(self) -> None:
-        """Calculate all investment metrics and scoring"""
-        
+        """Calculate all investment metrics and scoring.
+
+        Simplified formula (no repair estimates — those are unknowable
+        without a physical inspection):
+          Total investment = auction_price + closing(3%) + holding(ARV×1%×6mo)
+          Profit = ARV − total_investment − selling(ARV×8%)
+          Max bid = ARV × 0.70 × 0.91 (70% rule with 91% safety factor)
+        """
+
         # Cost breakdown
         closing_costs = self.auction_price * config.CLOSING_COST_PERCENT
-        holding_costs = (self.estimated_arv * 
-                        config.HOLDING_COST_PERCENT_PER_MONTH * 
+        holding_costs = (self.estimated_arv *
+                        config.HOLDING_COST_PERCENT_PER_MONTH *
                         config.HOLDING_MONTHS)
         selling_costs = self.estimated_arv * config.SELLING_COST_PERCENT
-        
-        # Total investment
-        self.total_investment = (self.auction_price + 
-                                self.estimated_repairs + 
-                                closing_costs + 
+
+        # Total investment (no repairs — unknowable without inspection)
+        self.total_investment = (self.auction_price +
+                                closing_costs +
                                 holding_costs)
-        
+
         # Profit calculation
         self.profit_potential = self.estimated_arv - self.total_investment - selling_costs
         self.profit_margin = ((self.profit_potential / self.estimated_arv) * 100
                              if self.estimated_arv > 0 else 0)
 
         # Max bid price — 70% rule at 91% safety margin
-        # Step 1: 70% rule base = ARV × 0.70 − Repairs
-        # Step 2: Apply 91% safety factor for bidding cushion
-        seventy_pct_base = self.estimated_arv * 0.70 - self.estimated_repairs
-        self.max_bid_price = round(max(0, seventy_pct_base * 0.91), 2)
+        # ARV × 0.70 × 0.91 (no repair deduction — account for repairs in your own due diligence)
+        self.max_bid_price = round(max(0, self.estimated_arv * 0.70 * 0.91), 2)
 
         # Deal scoring
         self.deal_score = self._calculate_deal_score()
-        
+
         # Recommendation
         self.recommended = (
             self.profit_margin >= config.MIN_PROFIT_MARGIN and
-            self.estimated_repairs <= config.MAX_REPAIR_COST and
             self.deal_score >= config.MIN_DEAL_SCORE
         )
     
     def _calculate_deal_score(self) -> float:
-        """Calculate deal quality score (0-100)"""
+        """Calculate deal quality score (0-100).
+
+        Weights (must sum to 100):
+          - Profit margin: 50 pts  (was 40; absorbed repair_efficiency)
+          - Neighborhood:  25 pts  (was 20)
+          - Property chars: 25 pts (was 20)
+        """
         score = 0
         t = config.SCORING_THRESHOLDS
 
-        # 1. Profit Margin Score (40 points max)
+        # 1. Profit Margin Score (50 points max)
         margin_weight = config.SCORE_WEIGHTS["profit_margin"]
         if self.profit_margin >= t["margin_excellent"]:
             score += margin_weight
@@ -135,21 +144,11 @@ class Property:
         else:
             score += self.profit_margin * (margin_weight / t["margin_excellent"])
 
-        # 2. Repair Efficiency Score (20 points max)
-        repair_weight = config.SCORE_WEIGHTS["repair_efficiency"]
-        repair_ratio = self.estimated_repairs / self.auction_price if self.auction_price > 0 else 1
-        if repair_ratio <= t["repair_ratio_excellent"]:
-            score += repair_weight
-        elif repair_ratio <= t["repair_ratio_good"]:
-            score += repair_weight * 0.75
-        else:
-            score += max(0, repair_weight * 0.5 - (repair_ratio - t["repair_ratio_good"]) * 50)
-
-        # 3. Neighborhood Score (20 points max)
+        # 2. Neighborhood Score (25 points max)
         neighborhood_weight = config.SCORE_WEIGHTS["neighborhood"]
         score += (self.neighborhood_score / 10) * neighborhood_weight
 
-        # 4. Property Characteristics Score (20 points max)
+        # 3. Property Characteristics Score (25 points max)
         char_weight = config.SCORE_WEIGHTS["property_characteristics"]
         char_score = 0
 
@@ -202,10 +201,9 @@ class Property:
         """Get detailed cost breakdown"""
         return {
             "auction_price": self.auction_price,
-            "repairs": self.estimated_repairs,
             "closing_costs": self.auction_price * config.CLOSING_COST_PERCENT,
-            "holding_costs": (self.estimated_arv * 
-                            config.HOLDING_COST_PERCENT_PER_MONTH * 
+            "holding_costs": (self.estimated_arv *
+                            config.HOLDING_COST_PERCENT_PER_MONTH *
                             config.HOLDING_MONTHS),
             "selling_costs": self.estimated_arv * config.SELLING_COST_PERCENT,
             "total_investment": self.total_investment

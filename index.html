@@ -1177,14 +1177,14 @@
             <div class="disclaimer-icon">&#x2705;</div>
             <div class="disclaimer-text">
                 <strong>Real MLS Data from Redfin.</strong>
-                These properties are actual MLS-listed foreclosures and bank-owned listings scraped from Redfin. Addresses, prices, and property details are real. Click "View on Redfin" for the full listing. ARV and repair estimates are still modeled.
+                These properties are actual MLS-listed foreclosures and bank-owned listings scraped from Redfin. Addresses, prices, and property details are real. Click "View on Redfin" for the full listing. Estimated values and profit margins are modeled.
             </div>
         </div>
         <div class="data-disclaimer" id="sheriffDisclaimer" style="display:none; border-color:#e74c3c; background: rgba(231,76,60,0.08);">
             <div class="disclaimer-icon">&#x1F3DB;&#xFE0F;</div>
             <div class="disclaimer-text">
                 <strong>Real Sheriff's Sale Auctions.</strong>
-                These are judicial foreclosures scheduled for courthouse-step auctions, scraped from <a href="https://oregonsheriffssales.org" target="_blank" style="color:#e74c3c;">oregonsheriffssales.org</a>. Sale dates, addresses, and case parties are real public records. Notice of Sale PDFs contain judgment amounts. ARV and repair estimates are modeled.
+                These are judicial foreclosures scheduled for courthouse-step auctions, scraped from <a href="https://oregonsheriffssales.org" target="_blank" style="color:#e74c3c;">oregonsheriffssales.org</a>. Sale dates, addresses, and case parties are real public records. Notice of Sale PDFs contain judgment amounts. Estimated values and profit margins are modeled.
             </div>
         </div>
         <div class="data-disclaimer" id="auctioncomDisclaimer" style="display:none; border-color:#3498db; background: rgba(52,152,219,0.08);">
@@ -1193,7 +1193,7 @@
                 <strong>Real Auction.com Listings.</strong>
                 These are real auction listings from <a href="https://www.auction.com" target="_blank" style="color:#3498db;">Auction.com</a> (fetched via Apify).
                 <strong>Real data:</strong> address, opening bid, auction date, beds/baths/sqft, est. resale value, occupancy.
-                <strong>Estimated:</strong> repairs (age-based formula), profit margins, max bid, deal score.
+                <strong>Estimated:</strong> profit margins, max bid, deal score.
                 Grayed-out "AUCTION ENDED" cards had past auction dates. Click "View on Auction.com" for the full listing.
             </div>
         </div>
@@ -1222,25 +1222,21 @@
                         <p style="margin-top: 8px;">Upgrading to ATTOM's paid tier ($100-250/mo) or a production BatchData key unlocks real foreclosure filings, mortgage amounts, and seller data.</p>
                     </div>
                     <div class="method-block">
-                        <h4>ARV (After-Repair Value)</h4>
-                        <p>Sourced from ATTOM's <strong>AVM (Automated Valuation Model)</strong> when available. If the API returns an assessed or market value, we apply a 1.1x markup to approximate post-repair ARV. When no API value exists, ARV is estimated from <strong>$/sq ft for the state</strong> (e.g. OR&nbsp;$200, TX&nbsp;$160, WA&nbsp;$230) multiplied by the property's living area.</p>
+                        <h4>Estimated Value</h4>
+                        <p>For Auction.com listings, sourced from Auction.com's own <strong>Est. Resale Value</strong>. For other sources, estimated from <strong>$/sq ft for the state</strong> (e.g. OR&nbsp;$200, TX&nbsp;$160) multiplied by the property's living area. Future: Zillow Zestimate integration.</p>
                     </div>
                     <div class="method-block">
-                        <h4>Estimated Repairs</h4>
-                        <p>Calculated as a <strong>percentage of last sale price</strong> based on building age: 20% for homes 40+ yrs old, 15% for 25-40 yrs, 10% for 10-25 yrs, and 5% for newer builds. This is a conservative desk estimate &mdash; always get a contractor walkthrough before committing.</p>
-                    </div>
-                    <div class="method-block">
-                        <h4>Max Bid Price (91% Rule)</h4>
+                        <h4>Max Bid Price (70% Rule)</h4>
                         <p>Based on the <strong>70% rule</strong> with a 91% safety cushion:<br>
-                        <code>Step 1: 70% Base = ARV &times; 0.70 &minus; Repairs</code><br>
-                        <code>Step 2: Max Bid = 70% Base &times; 0.91</code><br>
-                        This gives you a ~9% bidding cushion below the standard 70% rule. If the listed price is <strong style="color:var(--profit-green, #27ae60);">at or below</strong> the max bid, the deal has room; if it's <strong style="color:#e74c3c;">above</strong>, you'd be overpaying relative to the rule.</p>
+                        <code>Max Bid = Est. Value &times; 0.70 &times; 0.91</code><br>
+                        This gives you a ~36% discount from estimated value. Budget for your own repair estimates on top of this. If the listed price is <strong style="color:var(--profit-green, #27ae60);">at or below</strong> the max bid, the deal has room; if it's <strong style="color:#e74c3c;">above</strong>, you'd be overpaying relative to the rule.</p>
                     </div>
                     <div class="method-block">
                         <h4>Profit Formula</h4>
-                        <p><code>Total Investment = Purchase Price + Repairs + Closing (3%) + Holding (ARV &times; 1% &times; 6 mo)</code><br>
-                        <code>Profit = ARV &minus; Total Investment &minus; Selling Costs (ARV &times; 8%)</code><br>
-                        Recommended thresholds: margin &ge; 30%, repairs &le; $80k, deal score &ge; 60.</p>
+                        <p><code>Total Investment = Purchase Price + Closing (3%) + Holding (Est. Value &times; 1% &times; 6 mo)</code><br>
+                        <code>Profit = Est. Value &minus; Total Investment &minus; Selling Costs (Est. Value &times; 8%)</code><br>
+                        <em>Note: Repairs are NOT included in this estimate &mdash; budget separately after inspection.</em><br>
+                        Recommended thresholds: margin &ge; 30%, deal score &ge; 60.</p>
                     </div>
                 </div>
             </div>
@@ -1724,7 +1720,6 @@
                 { label: 'City, State', fn: function(p) { return p.city + ', ' + p.state; } },
                 { label: 'Auction Price', fn: function(p) { return '$' + p.auction_price.toLocaleString(); }, compare: 'low' },
                 { label: 'Est. ARV', fn: function(p) { return '$' + p.estimated_arv.toLocaleString(); }, compare: 'high' },
-                { label: 'Est. Repairs', fn: function(p) { return '$' + p.estimated_repairs.toLocaleString(); }, compare: 'low' },
                 { label: 'Profit', fn: function(p) { return '$' + p.profit_potential.toLocaleString(); }, compare: 'high' },
                 { label: 'Profit Margin', fn: function(p) { return p.profit_margin.toFixed(1) + '%'; }, compare: 'high', rawFn: function(p) { return p.profit_margin; } },
                 { label: 'Deal Score', fn: function(p) { return p.deal_score.toFixed(1); }, compare: 'high', rawFn: function(p) { return p.deal_score; } },
@@ -1879,7 +1874,7 @@
 
             var headers = [
                 'ID', 'Address', 'City', 'State', 'Zip', 'Region',
-                'Auction Price', 'Est. ARV', 'Est. Repairs',
+                'Auction Price', 'Est. Value',
                 'Profit Potential', 'Profit Margin', 'Deal Score',
                 'Bedrooms', 'Bathrooms', 'Sqft', 'Year Built',
                 'Neighborhood Score', 'Auction Date', 'Platform',
@@ -1911,7 +1906,6 @@
                     csvEscape(p.region),
                     p.auction_price,
                     p.estimated_arv,
-                    p.estimated_repairs,
                     p.profit_potential,
                     p.profit_margin.toFixed(1),
                     p.deal_score.toFixed(1),
@@ -2087,7 +2081,7 @@
                 items.push('<div class="detail-item">\u2696\uFE0F <strong>Type:</strong> Foreclosure Auction</div>');
             }
             // Disclaimer about estimated fields
-            items.push('<div class="detail-item" style="opacity:0.6;font-size:0.85em;width:100%;margin-top:4px;">\u26A0\uFE0F Repairs, profit, and max bid are <em>estimated</em> — verify with inspection</div>');
+            items.push('<div class="detail-item" style="opacity:0.6;font-size:0.85em;width:100%;margin-top:4px;">\u26A0\uFE0F Profit and max bid are <em>estimated</em> — budget repairs separately after inspection</div>');
             if (items.length === 0) return '';
             return '<div class="property-details" style="margin-top:10px;padding-top:10px;border-top:1px solid var(--divider);background:rgba(52,152,219,0.05);border-radius:6px;padding:8px;">'
                 + items.join('') + '</div>';
@@ -2254,8 +2248,7 @@
                 // For real data, label which metrics are from the source vs estimated
                 var estTag = isRealData ? ' <span style="opacity:0.5;font-size:0.8em;">(est.)</span>' : '';
                 var priceLabel = isAuctionCom ? 'Opening Bid' : isSheriff ? 'Est. Value' : isRedfin ? 'Listing Price' : 'Auction Price';
-                var arvLabel = (isAuctionCom && prop.estimated_arv) ? 'Est. Resale (Auction.com)' : 'Est. ARV';
-                var repairLabel = 'Est. Repairs' + (isRealData ? ' <span style="opacity:0.5;font-size:0.8em;">(formula)</span>' : '');
+                var arvLabel = (isAuctionCom && prop.estimated_arv) ? 'Est. Resale (Auction.com)' : 'Est. Value';
 
                 // Image thumbnail for Auction.com
                 var imageHtml = '';
@@ -2283,7 +2276,6 @@
                     + '<div class="property-metrics">'
                     + '<div class="metric"><div class="metric-label">' + priceLabel + '</div><div class="metric-value">$' + prop.auction_price.toLocaleString() + '</div></div>'
                     + '<div class="metric"><div class="metric-label">' + arvLabel + '</div><div class="metric-value">$' + prop.estimated_arv.toLocaleString() + '</div></div>'
-                    + '<div class="metric"><div class="metric-label">' + repairLabel + '</div><div class="metric-value" style="' + (isRealData ? 'opacity:0.6;' : '') + '">$' + prop.estimated_repairs.toLocaleString() + '</div></div>'
                     + '<div class="metric"><div class="metric-label">Max Bid (91% Rule)</div><div class="metric-value max-bid ' + (prop.auction_price <= (prop.max_bid_price || 0) ? 'under-max' : 'over-max') + '">$' + (prop.max_bid_price || 0).toLocaleString() + '</div></div>'
                     + '<div class="metric"><div class="metric-label">Profit Potential' + estTag + '</div><div class="metric-value profit" style="' + (isRealData ? 'opacity:0.7;' : '') + '">$' + prop.profit_potential.toLocaleString() + '</div></div>'
                     + '<div class="metric"><div class="metric-label">Profit Margin' + estTag + '</div><div class="metric-value profit" style="' + (isRealData ? 'opacity:0.7;' : '') + '">' + prop.profit_margin.toFixed(1) + '%</div></div>'

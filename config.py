@@ -61,19 +61,17 @@ HOLDING_COST_PERCENT_PER_MONTH = 0.01  # 1% of ARV per month
 SELLING_COST_PERCENT = 0.08  # 8% of ARV (agent fees, closing)
 
 # Deal scoring weights (must sum to 100)
+# Repair efficiency removed — unknowable without physical inspection
 SCORE_WEIGHTS = {
-    "profit_margin": 40,
-    "repair_efficiency": 20,
-    "neighborhood": 20,
-    "property_characteristics": 20
+    "profit_margin": 50,
+    "neighborhood": 25,
+    "property_characteristics": 25
 }
 
 # Deal scoring thresholds (referenced by models.py _calculate_deal_score)
 SCORING_THRESHOLDS = {
     "margin_excellent": 40,
     "margin_good": 30,
-    "repair_ratio_excellent": 0.15,
-    "repair_ratio_good": 0.30,
     "sqft_ideal_min": 1500,
     "sqft_ideal_max": 3000,
     "sqft_acceptable_min": 1200,

@@ -111,8 +111,7 @@ class AuctionAnalyzerCLI:
         filtered = self.analyzer.filter_properties()
         print(f"   {len(filtered)} properties meet criteria")
         print(f"   Filters: {config.TARGET_STATES}, "
-              f"${config.MIN_AUCTION_PRICE:,}-${config.MAX_AUCTION_PRICE:,}, "
-              f"max repairs ${config.MAX_REPAIR_COST:,}")
+              f"${config.MIN_AUCTION_PRICE:,}-${config.MAX_AUCTION_PRICE:,}")
         print()
 
         # Step 3: Analyze
