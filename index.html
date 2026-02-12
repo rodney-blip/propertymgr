@@ -1412,53 +1412,11 @@
         let comparisonSet = new Set();
         let searchDebounceTimer = null;
 
+        // Only states/regions we are actively pulling Auction.com data from
         const REGION_DEFINITIONS = {
             "Oregon": [
-                "Portland Metro",
-                "Salem / Mid-Valley",
-                "Eugene / Lane County",
                 "Central Oregon",
                 "Southern Oregon"
-            ],
-            "Texas": [
-                "Greater Austin",
-                "Dallas / Fort Worth",
-                "Houston Metro",
-                "San Antonio Area",
-                "El Paso Area"
-            ],
-            "Washington": [
-                "Southern Washington / Vancouver"
-            ],
-            "Florida": [
-                "Tampa Bay",
-                "Orlando Metro",
-                "Jacksonville"
-            ],
-            "Arizona": [
-                "Phoenix Metro",
-                "Tucson Area"
-            ],
-            "Georgia": [
-                "Metro Atlanta",
-                "Augusta / Savannah"
-            ],
-            "North Carolina": [
-                "Charlotte Metro",
-                "Raleigh-Durham"
-            ],
-            "Ohio": [
-                "Columbus Metro",
-                "Cleveland / Akron"
-            ],
-            "Tennessee": [
-                "Nashville Metro",
-                "Memphis Area"
-            ],
-            "California": [
-                "Sacramento Metro",
-                "Central Valley",
-                "Inland Empire"
             ]
         };
 
