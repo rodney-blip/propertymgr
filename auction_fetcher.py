@@ -127,7 +127,18 @@ def _normalize_state(state_str: str) -> str:
 
 def _normalize_address(address: str) -> str:
     """Normalize an address string for dedup comparison."""
-    return " ".join(address.upper().split())
+    addr = " ".join(address.upper().split())
+    # Expand common abbreviations for better dedup
+    _abbrevs = {
+        " CIR ": " CIRCLE ", " DR ": " DRIVE ", " ST ": " STREET ",
+        " AVE ": " AVENUE ", " RD ": " ROAD ", " LN ": " LANE ",
+        " CT ": " COURT ", " PL ": " PLACE ", " BLVD ": " BOULEVARD ",
+        " HWY ": " HIGHWAY ", " PKY ": " PARKWAY ", " TRL ": " TRAIL ",
+    }
+    addr = addr + " "  # pad end so trailing abbrevs match
+    for abbr, full in _abbrevs.items():
+        addr = addr.replace(abbr, full)
+    return addr.strip()
 
 
 def _pick_zip_sample(max_zips: int = 12) -> List[tuple]:

@@ -182,7 +182,43 @@ COST BREAKDOWN:
   Total:         $     301,177
 
 
-#6 - 1030 NW ROANOKE AVE UNIT 4, BEND (Central Oregon), Oregon
+#6 - 61015 MINARET CIRCLE, BEND (Central Oregon), Oregon
+────────────────────────────────────────────────────────────────────────────────
+Property ID: AUCT-0003
+Auction Date: 2026-02-26
+Platform: Auction.com Foreclosure
+
+FORECLOSURE CONTEXT:
+  Foreclosing Entity:  Listed on Auction.com
+  Stage:               Auction Scheduled
+
+PRICING:
+  Auction Price:     $     864,802
+  Estimated ARV:     $   1,729,603
+  Estimated Repairs: $     172,960
+  Total Investment:  $   1,167,482
+  Profit Potential:  $     423,753
+
+METRICS:
+  Profit Margin:            24.5%
+  Deal Score:               66.5/100
+  Recommended:                   No
+
+PROPERTY DETAILS:
+  3 bed / 3.5 bath | 3,741 sqft | Built 1981
+  Neighborhood Score: 8/10
+
+COST BREAKDOWN:
+  Purchase:      $     864,802
+  Repairs:       $     172,960
+  Closing:       $      25,944
+  Holding:       $     103,776
+  Selling:       $     138,368
+  ────────────────────────────────────────
+  Total:         $   1,167,482
+
+
+#7 - 1030 NW ROANOKE AVE UNIT 4, BEND (Central Oregon), Oregon
 ────────────────────────────────────────────────────────────────────────────────
 Property ID: AUCT-0002
 Auction Date: 2026-02-26

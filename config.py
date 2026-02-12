@@ -42,10 +42,10 @@ TARGET_STATES = [
 
 # Price filters
 MIN_AUCTION_PRICE = 100000
-MAX_AUCTION_PRICE = 1200000
+MAX_AUCTION_PRICE = 2000000
 
 # Repair budget
-MAX_REPAIR_COST = 80000
+MAX_REPAIR_COST = 200000
 
 # Profit requirements
 MIN_PROFIT_MARGIN = 30.0  # Percentage
@@ -634,7 +634,7 @@ SHERIFF_COUNTIES = [
 ]
 
 # Auction.com Scraper Settings (uses Apify cloud, requires apify_token)
-AUCTIONCOM_TIMEOUT = 180        # Seconds to wait for Apify run (county pages can be slow)
+AUCTIONCOM_TIMEOUT = 300        # Seconds to wait for Apify run (county pages can be slow)
 AUCTIONCOM_MAX_ITEMS = 50       # Max properties per run (keep low to reduce cost)
 AUCTIONCOM_STATES = ["Oregon"]  # States to search (fallback if no counties set)
 
