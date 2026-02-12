@@ -30,6 +30,10 @@ API_BASE = "https://api.gateway.attomdata.com/propertyapi/v1.0.0"
 _last_request_time = 0.0
 _REQUEST_INTERVAL = 0.5  # seconds between requests (direct API allows ~200/min)
 
+# Endpoint availability tracking — skip endpoints that return 401/404
+# (free tier only has avm/detail and some property endpoints)
+_disabled_endpoints: set = set()  # Endpoints that returned 401/403/404
+
 
 def _make_request(endpoint: str, params: Dict) -> Optional[Dict]:
     """Make an authenticated GET request to ATTOM's direct gateway."""
@@ -37,6 +41,11 @@ def _make_request(endpoint: str, params: Dict) -> Optional[Dict]:
 
     api_key = config.API_KEYS.get("attom_rapidapi")
     if not api_key:
+        return None
+
+    # Skip endpoints that have already failed with 401/404 (tier limitation)
+    base_endpoint = endpoint.split("?")[0]
+    if base_endpoint in _disabled_endpoints:
         return None
 
     # Rate limiting
@@ -60,9 +69,12 @@ def _make_request(endpoint: str, params: Dict) -> Optional[Dict]:
         if e.code == 429:
             print(f"   ATTOM API rate limited (429) — daily quota may be exhausted")
         elif e.code == 401:
-            print(f"   ATTOM API 401 — API key may be invalid or expired")
+            # Endpoint not available on this tier — disable for rest of session
+            _disabled_endpoints.add(base_endpoint)
         elif e.code == 404:
-            print(f"   ATTOM API 404 — endpoint '{endpoint}' not found or no results")
+            # Could be "no results" OR "endpoint not available"
+            # Disable after first hit to avoid spamming
+            _disabled_endpoints.add(base_endpoint)
         else:
             print(f"   ATTOM API error {e.code}: {e.reason}")
         return None
@@ -335,28 +347,16 @@ def get_mortgage_info(address: str, city_state_zip: str) -> Optional[Dict]:
     """
     Get current mortgage/debt information for a property.
 
-    Uses two ATTOM endpoints:
+    Tries multiple ATTOM endpoints in order of preference:
       1. saleshistory/expandedprofile — mortgage amount, lender, date, sale history
-      2. property/detail — assessed value, tax amount (for equity estimation)
+         (requires paid ATTOM tier; 404 on free tier)
+      2. property/detail — assessed value, tax amount, property characteristics
+         (available on free tier)
+      3. avm/detail — automated valuation model
+         (available on free tier)
 
     Returns:
-        Dict with mortgage details or None:
-        {
-            "mortgage_balance": 285000.0,     # Outstanding mortgage amount
-            "mortgage_lender": "Wells Fargo",  # Lender / servicer name
-            "mortgage_date": "2019-03-15",     # Origination date
-            "mortgage_interest_rate": None,     # Rate (if in data)
-            "mortgage_term": None,              # Loan term (if in data)
-            "second_mortgage_balance": None,    # 2nd lien
-            "second_mortgage_lender": None,     # 2nd lien holder
-            "last_sale_amount": 350000.0,       # Last sale price
-            "last_sale_date": "2019-03-15",     # Last sale date
-            "assessed_value": 310000.0,         # County assessed value
-            "is_foreclosure": False,
-            "is_distressed": False,
-            "is_reo": False,
-            "seller_name": "John Doe",
-        }
+        Dict with whatever data is available, or None.
     """
     api_key = config.API_KEYS.get("attom_rapidapi")
     if not api_key:
@@ -364,25 +364,29 @@ def get_mortgage_info(address: str, city_state_zip: str) -> Optional[Dict]:
 
     result = {}
 
-    # 1. Expanded profile — mortgage + sale history
+    # 1. Expanded profile — mortgage + sale history (paid tier only)
     profile = get_expanded_profile(address, city_state_zip)
     if profile:
         mortgage_amt = profile.get("mortgage_amount")
         if mortgage_amt:
             result["mortgage_balance"] = float(mortgage_amt)
-        result["mortgage_lender"] = profile.get("lender_name")
-        result["mortgage_date"] = profile.get("mortgage_date")
+        if profile.get("lender_name"):
+            result["mortgage_lender"] = profile["lender_name"]
+        if profile.get("mortgage_date"):
+            result["mortgage_date"] = profile["mortgage_date"]
 
         if profile.get("sale_amount"):
             result["last_sale_amount"] = float(profile["sale_amount"])
-        result["last_sale_date"] = profile.get("sale_date")
-        result["seller_name"] = profile.get("seller_name")
+        if profile.get("sale_date"):
+            result["last_sale_date"] = profile["sale_date"]
+        if profile.get("seller_name"):
+            result["seller_name"] = profile["seller_name"]
 
         result["is_foreclosure"] = profile.get("foreclosure") in (True, "Y", "Yes", "1", 1)
         result["is_distressed"] = profile.get("distressed_sale") in (True, "Y", "Yes", "1", 1)
         result["is_reo"] = profile.get("reo_sale") in (True, "Y", "Yes", "1", 1)
 
-    # 2. Property detail — assessed value, tax
+    # 2. Property detail — assessed value, tax (free tier)
     detail = get_property_detail(address, city_state_zip)
     if detail:
         if detail.get("assessed_value"):
@@ -391,6 +395,22 @@ def get_mortgage_info(address: str, city_state_zip: str) -> Optional[Dict]:
             result["market_value"] = float(detail["market_value"])
         if detail.get("tax_amount"):
             result["tax_amount"] = float(detail["tax_amount"])
+        # Also capture property detail enrichment
+        if detail.get("sqft"):
+            result["sqft"] = detail["sqft"]
+        if detail.get("bedrooms"):
+            result["bedrooms"] = detail["bedrooms"]
+        if detail.get("bathrooms"):
+            result["bathrooms"] = detail["bathrooms"]
+        if detail.get("lot_size"):
+            result["lot_size"] = detail["lot_size"]
+
+    # 3. AVM — real valuation (free tier)
+    avm = get_avm(address, city_state_zip)
+    if avm and avm.get("value"):
+        result["avm_value"] = float(avm["value"])
+        result["avm_high"] = float(avm["high"]) if avm.get("high") else None
+        result["avm_low"] = float(avm["low"]) if avm.get("low") else None
 
     return result if result else None
 
