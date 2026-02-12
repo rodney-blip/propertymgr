@@ -2,147 +2,219 @@
 TOP 20 AUCTION PROPERTY DEALS
 ================================================================================
 
-#1 - 2625 SW Glacier Ave, Redmond (Central Oregon), Oregon
+#1 - 16125 HAWKS LAIR RD, LA PINE, Oregon
 ────────────────────────────────────────────────────────────────────────────────
-Property ID: SHRF-0002
-Auction Date: 2026-02-12
-Platform: Oregon Sheriff Sale
+Property ID: AUCT-0001
+Auction Date: 2026-02-15
+Platform: Auction.com Bank-Owned
 
 FORECLOSURE CONTEXT:
-  Foreclosing Entity:  Pennymac Loan Services, LLC
-  Stage:               Sheriff Sale Scheduled
+  Foreclosing Entity:  Listed on Auction.com
+  Stage:               Auction Scheduled
 
 PRICING:
-  Auction Price:     $     208,872
-  Estimated ARV:     $     360,000
-  Estimated Repairs: $      31,331
-  Total Investment:  $     268,068
-  Profit Potential:  $      63,132
+  Auction Price:     $     150,000
+  Estimated ARV:     $     392,385
+  Estimated Repairs: $       7,500
+  Total Investment:  $     185,543
+  Profit Potential:  $     175,451
 
 METRICS:
-  Profit Margin:            17.5%
-  Deal Score:               71.5/100
-  Recommended:                   No
+  Profit Margin:            44.7%
+  Deal Score:               92.0/100
+  Recommended:                  Yes
 
 PROPERTY DETAILS:
-  3 bed / 2.0 bath | 1,800 sqft | Built 1990
-  Neighborhood Score: 8/10
-
-COST BREAKDOWN:
-  Purchase:      $     208,872
-  Repairs:       $      31,331
-  Closing:       $       6,266
-  Holding:       $      21,600
-  Selling:       $      28,800
-  ────────────────────────────────────────
-  Total:         $     268,068
-
-
-#2 - 2380 SW Phlox Pond Drive, Redmond (Central Oregon), Oregon
-────────────────────────────────────────────────────────────────────────────────
-Property ID: SHRF-0003
-Auction Date: 2026-02-26
-Platform: Oregon Sheriff Sale
-
-FORECLOSURE CONTEXT:
-  Foreclosing Entity:  Umpqua Bank
-  Stage:               Sheriff Sale Scheduled
-
-PRICING:
-  Auction Price:     $     222,567
-  Estimated ARV:     $     360,000
-  Estimated Repairs: $      33,385
-  Total Investment:  $     284,229
-  Profit Potential:  $      46,971
-
-METRICS:
-  Profit Margin:            13.0%
-  Deal Score:               62.0/100
-  Recommended:                   No
-
-PROPERTY DETAILS:
-  3 bed / 2.0 bath | 1,800 sqft | Built 1990
-  Neighborhood Score: 8/10
-
-COST BREAKDOWN:
-  Purchase:      $     222,567
-  Repairs:       $      33,385
-  Closing:       $       6,677
-  Holding:       $      21,600
-  Selling:       $      28,800
-  ────────────────────────────────────────
-  Total:         $     284,229
-
-
-#3 - 428 SE Warsaw St., Redmond (Central Oregon), Oregon
-────────────────────────────────────────────────────────────────────────────────
-Property ID: SHRF-0001
-Auction Date: 2026-02-12
-Platform: Oregon Sheriff Sale
-
-FORECLOSURE CONTEXT:
-  Foreclosing Entity:  Lakeview Loan Servicing, LLC
-  Stage:               Sheriff Sale Scheduled
-
-PRICING:
-  Auction Price:     $     245,409
-  Estimated ARV:     $     360,000
-  Estimated Repairs: $      36,811
-  Total Investment:  $     311,183
-  Profit Potential:  $      20,017
-
-METRICS:
-  Profit Margin:             5.6%
-  Deal Score:               54.6/100
-  Recommended:                   No
-
-PROPERTY DETAILS:
-  3 bed / 2.0 bath | 1,800 sqft | Built 1990
-  Neighborhood Score: 8/10
-
-COST BREAKDOWN:
-  Purchase:      $     245,409
-  Repairs:       $      36,811
-  Closing:       $       7,362
-  Holding:       $      21,600
-  Selling:       $      28,800
-  ────────────────────────────────────────
-  Total:         $     311,183
-
-
-#4 - 53362 Holtzclaw Rd, La Pine (Central Oregon), Oregon
-────────────────────────────────────────────────────────────────────────────────
-Property ID: SHRF-0004
-Auction Date: 2026-03-05
-Platform: Oregon Sheriff Sale
-
-FORECLOSURE CONTEXT:
-  Foreclosing Entity:  Amy Gimino, As Successor Trustee Of The Robert Glen Bruce And Hannah Elizabeth Bruce Declaration Of Trust Dated August 14. 2003
-  Stage:               Sheriff Sale Scheduled
-
-PRICING:
-  Auction Price:     $     258,301
-  Estimated ARV:     $     360,000
-  Estimated Repairs: $      38,745
-  Total Investment:  $     326,395
-  Profit Potential:  $       4,805
-
-METRICS:
-  Profit Margin:             1.3%
-  Deal Score:               46.3/100
-  Recommended:                   No
-
-PROPERTY DETAILS:
-  3 bed / 2.0 bath | 1,800 sqft | Built 1990
+  4 bed / 2.0 bath | 1,620 sqft | Built 2022
   Neighborhood Score: 6/10
 
 COST BREAKDOWN:
-  Purchase:      $     258,301
-  Repairs:       $      38,745
-  Closing:       $       7,749
-  Holding:       $      21,600
-  Selling:       $      28,800
+  Purchase:      $     150,000
+  Repairs:       $       7,500
+  Closing:       $       4,500
+  Holding:       $      23,543
+  Selling:       $      31,391
   ────────────────────────────────────────
-  Total:         $     326,395
+  Total:         $     185,543
+
+
+#2 - 61644 GEMINI WAY, BEND (Central Oregon), Oregon
+────────────────────────────────────────────────────────────────────────────────
+Property ID: AUCT-0004
+Auction Date: 2026-02-26
+Platform: Auction.com Foreclosure
+
+FORECLOSURE CONTEXT:
+  Foreclosing Entity:  Listed on Auction.com
+  Stage:               Auction Scheduled
+
+PRICING:
+  Auction Price:     $     306,828
+  Estimated ARV:     $     613,655
+  Estimated Repairs: $      30,683
+  Total Investment:  $     383,534
+  Profit Potential:  $     181,028
+
+METRICS:
+  Profit Margin:            29.5%
+  Deal Score:               85.5/100
+  Recommended:                   No
+
+PROPERTY DETAILS:
+  3 bed / 3.0 bath | 1,955 sqft | Built 2006
+  Neighborhood Score: 8/10
+
+COST BREAKDOWN:
+  Purchase:      $     306,828
+  Repairs:       $      30,683
+  Closing:       $       9,205
+  Holding:       $      36,819
+  Selling:       $      49,092
+  ────────────────────────────────────────
+  Total:         $     383,534
+
+
+#3 - 60539 SEVENTH MOUNTAIN DRIVE, BEND (Central Oregon), Oregon
+────────────────────────────────────────────────────────────────────────────────
+Property ID: AUCT-0005
+Auction Date: 2026-02-26
+Platform: Auction.com Foreclosure
+
+FORECLOSURE CONTEXT:
+  Foreclosing Entity:  Listed on Auction.com
+  Stage:               Auction Scheduled
+
+PRICING:
+  Auction Price:     $     440,766
+  Estimated ARV:     $     881,533
+  Estimated Repairs: $      44,077
+  Total Investment:  $     550,958
+  Profit Potential:  $     260,052
+
+METRICS:
+  Profit Margin:            29.5%
+  Deal Score:               83.5/100
+  Recommended:                   No
+
+PROPERTY DETAILS:
+  3 bed / 3.0 bath | 2,498 sqft | Built 2004
+  Neighborhood Score: 8/10
+
+COST BREAKDOWN:
+  Purchase:      $     440,766
+  Repairs:       $      44,077
+  Closing:       $      13,223
+  Holding:       $      52,892
+  Selling:       $      70,523
+  ────────────────────────────────────────
+  Total:         $     550,958
+
+
+#4 - 19580 RIVER WOODS DRIVE, BEND (Central Oregon), Oregon
+────────────────────────────────────────────────────────────────────────────────
+Property ID: AUCT-0007
+Auction Date: 2026-03-12
+Platform: Auction.com Foreclosure
+
+FORECLOSURE CONTEXT:
+  Foreclosing Entity:  Listed on Auction.com
+  Stage:               Auction Scheduled
+
+PRICING:
+  Auction Price:     $     212,784
+  Estimated ARV:     $     425,567
+  Estimated Repairs: $      31,918
+  Total Investment:  $     276,619
+  Profit Potential:  $     114,903
+
+METRICS:
+  Profit Margin:            27.0%
+  Deal Score:               76.0/100
+  Recommended:                   No
+
+PROPERTY DETAILS:
+  3 bed / 2.0 bath | 1,188 sqft | Built 1996
+  Neighborhood Score: 8/10
+
+COST BREAKDOWN:
+  Purchase:      $     212,784
+  Repairs:       $      31,918
+  Closing:       $       6,384
+  Holding:       $      25,534
+  Selling:       $      34,045
+  ────────────────────────────────────────
+  Total:         $     276,619
+
+
+#5 - 1111 SW OBSIDIAN AVE, REDMOND (Central Oregon), Oregon
+────────────────────────────────────────────────────────────────────────────────
+Property ID: AUCT-0006
+Auction Date: 2026-03-12
+Platform: Auction.com Foreclosure
+
+FORECLOSURE CONTEXT:
+  Foreclosing Entity:  Listed on Auction.com
+  Stage:               Auction Scheduled
+
+PRICING:
+  Auction Price:     $     223,094
+  Estimated ARV:     $     446,188
+  Estimated Repairs: $      44,619
+  Total Investment:  $     301,177
+  Profit Potential:  $     109,316
+
+METRICS:
+  Profit Margin:            24.5%
+  Deal Score:               68.5/100
+  Recommended:                   No
+
+PROPERTY DETAILS:
+  3 bed / 2.5 bath | 1,380 sqft | Built 1951
+  Neighborhood Score: 8/10
+
+COST BREAKDOWN:
+  Purchase:      $     223,094
+  Repairs:       $      44,619
+  Closing:       $       6,693
+  Holding:       $      26,771
+  Selling:       $      35,695
+  ────────────────────────────────────────
+  Total:         $     301,177
+
+
+#6 - 1030 NW ROANOKE AVE UNIT 4, BEND (Central Oregon), Oregon
+────────────────────────────────────────────────────────────────────────────────
+Property ID: AUCT-0002
+Auction Date: 2026-02-26
+Platform: Auction.com Foreclosure
+
+FORECLOSURE CONTEXT:
+  Foreclosing Entity:  Listed on Auction.com
+  Stage:               Auction Scheduled
+
+PRICING:
+  Auction Price:     $     201,007
+  Estimated ARV:     $     338,884
+  Estimated Repairs: $      40,201
+  Total Investment:  $     267,572
+  Profit Potential:  $      44,201
+
+METRICS:
+  Profit Margin:            13.0%
+  Deal Score:               55.0/100
+  Recommended:                   No
+
+PROPERTY DETAILS:
+  3 bed / 2.0 bath | 680 sqft | Built 1966
+  Neighborhood Score: 8/10
+
+COST BREAKDOWN:
+  Purchase:      $     201,007
+  Repairs:       $      40,201
+  Closing:       $       6,030
+  Holding:       $      20,333
+  Selling:       $      27,111
+  ────────────────────────────────────────
+  Total:         $     267,572
 
 
