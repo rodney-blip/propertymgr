@@ -77,26 +77,11 @@ class AuctionAnalyzerCLI:
                 sources=sources
             )
             if not self.properties:
-                print("\n   ⚠️  No real properties found (APIs may be rate-limited).")
-                print("   Falling back to mock data with Census enrichment...\n")
-                self.properties = generate_mock_data(count)
-                # Enrich mock data with Census (real neighborhood scores)
-                fetcher = DataFetcher()
-                self.properties = fetcher.enrich_properties(
-                    self.properties, skip_arv=True, skip_foreclosure=True
-                )
-            elif len(self.properties) < count // 2:
-                # Got some real data but not enough — supplement with mock
-                shortfall = count - len(self.properties)
-                print(f"\n   ℹ️  Only {len(self.properties)} real properties found.")
-                print(f"   Supplementing with {shortfall} enriched mock properties...\n")
-                mock_props = generate_mock_data(shortfall)
-                fetcher = DataFetcher()
-                mock_props = fetcher.enrich_properties(
-                    mock_props, skip_arv=True, skip_foreclosure=True
-                )
-                self.properties.extend(mock_props)
-            print(f"   🏠 Loaded {len(self.properties)} total properties\n")
+                print("\n   ⚠️  No real properties found.")
+                print("   Auction inventory changes frequently — try again later.")
+                print("   Or check the source directly (Auction.com, oregonsheriffssales.org)")
+                return
+            print(f"   🏠 Loaded {len(self.properties)} real properties\n")
         elif use_mock_data:
             print("📊 Generating mock auction data...")
             self.properties = generate_mock_data(property_count)
