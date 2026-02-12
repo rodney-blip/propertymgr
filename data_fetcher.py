@@ -97,6 +97,33 @@ class DataFetcher:
             except Exception as e:
                 print(f"   ⚠️  ATTOM enrichment failed for {prop.address}: {e}")
 
+        # 1b. ATTOM — Mortgage / debt data
+        if not skip_arv and self.attom_available:
+            try:
+                attom = _get_attom()
+                mtg = attom.get_mortgage_info(prop.address, city_state_zip)
+                if mtg:
+                    if mtg.get("mortgage_balance"):
+                        prop.mortgage_balance = mtg["mortgage_balance"]
+                        if not prop.total_debt:
+                            prop.total_debt = mtg["mortgage_balance"]
+                    if mtg.get("mortgage_lender"):
+                        prop.mortgage_lender = mtg["mortgage_lender"]
+                    if mtg.get("mortgage_date"):
+                        prop.mortgage_date = mtg["mortgage_date"]
+                    if mtg.get("mortgage_interest_rate"):
+                        prop.mortgage_interest_rate = mtg["mortgage_interest_rate"]
+                    if mtg.get("last_sale_amount") and not prop.last_sale_price:
+                        prop.last_sale_price = mtg["last_sale_amount"]
+                    if mtg.get("last_sale_date") and not prop.last_sale_date:
+                        prop.last_sale_date = mtg["last_sale_date"]
+                    if mtg.get("tax_amount") and not prop.annual_property_tax:
+                        prop.annual_property_tax = mtg["tax_amount"]
+                    if mtg.get("seller_name") and not prop.foreclosing_entity:
+                        prop.foreclosing_entity = mtg["seller_name"]
+            except Exception as e:
+                print(f"   ⚠️  ATTOM mortgage enrichment failed for {prop.address}: {e}")
+
         # 2. BatchData — Real foreclosure context
         if not skip_foreclosure and self.batchdata_available:
             try:

@@ -897,11 +897,81 @@ def fetch_real_properties(limit: int = 75,
         if progress and avm_count > 0:
             print(f"   Enriched {avm_count} properties with ATTOM AVM valuations")
 
-    # --- Enrich with foreclosure/debt context ---
-    # ATTOM's free tier doesn't return seller/mortgage/foreclosure fields,
-    # so we generate realistic foreclosure context based on property data.
-    # When a paid ATTOM tier or full BatchData key is available, this will
-    # be replaced with live data from get_expanded_profile() / lookup_property().
+    # --- Enrich with ATTOM mortgage/debt context ---
+    # Use ATTOM's expandedprofile + property/detail to get real mortgage
+    # balance, lender, loan date, assessed value, and foreclosure flags.
+    # Falls back to generated context only when ATTOM key isn't available.
+    if has_attom and properties:
+        attom = _get_attom()
+        mortgage_count = 0
+        mortgage_limit = 30  # Limit API calls to conserve free-tier quota
+
+        if progress:
+            print("   Enriching with ATTOM mortgage/debt data...")
+
+        for prop in properties:
+            if mortgage_count >= mortgage_limit:
+                break
+            # Skip properties that already have real data from their source
+            if getattr(prop, 'data_source', '') in ('redfin', 'sheriff', 'auctioncom'):
+                if prop.foreclosing_entity:
+                    continue  # Already has real context
+
+            try:
+                city_state_zip = f"{prop.city}, {prop.state} {prop.zip_code}"
+                mtg = attom.get_mortgage_info(prop.address, city_state_zip)
+                if mtg:
+                    # Mortgage balance & lender
+                    if mtg.get("mortgage_balance"):
+                        prop.mortgage_balance = mtg["mortgage_balance"]
+                        prop.total_debt = mtg["mortgage_balance"]  # Also set total_debt
+                    if mtg.get("mortgage_lender"):
+                        prop.mortgage_lender = mtg["mortgage_lender"]
+                        # Use mortgage lender as foreclosing entity if not set
+                        if not prop.foreclosing_entity:
+                            prop.foreclosing_entity = mtg["mortgage_lender"]
+                            prop.bank_contact_url = config.BANK_CONTACT_URLS.get(
+                                mtg["mortgage_lender"]
+                            )
+                    if mtg.get("mortgage_date"):
+                        prop.mortgage_date = mtg["mortgage_date"]
+                    if mtg.get("mortgage_interest_rate"):
+                        prop.mortgage_interest_rate = mtg["mortgage_interest_rate"]
+
+                    # Last sale history
+                    if mtg.get("last_sale_amount") and not prop.last_sale_price:
+                        prop.last_sale_price = mtg["last_sale_amount"]
+                    if mtg.get("last_sale_date") and not prop.last_sale_date:
+                        prop.last_sale_date = mtg["last_sale_date"]
+
+                    # Assessed value — use for ARV if better
+                    if mtg.get("assessed_value") and not prop.annual_property_tax:
+                        if mtg.get("tax_amount"):
+                            prop.annual_property_tax = mtg["tax_amount"]
+
+                    # Foreclosure flags from ATTOM
+                    if mtg.get("is_foreclosure") or mtg.get("is_distressed"):
+                        if not prop.foreclosure_stage:
+                            if mtg.get("is_reo"):
+                                prop.foreclosure_stage = "REO / Bank Owned"
+                            elif mtg.get("is_foreclosure"):
+                                prop.foreclosure_stage = "Foreclosure"
+                            elif mtg.get("is_distressed"):
+                                prop.foreclosure_stage = "Distressed Sale"
+
+                    if mtg.get("seller_name") and not prop.foreclosing_entity:
+                        prop.foreclosing_entity = mtg["seller_name"]
+
+                    mortgage_count += 1
+            except Exception as e:
+                if progress:
+                    print(f"      ATTOM mortgage error for {prop.address}: {e}")
+
+        if progress and mortgage_count > 0:
+            print(f"   Enriched {mortgage_count} properties with ATTOM mortgage data")
+
+    # --- Fallback: generate context for properties without mortgage data ---
+    # Only used when ATTOM key is unavailable or didn't return mortgage data
     _MAJOR_LENDERS = list(config.BANK_CONTACT_URLS.keys())
     _LOAN_TYPES = ["Conventional", "FHA", "VA", "USDA", "Jumbo", "ARM", "Fixed 30yr", "Fixed 15yr"]
     _STAGES = ["Pre-Foreclosure", "Notice of Default", "Lis Pendens",
@@ -910,7 +980,7 @@ def fetch_real_properties(limit: int = 75,
     fc_count = 0
     for prop in properties:
         if prop.foreclosing_entity:
-            continue  # Already has real data
+            continue  # Already has real or enriched data
         if getattr(prop, 'data_source', '') in ('redfin', 'sheriff', 'auctioncom'):
             continue  # These sources have real data — don't add fake context
 
@@ -936,7 +1006,7 @@ def fetch_real_properties(limit: int = 75,
         fc_count += 1
 
     if progress and fc_count > 0:
-        print(f"   Added foreclosure context to {fc_count} properties")
+        print(f"   Added generated foreclosure context to {fc_count} properties (no ATTOM mortgage data)")
 
     # --- Enrich with Census neighborhood scores ---
     if enrich_neighborhood and properties:

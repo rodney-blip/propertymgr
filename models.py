@@ -79,6 +79,15 @@ class Property:
     latitude: Optional[float] = None
     longitude: Optional[float] = None
 
+    # Mortgage / lien details (from ATTOM expanded profile)
+    mortgage_balance: Optional[float] = None      # Current outstanding mortgage amount
+    mortgage_lender: Optional[str] = None         # Lender / servicer name
+    mortgage_date: Optional[str] = None           # Date mortgage was originated
+    mortgage_interest_rate: Optional[float] = None  # Interest rate (if available)
+    mortgage_term: Optional[str] = None           # e.g. "30yr Fixed", "15yr ARM"
+    second_mortgage_balance: Optional[float] = None  # Second lien amount (if any)
+    second_mortgage_lender: Optional[str] = None  # Second lien holder
+
     # Additional metadata
     county: Optional[str] = None
     data_source: Optional[str] = None            # "mock", "attom", "batchdata", "redfin", "sheriff", "auctioncom"

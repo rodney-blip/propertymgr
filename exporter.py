@@ -100,6 +100,25 @@ class DataExporter:
                 f.write(f"Property ID: {prop.id}\n")
                 f.write(f"Auction Date: {prop.auction_date}\n")
                 f.write(f"Platform: {prop.auction_platform}\n")
+                if prop.mortgage_balance or prop.mortgage_lender:
+                    f.write(f"\nMORTGAGE / DEBT:\n")
+                    if prop.mortgage_balance:
+                        f.write(f"  Mortgage Balance:    ${prop.mortgage_balance:>12,.0f}\n")
+                        if prop.estimated_arv:
+                            equity = prop.estimated_arv - prop.mortgage_balance
+                            f.write(f"  Est. Equity:         ${equity:>12,.0f}\n")
+                    if prop.mortgage_lender:
+                        f.write(f"  Lender:              {prop.mortgage_lender}\n")
+                    if prop.mortgage_date:
+                        f.write(f"  Originated:          {prop.mortgage_date}\n")
+                    if prop.mortgage_interest_rate:
+                        f.write(f"  Interest Rate:       {prop.mortgage_interest_rate:.2f}%\n")
+                    if prop.mortgage_term:
+                        f.write(f"  Term:                {prop.mortgage_term}\n")
+                    if prop.second_mortgage_balance:
+                        f.write(f"  2nd Lien:            ${prop.second_mortgage_balance:>12,.0f}\n")
+                        if prop.second_mortgage_lender:
+                            f.write(f"  2nd Lien Holder:     {prop.second_mortgage_lender}\n")
                 if prop.foreclosing_entity:
                     f.write(f"\nFORECLOSURE CONTEXT:\n")
                     f.write(f"  Foreclosing Entity:  {prop.foreclosing_entity}\n")

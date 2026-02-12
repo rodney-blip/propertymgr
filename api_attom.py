@@ -329,3 +329,77 @@ def get_expanded_profile(address: str, city_state_zip: str) -> Optional[Dict]:
         }
     except (IndexError, KeyError, TypeError):
         return None
+
+
+def get_mortgage_info(address: str, city_state_zip: str) -> Optional[Dict]:
+    """
+    Get current mortgage/debt information for a property.
+
+    Uses two ATTOM endpoints:
+      1. saleshistory/expandedprofile — mortgage amount, lender, date, sale history
+      2. property/detail — assessed value, tax amount (for equity estimation)
+
+    Returns:
+        Dict with mortgage details or None:
+        {
+            "mortgage_balance": 285000.0,     # Outstanding mortgage amount
+            "mortgage_lender": "Wells Fargo",  # Lender / servicer name
+            "mortgage_date": "2019-03-15",     # Origination date
+            "mortgage_interest_rate": None,     # Rate (if in data)
+            "mortgage_term": None,              # Loan term (if in data)
+            "second_mortgage_balance": None,    # 2nd lien
+            "second_mortgage_lender": None,     # 2nd lien holder
+            "last_sale_amount": 350000.0,       # Last sale price
+            "last_sale_date": "2019-03-15",     # Last sale date
+            "assessed_value": 310000.0,         # County assessed value
+            "is_foreclosure": False,
+            "is_distressed": False,
+            "is_reo": False,
+            "seller_name": "John Doe",
+        }
+    """
+    api_key = config.API_KEYS.get("attom_rapidapi")
+    if not api_key:
+        return None
+
+    result = {}
+
+    # 1. Expanded profile — mortgage + sale history
+    profile = get_expanded_profile(address, city_state_zip)
+    if profile:
+        mortgage_amt = profile.get("mortgage_amount")
+        if mortgage_amt:
+            result["mortgage_balance"] = float(mortgage_amt)
+        result["mortgage_lender"] = profile.get("lender_name")
+        result["mortgage_date"] = profile.get("mortgage_date")
+
+        if profile.get("sale_amount"):
+            result["last_sale_amount"] = float(profile["sale_amount"])
+        result["last_sale_date"] = profile.get("sale_date")
+        result["seller_name"] = profile.get("seller_name")
+
+        result["is_foreclosure"] = profile.get("foreclosure") in (True, "Y", "Yes", "1", 1)
+        result["is_distressed"] = profile.get("distressed_sale") in (True, "Y", "Yes", "1", 1)
+        result["is_reo"] = profile.get("reo_sale") in (True, "Y", "Yes", "1", 1)
+
+    # 2. Property detail — assessed value, tax
+    detail = get_property_detail(address, city_state_zip)
+    if detail:
+        if detail.get("assessed_value"):
+            result["assessed_value"] = float(detail["assessed_value"])
+        if detail.get("market_value"):
+            result["market_value"] = float(detail["market_value"])
+        if detail.get("tax_amount"):
+            result["tax_amount"] = float(detail["tax_amount"])
+
+    return result if result else None
+
+
+def enrich_property_mortgage(address: str, city: str, state: str,
+                              zip_code: str) -> Optional[Dict]:
+    """
+    Convenience wrapper: get mortgage info for a property by address components.
+    Returns dict with mortgage details, or None.
+    """
+    city_state_zip = f"{city}, {state} {zip_code}"
+    return get_mortgage_info(address, city_state_zip)

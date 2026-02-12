@@ -1719,7 +1719,10 @@
                 { label: 'Address', fn: function(p) { return p.address; } },
                 { label: 'City, State', fn: function(p) { return p.city + ', ' + p.state; } },
                 { label: 'Auction Price', fn: function(p) { return '$' + p.auction_price.toLocaleString(); }, compare: 'low' },
-                { label: 'Est. ARV', fn: function(p) { return '$' + p.estimated_arv.toLocaleString(); }, compare: 'high' },
+                { label: 'Est. Value', fn: function(p) { return '$' + p.estimated_arv.toLocaleString(); }, compare: 'high' },
+                { label: 'Mortgage Balance', fn: function(p) { return p.mortgage_balance ? '$' + p.mortgage_balance.toLocaleString() : (p.total_debt ? '$' + p.total_debt.toLocaleString() : 'N/A'); }, compare: 'low', rawFn: function(p) { return p.mortgage_balance || p.total_debt || 0; } },
+                { label: 'Equity', fn: function(p) { var debt = p.mortgage_balance || p.total_debt || 0; if (!debt) return 'N/A'; var eq = p.estimated_arv - debt; return (eq >= 0 ? '+' : '-') + '$' + Math.abs(eq).toLocaleString(); }, compare: 'high', rawFn: function(p) { var debt = p.mortgage_balance || p.total_debt || 0; return debt ? p.estimated_arv - debt : 0; } },
+                { label: 'Lender', fn: function(p) { return p.mortgage_lender || p.foreclosing_entity || 'N/A'; } },
                 { label: 'Profit', fn: function(p) { return '$' + p.profit_potential.toLocaleString(); }, compare: 'high' },
                 { label: 'Profit Margin', fn: function(p) { return p.profit_margin.toFixed(1) + '%'; }, compare: 'high', rawFn: function(p) { return p.profit_margin; } },
                 { label: 'Deal Score', fn: function(p) { return p.deal_score.toFixed(1); }, compare: 'high', rawFn: function(p) { return p.deal_score; } },
@@ -1878,7 +1881,10 @@
                 'Profit Potential', 'Profit Margin', 'Deal Score',
                 'Bedrooms', 'Bathrooms', 'Sqft', 'Year Built',
                 'Neighborhood Score', 'Auction Date', 'Platform',
-                'Recommended', 'Foreclosing Entity', 'Total Debt',
+                'Recommended',
+                'Mortgage Balance', 'Mortgage Lender', 'Mortgage Date',
+                'Mortgage Rate', 'Mortgage Term', '2nd Mortgage',
+                'Foreclosing Entity', 'Total Debt',
                 'Loan Type', 'Foreclosure Stage', 'Default Date',
                 'Occupancy', 'Condition', 'Property Tax', 'HOA',
                 'Est. Monthly Rent', 'Last Sale Price', 'Last Sale Date',
@@ -1917,6 +1923,12 @@
                     csvEscape(p.auction_date),
                     csvEscape(p.auction_platform),
                     p.recommended ? 'Yes' : 'No',
+                    p.mortgage_balance || '',
+                    csvEscape(p.mortgage_lender),
+                    csvEscape(p.mortgage_date),
+                    p.mortgage_interest_rate || '',
+                    csvEscape(p.mortgage_term),
+                    p.second_mortgage_balance || '',
                     csvEscape(p.foreclosing_entity),
                     p.total_debt || '',
                     csvEscape(p.loan_type),
@@ -2088,7 +2100,11 @@
         }
 
         function renderForeclosureSection(prop) {
-            if (!prop.foreclosing_entity) return '';
+            // Show mortgage/debt section if we have ANY debt/mortgage data
+            var hasMortgage = prop.mortgage_balance || prop.mortgage_lender;
+            var hasForeclosure = prop.foreclosing_entity;
+            if (!hasMortgage && !hasForeclosure) return '';
+
             var isRedfin = (prop.data_source === 'redfin') || (prop.auction_platform && prop.auction_platform.indexOf('Redfin') !== -1);
             var isSheriff = (prop.data_source === 'sheriff') || (prop.auction_platform && prop.auction_platform.indexOf('Sheriff') !== -1);
 
@@ -2099,6 +2115,8 @@
                 var items = '<div class="detail-item">\u2696\uFE0F <strong>' + stage + '</strong></div>';
                 items += '<div class="detail-item">\u{1F3DB}\uFE0F Plaintiff: ' + entity + '</div>';
                 if (prop.county) items += '<div class="detail-item">\u{1F4CD} ' + prop.county + ' County</div>';
+                if (prop.mortgage_balance) items += '<div class="detail-item">\u{1F4B0} <strong>Mortgage: $' + prop.mortgage_balance.toLocaleString() + '</strong></div>';
+                if (prop.mortgage_lender) items += '<div class="detail-item">\u{1F3E6} Lender: ' + prop.mortgage_lender + '</div>';
                 if (prop.description && prop.description.indexOf('PDF available') !== -1) {
                     items += '<div class="detail-item">\u{1F4C4} Notice of Sale PDF available</div>';
                 }
@@ -2106,7 +2124,7 @@
                     + items + '</div>';
             }
 
-            // For Redfin MLS properties, show a simpler foreclosure context
+            // For Redfin MLS properties, show foreclosure context + mortgage if available
             if (isRedfin) {
                 var stage = prop.foreclosure_stage || 'MLS Listed';
                 var dom = prop.description && prop.description.match(/(\d+) days on market/);
@@ -2116,25 +2134,86 @@
                 var items = '<div class="detail-item">\u2696\uFE0F <strong>' + stage + '</strong></div>';
                 if (domText) items += '<div class="detail-item">\u{1F4C5} ' + domText + '</div>';
                 if (mlsText) items += '<div class="detail-item">\u{1F4CB} ' + mlsText + '</div>';
+                if (prop.mortgage_balance) items += '<div class="detail-item">\u{1F4B0} <strong>Mortgage: $' + prop.mortgage_balance.toLocaleString() + '</strong></div>';
+                if (prop.mortgage_lender) items += '<div class="detail-item">\u{1F3E6} Lender: ' + prop.mortgage_lender + '</div>';
+                if (prop.mortgage_date) items += '<div class="detail-item">\u{1F4C5} Originated: ' + prop.mortgage_date + '</div>';
                 return '<div class="property-details" style="margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--divider);">'
                     + items + '</div>';
             }
 
-            var bankUrl = prop.bank_contact_url || BANK_CONTACT_URLS[prop.foreclosing_entity] || null;
-            var entityHtml = bankUrl
-                ? '<a href="' + bankUrl + '" target="_blank" rel="noopener">' + prop.foreclosing_entity + '</a>'
-                : prop.foreclosing_entity;
-            var debt = prop.total_debt ? '$' + prop.total_debt.toLocaleString() : 'N/A';
-            var loanType = prop.loan_type || 'N/A';
-            var stage = prop.foreclosure_stage || 'N/A';
-            var defaultDate = prop.default_date || 'N/A';
+            // General properties — show full mortgage + foreclosure details
+            var items = [];
+
+            // Mortgage / Debt section header
+            if (hasMortgage) {
+                items.push('<div class="detail-item" style="width:100%;font-weight:600;margin-bottom:2px;">\u{1F4B3} Mortgage & Debt</div>');
+            }
+
+            // Mortgage balance (prominent)
+            if (prop.mortgage_balance) {
+                var equityNote = '';
+                if (prop.estimated_arv && prop.mortgage_balance) {
+                    var equity = prop.estimated_arv - prop.mortgage_balance;
+                    var equityPct = ((equity / prop.estimated_arv) * 100).toFixed(0);
+                    equityNote = ' <span style="opacity:0.7;font-size:0.9em;">(' + (equity >= 0 ? '+' : '') + '$' + Math.abs(equity).toLocaleString() + ' equity, ' + equityPct + '%)</span>';
+                }
+                items.push('<div class="detail-item">\u{1F4B0} <strong>Mortgage: $' + prop.mortgage_balance.toLocaleString() + '</strong>' + equityNote + '</div>');
+            } else if (prop.total_debt) {
+                items.push('<div class="detail-item">\u{1F4B0} <strong>Total Debt: $' + prop.total_debt.toLocaleString() + '</strong></div>');
+            }
+
+            // Second mortgage
+            if (prop.second_mortgage_balance) {
+                var secondInfo = '$' + prop.second_mortgage_balance.toLocaleString();
+                if (prop.second_mortgage_lender) secondInfo += ' (' + prop.second_mortgage_lender + ')';
+                items.push('<div class="detail-item">\u{1F4B3} 2nd Lien: ' + secondInfo + '</div>');
+            }
+
+            // Mortgage lender
+            if (prop.mortgage_lender) {
+                var bankUrl = prop.bank_contact_url || BANK_CONTACT_URLS[prop.mortgage_lender] || null;
+                var lenderHtml = bankUrl
+                    ? '<a href="' + bankUrl + '" target="_blank" rel="noopener">' + prop.mortgage_lender + '</a>'
+                    : prop.mortgage_lender;
+                items.push('<div class="detail-item">\u{1F3E6} Lender: ' + lenderHtml + '</div>');
+            }
+
+            // Mortgage date / term / rate
+            if (prop.mortgage_date) {
+                items.push('<div class="detail-item">\u{1F4C5} Originated: ' + prop.mortgage_date + '</div>');
+            }
+            if (prop.mortgage_term) {
+                items.push('<div class="detail-item">\u{1F4CB} Term: ' + prop.mortgage_term + '</div>');
+            }
+            if (prop.mortgage_interest_rate) {
+                items.push('<div class="detail-item">\u{1F4CA} Rate: ' + prop.mortgage_interest_rate.toFixed(2) + '%</div>');
+            }
+
+            // Foreclosure context
+            if (hasForeclosure) {
+                var bankUrl2 = prop.bank_contact_url || BANK_CONTACT_URLS[prop.foreclosing_entity] || null;
+                var entityHtml = bankUrl2
+                    ? '<a href="' + bankUrl2 + '" target="_blank" rel="noopener">' + prop.foreclosing_entity + '</a>'
+                    : prop.foreclosing_entity;
+
+                // Only show foreclosing entity if different from mortgage lender
+                if (!prop.mortgage_lender || prop.foreclosing_entity !== prop.mortgage_lender) {
+                    items.push('<div class="detail-item">\u{1F3DB}\uFE0F <strong>' + entityHtml + '</strong></div>');
+                }
+                if (prop.loan_type) {
+                    items.push('<div class="detail-item">\u{1F4CB} ' + prop.loan_type + '</div>');
+                }
+                if (prop.foreclosure_stage) {
+                    items.push('<div class="detail-item">\u2696\uFE0F ' + prop.foreclosure_stage + '</div>');
+                }
+                if (prop.default_date) {
+                    items.push('<div class="detail-item">\u{1F4C5} Default: ' + prop.default_date + '</div>');
+                }
+            }
+
+            if (items.length === 0) return '';
             return '<div class="property-details" style="margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--divider);">'
-                + '<div class="detail-item">\u{1F3DB}\uFE0F <strong>' + entityHtml + '</strong></div>'
-                + '<div class="detail-item">\u{1F4B0} Debt: ' + debt + '</div>'
-                + '<div class="detail-item">\u{1F4CB} ' + loanType + '</div>'
-                + '<div class="detail-item">\u2696\uFE0F ' + stage + '</div>'
-                + '<div class="detail-item">\u{1F4C5} Default: ' + defaultDate + '</div>'
-                + '</div>';
+                + items.join('') + '</div>';
         }
 
         // ─── Extra data fields renderer ───
