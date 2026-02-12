@@ -820,6 +820,10 @@ def fetch_real_properties(limit: int = 75,
             if prop.state not in enabled_states:
                 continue  # State is disabled (empty list)
 
+            # Skip past auctions — no point showing expired listings
+            if getattr(prop, 'auction_date_is_past', False):
+                continue
+
             # Price filter
             if prop.auction_price < config.MIN_AUCTION_PRICE:
                 continue

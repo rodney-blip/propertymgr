@@ -16,5 +16,9 @@ Thumbs.db
 .vscode/
 .idea/
 
+# Monitor state
+.seen_listings.json
+.monitor.log
+
 # Node
 node_modules/

@@ -2,43 +2,7 @@
 TOP 20 AUCTION PROPERTY DEALS
 ================================================================================
 
-#1 - 7579 28TH STREET, WHITE CITY, Oregon
-────────────────────────────────────────────────────────────────────────────────
-Property ID: AUCT-0008
-Auction Date: 2026-02-10
-Platform: Auction.com Bank-Owned
-
-FORECLOSURE CONTEXT:
-  Foreclosing Entity:  Listed on Auction.com
-  Stage:               Auction Scheduled
-
-PRICING:
-  Auction Price:     $     125,000
-  Estimated ARV:     $     346,513
-  Estimated Repairs: $      18,750
-  Total Investment:  $     168,291
-  Profit Potential:  $     150,501
-
-METRICS:
-  Profit Margin:            43.4%
-  Deal Score:               94.0/100
-  Recommended:                  Yes
-
-PROPERTY DETAILS:
-  3 bed / 2.0 bath | 1,800 sqft | Built 1990
-  Neighborhood Score: 8/10
-
-COST BREAKDOWN:
-  Purchase:      $     125,000
-  Repairs:       $      18,750
-  Closing:       $       3,750
-  Holding:       $      20,791
-  Selling:       $      27,721
-  ────────────────────────────────────────
-  Total:         $     168,291
-
-
-#2 - 16125 HAWKS LAIR RD, LA PINE, Oregon
+#1 - 16125 HAWKS LAIR RD, LA PINE, Oregon
 ────────────────────────────────────────────────────────────────────────────────
 Property ID: AUCT-0001
 Auction Date: 2026-02-15
@@ -74,7 +38,7 @@ COST BREAKDOWN:
   Total:         $     185,543
 
 
-#3 - 61644 GEMINI WAY, BEND (Central Oregon), Oregon
+#2 - 61644 GEMINI WAY, BEND (Central Oregon), Oregon
 ────────────────────────────────────────────────────────────────────────────────
 Property ID: AUCT-0004
 Auction Date: 2026-02-26
@@ -110,9 +74,9 @@ COST BREAKDOWN:
   Total:         $     383,534
 
 
-#4 - 2875 STRASBURG STREET, MEDFORD (Southern Oregon), Oregon
+#3 - 2875 STRASBURG STREET, MEDFORD (Southern Oregon), Oregon
 ────────────────────────────────────────────────────────────────────────────────
-Property ID: AUCT-0011
+Property ID: AUCT-0010
 Auction Date: 2026-03-05
 Platform: Auction.com Foreclosure
 
@@ -146,7 +110,7 @@ COST BREAKDOWN:
   Total:         $     289,155
 
 
-#5 - 60539 SEVENTH MOUNTAIN DRIVE, BEND (Central Oregon), Oregon
+#4 - 60539 SEVENTH MOUNTAIN DRIVE, BEND (Central Oregon), Oregon
 ────────────────────────────────────────────────────────────────────────────────
 Property ID: AUCT-0005
 Auction Date: 2026-02-26
@@ -182,9 +146,9 @@ COST BREAKDOWN:
   Total:         $     550,958
 
 
-#6 - 104 MONTEREY DR, MEDFORD (Southern Oregon), Oregon
+#5 - 104 MONTEREY DR, MEDFORD (Southern Oregon), Oregon
 ────────────────────────────────────────────────────────────────────────────────
-Property ID: AUCT-0010
+Property ID: AUCT-0009
 Auction Date: 2026-03-05
 Platform: Auction.com Foreclosure
 
@@ -218,9 +182,9 @@ COST BREAKDOWN:
   Total:         $     587,131
 
 
-#7 - 20490 HIGHWAY 62, SHADY COVE, Oregon
+#6 - 20490 HIGHWAY 62, SHADY COVE, Oregon
 ────────────────────────────────────────────────────────────────────────────────
-Property ID: AUCT-0009
+Property ID: AUCT-0008
 Auction Date: 2026-02-16
 Platform: Auction.com Bank-Owned
 
@@ -254,7 +218,7 @@ COST BREAKDOWN:
   Total:         $     166,734
 
 
-#8 - 19580 RIVER WOODS DRIVE, BEND (Central Oregon), Oregon
+#7 - 19580 RIVER WOODS DRIVE, BEND (Central Oregon), Oregon
 ────────────────────────────────────────────────────────────────────────────────
 Property ID: AUCT-0007
 Auction Date: 2026-03-12
@@ -290,9 +254,9 @@ COST BREAKDOWN:
   Total:         $     276,619
 
 
-#9 - 1211 TRIANGLE DR, CENTRAL POINT, Oregon
+#8 - 1211 TRIANGLE DR, CENTRAL POINT, Oregon
 ────────────────────────────────────────────────────────────────────────────────
-Property ID: AUCT-0013
+Property ID: AUCT-0012
 Auction Date: 2026-03-19
 Platform: Auction.com Foreclosure
 
@@ -326,9 +290,9 @@ COST BREAKDOWN:
   Total:         $     205,897
 
 
-#10 - 2185 SPRING STREET, MEDFORD (Southern Oregon), Oregon
+#9 - 2185 SPRING STREET, MEDFORD (Southern Oregon), Oregon
 ────────────────────────────────────────────────────────────────────────────────
-Property ID: AUCT-0014
+Property ID: AUCT-0013
 Auction Date: 2026-03-19
 Platform: Auction.com Foreclosure
 
@@ -362,7 +326,7 @@ COST BREAKDOWN:
   Total:         $     274,033
 
 
-#11 - 1111 SW OBSIDIAN AVE, REDMOND (Central Oregon), Oregon
+#10 - 1111 SW OBSIDIAN AVE, REDMOND (Central Oregon), Oregon
 ────────────────────────────────────────────────────────────────────────────────
 Property ID: AUCT-0006
 Auction Date: 2026-03-12
@@ -398,9 +362,9 @@ COST BREAKDOWN:
   Total:         $     301,177
 
 
-#12 - 3522 BELLINGER LN, MEDFORD (Southern Oregon), Oregon
+#11 - 3522 BELLINGER LN, MEDFORD (Southern Oregon), Oregon
 ────────────────────────────────────────────────────────────────────────────────
-Property ID: AUCT-0015
+Property ID: AUCT-0014
 Auction Date: 2026-04-02
 Platform: Auction.com Foreclosure
 
@@ -434,7 +398,7 @@ COST BREAKDOWN:
   Total:         $     445,162
 
 
-#13 - 61015 MINARET CIRCLE, BEND (Central Oregon), Oregon
+#12 - 61015 MINARET CIRCLE, BEND (Central Oregon), Oregon
 ────────────────────────────────────────────────────────────────────────────────
 Property ID: AUCT-0003
 Auction Date: 2026-02-26
@@ -470,9 +434,9 @@ COST BREAKDOWN:
   Total:         $   1,167,482
 
 
-#14 - 718 SW WESTHOLM AVE, GRANTS PASS (Southern Oregon), Oregon
+#13 - 718 SW WESTHOLM AVE, GRANTS PASS (Southern Oregon), Oregon
 ────────────────────────────────────────────────────────────────────────────────
-Property ID: AUCT-0016
+Property ID: AUCT-0015
 Auction Date: 2026-03-05
 Platform: Auction.com Foreclosure
 
@@ -506,7 +470,7 @@ COST BREAKDOWN:
   Total:         $     204,471
 
 
-#15 - 1030 NW ROANOKE AVE UNIT 4, BEND (Central Oregon), Oregon
+#14 - 1030 NW ROANOKE AVE UNIT 4, BEND (Central Oregon), Oregon
 ────────────────────────────────────────────────────────────────────────────────
 Property ID: AUCT-0002
 Auction Date: 2026-02-26
@@ -542,9 +506,9 @@ COST BREAKDOWN:
   Total:         $     267,572
 
 
-#16 - 255 CHARLOTTE ANN RD, MEDFORD (Southern Oregon), Oregon
+#15 - 255 CHARLOTTE ANN RD, MEDFORD (Southern Oregon), Oregon
 ────────────────────────────────────────────────────────────────────────────────
-Property ID: AUCT-0012
+Property ID: AUCT-0011
 Auction Date: 2026-03-19
 Platform: Auction.com Foreclosure
 

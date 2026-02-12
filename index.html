@@ -1963,7 +1963,18 @@
                 const response = await fetch('property_analysis.json');
                 const data = await response.json();
 
-                allProperties = data.all_properties;
+                // Filter out past auctions at load time (dates may expire between pipeline runs)
+                var now = new Date(); now.setHours(0,0,0,0);
+                allProperties = (data.all_properties || []).filter(function(p) {
+                    if (p.auction_date_is_past) return false;
+                    if (p.auction_date) {
+                        var ad = new Date(p.auction_date + 'T00:00:00');
+                        if (ad < now) return false;
+                    }
+                    return true;
+                });
+                // Update total count to reflect filtered list
+                data.total_properties = allProperties.length;
                 currentProperties = [...allProperties];
                 allAlerts = data.alerts || [];
 

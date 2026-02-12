@@ -1,57 +1,9 @@
 {
-  "total_properties": 16,
-  "recommended_deals": 4,
-  "avg_profit_margin": 28.665512221975085,
-  "avg_deal_score": 73.67574916138267,
+  "total_properties": 15,
+  "recommended_deals": 3,
+  "avg_profit_margin": 27.681009406125607,
+  "avg_deal_score": 72.32079910547485,
   "top_deals": [
-    {
-      "id": "AUCT-0008",
-      "address": "7579 28TH STREET",
-      "city": "WHITE CITY",
-      "state": "Oregon",
-      "zip_code": "97503",
-      "region": "",
-      "auction_price": 125000.0,
-      "estimated_arv": 346513.0,
-      "estimated_repairs": 18750.0,
-      "bedrooms": 3,
-      "bathrooms": 2.0,
-      "sqft": 1800,
-      "lot_size": 0.2,
-      "year_built": 1990,
-      "property_type": "Single Family",
-      "auction_date": "2026-02-10",
-      "auction_platform": "Auction.com Bank-Owned",
-      "description": "Auction.com bank owned in WHITE CITY, Oregon. Real auction listing data via Apify. Auction date: 2026-02-10.",
-      "neighborhood_score": 8,
-      "profit_potential": 150501.18,
-      "profit_margin": 43.43305445971724,
-      "total_investment": 168290.78,
-      "max_bid_price": 203666.28,
-      "deal_score": 94.0,
-      "recommended": true,
-      "foreclosing_entity": "Listed on Auction.com",
-      "total_debt": null,
-      "loan_type": null,
-      "default_date": null,
-      "foreclosure_stage": "Auction Scheduled",
-      "property_url": "https://www.auction.com/details/7579-28th-st-white-city-or-1979025",
-      "bank_contact_url": null,
-      "image_url": "https://adc-tenbox-prod.imgix.net/resi/propertyImages/1254757/4284604ord00777108_6.v1.jpeg?auto=compress,format",
-      "notes": null,
-      "occupancy_status": "VACANT",
-      "condition_category": null,
-      "annual_property_tax": null,
-      "hoa_monthly": null,
-      "estimated_monthly_rent": null,
-      "last_sale_price": null,
-      "last_sale_date": null,
-      "latitude": null,
-      "longitude": null,
-      "county": "JACKSON",
-      "data_source": "auctioncom",
-      "auction_date_is_past": true
-    },
     {
       "id": "AUCT-0001",
       "address": "16125 HAWKS LAIR RD",
@@ -149,7 +101,7 @@
       "auction_date_is_past": false
     },
     {
-      "id": "AUCT-0011",
+      "id": "AUCT-0010",
       "address": "2875 STRASBURG STREET",
       "city": "MEDFORD",
       "state": "Oregon",
@@ -245,7 +197,7 @@
       "auction_date_is_past": false
     },
     {
-      "id": "AUCT-0010",
+      "id": "AUCT-0009",
       "address": "104 MONTEREY DR",
       "city": "MEDFORD",
       "state": "Oregon",
@@ -293,7 +245,7 @@
       "auction_date_is_past": false
     },
     {
-      "id": "AUCT-0009",
+      "id": "AUCT-0008",
       "address": "20490 HIGHWAY 62",
       "city": "SHADY COVE",
       "state": "Oregon",
@@ -389,7 +341,7 @@
       "auction_date_is_past": false
     },
     {
-      "id": "AUCT-0013",
+      "id": "AUCT-0012",
       "address": "1211 TRIANGLE DR",
       "city": "CENTRAL POINT",
       "state": "Oregon",
@@ -437,7 +389,7 @@
       "auction_date_is_past": false
     },
     {
-      "id": "AUCT-0014",
+      "id": "AUCT-0013",
       "address": "2185 SPRING STREET",
       "city": "MEDFORD",
       "state": "Oregon",
@@ -533,7 +485,7 @@
       "auction_date_is_past": false
     },
     {
-      "id": "AUCT-0015",
+      "id": "AUCT-0014",
       "address": "3522 BELLINGER LN",
       "city": "MEDFORD",
       "state": "Oregon",
@@ -629,7 +581,7 @@
       "auction_date_is_past": false
     },
     {
-      "id": "AUCT-0016",
+      "id": "AUCT-0015",
       "address": "718 SW WESTHOLM AVE",
       "city": "GRANTS PASS",
       "state": "Oregon",
@@ -725,7 +677,7 @@
       "auction_date_is_past": false
     },
     {
-      "id": "AUCT-0012",
+      "id": "AUCT-0011",
       "address": "255 CHARLOTTE ANN RD",
       "city": "MEDFORD",
       "state": "Oregon",
@@ -775,54 +727,6 @@
   ],
   "all_properties": [
     {
-      "id": "AUCT-0008",
-      "address": "7579 28TH STREET",
-      "city": "WHITE CITY",
-      "state": "Oregon",
-      "zip_code": "97503",
-      "region": "",
-      "auction_price": 125000.0,
-      "estimated_arv": 346513.0,
-      "estimated_repairs": 18750.0,
-      "bedrooms": 3,
-      "bathrooms": 2.0,
-      "sqft": 1800,
-      "lot_size": 0.2,
-      "year_built": 1990,
-      "property_type": "Single Family",
-      "auction_date": "2026-02-10",
-      "auction_platform": "Auction.com Bank-Owned",
-      "description": "Auction.com bank owned in WHITE CITY, Oregon. Real auction listing data via Apify. Auction date: 2026-02-10.",
-      "neighborhood_score": 8,
-      "profit_potential": 150501.18,
-      "profit_margin": 43.43305445971724,
-      "total_investment": 168290.78,
-      "max_bid_price": 203666.28,
-      "deal_score": 94.0,
-      "recommended": true,
-      "foreclosing_entity": "Listed on Auction.com",
-      "total_debt": null,
-      "loan_type": null,
-      "default_date": null,
-      "foreclosure_stage": "Auction Scheduled",
-      "property_url": "https://www.auction.com/details/7579-28th-st-white-city-or-1979025",
-      "bank_contact_url": null,
-      "image_url": "https://adc-tenbox-prod.imgix.net/resi/propertyImages/1254757/4284604ord00777108_6.v1.jpeg?auto=compress,format",
-      "notes": null,
-      "occupancy_status": "VACANT",
-      "condition_category": null,
-      "annual_property_tax": null,
-      "hoa_monthly": null,
-      "estimated_monthly_rent": null,
-      "last_sale_price": null,
-      "last_sale_date": null,
-      "latitude": null,
-      "longitude": null,
-      "county": "JACKSON",
-      "data_source": "auctioncom",
-      "auction_date_is_past": true
-    },
-    {
       "id": "AUCT-0001",
       "address": "16125 HAWKS LAIR RD",
       "city": "LA PINE",
@@ -919,7 +823,7 @@
       "auction_date_is_past": false
     },
     {
-      "id": "AUCT-0011",
+      "id": "AUCT-0010",
       "address": "2875 STRASBURG STREET",
       "city": "MEDFORD",
       "state": "Oregon",
@@ -1015,7 +919,7 @@
       "auction_date_is_past": false
     },
     {
-      "id": "AUCT-0010",
+      "id": "AUCT-0009",
       "address": "104 MONTEREY DR",
       "city": "MEDFORD",
       "state": "Oregon",
@@ -1063,7 +967,7 @@
       "auction_date_is_past": false
     },
     {
-      "id": "AUCT-0009",
+      "id": "AUCT-0008",
       "address": "20490 HIGHWAY 62",
       "city": "SHADY COVE",
       "state": "Oregon",
@@ -1159,7 +1063,7 @@
       "auction_date_is_past": false
     },
     {
-      "id": "AUCT-0013",
+      "id": "AUCT-0012",
       "address": "1211 TRIANGLE DR",
       "city": "CENTRAL POINT",
       "state": "Oregon",
@@ -1207,7 +1111,7 @@
       "auction_date_is_past": false
     },
     {
-      "id": "AUCT-0014",
+      "id": "AUCT-0013",
       "address": "2185 SPRING STREET",
       "city": "MEDFORD",
       "state": "Oregon",
@@ -1303,7 +1207,7 @@
       "auction_date_is_past": false
     },
     {
-      "id": "AUCT-0015",
+      "id": "AUCT-0014",
       "address": "3522 BELLINGER LN",
       "city": "MEDFORD",
       "state": "Oregon",
@@ -1399,7 +1303,7 @@
       "auction_date_is_past": false
     },
     {
-      "id": "AUCT-0016",
+      "id": "AUCT-0015",
       "address": "718 SW WESTHOLM AVE",
       "city": "GRANTS PASS",
       "state": "Oregon",
@@ -1495,7 +1399,7 @@
       "auction_date_is_past": false
     },
     {
-      "id": "AUCT-0012",
+      "id": "AUCT-0011",
       "address": "255 CHARLOTTE ANN RD",
       "city": "MEDFORD",
       "state": "Oregon",
@@ -1546,16 +1450,6 @@
   "alerts": [
     {
       "level": "\ud83d\udd25 HOT DEAL",
-      "property_id": "AUCT-0008",
-      "address": "7579 28TH STREET, WHITE CITY, Oregon",
-      "profit_margin": "43.4%",
-      "profit_potential": "$150,501",
-      "max_bid_price": 203666.28,
-      "auction_date": "2026-02-10",
-      "deal_score": 94.0
-    },
-    {
-      "level": "\ud83d\udd25 HOT DEAL",
       "property_id": "AUCT-0001",
       "address": "16125 HAWKS LAIR RD, LA PINE, Oregon",
       "profit_margin": "44.7%",
@@ -1566,7 +1460,7 @@
     },
     {
       "level": "\u2b50 EXCELLENT",
-      "property_id": "AUCT-0009",
+      "property_id": "AUCT-0008",
       "address": "20490 HIGHWAY 62, SHADY COVE, Oregon",
       "profit_margin": "40.0%",
       "profit_potential": "$128,188",
@@ -1576,7 +1470,7 @@
     },
     {
       "level": "\u2705 GOOD",
-      "property_id": "AUCT-0013",
+      "property_id": "AUCT-0012",
       "address": "1211 TRIANGLE DR, CENTRAL POINT, Oregon",
       "profit_margin": "34.3%",
       "profit_potential": "$122,194",
@@ -1586,20 +1480,19 @@
     }
   ],
   "statistics": {
-    "oregon_count": 16,
-    "avg_auction_price": 272469.11875,
-    "median_auction_price": 207885.5,
-    "avg_repairs": 42587.484375,
-    "avg_arv": 558011.25,
-    "avg_sqft": 1722.125,
-    "deals_over_40_percent": 2,
+    "oregon_count": 15,
+    "avg_auction_price": 282300.3933333333,
+    "median_auction_price": 212783.5,
+    "avg_repairs": 44176.65,
+    "avg_arv": 572111.1333333333,
+    "avg_sqft": 1716.9333333333334,
+    "deals_over_40_percent": 1,
     "deals_30_to_40_percent": 2,
     "deals_20_to_30_percent": 10,
-    "avg_neighborhood_score": 7.25,
+    "avg_neighborhood_score": 7.2,
     "properties_by_city": {
       "BEND, Oregon": 5,
       "MEDFORD, Oregon": 5,
-      "WHITE CITY, Oregon": 1,
       "LA PINE, Oregon": 1,
       "SHADY COVE, Oregon": 1,
       "CENTRAL POINT, Oregon": 1,
@@ -1612,8 +1505,8 @@
     },
     "properties_by_platform": {
       "Auction.com Foreclosure": 13,
-      "Auction.com Bank-Owned": 3
+      "Auction.com Bank-Owned": 2
     }
   },
-  "timestamp": "2026-02-12T14:24:58.253534"
+  "timestamp": "2026-02-12T14:39:06.386448"
 }
