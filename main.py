@@ -30,16 +30,18 @@ class AuctionAnalyzerCLI:
                          use_real_data: bool = False,
                          property_count: int = None,
                          enrich: bool = False,
-                         max_zips: int = 12) -> None:
+                         max_zips: int = 12,
+                         sources: list = None) -> None:
         """
         Run complete analysis pipeline
 
         Args:
             use_mock_data: Use generated mock data
-            use_real_data: Fetch real properties from ATTOM/BatchData APIs
+            use_real_data: Fetch real properties from ATTOM/BatchData/Redfin
             property_count: Number of properties to generate/fetch
             enrich: Enrich mock data with live API calls (ATTOM, BatchData, Census)
             max_zips: Number of ZIP codes to scan in real-data mode
+            sources: Which data sources to use (None=all, ["redfin"], ["attom","batchdata"])
         """
         print("=" * 80)
         print("AUCTION PROPERTY ANALYZER")
@@ -49,12 +51,30 @@ class AuctionAnalyzerCLI:
 
         # Step 1: Load data
         if use_real_data:
-            print("🏠 Fetching REAL auction & foreclosure data...")
-            print("   Sources: ATTOM Property API + BatchData Pre-Foreclosure")
+            if sources and "auctioncom" in sources and len(sources) == 1:
+                print("🏠 Fetching Auction.com listings via Apify cloud...")
+                print("   Source: Auction.com (ParseForge PPE actor)")
+                ac_states = getattr(config, "AUCTIONCOM_STATES", ["Oregon"])
+                print(f"   States: {', '.join(ac_states)}")
+                print(f"   Max items: {getattr(config, 'AUCTIONCOM_MAX_ITEMS', 100)}")
+            elif sources and "sheriff" in sources and len(sources) == 1:
+                print("🏠 Scraping REAL sheriff's sale auction data...")
+                print("   Source: Oregon Sheriffs Sales (oregonsheriffssales.org)")
+                counties = getattr(config, "SHERIFF_COUNTIES", ["deschutes"])
+                print(f"   Counties: {', '.join(c.title() for c in counties)}")
+            elif sources and "redfin" in sources and len(sources) == 1:
+                print("🏠 Scraping REAL MLS foreclosure data from Redfin...")
+                print("   Source: Redfin Stingray API (MLS-listed foreclosures)")
+            else:
+                print("🏠 Fetching REAL auction & foreclosure data...")
+                print("   Sources: ATTOM Property API + BatchData Pre-Foreclosure")
+                if sources and "redfin" in sources:
+                    print("            + Redfin MLS Foreclosures")
             print()
             count = property_count or config.MOCK_DATA_COUNT
             self.properties = fetch_real_properties(
-                limit=count, max_zips=max_zips, progress=True
+                limit=count, max_zips=max_zips, progress=True,
+                sources=sources
             )
             if not self.properties:
                 print("\n   ⚠️  No real properties found (APIs may be rate-limited).")
@@ -214,7 +234,19 @@ Examples:
   # Run full analysis with mock data
   python main.py --mock
 
-  # Fetch REAL auction/foreclosure data from APIs
+  # Scrape REAL MLS foreclosures from Redfin (no API key needed!)
+  python main.py --scrape
+
+  # Scrape with more ZIP codes for wider coverage
+  python main.py --scrape --max-zips 20 --count 100
+
+  # Scrape Oregon sheriff's sales (real courthouse auctions)
+  python main.py --sheriff
+
+  # Fetch Auction.com listings via Apify cloud (free tier: 100 properties)
+  python main.py --auction-com
+
+  # Fetch REAL auction/foreclosure data from ATTOM/BatchData APIs
   python main.py --real
 
   # Real data with more ZIP codes scanned
@@ -242,6 +274,12 @@ Examples:
                              help='Use mock data for testing')
     data_source.add_argument('--real', action='store_true',
                              help='Fetch REAL auction/foreclosure data from ATTOM & BatchData APIs')
+    data_source.add_argument('--scrape', action='store_true',
+                             help='Scrape Redfin for real MLS-listed foreclosures (no API key needed)')
+    data_source.add_argument('--sheriff', action='store_true',
+                             help='Scrape Oregon sheriff\'s sales (real courthouse auctions, no API key needed)')
+    data_source.add_argument('--auction-com', action='store_true', dest='auction_com',
+                             help='Fetch Auction.com listings via Apify (requires apify_token in .api_keys.json)')
 
     parser.add_argument('--count', type=int, default=None,
                        help='Number of properties to generate/fetch (default: from config)')
@@ -343,12 +381,30 @@ Examples:
             use_mock_data=False, use_real_data=True,
             property_count=args.count, max_zips=args.max_zips
         )
+    elif args.scrape:
+        cli.run_full_analysis(
+            use_mock_data=False, use_real_data=True,
+            property_count=args.count, max_zips=args.max_zips,
+            sources=["redfin"]
+        )
+    elif args.sheriff:
+        cli.run_full_analysis(
+            use_mock_data=False, use_real_data=True,
+            property_count=args.count, max_zips=args.max_zips,
+            sources=["sheriff"]
+        )
+    elif args.auction_com:
+        cli.run_full_analysis(
+            use_mock_data=False, use_real_data=True,
+            property_count=args.count, max_zips=args.max_zips,
+            sources=["auctioncom"]
+        )
     elif args.mock:
         cli.run_full_analysis(use_mock_data=True, property_count=args.count,
                               enrich=args.enrich)
     else:
         parser.print_help()
-        print("\n⚠️  Please specify --mock for test data or --real for live auction data")
+        print("\n⚠️  Please specify --mock, --real, --scrape, --sheriff, or --auction-com")
         return
 
     # Additional operations (shared across --mock and --real)

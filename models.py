@@ -34,13 +34,13 @@ class Property:
     property_type: str
     
     # Auction details
-    auction_date: str
+    auction_date: str  # YYYY-MM-DD or "" if unknown
     auction_platform: str
     description: str
-    
+
     # Quality metrics
     neighborhood_score: int  # 1-10 scale
-    
+
     # Calculated fields (computed after creation)
     profit_potential: float = 0.0
     profit_margin: float = 0.0
@@ -81,7 +81,8 @@ class Property:
 
     # Additional metadata
     county: Optional[str] = None
-    data_source: Optional[str] = None            # "mock", "attom", "batchdata", "manual"
+    data_source: Optional[str] = None            # "mock", "attom", "batchdata", "redfin", "sheriff", "auctioncom"
+    auction_date_is_past: bool = False            # True if auction already occurred
     
     def calculate_metrics(self) -> None:
         """Calculate all investment metrics and scoring"""

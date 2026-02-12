@@ -2,783 +2,783 @@
 TOP 20 AUCTION PROPERTY DEALS
 ================================================================================
 
-#1 - 20112 NE 259TH ST, BATTLE GROUND (Southern Washington / Vancouver), Washington
+#1 - 4054 River Dr, Grants Pass (Southern Oregon), Oregon
 ────────────────────────────────────────────────────────────────────────────────
-Property ID: REAL-0376
-Auction Date: 2026-02-26
-Platform: ATTOM Sale
+Property ID: PROP-1129
+Auction Date: 2026-03-11
+Platform: Bid4Assets
 
 FORECLOSURE CONTEXT:
-  Foreclosing Entity:  Bank of America
-  Total Debt:          $     400,200
-  Loan Type:           USDA
-  Default Date:        2025-09-16
-  Stage:               Notice of Default
-
-PRICING:
-  Auction Price:     $     105,000
-  Estimated ARV:     $     452,760
-  Estimated Repairs: $      15,750
-  Total Investment:  $     151,066
-  Profit Potential:  $     265,474
-
-METRICS:
-  Profit Margin:            58.6%
-  Deal Score:               96.0/100
-  Recommended:                  Yes
-
-PROPERTY DETAILS:
-  5 bed / 2.0 bath | 2,058 sqft | Built 1990
-  Neighborhood Score: 10/10
-
-COST BREAKDOWN:
-  Purchase:      $     105,000
-  Repairs:       $      15,750
-  Closing:       $       3,150
-  Holding:       $      27,166
-  Selling:       $      36,221
-  ────────────────────────────────────────
-  Total:         $     151,066
-
-
-#2 - 691 E TYEE DR, SISTERS (Central Oregon), Oregon
-────────────────────────────────────────────────────────────────────────────────
-Property ID: REAL-0004
-Auction Date: 2026-03-10
-Platform: ATTOM Sale
-
-FORECLOSURE CONTEXT:
-  Foreclosing Entity:  Mr. Cooper
-  Total Debt:          $     722,910
-  Loan Type:           USDA
-  Default Date:        2025-02-25
-  Stage:               Short Sale
-
-PRICING:
-  Auction Price:     $     317,500
-  Estimated ARV:     $     936,186
-  Estimated Repairs: $      47,625
-  Total Investment:  $     430,821
-  Profit Potential:  $     430,470
-
-METRICS:
-  Profit Margin:            46.0%
-  Deal Score:               94.0/100
-  Recommended:                  Yes
-
-PROPERTY DETAILS:
-  4 bed / 2.0 bath | 2,391 sqft | Built 1990
-  Neighborhood Score: 8/10
-
-COST BREAKDOWN:
-  Purchase:      $     317,500
-  Repairs:       $      47,625
-  Closing:       $       9,525
-  Holding:       $      56,171
-  Selling:       $      74,895
-  ────────────────────────────────────────
-  Total:         $     430,821
-
-
-#3 - 364 E WAPATO LOOP, SISTERS (Central Oregon), Oregon
-────────────────────────────────────────────────────────────────────────────────
-Property ID: REAL-0010
-Auction Date: 2026-04-01
-Platform: ATTOM Property
-
-FORECLOSURE CONTEXT:
-  Foreclosing Entity:  Capital One
-  Total Debt:          $     792,598
-  Loan Type:           Jumbo
-  Default Date:        2025-02-17
-  Stage:               Pre-Foreclosure
-
-PRICING:
-  Auction Price:     $     295,026
-  Estimated ARV:     $     839,500
-  Estimated Repairs: $      44,254
-  Total Investment:  $     398,501
-  Profit Potential:  $     373,839
-
-METRICS:
-  Profit Margin:            44.5%
-  Deal Score:               94.0/100
-  Recommended:                  Yes
-
-PROPERTY DETAILS:
-  3 bed / 2.0 bath | 2,181 sqft | Built 1990
-  Neighborhood Score: 8/10
-
-COST BREAKDOWN:
-  Purchase:      $     295,026
-  Repairs:       $      44,254
-  Closing:       $       8,851
-  Holding:       $      50,370
-  Selling:       $      67,160
-  ────────────────────────────────────────
-  Total:         $     398,501
-
-
-#4 - 2103 SW 35TH PL, REDMOND (Central Oregon), Oregon
-────────────────────────────────────────────────────────────────────────────────
-Property ID: REAL-0058
-Auction Date: 2026-04-04
-Platform: ATTOM Sale
-
-FORECLOSURE CONTEXT:
-  Foreclosing Entity:  Capital One
-  Total Debt:          $     263,175
-  Loan Type:           FHA
-  Default Date:        2025-03-05
-  Stage:               REO / Bank Owned
-
-PRICING:
-  Auction Price:     $     123,500
-  Estimated ARV:     $     331,200
-  Estimated Repairs: $      18,525
-  Total Investment:  $     165,602
-  Profit Potential:  $     139,102
-
-METRICS:
-  Profit Margin:            42.0%
-  Deal Score:               94.0/100
-  Recommended:                  Yes
-
-PROPERTY DETAILS:
-  3 bed / 2.0 bath | 1,656 sqft | Built 1990
-  Neighborhood Score: 8/10
-
-COST BREAKDOWN:
-  Purchase:      $     123,500
-  Repairs:       $      18,525
-  Closing:       $       3,705
-  Holding:       $      19,872
-  Selling:       $      26,496
-  ────────────────────────────────────────
-  Total:         $     165,602
-
-
-#5 - 287 ROLLING MEADOWS LN, KYLE (Greater Austin), Texas
-────────────────────────────────────────────────────────────────────────────────
-Property ID: REAL-0372
-Auction Date: 2026-03-14
-Platform: ATTOM Sale
-
-FORECLOSURE CONTEXT:
-  Foreclosing Entity:  Caliber Home Loans
-  Total Debt:          $     285,101
-  Loan Type:           ARM
-  Default Date:        2025-04-07
+  Foreclosing Entity:  PHH Mortgage
+  Total Debt:          $     279,256
+  Loan Type:           VA
+  Default Date:        2025-04-18
   Stage:               Lis Pendens
 
 PRICING:
-  Auction Price:     $     107,175
-  Estimated ARV:     $     318,400
-  Estimated Repairs: $      16,076
-  Total Investment:  $     145,570
-  Profit Potential:  $     147,358
+  Auction Price:     $     203,635
+  Estimated ARV:     $     479,496
+  Estimated Repairs: $      10,182
+  Total Investment:  $     248,696
+  Profit Potential:  $     192,441
 
 METRICS:
-  Profit Margin:            46.3%
-  Deal Score:               94.0/100
-  Recommended:                  Yes
-
-PROPERTY DETAILS:
-  3 bed / 2.0 bath | 1,990 sqft | Built 1990
-  Neighborhood Score: 8/10
-
-COST BREAKDOWN:
-  Purchase:      $     107,175
-  Repairs:       $      16,076
-  Closing:       $       3,215
-  Holding:       $      19,104
-  Selling:       $      25,472
-  ────────────────────────────────────────
-  Total:         $     145,570
-
-
-#6 - 717 NE 14TH AVE, CAMAS (Southern Washington / Vancouver), Washington
-────────────────────────────────────────────────────────────────────────────────
-Property ID: REAL-0438
-Auction Date: 2026-03-26
-Platform: ATTOM Sale
-
-FORECLOSURE CONTEXT:
-  Foreclosing Entity:  Mr. Cooper
-  Total Debt:          $     532,364
-  Loan Type:           FHA
-  Default Date:        2025-10-28
-  Stage:               Short Sale
-
-PRICING:
-  Auction Price:     $     181,100
-  Estimated ARV:     $     594,000
-  Estimated Repairs: $      27,165
-  Total Investment:  $     249,338
-  Profit Potential:  $     297,142
-
-METRICS:
-  Profit Margin:            50.0%
-  Deal Score:               93.0/100
-  Recommended:                  Yes
-
-PROPERTY DETAILS:
-  6 bed / 6.0 bath | 2,700 sqft | Built 1990
-  Neighborhood Score: 10/10
-
-COST BREAKDOWN:
-  Purchase:      $     181,100
-  Repairs:       $      27,165
-  Closing:       $       5,433
-  Holding:       $      35,640
-  Selling:       $      47,520
-  ────────────────────────────────────────
-  Total:         $     249,338
-
-
-#7 - 402 NW 14TH ST, BATTLE GROUND (Southern Washington / Vancouver), Washington
-────────────────────────────────────────────────────────────────────────────────
-Property ID: REAL-0489
-Auction Date: 2026-04-06
-Platform: ATTOM Sale
-
-FORECLOSURE CONTEXT:
-  Foreclosing Entity:  Mr. Cooper
-  Total Debt:          $     389,047
-  Loan Type:           VA
-  Default Date:        2025-08-05
-  Stage:               Notice of Default
-
-PRICING:
-  Auction Price:     $     155,751
-  Estimated ARV:     $     506,440
-  Estimated Repairs: $      23,363
-  Total Investment:  $     214,173
-  Profit Potential:  $     251,752
-
-METRICS:
-  Profit Margin:            49.7%
-  Deal Score:               93.0/100
-  Recommended:                  Yes
-
-PROPERTY DETAILS:
-  3 bed / 3.0 bath | 2,302 sqft | Built 1990
-  Neighborhood Score: 10/10
-
-COST BREAKDOWN:
-  Purchase:      $     155,751
-  Repairs:       $      23,363
-  Closing:       $       4,673
-  Holding:       $      30,386
-  Selling:       $      40,515
-  ────────────────────────────────────────
-  Total:         $     214,173
-
-
-#8 - 63415 MUSTANG RD, BEND (Central Oregon), Oregon
-────────────────────────────────────────────────────────────────────────────────
-Property ID: REAL-0008
-Auction Date: 2026-04-06
-Platform: ATTOM Sale
-
-FORECLOSURE CONTEXT:
-  Foreclosing Entity:  Truist Bank
-  Total Debt:          $     625,602
-  Loan Type:           USDA
-  Default Date:        2025-08-13
-  Stage:               Notice of Default
-
-PRICING:
-  Auction Price:     $     249,000
-  Estimated ARV:     $     698,273
-  Estimated Repairs: $      37,350
-  Total Investment:  $     335,716
-  Profit Potential:  $     306,695
-
-METRICS:
-  Profit Margin:            43.9%
+  Profit Margin:            40.1%
   Deal Score:               92.0/100
   Recommended:                  Yes
 
 PROPERTY DETAILS:
-  3 bed / 2.0 bath | 2,119 sqft | Built 1990
-  Neighborhood Score: 7/10
-
-COST BREAKDOWN:
-  Purchase:      $     249,000
-  Repairs:       $      37,350
-  Closing:       $       7,470
-  Holding:       $      41,896
-  Selling:       $      55,862
-  ────────────────────────────────────────
-  Total:         $     335,716
-
-
-#9 - 70065 MCKENZIE CANYON RD, SISTERS (Central Oregon), Oregon
-────────────────────────────────────────────────────────────────────────────────
-Property ID: REAL-0079
-Auction Date: 2026-03-09
-Platform: ATTOM Sale
-
-FORECLOSURE CONTEXT:
-  Foreclosing Entity:  PNC Bank
-  Total Debt:          $     334,897
-  Loan Type:           Jumbo
-  Default Date:        2024-12-17
-  Stage:               Auction Scheduled
-
-PRICING:
-  Auction Price:     $     165,000
-  Estimated ARV:     $     423,600
-  Estimated Repairs: $      24,750
-  Total Investment:  $     220,116
-  Profit Potential:  $     169,596
-
-METRICS:
-  Profit Margin:            40.0%
-  Deal Score:               92.0/100
-  Recommended:                  Yes
-
-PROPERTY DETAILS:
-  5 bed / 3.0 bath | 2,118 sqft | Built 1990
-  Neighborhood Score: 8/10
-
-COST BREAKDOWN:
-  Purchase:      $     165,000
-  Repairs:       $      24,750
-  Closing:       $       4,950
-  Holding:       $      25,416
-  Selling:       $      33,888
-  ────────────────────────────────────────
-  Total:         $     220,116
-
-
-#10 - 63345 BRODY LN, BEND (Central Oregon), Oregon
-────────────────────────────────────────────────────────────────────────────────
-Property ID: REAL-0021
-Auction Date: 2026-04-04
-Platform: ATTOM Sale
-
-FORECLOSURE CONTEXT:
-  Foreclosing Entity:  PNC Bank
-  Total Debt:          $     336,823
-  Loan Type:           ARM
-  Default Date:        2025-08-06
-  Stage:               Auction Scheduled
-
-PRICING:
-  Auction Price:     $     140,000
-  Estimated ARV:     $     416,000
-  Estimated Repairs: $      21,000
-  Total Investment:  $     190,160
-  Profit Potential:  $     192,560
-
-METRICS:
-  Profit Margin:            46.3%
-  Deal Score:               90.0/100
-  Recommended:                  Yes
-
-PROPERTY DETAILS:
-  5 bed / 4.0 bath | 2,080 sqft | Built 1990
-  Neighborhood Score: 7/10
-
-COST BREAKDOWN:
-  Purchase:      $     140,000
-  Repairs:       $      21,000
-  Closing:       $       4,200
-  Holding:       $      24,960
-  Selling:       $      33,280
-  ────────────────────────────────────────
-  Total:         $     190,160
-
-
-#11 - 1005 SW KENWOOD DR, MADRAS (Central Oregon), Oregon
-────────────────────────────────────────────────────────────────────────────────
-Property ID: REAL-0067
-Auction Date: 2026-04-10
-Platform: ATTOM Sale
-
-FORECLOSURE CONTEXT:
-  Foreclosing Entity:  PNC Bank
-  Total Debt:          $     322,607
-  Loan Type:           USDA
-  Default Date:        2025-02-22
-  Stage:               REO / Bank Owned
-
-PRICING:
-  Auction Price:     $     159,000
-  Estimated ARV:     $     410,000
-  Estimated Repairs: $      23,850
-  Total Investment:  $     212,220
-  Profit Potential:  $     164,980
-
-METRICS:
-  Profit Margin:            40.2%
-  Deal Score:               90.0/100
-  Recommended:                  Yes
-
-PROPERTY DETAILS:
-  4 bed / 2.0 bath | 2,050 sqft | Built 1990
+  2 bed / 3.0 bath | 2,332 sqft | Built 1991
   Neighborhood Score: 6/10
 
 COST BREAKDOWN:
-  Purchase:      $     159,000
-  Repairs:       $      23,850
-  Closing:       $       4,770
-  Holding:       $      24,600
-  Selling:       $      32,800
+  Purchase:      $     203,635
+  Repairs:       $      10,182
+  Closing:       $       6,109
+  Holding:       $      28,770
+  Selling:       $      38,360
   ────────────────────────────────────────
-  Total:         $     212,220
+  Total:         $     248,696
 
 
-#12 - 409 KEENLAND DR, GEORGETOWN (Greater Austin), Texas
+#2 - 4385 Sunset Dr, Oregon City (Portland Metro), Oregon
 ────────────────────────────────────────────────────────────────────────────────
-Property ID: REAL-0309
-Auction Date: 2026-03-20
-Platform: ATTOM Sale
-
-FORECLOSURE CONTEXT:
-  Foreclosing Entity:  PHH Mortgage
-  Total Debt:          $     307,112
-  Loan Type:           Fixed 30yr
-  Default Date:        2025-07-24
-  Stage:               Auction Scheduled
-
-PRICING:
-  Auction Price:     $     151,460
-  Estimated ARV:     $     406,080
-  Estimated Repairs: $      22,719
-  Total Investment:  $     203,088
-  Profit Potential:  $     170,506
-
-METRICS:
-  Profit Margin:            42.0%
-  Deal Score:               90.0/100
-  Recommended:                  Yes
-
-PROPERTY DETAILS:
-  3 bed / 3.0 bath | 2,538 sqft | Built 1990
-  Neighborhood Score: 6/10
-
-COST BREAKDOWN:
-  Purchase:      $     151,460
-  Repairs:       $      22,719
-  Closing:       $       4,544
-  Holding:       $      24,365
-  Selling:       $      32,486
-  ────────────────────────────────────────
-  Total:         $     203,088
-
-
-#13 - 181 WARD RD, LONGVIEW (Southern Washington / Vancouver), Washington
-────────────────────────────────────────────────────────────────────────────────
-Property ID: REAL-0412
-Auction Date: 2026-03-08
-Platform: ATTOM Sale
-
-FORECLOSURE CONTEXT:
-  Foreclosing Entity:  PHH Mortgage
-  Total Debt:          $     293,986
-  Loan Type:           FHA
-  Default Date:        2025-10-23
-  Stage:               Notice of Default
-
-PRICING:
-  Auction Price:     $     133,900
-  Estimated ARV:     $     392,040
-  Estimated Repairs: $      20,085
-  Total Investment:  $     181,524
-  Profit Potential:  $     179,152
-
-METRICS:
-  Profit Margin:            45.7%
-  Deal Score:               90.0/100
-  Recommended:                  Yes
-
-PROPERTY DETAILS:
-  3 bed / 2.0 bath | 1,782 sqft | Built 1990
-  Neighborhood Score: 6/10
-
-COST BREAKDOWN:
-  Purchase:      $     133,900
-  Repairs:       $      20,085
-  Closing:       $       4,017
-  Holding:       $      23,522
-  Selling:       $      31,363
-  ────────────────────────────────────────
-  Total:         $     181,524
-
-
-#14 - 315 NW 1ST AVE, KELSO (Southern Washington / Vancouver), Washington
-────────────────────────────────────────────────────────────────────────────────
-Property ID: REAL-0457
-Auction Date: 2026-02-28
-Platform: ATTOM Sale
-
-FORECLOSURE CONTEXT:
-  Foreclosing Entity:  Caliber Home Loans
-  Total Debt:          $     367,979
-  Loan Type:           Conventional
-  Default Date:        2024-10-08
-  Stage:               Notice of Default
-
-PRICING:
-  Auction Price:     $     106,125
-  Estimated ARV:     $     408,320
-  Estimated Repairs: $      15,919
-  Total Investment:  $     149,727
-  Profit Potential:  $     225,928
-
-METRICS:
-  Profit Margin:            55.3%
-  Deal Score:               90.0/100
-  Recommended:                  Yes
-
-PROPERTY DETAILS:
-  4 bed / 2.0 bath | 1,856 sqft | Built 1990
-  Neighborhood Score: 6/10
-
-COST BREAKDOWN:
-  Purchase:      $     106,125
-  Repairs:       $      15,919
-  Closing:       $       3,184
-  Holding:       $      24,499
-  Selling:       $      32,666
-  ────────────────────────────────────────
-  Total:         $     149,727
-
-
-#15 - 161 N ELM ST # 101, SISTERS (Central Oregon), Oregon
-────────────────────────────────────────────────────────────────────────────────
-Property ID: REAL-0036
-Auction Date: 2026-02-25
-Platform: ATTOM Sale
+Property ID: PROP-1097
+Auction Date: 2026-02-15
+Platform: RealtyTrac
 
 FORECLOSURE CONTEXT:
   Foreclosing Entity:  Shellpoint Mortgage
-  Total Debt:          $     986,866
-  Loan Type:           USDA
-  Default Date:        2025-02-02
-  Stage:               Pre-Foreclosure
+  Total Debt:          $     217,891
+  Loan Type:           Interest-Only
+  Default Date:        2025-01-18
+  Stage:               Short Sale
 
 PRICING:
-  Auction Price:     $     400,000
-  Estimated ARV:     $   1,128,000
-  Estimated Repairs: $      60,000
-  Total Investment:  $     539,680
-  Profit Potential:  $     498,080
+  Auction Price:     $     152,249
+  Estimated ARV:     $     364,482
+  Estimated Repairs: $       7,612
+  Total Investment:  $     186,298
+  Profit Potential:  $     149,026
 
 METRICS:
-  Profit Margin:            44.2%
-  Deal Score:               89.0/100
+  Profit Margin:            40.9%
+  Deal Score:               90.0/100
   Recommended:                  Yes
 
 PROPERTY DETAILS:
-  3 bed / 2.0 bath | 5,640 sqft | Built 1990
-  Neighborhood Score: 8/10
-
-COST BREAKDOWN:
-  Purchase:      $     400,000
-  Repairs:       $      60,000
-  Closing:       $      12,000
-  Holding:       $      67,680
-  Selling:       $      90,240
-  ────────────────────────────────────────
-  Total:         $     539,680
-
-
-#16 - 33817 SE 27TH ST, WASHOUGAL (Southern Washington / Vancouver), Washington
-────────────────────────────────────────────────────────────────────────────────
-Property ID: REAL-0451
-Auction Date: 2026-04-08
-Platform: ATTOM Sale
-
-FORECLOSURE CONTEXT:
-  Foreclosing Entity:  Citibank
-  Total Debt:          $     318,195
-  Loan Type:           ARM
-  Default Date:        2025-05-11
-  Stage:               REO / Bank Owned
-
-PRICING:
-  Auction Price:     $     179,495
-  Estimated ARV:     $     392,040
-  Estimated Repairs: $      26,924
-  Total Investment:  $     235,326
-  Profit Potential:  $     125,350
-
-METRICS:
-  Profit Margin:            32.0%
-  Deal Score:               88.5/100
-  Recommended:                  Yes
-
-PROPERTY DETAILS:
-  4 bed / 3.0 bath | 1,782 sqft | Built 1990
+  2 bed / 3.0 bath | 1,717 sqft | Built 1977
   Neighborhood Score: 10/10
 
 COST BREAKDOWN:
-  Purchase:      $     179,495
-  Repairs:       $      26,924
-  Closing:       $       5,385
-  Holding:       $      23,522
-  Selling:       $      31,363
+  Purchase:      $     152,249
+  Repairs:       $       7,612
+  Closing:       $       4,567
+  Holding:       $      21,869
+  Selling:       $      29,159
   ────────────────────────────────────────
-  Total:         $     235,326
+  Total:         $     186,298
 
 
-#17 - 104 SW 16TH WAY, BATTLE GROUND (Southern Washington / Vancouver), Washington
+#3 - 7871 Oak Dr, Medford (Southern Oregon), Oregon
 ────────────────────────────────────────────────────────────────────────────────
-Property ID: REAL-0421
-Auction Date: 2026-04-06
-Platform: ATTOM Sale
+Property ID: PROP-1119
+Auction Date: 2026-03-11
+Platform: Hubzu
 
 FORECLOSURE CONTEXT:
-  Foreclosing Entity:  PNC Bank
-  Total Debt:          $     373,553
-  Loan Type:           USDA
-  Default Date:        2025-02-26
+  Foreclosing Entity:  Chase Bank
+  Total Debt:          $     306,738
+  Loan Type:           ARM
+  Default Date:        2025-10-15
+  Stage:               Bank Owned (REO)
+
+PRICING:
+  Auction Price:     $     234,684
+  Estimated ARV:     $     584,064
+  Estimated Repairs: $      18,775
+  Total Investment:  $     295,543
+  Profit Potential:  $     241,796
+
+METRICS:
+  Profit Margin:            41.4%
+  Deal Score:               90.0/100
+  Recommended:                  Yes
+
+PROPERTY DETAILS:
+  4 bed / 3.5 bath | 2,635 sqft | Built 1998
+  Neighborhood Score: 6/10
+
+COST BREAKDOWN:
+  Purchase:      $     234,684
+  Repairs:       $      18,775
+  Closing:       $       7,041
+  Holding:       $      35,044
+  Selling:       $      46,725
+  ────────────────────────────────────────
+  Total:         $     295,543
+
+
+#4 - 5438 Cedar Dr, Hillsboro (Portland Metro), Oregon
+────────────────────────────────────────────────────────────────────────────────
+Property ID: PROP-1075
+Auction Date: 2026-03-05
+Platform: RealtyBid
+
+FORECLOSURE CONTEXT:
+  Foreclosing Entity:  Shellpoint Mortgage
+  Total Debt:          $     287,737
+  Loan Type:           FHA
+  Default Date:        2024-11-19
   Stage:               Auction Scheduled
 
 PRICING:
-  Auction Price:     $     204,700
-  Estimated ARV:     $     443,520
-  Estimated Repairs: $      30,705
-  Total Investment:  $     268,157
-  Profit Potential:  $     139,881
+  Auction Price:     $     249,384
+  Estimated ARV:     $     489,726
+  Estimated Repairs: $      29,926
+  Total Investment:  $     316,176
+  Profit Potential:  $     134,372
 
 METRICS:
-  Profit Margin:            31.5%
-  Deal Score:               88.4/100
+  Profit Margin:            27.4%
+  Deal Score:               87.4/100
+  Recommended:                   No
+
+PROPERTY DETAILS:
+  3 bed / 3.5 bath | 2,420 sqft | Built 2015
+  Neighborhood Score: 9/10
+
+COST BREAKDOWN:
+  Purchase:      $     249,384
+  Repairs:       $      29,926
+  Closing:       $       7,482
+  Holding:       $      29,384
+  Selling:       $      39,178
+  ────────────────────────────────────────
+  Total:         $     316,176
+
+
+#5 - 6511 Hill Rd, Springfield (Eugene / Lane County), Oregon
+────────────────────────────────────────────────────────────────────────────────
+Property ID: PROP-1127
+Auction Date: 2026-02-28
+Platform: Bid4Assets
+
+FORECLOSURE CONTEXT:
+  Foreclosing Entity:  Shellpoint Mortgage
+  Total Debt:          $     357,536
+  Loan Type:           VA
+  Default Date:        2025-10-15
+  Stage:               Bank Owned (REO)
+
+PRICING:
+  Auction Price:     $     270,369
+  Estimated ARV:     $     593,681
+  Estimated Repairs: $      21,630
+  Total Investment:  $     335,731
+  Profit Potential:  $     210,456
+
+METRICS:
+  Profit Margin:            35.4%
+  Deal Score:               87.4/100
   Recommended:                  Yes
 
 PROPERTY DETAILS:
-  3 bed / 3.0 bath | 2,016 sqft | Built 1990
-  Neighborhood Score: 10/10
+  5 bed / 2.5 bath | 2,554 sqft | Built 2013
+  Neighborhood Score: 6/10
 
 COST BREAKDOWN:
-  Purchase:      $     204,700
-  Repairs:       $      30,705
-  Closing:       $       6,141
-  Holding:       $      26,611
-  Selling:       $      35,482
+  Purchase:      $     270,369
+  Repairs:       $      21,630
+  Closing:       $       8,111
+  Holding:       $      35,621
+  Selling:       $      47,494
   ────────────────────────────────────────
-  Total:         $     268,157
+  Total:         $     335,731
 
 
-#18 - 1258 SE PINE ST, ROSEBURG (Southern Oregon), Oregon
+#6 - 6290 Highland Ave, McMinnville (Salem / Mid-Valley), Oregon
 ────────────────────────────────────────────────────────────────────────────────
-Property ID: REAL-0150
-Auction Date: 2026-03-14
-Platform: ATTOM Sale
+Property ID: PROP-1034
+Auction Date: 2026-03-23
+Platform: HomePath
+
+FORECLOSURE CONTEXT:
+  Foreclosing Entity:  Freedom Mortgage
+  Total Debt:          $     269,497
+  Loan Type:           Jumbo
+  Default Date:        2025-10-15
+  Stage:               Notice of Default
+
+PRICING:
+  Auction Price:     $     177,309
+  Estimated ARV:     $     411,534
+  Estimated Repairs: $       8,865
+  Total Investment:  $     216,186
+  Profit Potential:  $     162,426
+
+METRICS:
+  Profit Margin:            39.5%
+  Deal Score:               84.4/100
+  Recommended:                  Yes
+
+PROPERTY DETAILS:
+  5 bed / 2.5 bath | 2,151 sqft | Built 2015
+  Neighborhood Score: 7/10
+
+COST BREAKDOWN:
+  Purchase:      $     177,309
+  Repairs:       $       8,865
+  Closing:       $       5,319
+  Holding:       $      24,692
+  Selling:       $      32,923
+  ────────────────────────────────────────
+  Total:         $     216,186
+
+
+#7 - 2803 Ridge Ct, Roseburg (Southern Oregon), Oregon
+────────────────────────────────────────────────────────────────────────────────
+Property ID: PROP-1068
+Auction Date: 2026-03-04
+Platform: RealtyBid
 
 FORECLOSURE CONTEXT:
   Foreclosing Entity:  Ocwen Financial
-  Total Debt:          $     415,588
-  Loan Type:           Fixed 15yr
-  Default Date:        2024-12-16
-  Stage:               Auction Scheduled
+  Total Debt:          $     199,257
+  Loan Type:           Interest-Only
+  Default Date:        2025-06-17
+  Stage:               Lis Pendens
 
 PRICING:
-  Auction Price:     $     212,000
-  Estimated ARV:     $     559,600
-  Estimated Repairs: $      31,800
-  Total Investment:  $     283,736
-  Profit Potential:  $     231,096
+  Auction Price:     $     175,313
+  Estimated ARV:     $     417,268
+  Estimated Repairs: $      17,531
+  Total Investment:  $     223,140
+  Profit Potential:  $     160,746
 
 METRICS:
-  Profit Margin:            41.3%
-  Deal Score:               88.0/100
+  Profit Margin:            38.5%
+  Deal Score:               84.1/100
   Recommended:                  Yes
 
 PROPERTY DETAILS:
-  3 bed / 3.0 bath | 2,798 sqft | Built 1990
+  3 bed / 3.0 bath | 2,167 sqft | Built 1977
   Neighborhood Score: 5/10
 
 COST BREAKDOWN:
-  Purchase:      $     212,000
-  Repairs:       $      31,800
-  Closing:       $       6,360
-  Holding:       $      33,576
-  Selling:       $      44,768
+  Purchase:      $     175,313
+  Repairs:       $      17,531
+  Closing:       $       5,259
+  Holding:       $      25,036
+  Selling:       $      33,381
   ────────────────────────────────────────
-  Total:         $     283,736
+  Total:         $     223,140
 
 
-#19 - 1065 GENEVA GROVE CT, SAN MARCOS (Greater Austin), Texas
+#8 - 8264 River Ln, Grants Pass (Southern Oregon), Oregon
 ────────────────────────────────────────────────────────────────────────────────
-Property ID: REAL-0301
-Auction Date: 2026-04-04
-Platform: ATTOM Sale
-
-FORECLOSURE CONTEXT:
-  Foreclosing Entity:  PNC Bank
-  Total Debt:          $     299,026
-  Loan Type:           Jumbo
-  Default Date:        2025-07-16
-  Stage:               Auction Scheduled
-
-PRICING:
-  Auction Price:     $     104,385
-  Estimated ARV:     $     328,320
-  Estimated Repairs: $      15,658
-  Total Investment:  $     142,874
-  Profit Potential:  $     159,181
-
-METRICS:
-  Profit Margin:            48.5%
-  Deal Score:               88.0/100
-  Recommended:                  Yes
-
-PROPERTY DETAILS:
-  3 bed / 2.0 bath | 2,052 sqft | Built 1990
-  Neighborhood Score: 5/10
-
-COST BREAKDOWN:
-  Purchase:      $     104,385
-  Repairs:       $      15,658
-  Closing:       $       3,132
-  Holding:       $      19,699
-  Selling:       $      26,266
-  ────────────────────────────────────────
-  Total:         $     142,874
-
-
-#20 - 801 OAK GROVE RD, SAN MARCOS (Greater Austin), Texas
-────────────────────────────────────────────────────────────────────────────────
-Property ID: REAL-0339
+Property ID: PROP-1051
 Auction Date: 2026-03-24
-Platform: ATTOM Sale
+Platform: Foreclosure.com
 
 FORECLOSURE CONTEXT:
-  Foreclosing Entity:  Capital One
-  Total Debt:          $     278,813
+  Foreclosing Entity:  Flagstar Bank
+  Total Debt:          $     442,025
   Loan Type:           ARM
-  Default Date:        2025-03-02
-  Stage:               REO / Bank Owned
+  Default Date:        2025-01-18
+  Stage:               Short Sale
 
 PRICING:
-  Auction Price:     $     123,377
-  Estimated ARV:     $     336,960
-  Estimated Repairs: $      18,507
-  Total Investment:  $     165,802
-  Profit Potential:  $     144,201
+  Auction Price:     $     300,961
+  Estimated ARV:     $     715,091
+  Estimated Repairs: $      15,048
+  Total Investment:  $     367,943
+  Profit Potential:  $     289,941
 
 METRICS:
-  Profit Margin:            42.8%
-  Deal Score:               88.0/100
+  Profit Margin:            40.5%
+  Deal Score:               84.0/100
   Recommended:                  Yes
 
 PROPERTY DETAILS:
-  3 bed / 2.0 bath | 2,106 sqft | Built 1990
-  Neighborhood Score: 5/10
+  4 bed / 2.0 bath | 3,420 sqft | Built 1986
+  Neighborhood Score: 6/10
 
 COST BREAKDOWN:
-  Purchase:      $     123,377
-  Repairs:       $      18,507
-  Closing:       $       3,701
-  Holding:       $      20,218
-  Selling:       $      26,957
+  Purchase:      $     300,961
+  Repairs:       $      15,048
+  Closing:       $       9,029
+  Holding:       $      42,905
+  Selling:       $      57,207
   ────────────────────────────────────────
-  Total:         $     165,802
+  Total:         $     367,943
+
+
+#9 - 4753 Forest Ct, Grants Pass (Southern Oregon), Oregon
+────────────────────────────────────────────────────────────────────────────────
+Property ID: PROP-1058
+Auction Date: 2026-02-14
+Platform: Hubzu
+
+FORECLOSURE CONTEXT:
+  Foreclosing Entity:  Ocwen Financial
+  Total Debt:          $     316,018
+  Loan Type:           Interest-Only
+  Default Date:        2025-07-17
+  Stage:               Lis Pendens
+
+PRICING:
+  Auction Price:     $     224,038
+  Estimated ARV:     $     512,496
+  Estimated Repairs: $      17,923
+  Total Investment:  $     279,431
+  Profit Potential:  $     192,065
+
+METRICS:
+  Profit Margin:            37.5%
+  Deal Score:               83.9/100
+  Recommended:                  Yes
+
+PROPERTY DETAILS:
+  3 bed / 2.0 bath | 2,560 sqft | Built 1982
+  Neighborhood Score: 6/10
+
+COST BREAKDOWN:
+  Purchase:      $     224,038
+  Repairs:       $      17,923
+  Closing:       $       6,721
+  Holding:       $      30,750
+  Selling:       $      41,000
+  ────────────────────────────────────────
+  Total:         $     279,431
+
+
+#10 - 7375 Pine Pl, Cottage Grove (Eugene / Lane County), Oregon
+────────────────────────────────────────────────────────────────────────────────
+Property ID: PROP-1044
+Auction Date: 2026-03-03
+Platform: Foreclosure.com
+
+FORECLOSURE CONTEXT:
+  Foreclosing Entity:  Bank of America
+  Total Debt:          $     338,001
+  Loan Type:           FHA
+  Default Date:        2025-08-16
+  Stage:               Lis Pendens
+
+PRICING:
+  Auction Price:     $     245,641
+  Estimated ARV:     $     575,503
+  Estimated Repairs: $      12,282
+  Total Investment:  $     299,822
+  Profit Potential:  $     229,640
+
+METRICS:
+  Profit Margin:            39.9%
+  Deal Score:               83.5/100
+  Recommended:                  Yes
+
+PROPERTY DETAILS:
+  4 bed / 1.0 bath | 3,021 sqft | Built 2011
+  Neighborhood Score: 6/10
+
+COST BREAKDOWN:
+  Purchase:      $     245,641
+  Repairs:       $      12,282
+  Closing:       $       7,369
+  Holding:       $      34,530
+  Selling:       $      46,040
+  ────────────────────────────────────────
+  Total:         $     299,822
+
+
+#11 - 9520 Highland Ave, West Linn (Portland Metro), Oregon
+────────────────────────────────────────────────────────────────────────────────
+Property ID: PROP-1024
+Auction Date: 2026-03-26
+Platform: Hudson & Marshall
+
+FORECLOSURE CONTEXT:
+  Foreclosing Entity:  Chase Bank
+  Total Debt:          $     149,934
+  Loan Type:           FHA
+  Default Date:        2024-09-20
+  Stage:               Bank Owned (REO)
+
+PRICING:
+  Auction Price:     $     119,299
+  Estimated ARV:     $     255,935
+  Estimated Repairs: $       5,965
+  Total Investment:  $     144,199
+  Profit Potential:  $      91,262
+
+METRICS:
+  Profit Margin:            35.7%
+  Deal Score:               83.4/100
+  Recommended:                  Yes
+
+PROPERTY DETAILS:
+  3 bed / 2.5 bath | 1,318 sqft | Built 1969
+  Neighborhood Score: 9/10
+
+COST BREAKDOWN:
+  Purchase:      $     119,299
+  Repairs:       $       5,965
+  Closing:       $       3,579
+  Holding:       $      15,356
+  Selling:       $      20,475
+  ────────────────────────────────────────
+  Total:         $     144,199
+
+
+#12 - 5133 Sunset Blvd, Bend (Central Oregon), Oregon
+────────────────────────────────────────────────────────────────────────────────
+Property ID: PROP-1123
+Auction Date: 2026-03-09
+Platform: Foreclosure.com
+
+FORECLOSURE CONTEXT:
+  Foreclosing Entity:  Nationstar Mortgage
+  Total Debt:          $     438,893
+  Loan Type:           VA
+  Default Date:        2024-10-20
+  Stage:               Short Sale
+
+PRICING:
+  Auction Price:     $     268,996
+  Estimated ARV:     $     502,597
+  Estimated Repairs: $      21,520
+  Total Investment:  $     328,741
+  Profit Potential:  $     133,648
+
+METRICS:
+  Profit Margin:            26.6%
+  Deal Score:               82.6/100
+  Recommended:                   No
+
+PROPERTY DETAILS:
+  4 bed / 2.0 bath | 2,656 sqft | Built 2014
+  Neighborhood Score: 7/10
+
+COST BREAKDOWN:
+  Purchase:      $     268,996
+  Repairs:       $      21,520
+  Closing:       $       8,070
+  Holding:       $      30,156
+  Selling:       $      40,208
+  ────────────────────────────────────────
+  Total:         $     328,741
+
+
+#13 - 6642 Sunset St, Albany (Salem / Mid-Valley), Oregon
+────────────────────────────────────────────────────────────────────────────────
+Property ID: PROP-1140
+Auction Date: 2026-03-04
+Platform: Bank Foreclosure
+
+FORECLOSURE CONTEXT:
+  Foreclosing Entity:  Nationstar Mortgage
+  Total Debt:          $     348,310
+  Loan Type:           VA
+  Default Date:        2025-02-17
+  Stage:               Bank Owned (REO)
+
+PRICING:
+  Auction Price:     $     241,538
+  Estimated ARV:     $     561,357
+  Estimated Repairs: $      12,077
+  Total Investment:  $     294,543
+  Profit Potential:  $     221,906
+
+METRICS:
+  Profit Margin:            39.5%
+  Deal Score:               82.4/100
+  Recommended:                  Yes
+
+PROPERTY DETAILS:
+  4 bed / 1.5 bath | 2,473 sqft | Built 1997
+  Neighborhood Score: 9/10
+
+COST BREAKDOWN:
+  Purchase:      $     241,538
+  Repairs:       $      12,077
+  Closing:       $       7,246
+  Holding:       $      33,681
+  Selling:       $      44,909
+  ────────────────────────────────────────
+  Total:         $     294,543
+
+
+#14 - 5678 Ridge Ct, Grants Pass (Southern Oregon), Oregon
+────────────────────────────────────────────────────────────────────────────────
+Property ID: PROP-1089
+Auction Date: 2026-03-28
+Platform: Bank Foreclosure
+
+FORECLOSURE CONTEXT:
+  Foreclosing Entity:  Caliber Home Loans
+  Total Debt:          $     357,755
+  Loan Type:           ARM
+  Default Date:        2024-10-20
+  Stage:               Lis Pendens
+
+PRICING:
+  Auction Price:     $     266,058
+  Estimated ARV:     $     615,494
+  Estimated Repairs: $      13,303
+  Total Investment:  $     324,272
+  Profit Potential:  $     241,982
+
+METRICS:
+  Profit Margin:            39.3%
+  Deal Score:               82.3/100
+  Recommended:                  Yes
+
+PROPERTY DETAILS:
+  4 bed / 2.0 bath | 2,606 sqft | Built 1991
+  Neighborhood Score: 6/10
+
+COST BREAKDOWN:
+  Purchase:      $     266,058
+  Repairs:       $      13,303
+  Closing:       $       7,982
+  Holding:       $      36,930
+  Selling:       $      49,240
+  ────────────────────────────────────────
+  Total:         $     324,272
+
+
+#15 - 9202 Willow St, Beaverton (Portland Metro), Oregon
+────────────────────────────────────────────────────────────────────────────────
+Property ID: PROP-1028
+Auction Date: 2026-02-16
+Platform: Auction.com
+
+FORECLOSURE CONTEXT:
+  Foreclosing Entity:  Freedom Mortgage
+  Total Debt:          $     369,328
+  Loan Type:           ARM
+  Default Date:        2024-12-19
+  Stage:               Bank Owned (REO)
+
+PRICING:
+  Auction Price:     $     307,364
+  Estimated ARV:     $     614,633
+  Estimated Repairs: $      24,589
+  Total Investment:  $     378,052
+  Profit Potential:  $     187,411
+
+METRICS:
+  Profit Margin:            30.5%
+  Deal Score:               82.1/100
+  Recommended:                  Yes
+
+PROPERTY DETAILS:
+  5 bed / 3.5 bath | 2,669 sqft | Built 1976
+  Neighborhood Score: 6/10
+
+COST BREAKDOWN:
+  Purchase:      $     307,364
+  Repairs:       $      24,589
+  Closing:       $       9,221
+  Holding:       $      36,878
+  Selling:       $      49,171
+  ────────────────────────────────────────
+  Total:         $     378,052
+
+
+#16 - 249 Highland St, Prineville (Central Oregon), Oregon
+────────────────────────────────────────────────────────────────────────────────
+Property ID: PROP-1054
+Auction Date: 2026-03-25
+Platform: Xome
+
+FORECLOSURE CONTEXT:
+  Foreclosing Entity:  Ocwen Financial
+  Total Debt:          $     301,129
+  Loan Type:           VA
+  Default Date:        2024-12-19
+  Stage:               Auction Scheduled
+
+PRICING:
+  Auction Price:     $     250,433
+  Estimated ARV:     $     517,318
+  Estimated Repairs: $      12,522
+  Total Investment:  $     301,507
+  Profit Potential:  $     174,426
+
+METRICS:
+  Profit Margin:            33.7%
+  Deal Score:               80.9/100
+  Recommended:                  Yes
+
+PROPERTY DETAILS:
+  4 bed / 3.0 bath | 2,560 sqft | Built 2007
+  Neighborhood Score: 8/10
+
+COST BREAKDOWN:
+  Purchase:      $     250,433
+  Repairs:       $      12,522
+  Closing:       $       7,513
+  Holding:       $      31,039
+  Selling:       $      41,385
+  ────────────────────────────────────────
+  Total:         $     301,507
+
+
+#17 - 907 Sunset Dr, Redmond (Central Oregon), Oregon
+────────────────────────────────────────────────────────────────────────────────
+Property ID: PROP-1065
+Auction Date: 2026-03-02
+Platform: Hudson & Marshall
+
+FORECLOSURE CONTEXT:
+  Foreclosing Entity:  Flagstar Bank
+  Total Debt:          $     543,737
+  Loan Type:           Fixed-Rate
+  Default Date:        2024-10-20
+  Stage:               Notice of Default
+
+PRICING:
+  Auction Price:     $     331,120
+  Estimated ARV:     $     609,448
+  Estimated Repairs: $      26,490
+  Total Investment:  $     404,110
+  Profit Potential:  $     156,582
+
+METRICS:
+  Profit Margin:            25.7%
+  Deal Score:               79.7/100
+  Recommended:                   No
+
+PROPERTY DETAILS:
+  3 bed / 3.5 bath | 2,923 sqft | Built 2017
+  Neighborhood Score: 8/10
+
+COST BREAKDOWN:
+  Purchase:      $     331,120
+  Repairs:       $      26,490
+  Closing:       $       9,934
+  Holding:       $      36,567
+  Selling:       $      48,756
+  ────────────────────────────────────────
+  Total:         $     404,110
+
+
+#18 - 7689 River Ave, Eugene (Eugene / Lane County), Oregon
+────────────────────────────────────────────────────────────────────────────────
+Property ID: PROP-1099
+Auction Date: 2026-02-17
+Platform: Williams & Williams
+
+FORECLOSURE CONTEXT:
+  Foreclosing Entity:  Shellpoint Mortgage
+  Total Debt:          $     345,425
+  Loan Type:           Fixed-Rate
+  Default Date:        2024-08-21
+  Stage:               Notice of Default
+
+PRICING:
+  Auction Price:     $     252,571
+  Estimated ARV:     $     497,657
+  Estimated Repairs: $      20,206
+  Total Investment:  $     310,213
+  Profit Potential:  $     147,631
+
+METRICS:
+  Profit Margin:            29.7%
+  Deal Score:               79.7/100
+  Recommended:                   No
+
+PROPERTY DETAILS:
+  3 bed / 2.0 bath | 2,557 sqft | Built 1979
+  Neighborhood Score: 6/10
+
+COST BREAKDOWN:
+  Purchase:      $     252,571
+  Repairs:       $      20,206
+  Closing:       $       7,577
+  Holding:       $      29,859
+  Selling:       $      39,813
+  ────────────────────────────────────────
+  Total:         $     310,213
+
+
+#19 - 5967 Creek Pl, Ashland (Southern Oregon), Oregon
+────────────────────────────────────────────────────────────────────────────────
+Property ID: PROP-1105
+Auction Date: 2026-03-05
+Platform: Auction.com
+
+FORECLOSURE CONTEXT:
+  Foreclosing Entity:  NewRez LLC
+  Total Debt:          $     373,906
+  Loan Type:           VA
+  Default Date:        2025-11-14
+  Stage:               Notice of Default
+
+PRICING:
+  Auction Price:     $     316,420
+  Estimated ARV:     $     703,555
+  Estimated Repairs: $      25,314
+  Total Investment:  $     393,440
+  Profit Potential:  $     253,831
+
+METRICS:
+  Profit Margin:            36.1%
+  Deal Score:               79.5/100
+  Recommended:                  Yes
+
+PROPERTY DETAILS:
+  3 bed / 2.0 bath | 3,192 sqft | Built 2018
+  Neighborhood Score: 6/10
+
+COST BREAKDOWN:
+  Purchase:      $     316,420
+  Repairs:       $      25,314
+  Closing:       $       9,493
+  Holding:       $      42,213
+  Selling:       $      56,284
+  ────────────────────────────────────────
+  Total:         $     393,440
+
+
+#20 - 5173 Mountain Way, Springfield (Eugene / Lane County), Oregon
+────────────────────────────────────────────────────────────────────────────────
+Property ID: PROP-1146
+Auction Date: 2026-03-12
+Platform: RealtyTrac
+
+FORECLOSURE CONTEXT:
+  Foreclosing Entity:  Nationstar Mortgage
+  Total Debt:          $     314,756
+  Loan Type:           ARM
+  Default Date:        2025-10-15
+  Stage:               Lis Pendens
+
+PRICING:
+  Auction Price:     $     256,090
+  Estimated ARV:     $     493,120
+  Estimated Repairs: $      25,609
+  Total Investment:  $     318,969
+  Profit Potential:  $     134,701
+
+METRICS:
+  Profit Margin:            27.3%
+  Deal Score:               79.3/100
+  Recommended:                   No
+
+PROPERTY DETAILS:
+  5 bed / 3.0 bath | 2,353 sqft | Built 2011
+  Neighborhood Score: 6/10
+
+COST BREAKDOWN:
+  Purchase:      $     256,090
+  Repairs:       $      25,609
+  Closing:       $       7,683
+  Holding:       $      29,587
+  Selling:       $      39,450
+  ────────────────────────────────────────
+  Total:         $     318,969
 
 

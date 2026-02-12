@@ -32,6 +32,9 @@ import config
 _attom = None
 _batchdata = None
 _census = None
+_redfin = None
+_sheriff = None
+_auctioncom = None
 
 
 def _get_attom():
@@ -56,6 +59,42 @@ def _get_census():
         import api_census
         _census = api_census
     return _census
+
+
+def _get_redfin():
+    """Lazy-load the Redfin scraper module."""
+    global _redfin
+    if _redfin is None:
+        try:
+            import scraper_redfin
+            _redfin = scraper_redfin
+        except ImportError:
+            _redfin = False  # Mark as unavailable
+    return _redfin if _redfin is not False else None
+
+
+def _get_sheriff():
+    """Lazy-load the Oregon Sheriff's Sales scraper module."""
+    global _sheriff
+    if _sheriff is None:
+        try:
+            import scraper_orsheriff
+            _sheriff = scraper_orsheriff
+        except ImportError:
+            _sheriff = False  # Mark as unavailable
+    return _sheriff if _sheriff is not False else None
+
+
+def _get_auctioncom():
+    """Lazy-load the Auction.com scraper module (via Apify)."""
+    global _auctioncom
+    if _auctioncom is None:
+        try:
+            import scraper_auctioncom
+            _auctioncom = scraper_auctioncom
+        except ImportError:
+            _auctioncom = False
+    return _auctioncom if _auctioncom is not False else None
 
 
 # State abbreviation → full name mapping
@@ -231,8 +270,11 @@ def _build_property_from_raw(raw: Dict, source: str,
     state = _normalize_state(raw_state)  # Convert "OR" → "Oregon", etc.
     zip_code = raw.get("zip_code", zip_hint) or zip_hint
 
+    # Normalize city to title case for config lookup (Auction.com returns "BEND", config has "Bend")
+    city_lookup = city.title() if city else city
+
     # Determine region from config lookup, fallback to hint
-    region = config.CITY_TO_REGION.get((state, city), region_hint)
+    region = config.CITY_TO_REGION.get((state, city_lookup), region_hint)
 
     # Pricing — use what we have, fall back to $/sqft estimation
     auction_price = (
@@ -254,10 +296,18 @@ def _build_property_from_raw(raw: Dict, source: str,
         # Auction price ≈ 55-75% of estimated ARV (distressed discount)
         auction_price = round(estimated_arv_from_sqft * random.uniform(0.55, 0.75), 2)
 
-    # Estimated ARV: if we have market_value, use it; otherwise estimate
-    estimated_arv = raw.get("market_value") or raw.get("assessed_value")
+    # Estimated ARV: use best available data source
+    # Auction.com provides est_resale_value (their own ARV estimate)
+    estimated_arv = (
+        raw.get("estimated_value")   # Auction.com est_resale_value
+        or raw.get("market_value")
+        or raw.get("assessed_value")
+    )
     if estimated_arv:
-        estimated_arv = float(estimated_arv) * 1.1  # small markup for ARV
+        estimated_arv = float(estimated_arv)
+        # Only markup non-Auction.com values (Auction.com's estimate is already market value)
+        if source != "auctioncom":
+            estimated_arv *= 1.1
     else:
         # Rough estimate from $/sqft for the state
         sqft = raw.get("sqft") or 1800
@@ -301,22 +351,28 @@ def _build_property_from_raw(raw: Dict, source: str,
         try: lot_size = float(lot_size)
         except: lot_size = 0.20
 
-    # Auction date — only use future dates; past dates are historical sales, not auctions
+    # Auction date handling
     auction_date = raw.get("auction_date")  # explicit auction date from API
+    auction_date_is_past = False
     today = datetime.now().date()
 
     if auction_date:
         try:
             parsed = datetime.strptime(str(auction_date)[:10], "%Y-%m-%d").date()
             if parsed < today:
-                auction_date = None  # Past date — discard, will generate a future one
+                auction_date_is_past = True
+                # Keep the real date — don't fake it. Mark as past auction.
         except (ValueError, TypeError):
             auction_date = None
 
     if not auction_date:
-        # Project a realistic future auction date (14-60 days out)
-        days_ahead = random.randint(14, 60)
-        auction_date = (today + timedelta(days=days_ahead)).strftime("%Y-%m-%d")
+        if source in ("auctioncom", "sheriff", "redfin"):
+            # Real data sources: leave blank rather than fabricate
+            auction_date = ""
+        else:
+            # Mock/API sources: project a future date
+            days_ahead = random.randint(14, 60)
+            auction_date = (today + timedelta(days=days_ahead)).strftime("%Y-%m-%d")
 
     # Foreclosure context
     foreclosing_entity = raw.get("foreclosing_entity") or raw.get("seller_name") or raw.get("lender_name")
@@ -329,8 +385,10 @@ def _build_property_from_raw(raw: Dict, source: str,
 
     # Determine source platform / data origin
     platform = "ATTOM Property"
+    data_source_tag = "attom"
     if source == "batchdata":
         platform = "BatchData Pre-Foreclosure"
+        data_source_tag = "batchdata"
     elif source == "attom_sale":
         sale_type = raw.get("sale_type", "")
         if sale_type and "foreclosure" in str(sale_type).lower():
@@ -339,31 +397,121 @@ def _build_property_from_raw(raw: Dict, source: str,
             platform = "ATTOM REO"
         else:
             platform = "ATTOM Sale"
+        data_source_tag = "attom"
     elif source == "attom_prop":
         platform = "ATTOM Property"
+        data_source_tag = "attom"
+    elif source == "redfin":
+        sale_type_str = raw.get("sale_type", "")
+        if sale_type_str and "bank" in sale_type_str.lower():
+            platform = "Redfin MLS Bank-Owned"
+        else:
+            platform = "Redfin MLS Foreclosure"
+        data_source_tag = "redfin"
+        # Redfin provides real foreclosure context
+        if not foreclosing_entity:
+            foreclosing_entity = "Listed on MLS"
+        if not foreclosure_stage:
+            foreclosure_stage = "MLS Listed"
+    elif source == "sheriff":
+        platform = "Oregon Sheriff Sale"
+        data_source_tag = "sheriff"
+        # Sheriff sales have real foreclosure context from case title
+        if not foreclosure_stage:
+            foreclosure_stage = raw.get("foreclosure_stage", "Sheriff Sale Scheduled")
+    elif source == "auctioncom":
+        auction_type = raw.get("auction_type", "Foreclosure")
+        if "bank" in auction_type.lower():
+            platform = "Auction.com Bank-Owned"
+        else:
+            platform = "Auction.com Foreclosure"
+        data_source_tag = "auctioncom"
+        if not foreclosure_stage:
+            foreclosure_stage = "Auction Scheduled"
+        if not foreclosing_entity:
+            foreclosing_entity = "Listed on Auction.com"
 
-    # Build a useful search URL rather than a fake listing link.
-    # Use Zillow address search — works for any property and shows comps/history.
+    # Build a useful search URL.
+    # For Redfin properties, use the actual listing URL from the CSV data.
+    # For Sheriff sales, use the listing detail page or PDF.
+    # For other sources, use Zillow address search.
     import urllib.parse
-    search_addr = f"{address}, {city}, {state} {zip_code}"
-    property_url = "https://www.zillow.com/homes/" + urllib.parse.quote(search_addr) + "_rb/"
+    if source == "redfin" and raw.get("property_url"):
+        property_url = raw["property_url"]
+    elif source == "sheriff" and raw.get("listing_url"):
+        property_url = raw["listing_url"]
+    elif source == "auctioncom" and raw.get("property_url"):
+        property_url = raw["property_url"]
+    else:
+        search_addr = f"{address}, {city}, {state} {zip_code}"
+        property_url = "https://www.zillow.com/homes/" + urllib.parse.quote(search_addr) + "_rb/"
 
     # Bank contact URL
     bank_contact_url = None
-    if foreclosing_entity:
+    if foreclosing_entity and foreclosing_entity != "Listed on MLS":
         bank_contact_url = config.BANK_CONTACT_URLS.get(foreclosing_entity)
 
     # Neighborhood score placeholder (will be enriched by Census)
     neighborhood_score = 5
 
-    description = (
-        f"Real {source} listing in {city}, {state}. "
-        f"{'Pre-foreclosure' if foreclosure_stage else 'Distressed sale'} opportunity."
-    )
+    # Use real HOA data from Redfin if available
+    hoa_monthly_val = None
+    if source == "redfin" and raw.get("hoa_monthly"):
+        hoa_monthly_val = raw["hoa_monthly"]
+
+    # Use real lat/lng from Redfin if available
+    latitude_val = raw.get("latitude") if source == "redfin" else None
+    longitude_val = raw.get("longitude") if source == "redfin" else None
+
+    # Days on market info for Redfin properties
+    days_on_market = raw.get("days_on_market", 0) if source == "redfin" else 0
+
+    if source == "auctioncom":
+        atype = raw.get("auction_type", "Foreclosure")
+        description = (
+            f"Auction.com {atype.lower()} in {city}, {state}. "
+            f"Real auction listing data via Apify."
+        )
+        if raw.get("auction_date"):
+            description += f" Auction date: {raw['auction_date']}."
+    elif source == "sheriff":
+        county_name = raw.get("county", "")
+        description = (
+            f"Sheriff's sale in {city}, {state}. "
+            f"Judicial foreclosure — {county_name} County courthouse auction."
+        )
+        if raw.get("foreclosing_entity"):
+            description += f" Plaintiff: {raw['foreclosing_entity']}."
+        if raw.get("pdf_url"):
+            description += f" Notice of Sale PDF available."
+    elif source == "redfin":
+        description = (
+            f"MLS-listed foreclosure in {city}, {state}. "
+            f"Real listing data from Redfin."
+        )
+        if days_on_market:
+            description += f" {days_on_market} days on market."
+        if raw.get("mls_number"):
+            description += f" MLS# {raw['mls_number']}."
+    else:
+        description = (
+            f"Real {source} listing in {city}, {state}. "
+            f"{'Pre-foreclosure' if foreclosure_stage else 'Distressed sale'} opportunity."
+        )
+
+    # ID prefix based on data source
+    if source == "auctioncom":
+        id_prefix = "AUCT"
+    elif source == "sheriff":
+        id_prefix = "SHRF"
+    elif source == "redfin":
+        id_prefix = "RDFN"
+    else:
+        id_prefix = "REAL"
 
     try:
         prop = Property(
-            id=f"REAL-{index:04d}",
+            id=f"{id_prefix}-{index:04d}",
             address=address,
             city=city,
             state=state,
@@ -389,7 +537,34 @@ def _build_property_from_raw(raw: Dict, source: str,
             foreclosure_stage=foreclosure_stage,
             property_url=property_url,
             bank_contact_url=bank_contact_url,
+            data_source=data_source_tag,
         )
+        # Mark past auctions
+        if auction_date_is_past:
+            prop.auction_date_is_past = True
+
+        # Add optional fields from specific sources
+        if source in ("sheriff", "auctioncom"):
+            county_val = raw.get("county")
+            if county_val:
+                prop.county = county_val
+
+        # Occupancy status from any real source
+        occupancy_val = raw.get("occupancy_status")
+        if occupancy_val:
+            prop.occupancy_status = occupancy_val
+
+        # Image URL from Auction.com
+        image_val = raw.get("image_url")
+        if image_val:
+            prop.image_url = image_val
+
+        if hoa_monthly_val:
+            prop.hoa_monthly = hoa_monthly_val
+        if latitude_val and latitude_val != 0:
+            prop.latitude = latitude_val
+        if longitude_val and longitude_val != 0:
+            prop.longitude = longitude_val
         prop.calculate_metrics()
         return prop
     except Exception as e:
@@ -400,40 +575,138 @@ def _build_property_from_raw(raw: Dict, source: str,
 def fetch_real_properties(limit: int = 75,
                            max_zips: int = 12,
                            enrich_neighborhood: bool = True,
-                           progress: bool = True) -> List[Property]:
+                           progress: bool = True,
+                           sources: List[str] = None) -> List[Property]:
     """
-    Fetch real properties from ATTOM and BatchData APIs.
+    Fetch real properties from ATTOM, BatchData, and/or Redfin.
 
     Args:
         limit: Maximum number of properties to return
         max_zips: Number of ZIP codes to sample from config regions
         enrich_neighborhood: Whether to run Census API for neighborhood scores
         progress: Print progress updates
+        sources: Which data sources to use. None = all available.
+                 Options: ["attom", "batchdata", "redfin"]
 
     Returns:
         List of Property objects with metrics calculated
     """
     has_attom = bool(config.API_KEYS.get("attom_rapidapi"))
     has_batchdata = bool(config.API_KEYS.get("batchdata"))
+    has_redfin = _get_redfin() is not None
+    has_sheriff = _get_sheriff() is not None
+    has_auctioncom = _get_auctioncom() is not None and _get_auctioncom().is_configured()
 
-    if not has_attom and not has_batchdata:
-        print("   ⚠️  No API keys configured for real data. Set attom_rapidapi or batchdata in .api_keys.json")
+    # If sources specified, filter to only those
+    if sources:
+        if "attom" not in sources:
+            has_attom = False
+        if "batchdata" not in sources:
+            has_batchdata = False
+        if "redfin" not in sources:
+            has_redfin = False
+        if "sheriff" not in sources:
+            has_sheriff = False
+        if "auctioncom" not in sources:
+            has_auctioncom = False
+
+    if not has_attom and not has_batchdata and not has_redfin and not has_sheriff and not has_auctioncom:
+        if sources and "redfin" in sources:
+            print("   ⚠️  Redfin scraper module not found (scraper_redfin.py)")
+        elif sources and "sheriff" in sources:
+            print("   ⚠️  Sheriff scraper module not found (scraper_orsheriff.py)")
+        elif sources and "auctioncom" in sources:
+            print("   ⚠️  Auction.com requires an Apify API token")
+            print("      Sign up free: https://console.apify.com/sign-up")
+            print("      Add 'apify_token' to .api_keys.json")
+        else:
+            print("   ⚠️  No data sources available. Set API keys in .api_keys.json or use --scrape for Redfin")
         return []
+
+    # Reset circuit breakers at the start of each run
+    if has_redfin:
+        redfin_mod = _get_redfin()
+        redfin_mod.reset_circuit_breaker()
+    if has_sheriff:
+        sheriff_mod = _get_sheriff()
+        sheriff_mod.reset_circuit_breaker()
 
     zip_sample = _pick_zip_sample(max_zips)
 
     if progress:
-        print(f"   Searching {len(zip_sample)} ZIP codes across {len(config.TARGET_STATES)} states...")
-        sources = []
+        print(f"   Searching {len(zip_sample)} ZIP codes across active regions...")
+        active_sources = []
         if has_batchdata:
-            sources.append("BatchData")
+            active_sources.append("BatchData")
         if has_attom:
-            sources.append("ATTOM")
-        print(f"   Data sources: {', '.join(sources)}")
+            active_sources.append("ATTOM")
+        if has_redfin:
+            active_sources.append("Redfin MLS")
+        if has_sheriff:
+            active_sources.append("OR Sheriff Sales")
+        if has_auctioncom:
+            active_sources.append("Auction.com (Apify)")
+        print(f"   Data sources: {', '.join(active_sources)}")
 
     # Collect raw results, keyed by normalized address for dedup
     seen_addresses: Set[str] = set()
     raw_results: List[tuple] = []  # (raw_dict, source_str, city, state, zip, region)
+
+    # --- Auction.com via Apify (county or state-based, runs before ZIP loop) ---
+    if has_auctioncom:
+        ac_mod = _get_auctioncom()
+        ac_counties = getattr(config, "AUCTIONCOM_COUNTIES", [])
+        ac_states = getattr(config, "AUCTIONCOM_STATES", ["Oregon"])
+        ac_max = getattr(config, "AUCTIONCOM_MAX_ITEMS", 50)
+        if ac_counties:
+            county_labels = [f"{c[0].title()} Co, {c[1].upper()}" for c in ac_counties]
+            if progress:
+                print(f"   Fetching Auction.com listings via Apify ({', '.join(county_labels)})...")
+            ac_results = ac_mod.search_auctions(
+                counties=ac_counties, max_items=ac_max, progress=progress
+            )
+        else:
+            if progress:
+                print(f"   Fetching Auction.com listings via Apify ({', '.join(ac_states)})...")
+            ac_results = ac_mod.search_auctions(
+                states=ac_states, max_items=ac_max, progress=progress
+            )
+        for r in ac_results:
+            addr_key = _normalize_address(r.get("address", ""))
+            if addr_key and addr_key not in seen_addresses:
+                seen_addresses.add(addr_key)
+                raw_results.append((
+                    r, "auctioncom",
+                    r.get("city", ""),
+                    r.get("state", ""),
+                    r.get("zip_code", ""),
+                    "",  # region will be resolved in _build_property_from_raw
+                ))
+        if progress and ac_results:
+            print(f"      Total: {len(ac_results)} Auction.com listings\n")
+
+    # --- Oregon Sheriff's Sales (county-based, runs before ZIP loop) ---
+    if has_sheriff:
+        sheriff_mod = _get_sheriff()
+        counties = getattr(config, "SHERIFF_COUNTIES", ["deschutes"])
+        if progress:
+            print(f"   Scraping Oregon sheriff's sales ({len(counties)} counties)...")
+        sheriff_results = sheriff_mod.scrape_all_counties(
+            counties=counties, progress=progress
+        )
+        for r in sheriff_results:
+            addr_key = _normalize_address(r.get("address", ""))
+            if addr_key and addr_key not in seen_addresses:
+                seen_addresses.add(addr_key)
+                raw_results.append((
+                    r, "sheriff",
+                    r.get("city", ""),
+                    r.get("state", "Oregon"),
+                    r.get("zip_code", ""),
+                    r.get("region", "Central Oregon"),
+                ))
+        if progress and sheriff_results:
+            print(f"      Total: {len(sheriff_results)} sheriff's sale listings\n")
 
     for i, (city, state, zip_code, region) in enumerate(zip_sample):
         if len(raw_results) >= limit * 3:
@@ -490,6 +763,30 @@ def fetch_real_properties(limit: int = 75,
                     print(f"      ATTOM properties: {len(prop_results)} in ZIP")
             except Exception as e:
                 print(f"      ATTOM property error: {e}")
+
+        # --- Redfin: MLS-listed foreclosures ---
+        if has_redfin:
+            redfin_mod = _get_redfin()
+            if redfin_mod and not redfin_mod.get_circuit_breaker_status()["tripped"]:
+                try:
+                    redfin_results = redfin_mod.search_foreclosures_by_zip(
+                        zip_code, city_hint=city, state_hint=state
+                    )
+                    added = 0
+                    for r in redfin_results:
+                        addr_key = _normalize_address(r.get("address", ""))
+                        if addr_key and addr_key not in seen_addresses:
+                            seen_addresses.add(addr_key)
+                            raw_results.append((r, "redfin", city, state, zip_code, region))
+                            added += 1
+                    if progress and added > 0:
+                        print(f"      Redfin: {added} MLS foreclosures")
+                except Exception as e:
+                    if progress:
+                        print(f"      Redfin error: {e}")
+            elif redfin_mod and redfin_mod.get_circuit_breaker_status()["tripped"]:
+                if progress and i == len([k for k in range(len(zip_sample)) if True]):
+                    print("      ⚠️ Redfin circuit breaker tripped — skipping remaining ZIPs")
 
     if progress:
         print(f"\n   Raw candidates found: {len(raw_results)}")
@@ -548,8 +845,24 @@ def fetch_real_properties(limit: int = 75,
         properties = properties[:limit]
 
     # Re-assign sequential IDs after proportional selection
-    for i, prop in enumerate(properties):
-        prop.id = f"REAL-{i + 1:04d}"
+    redfin_idx = 0
+    sheriff_idx = 0
+    auctioncom_idx = 0
+    real_idx = 0
+    for prop in properties:
+        ds = getattr(prop, 'data_source', '')
+        if ds == 'auctioncom':
+            auctioncom_idx += 1
+            prop.id = f"AUCT-{auctioncom_idx:04d}"
+        elif ds == 'sheriff':
+            sheriff_idx += 1
+            prop.id = f"SHRF-{sheriff_idx:04d}"
+        elif ds == 'redfin':
+            redfin_idx += 1
+            prop.id = f"RDFN-{redfin_idx:04d}"
+        else:
+            real_idx += 1
+            prop.id = f"REAL-{real_idx:04d}"
 
     if progress:
         print(f"   Properties after filtering: {len(properties)}")
@@ -590,6 +903,8 @@ def fetch_real_properties(limit: int = 75,
     for prop in properties:
         if prop.foreclosing_entity:
             continue  # Already has real data
+        if getattr(prop, 'data_source', '') in ('redfin', 'sheriff', 'auctioncom'):
+            continue  # These sources have real data — don't add fake context
 
         # Pick a lender weighted toward the big banks
         lender = random.choice(_MAJOR_LENDERS)
@@ -639,17 +954,24 @@ def fetch_real_properties(limit: int = 75,
     if len(properties) < limit // 2:
         if progress:
             print()
-            if not has_attom:
+            if has_redfin and len(properties) == 0:
+                print("   ℹ️  No MLS-listed foreclosures found in your target regions.")
+                print("      This is normal — foreclosure inventory on MLS varies by area.")
+                print("      Try expanding ACTIVE_REGIONS in config.py or running --mock for testing.")
+            if not has_attom and not (sources and "redfin" in sources):
                 print("   ℹ️  No ATTOM API key — add attom_rapidapi to .api_keys.json")
-            elif len(properties) == 0:
+            elif has_attom and len(properties) == 0:
                 print("   ℹ️  ATTOM may be rate-limited (500 calls/day on free tier)")
                 print("      Rate limits reset daily. Try again later.")
             if has_batchdata:
                 # Check if sandbox
-                from api_batchdata import search_properties_by_area
-                test = search_properties_by_area("Portland, OR", take=1)
-                if test and len(test) == 1 and test[0].get("state") not in config.TARGET_STATES:
-                    print("   ℹ️  BatchData key appears to be a sandbox/demo token.")
-                    print("      Upgrade at https://app.batchdata.com for real property data.")
+                try:
+                    from api_batchdata import search_properties_by_area
+                    test = search_properties_by_area("Portland, OR", take=1)
+                    if test and len(test) == 1 and test[0].get("state") not in config.TARGET_STATES:
+                        print("   ℹ️  BatchData key appears to be a sandbox/demo token.")
+                        print("      Upgrade at https://app.batchdata.com for real property data.")
+                except Exception:
+                    pass
 
     return properties

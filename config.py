@@ -23,6 +23,7 @@ def _load_local_keys():
         "batchdata": "BATCHDATA_API_KEY",
         "census": "CENSUS_API_KEY",
         "hud": "HUD_API_KEY",
+        "apify_token": "APIFY_TOKEN",
     }
     for key_name, env_name in env_map.items():
         env_val = os.environ.get(env_name)
@@ -34,8 +35,9 @@ _local_keys = _load_local_keys()
 
 # Geographic targeting
 TARGET_STATES = [
-    "Oregon", "Texas", "Washington", "Florida", "Arizona",
-    "Georgia", "North Carolina", "Ohio", "Tennessee", "California",
+    "Oregon",
+    # "Texas", "Washington", "Florida", "Arizona",
+    # "Georgia", "North Carolina", "Ohio", "Tennessee", "California",
 ]
 
 # Price filters
@@ -591,11 +593,76 @@ API_KEYS = {
     "batchdata": _local_keys.get("batchdata"),              # BatchData bearer token for foreclosure records
     "census": _local_keys.get("census"),                    # US Census API key (free)
     "hud": _local_keys.get("hud"),                          # HUD Fair Market Rent token (free)
+    "apify_token": _local_keys.get("apify_token"),          # Apify API token for Auction.com scraping
     "zillow": None,
     "redfin": None,
     "auction_com": None,
     "realtor_com": None,
 }
+
+# Redfin Scraper Settings (used by scraper_redfin.py)
+REDFIN_RATE_LIMIT = 3          # Seconds between requests
+REDFIN_MAX_RETRIES = 2         # Retries per ZIP on failure
+REDFIN_TIMEOUT = 15            # HTTP timeout in seconds
+REDFIN_CIRCUIT_BREAKER = 3     # Consecutive failures before stopping
+REDFIN_USER_AGENT = (
+    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
+    "AppleWebKit/537.36 (KHTML, like Gecko) "
+    "Chrome/120.0.0.0 Safari/537.36"
+)
+
+# Oregon Sheriff's Sales Scraper Settings (used by scraper_orsheriff.py)
+SHERIFF_RATE_LIMIT = 2           # Seconds between requests
+SHERIFF_MAX_RETRIES = 2          # Retries per county on failure
+SHERIFF_TIMEOUT = 15             # HTTP timeout in seconds
+SHERIFF_USER_AGENT = (
+    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
+    "AppleWebKit/537.36 (KHTML, like Gecko) "
+    "Chrome/120.0.0.0 Safari/537.36"
+)
+
+# Sheriff scraper county configuration
+# Which Oregon counties to scrape. Only Deschutes for initial test.
+# Add more from scraper_orsheriff.COUNTY_SLUGS as needed:
+#   "multnomah", "clackamas", "washington", "marion", "lane",
+#   "jackson", "josephine", etc.
+SHERIFF_COUNTIES = [
+    "deschutes",                          # Deschutes County (Bend area)
+    # "crook", "jefferson",              # Central Oregon (expand later)
+    # "jackson", "josephine", "douglas", # Southern Oregon / Medford (expand later)
+    # "klamath", "lane",                 # Shared / extended (expand later)
+]
+
+# Auction.com Scraper Settings (uses Apify cloud, requires apify_token)
+AUCTIONCOM_TIMEOUT = 180        # Seconds to wait for Apify run (county pages can be slow)
+AUCTIONCOM_MAX_ITEMS = 50       # Max properties per run (keep low to reduce cost)
+AUCTIONCOM_STATES = ["Oregon"]  # States to search (fallback if no counties set)
+
+# County-level targeting — much cheaper & more relevant than state-level scraping
+# Format: list of (county_slug, state_abbrev) tuples
+# URL pattern: https://www.auction.com/residential/{st}/{county}-county
+AUCTIONCOM_COUNTIES = [
+    ("deschutes", "or"),   # Bend, Redmond, La Pine, Sisters
+
+    # Future: expand Central Oregon (~50 mi of Bend)
+    # ("crook", "or"),       # Prineville (~29 mi from Bend)
+    # ("jefferson", "or"),   # Madras, Culver (~41 mi from Bend)
+
+    # Future: Southern Oregon (~50 mi of Medford)
+    # ("jackson", "or"),     # Medford, Ashland, Central Point (0 mi)
+    # ("josephine", "or"),   # Grants Pass, Cave Junction (~24 mi)
+    # ("douglas", "or"),     # Myrtle Creek, Canyonville, Roseburg (~35-66 mi)
+
+    # Future: shared / extended
+    # ("klamath", "or"),     # Klamath Falls (within both radii)
+    # ("lane", "or"),        # Eugene/Springfield (Lane border ~30 mi W of Bend)
+
+    # Future: Leander, TX area (~40 mi)
+    # ("williamson", "tx"),  # Georgetown, Round Rock, Cedar Park
+    # ("travis", "tx"),      # Austin, Leander
+    # ("bell", "tx"),        # Killeen, Temple (~40 mi N)
+    # ("burnet", "tx"),      # Marble Falls (~35 mi W)
+]
 
 # Output settings
 OUTPUT_JSON_FILE = "property_analysis.json"

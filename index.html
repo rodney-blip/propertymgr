@@ -713,6 +713,15 @@
             background: var(--recommended-bg);
         }
 
+        .property-card.past-auction {
+            opacity: 0.7;
+            border-style: dashed;
+        }
+
+        .property-card.past-auction:hover {
+            opacity: 1;
+        }
+
         .property-header {
             display: flex;
             justify-content: space-between;
@@ -1159,9 +1168,33 @@
 
         <div class="data-disclaimer" id="dataDisclaimer" style="display:none;">
             <div class="disclaimer-icon">&#x26A0;&#xFE0F;</div>
-            <div class="disclaimer-text">
+            <div class="disclaimer-text" id="disclaimerText">
                 <strong>Important: These are NOT confirmed auction listings.</strong>
                 Properties are sourced from ATTOM public records (recent sales, assessments). Auction dates, foreclosure stages, lender names, and debt amounts are <strong>modeled estimates</strong> &mdash; not live filings. Use this dashboard to identify neighborhoods and price points, then verify actual auction status through the links below.
+            </div>
+        </div>
+        <div class="data-disclaimer" id="redfinDisclaimer" style="display:none; border-color:#27ae60; background: rgba(39,174,96,0.08);">
+            <div class="disclaimer-icon">&#x2705;</div>
+            <div class="disclaimer-text">
+                <strong>Real MLS Data from Redfin.</strong>
+                These properties are actual MLS-listed foreclosures and bank-owned listings scraped from Redfin. Addresses, prices, and property details are real. Click "View on Redfin" for the full listing. ARV and repair estimates are still modeled.
+            </div>
+        </div>
+        <div class="data-disclaimer" id="sheriffDisclaimer" style="display:none; border-color:#e74c3c; background: rgba(231,76,60,0.08);">
+            <div class="disclaimer-icon">&#x1F3DB;&#xFE0F;</div>
+            <div class="disclaimer-text">
+                <strong>Real Sheriff's Sale Auctions.</strong>
+                These are judicial foreclosures scheduled for courthouse-step auctions, scraped from <a href="https://oregonsheriffssales.org" target="_blank" style="color:#e74c3c;">oregonsheriffssales.org</a>. Sale dates, addresses, and case parties are real public records. Notice of Sale PDFs contain judgment amounts. ARV and repair estimates are modeled.
+            </div>
+        </div>
+        <div class="data-disclaimer" id="auctioncomDisclaimer" style="display:none; border-color:#3498db; background: rgba(52,152,219,0.08);">
+            <div class="disclaimer-icon">&#x1F3E0;</div>
+            <div class="disclaimer-text">
+                <strong>Real Auction.com Listings.</strong>
+                These are real auction listings from <a href="https://www.auction.com" target="_blank" style="color:#3498db;">Auction.com</a> (fetched via Apify).
+                <strong>Real data:</strong> address, opening bid, auction date, beds/baths/sqft, est. resale value, occupancy.
+                <strong>Estimated:</strong> repairs (age-based formula), profit margins, max bid, deal score.
+                Grayed-out "AUCTION ENDED" cards had past auction dates. Click "View on Auction.com" for the full listing.
             </div>
         </div>
 
@@ -1171,7 +1204,16 @@
                 <div class="methodology-content">
                     <div class="method-block">
                         <h4>Data Source &amp; Limitations</h4>
-                        <p>Properties come from <strong>ATTOM public records</strong> (sale snapshots + property details) and <strong>BatchData</strong> (pre-foreclosure filings). On the current free/sandbox tier, ATTOM returns real addresses, sale prices, sq ft, beds/baths, and year built &mdash; but does <strong>not</strong> return seller names, foreclosure flags, or mortgage data. As a result:</p>
+                        <p>Properties come from multiple sources:</p>
+                        <ul style="margin: 6px 0 0 18px; font-size: 0.88em; line-height: 1.55; color: var(--text-secondary, #666);">
+                            <li><strong style="color:#3498db;">Auction.com</strong> (--auction-com mode): Real auction listings from <a href="https://www.auction.com" target="_blank">Auction.com</a> via Apify cloud. Addresses, auction prices, dates, and details are <strong>real data</strong>. Look for the blue "AUCTION.COM" badge. Requires Apify API token.</li>
+                            <li><strong style="color:#e74c3c;">Oregon Sheriff Sales</strong> (--sheriff mode): Real courthouse-step judicial foreclosure auctions from <a href="https://oregonsheriffssales.org" target="_blank">oregonsheriffssales.org</a>. Addresses, sale dates, and case parties are <strong>real public records</strong>. Look for the red "SHERIFF SALE" badge.</li>
+                            <li><strong style="color:#27ae60;">Redfin MLS</strong> (--scrape mode): Real MLS-listed foreclosures and bank-owned properties. Addresses, listing prices, beds/baths/sqft are <strong>real data</strong>. Look for the green "REAL MLS DATA" badge.</li>
+                            <li><strong>ATTOM public records</strong> (--real mode): Sale snapshots + property details. Free tier does not return foreclosure flags or mortgage data.</li>
+                            <li><strong>BatchData</strong> (--real mode): Pre-foreclosure filings (requires paid key).</li>
+                            <li><strong>Mock data</strong> (--mock mode): Synthetic properties for testing.</li>
+                        </ul>
+                        <p style="margin-top: 8px;">For non-Redfin properties:</p>
                         <ul style="margin: 6px 0 0 18px; font-size: 0.88em; line-height: 1.55; color: var(--text-secondary, #666);">
                             <li><strong>Auction dates</strong> are projected 14-60 days out (not from real auction schedules)</li>
                             <li><strong>Foreclosing entity, loan type, stage</strong> are modeled from typical market distributions</li>
@@ -1320,6 +1362,25 @@
                         <option value="not_interested">Not Interested</option>
                     </select>
                 </div>
+                <div class="filter-group">
+                    <label>Data Source</label>
+                    <select id="sourceFilter">
+                        <option value="all">All Sources</option>
+                        <option value="real_only">Real Data Only</option>
+                        <option value="auctioncom">Auction.com</option>
+                        <option value="sheriff">Sheriff Sales</option>
+                        <option value="redfin">Redfin MLS</option>
+                        <option value="mock">Mock Data</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Auction Status</label>
+                    <select id="auctionStatusFilter">
+                        <option value="all">All Auctions</option>
+                        <option value="upcoming">Upcoming Only</option>
+                        <option value="past">Past / Ended</option>
+                    </select>
+                </div>
                 <div class="filter-group" style="display:flex; align-items:flex-end;">
                     <div class="filter-buttons">
                         <button onclick="applyFilters()">Apply Filters</button>
@@ -1418,7 +1479,12 @@
             "ATTOM Property": "https://www.zillow.com",
             "ATTOM Foreclosure": "https://www.zillow.com",
             "ATTOM REO": "https://www.zillow.com",
-            "BatchData Pre-Foreclosure": "https://www.zillow.com"
+            "BatchData Pre-Foreclosure": "https://www.zillow.com",
+            "Redfin MLS Foreclosure": "https://www.redfin.com",
+            "Redfin MLS Bank-Owned": "https://www.redfin.com",
+            "Oregon Sheriff Sale": "https://oregonsheriffssales.org",
+            "Auction.com Foreclosure": "https://www.auction.com",
+            "Auction.com Bank-Owned": "https://www.auction.com"
         };
 
         const BANK_CONTACT_URLS = {
@@ -1823,11 +1889,26 @@
 
         function updateCharts(properties) {
             if (properties.length > 0) {
-                document.getElementById('dataDisclaimer').style.display = 'flex';
                 document.getElementById('chartsSection').style.display = 'grid';
                 document.getElementById('stateChartSection').style.display = 'grid';
+
+                // Show the right disclaimer based on data sources present
+                var hasRedfin = properties.some(function(p) { return p.data_source === 'redfin' || (p.auction_platform && p.auction_platform.indexOf('Redfin') !== -1); });
+                var hasSheriff = properties.some(function(p) { return p.data_source === 'sheriff' || (p.auction_platform && p.auction_platform.indexOf('Sheriff') !== -1); });
+                var hasAuctionCom = properties.some(function(p) { return p.data_source === 'auctioncom' || (p.auction_platform && p.auction_platform.indexOf('Auction.com') !== -1); });
+                var realSources = ['redfin', 'sheriff', 'auctioncom'];
+                var hasOther = properties.some(function(p) { return realSources.indexOf(p.data_source) === -1; });
+
+                // Show/hide each disclaimer based on what sources are present
+                document.getElementById('sheriffDisclaimer').style.display = hasSheriff ? 'flex' : 'none';
+                document.getElementById('redfinDisclaimer').style.display = hasRedfin ? 'flex' : 'none';
+                document.getElementById('auctioncomDisclaimer').style.display = hasAuctionCom ? 'flex' : 'none';
+                document.getElementById('dataDisclaimer').style.display = hasOther ? 'flex' : 'none';
             } else {
                 document.getElementById('dataDisclaimer').style.display = 'none';
+                document.getElementById('redfinDisclaimer').style.display = 'none';
+                document.getElementById('sheriffDisclaimer').style.display = 'none';
+                document.getElementById('auctioncomDisclaimer').style.display = 'none';
                 document.getElementById('chartsSection').style.display = 'none';
                 document.getElementById('stateChartSection').style.display = 'none';
             }
@@ -2014,8 +2095,68 @@
         }
 
         // ─── Foreclosure section renderer ───
+        // ─── Auction.com-specific data section ───
+        function renderAuctionComSection(prop, isAuctionCom) {
+            if (!isAuctionCom) return '';
+            var items = [];
+            if (prop.auction_date) {
+                var dateLabel = prop.auction_date_is_past ? 'Auction Date (ENDED)' : 'Auction Date';
+                var dateStyle = prop.auction_date_is_past ? 'color:#e74c3c;' : '';
+                items.push('<div class="detail-item" style="' + dateStyle + '">\u{1F4C5} <strong>' + dateLabel + ':</strong> ' + prop.auction_date + '</div>');
+            }
+            if (prop.occupancy_status) {
+                var occIcon = prop.occupancy_status.toLowerCase().indexOf('vacant') !== -1 ? '\u{1F3DA}\uFE0F' : '\u{1F464}';
+                items.push('<div class="detail-item">' + occIcon + ' <strong>Occupancy:</strong> ' + prop.occupancy_status + '</div>');
+            }
+            if (prop.county) {
+                items.push('<div class="detail-item">\u{1F4CD} <strong>County:</strong> ' + prop.county + '</div>');
+            }
+            var saleType = prop.auction_platform || '';
+            if (saleType.indexOf('Bank-Owned') !== -1) {
+                items.push('<div class="detail-item">\u{1F3E6} <strong>Type:</strong> Bank-Owned / REO</div>');
+            } else if (saleType.indexOf('Foreclosure') !== -1) {
+                items.push('<div class="detail-item">\u2696\uFE0F <strong>Type:</strong> Foreclosure Auction</div>');
+            }
+            // Disclaimer about estimated fields
+            items.push('<div class="detail-item" style="opacity:0.6;font-size:0.85em;width:100%;margin-top:4px;">\u26A0\uFE0F Repairs, profit, and max bid are <em>estimated</em> — verify with inspection</div>');
+            if (items.length === 0) return '';
+            return '<div class="property-details" style="margin-top:10px;padding-top:10px;border-top:1px solid var(--divider);background:rgba(52,152,219,0.05);border-radius:6px;padding:8px;">'
+                + items.join('') + '</div>';
+        }
+
         function renderForeclosureSection(prop) {
             if (!prop.foreclosing_entity) return '';
+            var isRedfin = (prop.data_source === 'redfin') || (prop.auction_platform && prop.auction_platform.indexOf('Redfin') !== -1);
+            var isSheriff = (prop.data_source === 'sheriff') || (prop.auction_platform && prop.auction_platform.indexOf('Sheriff') !== -1);
+
+            // For Sheriff Sale properties, show case info and PDF link
+            if (isSheriff) {
+                var stage = prop.foreclosure_stage || 'Sheriff Sale Scheduled';
+                var entity = prop.foreclosing_entity || 'Unknown';
+                var items = '<div class="detail-item">\u2696\uFE0F <strong>' + stage + '</strong></div>';
+                items += '<div class="detail-item">\u{1F3DB}\uFE0F Plaintiff: ' + entity + '</div>';
+                if (prop.county) items += '<div class="detail-item">\u{1F4CD} ' + prop.county + ' County</div>';
+                if (prop.description && prop.description.indexOf('PDF available') !== -1) {
+                    items += '<div class="detail-item">\u{1F4C4} Notice of Sale PDF available</div>';
+                }
+                return '<div class="property-details" style="margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--divider);">'
+                    + items + '</div>';
+            }
+
+            // For Redfin MLS properties, show a simpler foreclosure context
+            if (isRedfin) {
+                var stage = prop.foreclosure_stage || 'MLS Listed';
+                var dom = prop.description && prop.description.match(/(\d+) days on market/);
+                var domText = dom ? dom[1] + ' days on market' : '';
+                var mlsMatch = prop.description && prop.description.match(/MLS# ([A-Z0-9-]+)/);
+                var mlsText = mlsMatch ? 'MLS# ' + mlsMatch[1] : '';
+                var items = '<div class="detail-item">\u2696\uFE0F <strong>' + stage + '</strong></div>';
+                if (domText) items += '<div class="detail-item">\u{1F4C5} ' + domText + '</div>';
+                if (mlsText) items += '<div class="detail-item">\u{1F4CB} ' + mlsText + '</div>';
+                return '<div class="property-details" style="margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--divider);">'
+                    + items + '</div>';
+            }
+
             var bankUrl = prop.bank_contact_url || BANK_CONTACT_URLS[prop.foreclosing_entity] || null;
             var entityHtml = bankUrl
                 ? '<a href="' + bankUrl + '" target="_blank" rel="noopener">' + prop.foreclosing_entity + '</a>'
@@ -2099,25 +2240,68 @@
                 var statusClass = currentStatus === 'interested' ? ' interested' :
                                     currentStatus === 'not_interested' ? ' not-interested' : '';
 
+                var isRedfin = (prop.data_source === 'redfin') || (prop.auction_platform && prop.auction_platform.indexOf('Redfin') !== -1);
+                var isSheriff = (prop.data_source === 'sheriff') || (prop.auction_platform && prop.auction_platform.indexOf('Sheriff') !== -1);
+                var isAuctionCom = (prop.data_source === 'auctioncom') || (prop.auction_platform && prop.auction_platform.indexOf('Auction.com') !== -1);
                 var auctionUrl = prop.property_url || PLATFORM_URLS[prop.auction_platform] || null;
-                var linkLabel = auctionUrl && auctionUrl.indexOf('zillow.com') !== -1
-                    ? 'View on Zillow' : prop.auction_platform;
+                var linkLabel = isAuctionCom ? 'View on Auction.com'
+                    : isSheriff ? 'View on OR Sheriff Sales'
+                    : isRedfin ? 'View on Redfin'
+                    : auctionUrl && auctionUrl.indexOf('zillow.com') !== -1 ? 'View on Zillow'
+                    : prop.auction_platform;
                 var platformHtml = auctionUrl
                     ? '<a href="' + auctionUrl + '" target="_blank" rel="noopener">' + linkLabel + '</a>'
                     + ' <span style="opacity:0.6;font-size:0.85em;">(' + prop.auction_platform + ')</span>'
                     : prop.auction_platform;
+                var isRealData = (isAuctionCom || isSheriff || isRedfin);
+                var sourceBadge = isAuctionCom
+                    ? '<span style="background:#3498db;color:#fff;padding:2px 8px;border-radius:10px;font-size:0.75em;margin-left:6px;font-weight:600;">AUCTION.COM</span>'
+                    : isSheriff
+                    ? '<span style="background:#e74c3c;color:#fff;padding:2px 8px;border-radius:10px;font-size:0.75em;margin-left:6px;font-weight:600;">SHERIFF SALE</span>'
+                    : isRedfin
+                    ? '<span style="background:#27ae60;color:#fff;padding:2px 8px;border-radius:10px;font-size:0.75em;margin-left:6px;font-weight:600;">REAL MLS DATA</span>'
+                    : (prop.data_source === 'mock' ? '<span style="background:#f39c12;color:#fff;padding:2px 8px;border-radius:10px;font-size:0.75em;margin-left:6px;font-weight:600;">MOCK</span>' : '');
+
+                // Past auction badge
+                var pastBadge = '';
+                if (prop.auction_date_is_past) {
+                    pastBadge = '<span style="background:#95a5a6;color:#fff;padding:2px 8px;border-radius:10px;font-size:0.75em;margin-left:6px;font-weight:600;">AUCTION ENDED</span>';
+                }
+
+                // County badge for real data
+                var countyBadge = '';
+                if (prop.county && isRealData) {
+                    countyBadge = '<span style="background:var(--card-bg-alt, #f0f0f0);color:var(--card-text-muted, #666);padding:2px 8px;border-radius:10px;font-size:0.75em;margin-left:4px;">' + prop.county + ' Co.</span>';
+                }
 
                 var countdown = getAuctionCountdown(prop.auction_date);
-                var countdownHtml = '<span class="auction-countdown ' + countdown.cls + '">' + countdown.html + '</span>';
+                var countdownHtml = '';
+                if (prop.auction_date) {
+                    countdownHtml = '<span class="auction-countdown ' + countdown.cls + '">' + countdown.html + '</span>';
+                } else {
+                    countdownHtml = '<span class="auction-countdown" style="opacity:0.5;">Date TBD</span>';
+                }
+
+                // For real data, label which metrics are from the source vs estimated
+                var estTag = isRealData ? ' <span style="opacity:0.5;font-size:0.8em;">(est.)</span>' : '';
+                var priceLabel = isAuctionCom ? 'Opening Bid' : isSheriff ? 'Est. Value' : isRedfin ? 'Listing Price' : 'Auction Price';
+                var arvLabel = (isAuctionCom && prop.estimated_arv) ? 'Est. Resale (Auction.com)' : 'Est. ARV';
+                var repairLabel = 'Est. Repairs' + (isRealData ? ' <span style="opacity:0.5;font-size:0.8em;">(formula)</span>' : '');
+
+                // Image thumbnail for Auction.com
+                var imageHtml = '';
+                if (prop.image_url) {
+                    imageHtml = '<div style="margin:8px 0;"><img src="' + prop.image_url + '" style="max-width:100%;max-height:200px;border-radius:8px;object-fit:cover;" onerror="this.style.display=\'none\'"></div>';
+                }
 
                 var isCompared = comparisonSet.has(prop.id);
 
-                return '<div class="property-card ' + (prop.recommended ? 'recommended' : '') + '" id="' + prop.id + '">'
+                return '<div class="property-card ' + (prop.recommended ? 'recommended' : '') + (prop.auction_date_is_past ? ' past-auction' : '') + '" id="' + prop.id + '">'
                     + '<div class="property-header">'
                     + '<input type="checkbox" class="compare-checkbox" data-prop-id="' + prop.id + '" ' + (isCompared ? 'checked' : '') + ' onchange="toggleCompare(this, \'' + prop.id + '\')" title="Select for comparison">'
                     + '<div class="property-address">'
                     + '<h3>' + prop.address + '</h3>'
-                    + '<p>' + prop.city + ', ' + prop.state + ' ' + prop.zip_code + (prop.region ? ' &mdash; ' + prop.region : '') + '</p>'
+                    + '<p>' + prop.city + ', ' + prop.state + ' ' + prop.zip_code + (prop.region ? ' &mdash; ' + prop.region : '') + sourceBadge + pastBadge + countyBadge + '</p>'
                     + '</div>'
                     + '<select class="status-select' + statusClass + '" data-prop-id="' + prop.id + '" onchange="handleStatusChange(this)">'
                     + '<option value="not_reviewed"' + (currentStatus === 'not_reviewed' ? ' selected' : '') + '>-- Not Reviewed --</option>'
@@ -2126,13 +2310,14 @@
                     + '</select>'
                     + '<div class="deal-badge ' + badgeClass + '">' + badgeText + '</div>'
                     + '</div>'
+                    + imageHtml
                     + '<div class="property-metrics">'
-                    + '<div class="metric"><div class="metric-label">Last Sale Price</div><div class="metric-value">$' + prop.auction_price.toLocaleString() + '</div></div>'
-                    + '<div class="metric"><div class="metric-label">Est. ARV</div><div class="metric-value">$' + prop.estimated_arv.toLocaleString() + '</div></div>'
-                    + '<div class="metric"><div class="metric-label">Est. Repairs</div><div class="metric-value">$' + prop.estimated_repairs.toLocaleString() + '</div></div>'
+                    + '<div class="metric"><div class="metric-label">' + priceLabel + '</div><div class="metric-value">$' + prop.auction_price.toLocaleString() + '</div></div>'
+                    + '<div class="metric"><div class="metric-label">' + arvLabel + '</div><div class="metric-value">$' + prop.estimated_arv.toLocaleString() + '</div></div>'
+                    + '<div class="metric"><div class="metric-label">' + repairLabel + '</div><div class="metric-value" style="' + (isRealData ? 'opacity:0.6;' : '') + '">$' + prop.estimated_repairs.toLocaleString() + '</div></div>'
                     + '<div class="metric"><div class="metric-label">Max Bid (91% Rule)</div><div class="metric-value max-bid ' + (prop.auction_price <= (prop.max_bid_price || 0) ? 'under-max' : 'over-max') + '">$' + (prop.max_bid_price || 0).toLocaleString() + '</div></div>'
-                    + '<div class="metric"><div class="metric-label">Profit Potential</div><div class="metric-value profit">$' + prop.profit_potential.toLocaleString() + '</div></div>'
-                    + '<div class="metric"><div class="metric-label">Profit Margin</div><div class="metric-value profit">' + prop.profit_margin.toFixed(1) + '%</div></div>'
+                    + '<div class="metric"><div class="metric-label">Profit Potential' + estTag + '</div><div class="metric-value profit" style="' + (isRealData ? 'opacity:0.7;' : '') + '">$' + prop.profit_potential.toLocaleString() + '</div></div>'
+                    + '<div class="metric"><div class="metric-label">Profit Margin' + estTag + '</div><div class="metric-value profit" style="' + (isRealData ? 'opacity:0.7;' : '') + '">' + prop.profit_margin.toFixed(1) + '%</div></div>'
                     + '<div class="metric"><div class="metric-label">Deal Score</div><div class="metric-value">' + prop.deal_score.toFixed(1) + '/100</div><div class="progress-bar"><div class="progress-fill" style="width: ' + prop.deal_score + '%"></div></div></div>'
                     + '</div>'
                     + '<div class="property-details">'
@@ -2144,6 +2329,7 @@
                     + '<div class="detail-item">\u{1F3E6} ' + platformHtml + '</div>'
                     + '</div>'
                     + renderExtraDataRow(prop)
+                    + renderAuctionComSection(prop, isAuctionCom)
                     + renderForeclosureSection(prop)
                     + renderNotesSection(prop)
                     + '</div>';
@@ -2159,6 +2345,8 @@
             var minScore = parseFloat(document.getElementById('minScore').value) || 0;
             var sortBy = document.getElementById('sortBy').value;
             var statusFilter = document.getElementById('statusFilter').value;
+            var sourceFilter = document.getElementById('sourceFilter').value;
+            var auctionStatusFilter = document.getElementById('auctionStatusFilter').value;
             var searchTerm = (document.getElementById('searchInput').value || '').toLowerCase().trim();
 
             currentProperties = allProperties.filter(function(prop) {
@@ -2171,12 +2359,31 @@
                     var propStatus = getPropertyStatus(prop.id);
                     if (propStatus !== statusFilter) return false;
                 }
+                // Data source filter
+                if (sourceFilter === 'real_only') {
+                    if (!prop.data_source || prop.data_source === 'mock') return false;
+                } else if (sourceFilter !== 'all') {
+                    if (prop.data_source !== sourceFilter) return false;
+                }
+                // Auction status filter
+                if (auctionStatusFilter === 'upcoming') {
+                    if (!prop.auction_date || prop.auction_date_is_past) return false;
+                    var ad = new Date(prop.auction_date + 'T00:00:00');
+                    var now = new Date(); now.setHours(0,0,0,0);
+                    if (ad < now) return false;
+                } else if (auctionStatusFilter === 'past') {
+                    if (!prop.auction_date) return false;
+                    var ad = new Date(prop.auction_date + 'T00:00:00');
+                    var now = new Date(); now.setHours(0,0,0,0);
+                    if (ad >= now && !prop.auction_date_is_past) return false;
+                }
                 if (searchTerm) {
                     var haystack = (
                         (prop.address || '') + ' ' +
                         (prop.city || '') + ' ' +
                         (prop.id || '') + ' ' +
-                        (prop.foreclosing_entity || '')
+                        (prop.foreclosing_entity || '') + ' ' +
+                        (prop.county || '')
                     ).toLowerCase();
                     if (haystack.indexOf(searchTerm) === -1) return false;
                 }
@@ -2185,7 +2392,9 @@
 
             currentProperties.sort(function(a, b) {
                 if (sortBy === 'auction_date') {
-                    return new Date(a.auction_date) - new Date(b.auction_date);
+                    var dateA = a.auction_date ? new Date(a.auction_date) : new Date('2099-12-31');
+                    var dateB = b.auction_date ? new Date(b.auction_date) : new Date('2099-12-31');
+                    return dateA - dateB;
                 }
                 return b[sortBy] - a[sortBy];
             });
