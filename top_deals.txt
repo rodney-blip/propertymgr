@@ -2,7 +2,43 @@
 TOP 20 AUCTION PROPERTY DEALS
 ================================================================================
 
-#1 - 16125 HAWKS LAIR RD, LA PINE, Oregon
+#1 - 7579 28TH STREET, WHITE CITY, Oregon
+────────────────────────────────────────────────────────────────────────────────
+Property ID: AUCT-0008
+Auction Date: 2026-02-10
+Platform: Auction.com Bank-Owned
+
+FORECLOSURE CONTEXT:
+  Foreclosing Entity:  Listed on Auction.com
+  Stage:               Auction Scheduled
+
+PRICING:
+  Auction Price:     $     125,000
+  Estimated ARV:     $     346,513
+  Estimated Repairs: $      18,750
+  Total Investment:  $     168,291
+  Profit Potential:  $     150,501
+
+METRICS:
+  Profit Margin:            43.4%
+  Deal Score:               94.0/100
+  Recommended:                  Yes
+
+PROPERTY DETAILS:
+  3 bed / 2.0 bath | 1,800 sqft | Built 1990
+  Neighborhood Score: 8/10
+
+COST BREAKDOWN:
+  Purchase:      $     125,000
+  Repairs:       $      18,750
+  Closing:       $       3,750
+  Holding:       $      20,791
+  Selling:       $      27,721
+  ────────────────────────────────────────
+  Total:         $     168,291
+
+
+#2 - 16125 HAWKS LAIR RD, LA PINE, Oregon
 ────────────────────────────────────────────────────────────────────────────────
 Property ID: AUCT-0001
 Auction Date: 2026-02-15
@@ -38,7 +74,7 @@ COST BREAKDOWN:
   Total:         $     185,543
 
 
-#2 - 61644 GEMINI WAY, BEND (Central Oregon), Oregon
+#3 - 61644 GEMINI WAY, BEND (Central Oregon), Oregon
 ────────────────────────────────────────────────────────────────────────────────
 Property ID: AUCT-0004
 Auction Date: 2026-02-26
@@ -74,7 +110,43 @@ COST BREAKDOWN:
   Total:         $     383,534
 
 
-#3 - 60539 SEVENTH MOUNTAIN DRIVE, BEND (Central Oregon), Oregon
+#4 - 2875 STRASBURG STREET, MEDFORD (Southern Oregon), Oregon
+────────────────────────────────────────────────────────────────────────────────
+Property ID: AUCT-0011
+Auction Date: 2026-03-05
+Platform: Auction.com Foreclosure
+
+FORECLOSURE CONTEXT:
+  Foreclosing Entity:  Listed on Auction.com
+  Stage:               Auction Scheduled
+
+PRICING:
+  Auction Price:     $     231,324
+  Estimated ARV:     $     462,648
+  Estimated Repairs: $      23,132
+  Total Investment:  $     289,155
+  Profit Potential:  $     136,481
+
+METRICS:
+  Profit Margin:            29.5%
+  Deal Score:               85.5/100
+  Recommended:                   No
+
+PROPERTY DETAILS:
+  3 bed / 2.0 bath | 1,631 sqft | Built 2010
+  Neighborhood Score: 8/10
+
+COST BREAKDOWN:
+  Purchase:      $     231,324
+  Repairs:       $      23,132
+  Closing:       $       6,940
+  Holding:       $      27,759
+  Selling:       $      37,012
+  ────────────────────────────────────────
+  Total:         $     289,155
+
+
+#5 - 60539 SEVENTH MOUNTAIN DRIVE, BEND (Central Oregon), Oregon
 ────────────────────────────────────────────────────────────────────────────────
 Property ID: AUCT-0005
 Auction Date: 2026-02-26
@@ -110,7 +182,79 @@ COST BREAKDOWN:
   Total:         $     550,958
 
 
-#4 - 19580 RIVER WOODS DRIVE, BEND (Central Oregon), Oregon
+#6 - 104 MONTEREY DR, MEDFORD (Southern Oregon), Oregon
+────────────────────────────────────────────────────────────────────────────────
+Property ID: AUCT-0010
+Auction Date: 2026-03-05
+Platform: Auction.com Foreclosure
+
+FORECLOSURE CONTEXT:
+  Foreclosing Entity:  Listed on Auction.com
+  Stage:               Auction Scheduled
+
+PRICING:
+  Auction Price:     $     469,704
+  Estimated ARV:     $     939,409
+  Estimated Repairs: $      46,970
+  Total Investment:  $     587,131
+  Profit Potential:  $     277,126
+
+METRICS:
+  Profit Margin:            29.5%
+  Deal Score:               81.5/100
+  Recommended:                   No
+
+PROPERTY DETAILS:
+  3 bed / 3.5 bath | 3,187 sqft | Built 2005
+  Neighborhood Score: 8/10
+
+COST BREAKDOWN:
+  Purchase:      $     469,704
+  Repairs:       $      46,970
+  Closing:       $      14,091
+  Holding:       $      56,365
+  Selling:       $      75,153
+  ────────────────────────────────────────
+  Total:         $     587,131
+
+
+#7 - 20490 HIGHWAY 62, SHADY COVE, Oregon
+────────────────────────────────────────────────────────────────────────────────
+Property ID: AUCT-0009
+Auction Date: 2026-02-16
+Platform: Auction.com Bank-Owned
+
+FORECLOSURE CONTEXT:
+  Foreclosing Entity:  Listed on Auction.com
+  Stage:               Auction Scheduled
+
+PRICING:
+  Auction Price:     $     125,000
+  Estimated ARV:     $     320,567
+  Estimated Repairs: $      18,750
+  Total Investment:  $     166,734
+  Profit Potential:  $     128,188
+
+METRICS:
+  Profit Margin:            40.0%
+  Deal Score:               76.5/100
+  Recommended:                  Yes
+
+PROPERTY DETAILS:
+  3 bed / 2.0 bath | 1,456 sqft | Built 1992
+  Neighborhood Score: 4/10
+
+COST BREAKDOWN:
+  Purchase:      $     125,000
+  Repairs:       $      18,750
+  Closing:       $       3,750
+  Holding:       $      19,234
+  Selling:       $      25,645
+  ────────────────────────────────────────
+  Total:         $     166,734
+
+
+#8 - 19580 RIVER WOODS DRIVE, BEND (Central Oregon), Oregon
 ────────────────────────────────────────────────────────────────────────────────
 Property ID: AUCT-0007
 Auction Date: 2026-03-12
@@ -146,7 +290,79 @@ COST BREAKDOWN:
   Total:         $     276,619
 
 
-#5 - 1111 SW OBSIDIAN AVE, REDMOND (Central Oregon), Oregon
+#9 - 1211 TRIANGLE DR, CENTRAL POINT, Oregon
+────────────────────────────────────────────────────────────────────────────────
+Property ID: AUCT-0013
+Auction Date: 2026-03-19
+Platform: Auction.com Foreclosure
+
+FORECLOSURE CONTEXT:
+  Foreclosing Entity:  Listed on Auction.com
+  Stage:               Auction Scheduled
+
+PRICING:
+  Auction Price:     $     150,000
+  Estimated ARV:     $     356,621
+  Estimated Repairs: $      30,000
+  Total Investment:  $     205,897
+  Profit Potential:  $     122,194
+
+METRICS:
+  Profit Margin:            34.3%
+  Deal Score:               71.1/100
+  Recommended:                  Yes
+
+PROPERTY DETAILS:
+  3 bed / 1.5 bath | 1,140 sqft | Built 1971
+  Neighborhood Score: 8/10
+
+COST BREAKDOWN:
+  Purchase:      $     150,000
+  Repairs:       $      30,000
+  Closing:       $       4,500
+  Holding:       $      21,397
+  Selling:       $      28,530
+  ────────────────────────────────────────
+  Total:         $     205,897
+
+
+#10 - 2185 SPRING STREET, MEDFORD (Southern Oregon), Oregon
+────────────────────────────────────────────────────────────────────────────────
+Property ID: AUCT-0014
+Auction Date: 2026-03-19
+Platform: Auction.com Foreclosure
+
+FORECLOSURE CONTEXT:
+  Foreclosing Entity:  Listed on Auction.com
+  Stage:               Auction Scheduled
+
+PRICING:
+  Auction Price:     $     202,988
+  Estimated ARV:     $     405,975
+  Estimated Repairs: $      40,598
+  Total Investment:  $     274,033
+  Profit Potential:  $      99,464
+
+METRICS:
+  Profit Margin:            24.5%
+  Deal Score:               69.5/100
+  Recommended:                   No
+
+PROPERTY DETAILS:
+  3 bed / 2.0 bath | 1,420 sqft | Built 1978
+  Neighborhood Score: 8/10
+
+COST BREAKDOWN:
+  Purchase:      $     202,988
+  Repairs:       $      40,598
+  Closing:       $       6,090
+  Holding:       $      24,358
+  Selling:       $      32,478
+  ────────────────────────────────────────
+  Total:         $     274,033
+
+
+#11 - 1111 SW OBSIDIAN AVE, REDMOND (Central Oregon), Oregon
 ────────────────────────────────────────────────────────────────────────────────
 Property ID: AUCT-0006
 Auction Date: 2026-03-12
@@ -182,7 +398,43 @@ COST BREAKDOWN:
   Total:         $     301,177
 
 
-#6 - 61015 MINARET CIRCLE, BEND (Central Oregon), Oregon
+#12 - 3522 BELLINGER LN, MEDFORD (Southern Oregon), Oregon
+────────────────────────────────────────────────────────────────────────────────
+Property ID: AUCT-0015
+Auction Date: 2026-04-02
+Platform: Auction.com Foreclosure
+
+FORECLOSURE CONTEXT:
+  Foreclosing Entity:  Listed on Auction.com
+  Stage:               Auction Scheduled
+
+PRICING:
+  Auction Price:     $     329,750
+  Estimated ARV:     $     659,499
+  Estimated Repairs: $      65,950
+  Total Investment:  $     445,162
+  Profit Potential:  $     161,577
+
+METRICS:
+  Profit Margin:            24.5%
+  Deal Score:               67.5/100
+  Recommended:                   No
+
+PROPERTY DETAILS:
+  3 bed / 2.0 bath | 1,644 sqft | Built 1983
+  Neighborhood Score: 6/10
+
+COST BREAKDOWN:
+  Purchase:      $     329,750
+  Repairs:       $      65,950
+  Closing:       $       9,892
+  Holding:       $      39,570
+  Selling:       $      52,760
+  ────────────────────────────────────────
+  Total:         $     445,162
+
+
+#13 - 61015 MINARET CIRCLE, BEND (Central Oregon), Oregon
 ────────────────────────────────────────────────────────────────────────────────
 Property ID: AUCT-0003
 Auction Date: 2026-02-26
@@ -218,7 +470,43 @@ COST BREAKDOWN:
   Total:         $   1,167,482
 
 
-#7 - 1030 NW ROANOKE AVE UNIT 4, BEND (Central Oregon), Oregon
+#14 - 718 SW WESTHOLM AVE, GRANTS PASS (Southern Oregon), Oregon
+────────────────────────────────────────────────────────────────────────────────
+Property ID: AUCT-0016
+Auction Date: 2026-03-05
+Platform: Auction.com Foreclosure
+
+FORECLOSURE CONTEXT:
+  Foreclosing Entity:  Listed on Auction.com
+  Stage:               Auction Scheduled
+
+PRICING:
+  Auction Price:     $     151,460
+  Estimated ARV:     $     302,920
+  Estimated Repairs: $      30,292
+  Total Investment:  $     204,471
+  Profit Potential:  $      74,215
+
+METRICS:
+  Profit Margin:            24.5%
+  Deal Score:               60.5/100
+  Recommended:                   No
+
+PROPERTY DETAILS:
+  4 bed / 1.0 bath | 1,380 sqft | Built 1966
+  Neighborhood Score: 6/10
+
+COST BREAKDOWN:
+  Purchase:      $     151,460
+  Repairs:       $      30,292
+  Closing:       $       4,544
+  Holding:       $      18,175
+  Selling:       $      24,234
+  ────────────────────────────────────────
+  Total:         $     204,471
+
+
+#15 - 1030 NW ROANOKE AVE UNIT 4, BEND (Central Oregon), Oregon
 ────────────────────────────────────────────────────────────────────────────────
 Property ID: AUCT-0002
 Auction Date: 2026-02-26
@@ -252,5 +540,41 @@ COST BREAKDOWN:
   Selling:       $      27,111
   ────────────────────────────────────────
   Total:         $     267,572
+
+
+#16 - 255 CHARLOTTE ANN RD, MEDFORD (Southern Oregon), Oregon
+────────────────────────────────────────────────────────────────────────────────
+Property ID: AUCT-0012
+Auction Date: 2026-03-19
+Platform: Auction.com Foreclosure
+
+FORECLOSURE CONTEXT:
+  Foreclosing Entity:  Listed on Auction.com
+  Stage:               Auction Scheduled
+
+PRICING:
+  Auction Price:     $     175,000
+  Estimated ARV:     $     306,213
+  Estimated Repairs: $      35,000
+  Total Investment:  $     233,623
+  Profit Potential:  $      48,093
+
+METRICS:
+  Profit Margin:            15.7%
+  Deal Score:               45.7/100
+  Recommended:                   No
+
+PROPERTY DETAILS:
+  2 bed / 1.0 bath | 834 sqft | Built 1943
+  Neighborhood Score: 6/10
+
+COST BREAKDOWN:
+  Purchase:      $     175,000
+  Repairs:       $      35,000
+  Closing:       $       5,250
+  Holding:       $      18,373
+  Selling:       $      24,497
+  ────────────────────────────────────────
+  Total:         $     233,623
 
 

@@ -42,10 +42,10 @@ TARGET_STATES = [
 
 # Price filters
 MIN_AUCTION_PRICE = 100000
-MAX_AUCTION_PRICE = 2000000
+MAX_AUCTION_PRICE = 3000000
 
-# Repair budget
-MAX_REPAIR_COST = 200000
+# Repair budget (no cap — show all properties regardless of repair estimate)
+MAX_REPAIR_COST = 999999999
 
 # Profit requirements
 MIN_PROFIT_MARGIN = 30.0  # Percentage
@@ -643,13 +643,13 @@ AUCTIONCOM_STATES = ["Oregon"]  # States to search (fallback if no counties set)
 # URL pattern: https://www.auction.com/residential/{st}/{county}-county
 AUCTIONCOM_COUNTIES = [
     ("deschutes", "or"),   # Bend, Redmond, La Pine, Sisters
+    ("jackson", "or"),     # Medford, Ashland, Central Point (within 15 mi)
 
     # Future: expand Central Oregon (~50 mi of Bend)
     # ("crook", "or"),       # Prineville (~29 mi from Bend)
     # ("jefferson", "or"),   # Madras, Culver (~41 mi from Bend)
 
-    # Future: Southern Oregon (~50 mi of Medford)
-    # ("jackson", "or"),     # Medford, Ashland, Central Point (0 mi)
+    # Future: Southern Oregon (beyond 15 mi of Medford)
     # ("josephine", "or"),   # Grants Pass, Cave Junction (~24 mi)
     # ("douglas", "or"),     # Myrtle Creek, Canyonville, Roseburg (~35-66 mi)
 
