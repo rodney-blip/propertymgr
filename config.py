@@ -35,8 +35,8 @@ _local_keys = _load_local_keys()
 
 # Geographic targeting
 TARGET_STATES = [
-    "Oregon", "Washington",
-    # "Texas", "Florida", "Arizona",
+    "Oregon",
+    # "Washington", "Texas", "Florida", "Arizona",
     # "Georgia", "North Carolina", "Ohio", "Tennessee", "California",
 ]
 
@@ -101,9 +101,9 @@ MOCK_DATA_COUNT = 150
 # Set to a list of region names to restrict scanning to just those regions.
 # This is useful for concentrating API calls on your target market.
 ACTIVE_REGIONS = {
-    "Oregon": ["Central Oregon", "Southern Oregon", "Portland Metro / Gresham"],
-    "Texas": ["Greater Austin"],
-    "Washington": ["Vancouver / Camas"],
+    "Oregon": ["Central Oregon", "Southern Oregon"],  # Bend/Redmond + Medford
+    "Texas": [],                                      # Disabled
+    "Washington": [],                                 # Disabled
     "Florida": [],          # Disabled
     "Arizona": [],          # Disabled
     "Georgia": [],          # Disabled
@@ -637,8 +637,8 @@ SHERIFF_USER_AGENT = (
 #   "jackson", "josephine", etc.
 SHERIFF_COUNTIES = [
     "deschutes",                          # Deschutes County (Bend area)
-    "multnomah",                          # Multnomah County (Portland/Gresham)
-    "clackamas",                          # Clackamas County (Oregon City/Happy Valley)
+    # "multnomah",                        # Multnomah County (Portland/Gresham)
+    # "clackamas",                        # Clackamas County (Oregon City/Happy Valley)
     # "crook", "jefferson",              # Central Oregon (expand later)
     # "jackson", "josephine", "douglas", # Southern Oregon / Medford (expand later)
     # "klamath", "lane",                 # Shared / extended (expand later)
@@ -655,9 +655,9 @@ AUCTIONCOM_STATES = ["Oregon"]  # States to search (fallback if no counties set)
 AUCTIONCOM_COUNTIES = [
     ("deschutes", "or"),   # Bend, Redmond, La Pine, Sisters
     ("jackson", "or"),     # Medford, Ashland, Central Point (within 15 mi)
-    ("multnomah", "or"),   # Portland, Gresham, Troutdale, Fairview
-    ("clackamas", "or"),   # Oregon City, Happy Valley, Milwaukie, Estacada
-    ("clark", "wa"),       # Vancouver, Camas, Washougal, Battle Ground
+    # ("multnomah", "or"),   # Portland, Gresham, Troutdale, Fairview
+    # ("clackamas", "or"),   # Oregon City, Happy Valley, Milwaukie, Estacada
+    # ("clark", "wa"),       # Vancouver, Camas, Washougal, Battle Ground
 
     # Future: expand Central Oregon (~50 mi of Bend)
     # ("crook", "or"),       # Prineville (~29 mi from Bend)

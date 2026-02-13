@@ -1345,8 +1345,15 @@
                 </div>
                 <div class="filter-group">
                     <label>State</label>
-                    <select id="stateFilter">
-                    </select>
+                    <div class="multi-select" id="stateMultiSelect">
+                        <div class="multi-select-trigger" onclick="toggleDropdown('stateDropdown')">
+                            <span id="stateSelectionText">All States</span>
+                            <span>&#9662;</span>
+                        </div>
+                        <div class="multi-select-dropdown" id="stateDropdown" style="display:none;">
+                            <div class="multi-select-options" id="stateOptions"></div>
+                        </div>
+                    </div>
                 </div>
                 <div class="filter-group">
                     <label>Area</label>
@@ -1387,12 +1394,15 @@
                 </div>
                 <div class="filter-group">
                     <label>Review Status</label>
-                    <select id="statusFilter">
-                        <option value="all">All Statuses</option>
-                        <option value="not_reviewed">Not Reviewed</option>
-                        <option value="interested">Interested</option>
-                        <option value="not_interested">Not Interested</option>
-                    </select>
+                    <div class="multi-select" id="statusMultiSelect">
+                        <div class="multi-select-trigger" onclick="toggleDropdown('statusDropdown')">
+                            <span id="statusSelectionText">All Statuses</span>
+                            <span>&#9662;</span>
+                        </div>
+                        <div class="multi-select-dropdown" id="statusDropdown" style="display:none;">
+                            <div class="multi-select-options" id="statusOptions"></div>
+                        </div>
+                    </div>
                 </div>
                 <div class="filter-group">
                     <label>Data Source</label>
@@ -1439,6 +1449,8 @@
         let allProperties = [];
         let currentProperties = [];
         let selectedAreas = [];
+        let selectedStates = [];
+        let selectedStatuses = [];
         let allAlerts = [];
         let alertsExpanded = false;
         let comparisonSet = new Set();
@@ -1447,12 +1459,8 @@
         // Only states/regions we are actively pulling Auction.com data from
         const REGION_DEFINITIONS = {
             "Oregon": [
-                "Portland Metro / Gresham",
                 "Central Oregon",
                 "Southern Oregon"
-            ],
-            "Washington": [
-                "Vancouver / Camas"
             ]
         };
 
@@ -1566,19 +1574,115 @@
             }
         });
 
-        // ─── Populate state dropdown dynamically ───
-        function populateStateDropdown() {
-            var select = document.getElementById('stateFilter');
-            select.innerHTML = '<option value="all">All States</option>';
-            Object.keys(REGION_DEFINITIONS).sort().forEach(function(state) {
-                var opt = document.createElement('option');
-                opt.value = state;
-                opt.textContent = state;
-                select.appendChild(opt);
-            });
+        // ─── Generic dropdown toggle ───
+        function toggleDropdown(id) {
+            var dd = document.getElementById(id);
+            dd.style.display = dd.style.display === 'none' ? 'block' : 'none';
         }
 
-        populateStateDropdown();
+        // Close any open dropdown when clicking outside
+        document.addEventListener('click', function(e) {
+            ['stateDropdown', 'statusDropdown', 'areaDropdown'].forEach(function(id) {
+                var dd = document.getElementById(id);
+                if (dd && !e.target.closest('#' + id.replace('Dropdown', 'MultiSelect'))) {
+                    dd.style.display = 'none';
+                }
+            });
+        });
+
+        // ─── State multi-select ───
+        function populateStateCheckboxes() {
+            var container = document.getElementById('stateOptions');
+            container.innerHTML = '';
+            var allLabel = document.createElement('label');
+            allLabel.innerHTML = '<input type="checkbox" id="stateAll" checked onchange="toggleAllStates(this)"> <strong>All States</strong>';
+            container.appendChild(allLabel);
+            var hr = document.createElement('hr');
+            container.appendChild(hr);
+
+            // Collect unique states from data
+            var states = {};
+            allProperties.forEach(function(p) { if (p.state) states[p.state] = true; });
+            Object.keys(states).sort().forEach(function(st) {
+                var label = document.createElement('label');
+                var count = allProperties.filter(function(p) { return p.state === st; }).length;
+                label.innerHTML = '<input type="checkbox" value="' + st + '" class="state-cb" checked onchange="updateStateSelection()"> ' + st + ' (' + count + ')';
+                container.appendChild(label);
+            });
+            selectedStates = [];
+            document.getElementById('stateSelectionText').textContent = 'All States';
+        }
+
+        function toggleAllStates(masterCb) {
+            document.querySelectorAll('.state-cb').forEach(function(cb) { cb.checked = masterCb.checked; });
+            updateStateSelection();
+        }
+
+        function updateStateSelection() {
+            var cbs = document.querySelectorAll('.state-cb');
+            var allChecked = Array.from(cbs).every(function(cb) { return cb.checked; });
+            var noneChecked = Array.from(cbs).every(function(cb) { return !cb.checked; });
+            document.getElementById('stateAll').checked = allChecked;
+            if (allChecked || noneChecked) {
+                selectedStates = [];
+            } else {
+                selectedStates = Array.from(cbs).filter(function(cb) { return cb.checked; }).map(function(cb) { return cb.value; });
+            }
+            var text = document.getElementById('stateSelectionText');
+            if (selectedStates.length === 0) text.textContent = 'All States';
+            else if (selectedStates.length <= 2) text.textContent = selectedStates.join(', ');
+            else text.textContent = selectedStates.length + ' states';
+            populateAreaCheckboxes();
+            applyFilters();
+        }
+
+        // ─── Status multi-select ───
+        function populateStatusCheckboxes() {
+            var container = document.getElementById('statusOptions');
+            container.innerHTML = '';
+            var allLabel = document.createElement('label');
+            allLabel.innerHTML = '<input type="checkbox" id="statusAll" checked onchange="toggleAllStatuses(this)"> <strong>All Statuses</strong>';
+            container.appendChild(allLabel);
+            var hr = document.createElement('hr');
+            container.appendChild(hr);
+
+            var statusLabels = {
+                'not_reviewed': 'Not Reviewed',
+                'interested': 'Interested',
+                'not_interested': 'Not Interested'
+            };
+            Object.keys(statusLabels).forEach(function(key) {
+                var label = document.createElement('label');
+                label.innerHTML = '<input type="checkbox" value="' + key + '" class="status-cb" checked onchange="updateStatusSelection()"> ' + statusLabels[key];
+                container.appendChild(label);
+            });
+            selectedStatuses = [];
+            document.getElementById('statusSelectionText').textContent = 'All Statuses';
+        }
+
+        function toggleAllStatuses(masterCb) {
+            document.querySelectorAll('.status-cb').forEach(function(cb) { cb.checked = masterCb.checked; });
+            updateStatusSelection();
+        }
+
+        function updateStatusSelection() {
+            var cbs = document.querySelectorAll('.status-cb');
+            var allChecked = Array.from(cbs).every(function(cb) { return cb.checked; });
+            var noneChecked = Array.from(cbs).every(function(cb) { return !cb.checked; });
+            document.getElementById('statusAll').checked = allChecked;
+            if (allChecked || noneChecked) {
+                selectedStatuses = [];
+            } else {
+                selectedStatuses = Array.from(cbs).filter(function(cb) { return cb.checked; }).map(function(cb) { return cb.value; });
+            }
+            var text = document.getElementById('statusSelectionText');
+            if (selectedStatuses.length === 0) text.textContent = 'All Statuses';
+            else if (selectedStatuses.length <= 2) text.textContent = selectedStatuses.map(function(s) { return s.replace('_', ' '); }).join(', ');
+            else text.textContent = selectedStatuses.length + ' selected';
+            applyFilters();
+        }
+
+        populateStatusCheckboxes();
 
         // ─── localStorage status management ───
         const STATUS_KEY = 'propertyStatuses';
@@ -1680,9 +1784,7 @@
         // Map metro area names → list of cities that belong to each
         var METRO_AREAS = {
             "Greater Bend": ["Bend", "Redmond", "Madras", "Prineville", "Sisters", "La Pine", "Sunriver"],
-            "Greater Medford": ["Medford", "Ashland", "Grants Pass", "Central Point", "Klamath Falls", "Roseburg", "Eagle Point", "Phoenix", "Talent", "White City", "Shady Cove", "Jacksonville", "Gold Hill", "Rogue River"],
-            "Greater Gresham": ["Gresham", "Troutdale", "Fairview", "Wood Village", "Happy Valley", "Clackamas", "Milwaukie", "Gladstone", "Oregon City", "West Linn", "Estacada", "Portland", "Beaverton", "Hillsboro", "Lake Oswego", "Tigard", "Tualatin"],
-            "Greater Vancouver": ["Vancouver", "Camas", "Washougal", "Battle Ground", "Brush Prairie", "Ridgefield"]
+            "Greater Medford": ["Medford", "Ashland", "Grants Pass", "Central Point", "Klamath Falls", "Roseburg", "Eagle Point", "Phoenix", "Talent", "White City", "Shady Cove", "Jacksonville", "Gold Hill", "Rogue River"]
         };
 
         // Build reverse lookup: city name → list of metro areas it belongs to
@@ -1754,16 +1856,8 @@
         }
 
         function toggleAreaDropdown() {
-            var dd = document.getElementById('areaDropdown');
-            dd.style.display = dd.style.display === 'none' ? 'block' : 'none';
+            toggleDropdown('areaDropdown');
         }
-
-        // Close dropdown when clicking outside
-        document.addEventListener('click', function(e) {
-            if (!e.target.closest('#areaMultiSelect')) {
-                document.getElementById('areaDropdown').style.display = 'none';
-            }
-        });
 
         // Check if a property's city belongs to any of the selected areas
         function propertyMatchesAreas(prop) {
@@ -1776,11 +1870,6 @@
             }
             return false;
         }
-
-        // State filter change repopulates areas
-        document.getElementById('stateFilter').addEventListener('change', function() {
-            populateAreaCheckboxes();
-        });
 
         // ─── Status change handler ───
         function handleStatusChange(selectEl) {
@@ -2098,6 +2187,7 @@
                 allAlerts = data.alerts || [];
 
                 updateStats(data);
+                populateStateCheckboxes();
                 populateAreaCheckboxes();
                 displayAlerts(allAlerts);
                 displayProperties(currentProperties);
@@ -2496,26 +2586,26 @@
 
         // ─── Filter logic ───
         function applyFilters() {
-            var state = document.getElementById('stateFilter').value;
             var minMargin = parseFloat(document.getElementById('minMargin').value) || 0;
             var minAuctionPrice = parseFloat(document.getElementById('minPrice').value) || 0;
             var maxAuctionPrice = parseFloat(document.getElementById('maxPrice').value) || 2000000;
             var minScore = parseFloat(document.getElementById('minScore').value) || 0;
             var sortBy = document.getElementById('sortBy').value;
-            var statusFilter = document.getElementById('statusFilter').value;
             var sourceFilter = document.getElementById('sourceFilter').value;
             var auctionStatusFilter = document.getElementById('auctionStatusFilter').value;
             var searchTerm = (document.getElementById('searchInput').value || '').toLowerCase().trim();
 
             currentProperties = allProperties.filter(function(prop) {
-                if (state !== 'all' && prop.state !== state) return false;
+                // State multi-select
+                if (selectedStates.length > 0 && selectedStates.indexOf(prop.state) === -1) return false;
                 if (!propertyMatchesAreas(prop)) return false;
                 if (prop.profit_margin < minMargin) return false;
                 if (prop.auction_price < minAuctionPrice || prop.auction_price > maxAuctionPrice) return false;
                 if (prop.deal_score < minScore) return false;
-                if (statusFilter !== 'all') {
+                // Status multi-select
+                if (selectedStatuses.length > 0) {
                     var propStatus = getPropertyStatus(prop.id);
-                    if (propStatus !== statusFilter) return false;
+                    if (selectedStatuses.indexOf(propStatus) === -1) return false;
                 }
                 // Data source filter
                 if (sourceFilter === 'real_only') {
