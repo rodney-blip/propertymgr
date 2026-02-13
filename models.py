@@ -91,6 +91,7 @@ class Property:
     # Additional metadata
     county: Optional[str] = None
     data_source: Optional[str] = None            # "mock", "attom", "batchdata", "redfin", "sheriff", "auctioncom"
+    valuation_source: Optional[str] = None       # "zillow", "attom_avm", "auctioncom", "sqft_estimate"
     auction_date_is_past: bool = False            # True if auction already occurred
     
     def calculate_metrics(self) -> None:

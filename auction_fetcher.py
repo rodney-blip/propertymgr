@@ -35,6 +35,7 @@ _census = None
 _redfin = None
 _sheriff = None
 _auctioncom = None
+_zillow = None
 
 
 def _get_attom():
@@ -95,6 +96,18 @@ def _get_auctioncom():
         except ImportError:
             _auctioncom = False
     return _auctioncom if _auctioncom is not False else None
+
+
+def _get_zillow():
+    """Lazy-load the Zillow Zestimate scraper module (via Apify)."""
+    global _zillow
+    if _zillow is None:
+        try:
+            import scraper_zillow
+            _zillow = scraper_zillow
+        except ImportError:
+            _zillow = False
+    return _zillow if _zillow is not False else None
 
 
 # State abbreviation → full name mapping
@@ -879,6 +892,75 @@ def fetch_real_properties(limit: int = 75,
     if progress:
         print(f"   Properties after filtering: {len(properties)}")
 
+    # --- Enrich with Zillow Zestimates (batch lookup) ---
+    # Replaces the $/sqft estimation with real Zestimate data.
+    # Uses the same Apify token as Auction.com scraping.
+    zillow_mod = _get_zillow()
+    has_zillow = zillow_mod is not None and zillow_mod.is_configured()
+    if has_zillow and properties:
+        if progress:
+            print("   Looking up Zillow Zestimates...")
+
+        # Build address list for batch lookup
+        addr_list = []
+        for prop in properties:
+            full_addr = f"{prop.address}, {prop.city}, {prop.state} {prop.zip_code}"
+            addr_list.append(full_addr)
+
+        zestimate_results = zillow_mod.batch_zestimate_lookup(
+            addr_list, progress=progress
+        )
+
+        if zestimate_results:
+            zest_count = 0
+            for prop in properties:
+                addr_key = zillow_mod._normalize_address_key(prop.address)
+                zdata = zestimate_results.get(addr_key)
+                if zdata and zdata.get("zestimate"):
+                    old_arv = prop.estimated_arv
+                    prop.estimated_arv = float(zdata["zestimate"])
+                    prop.valuation_source = "zillow"
+
+                    # Also update property details if Zillow has better data
+                    if zdata.get("beds") and prop.bedrooms == 3:  # Replace default
+                        prop.bedrooms = int(zdata["beds"])
+                    if zdata.get("baths") and prop.bathrooms == 2.0:  # Replace default
+                        prop.bathrooms = float(zdata["baths"])
+                    if zdata.get("sqft") and prop.sqft == 1800:  # Replace default
+                        prop.sqft = int(float(zdata["sqft"]))
+                    if zdata.get("year_built") and prop.year_built == 1990:  # Replace default
+                        prop.year_built = int(zdata["year_built"])
+                    if zdata.get("lot_size"):
+                        try:
+                            prop.lot_size = float(zdata["lot_size"])
+                        except (ValueError, TypeError):
+                            pass
+                    if zdata.get("zestimate_rent"):
+                        try:
+                            prop.estimated_monthly_rent = float(zdata["zestimate_rent"])
+                        except (ValueError, TypeError):
+                            pass
+
+                    # Tax data from Zillow
+                    if zdata.get("annual_tax") and not prop.annual_property_tax:
+                        try:
+                            prop.annual_property_tax = float(zdata["annual_tax"])
+                        except (ValueError, TypeError):
+                            pass
+
+                    # Last sale from Zillow
+                    if zdata.get("last_sold_price") and not prop.last_sale_price:
+                        try:
+                            prop.last_sale_price = float(zdata["last_sold_price"])
+                        except (ValueError, TypeError):
+                            pass
+
+                    prop.calculate_metrics()
+                    zest_count += 1
+
+            if progress:
+                print(f"   Enriched {zest_count}/{len(properties)} properties with Zillow Zestimates")
+
     # --- Enrich with ATTOM mortgage/debt + property data ---
     # Uses expandedprofile (paid tier: mortgage, lender, sale history)
     # and property/detail + AVM (free tier: real valuation, beds/baths/sqft).
@@ -943,8 +1025,10 @@ def fetch_real_properties(limit: int = 75,
                         prop.foreclosing_entity = mtg["seller_name"]
 
                     # --- Free-tier data: real AVM valuation ---
-                    if mtg.get("avm_value"):
+                    # Only override if Zillow Zestimate hasn't already set it
+                    if mtg.get("avm_value") and getattr(prop, 'valuation_source', None) != 'zillow':
                         prop.estimated_arv = mtg["avm_value"]
+                        prop.valuation_source = "attom_avm"
                         prop.calculate_metrics()  # Recalculate with real value
 
                     # --- Free-tier data: real property details ---

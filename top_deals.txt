@@ -14,12 +14,12 @@ FORECLOSURE CONTEXT:
 
 PRICING:
   Auction Price:     $     150,000
-  Estimated Value:   $     392,385
-  Total Investment:  $     178,043
-  Profit Potential:  $     182,951
+  Estimated Value:   $     388,800
+  Total Investment:  $     177,828
+  Profit Potential:  $     179,868
 
 METRICS:
-  Profit Margin:            46.6%
+  Profit Margin:            46.3%
   Deal Score:               85.0/100
   Recommended:                  Yes
 
@@ -30,15 +30,15 @@ PROPERTY DETAILS:
 COST BREAKDOWN:
   Purchase:      $     150,000
   Closing:       $       4,500
-  Holding:       $      23,543
-  Selling:       $      31,391
+  Holding:       $      23,328
+  Selling:       $      31,104
   ────────────────────────────────────────
-  Total:         $     178,043
+  Total:         $     177,828
 
 
 #2 - 1211 TRIANGLE DR, CENTRAL POINT, Oregon
 ────────────────────────────────────────────────────────────────────────────────
-Property ID: AUCT-0012
+Property ID: AUCT-0005
 Auction Date: 2026-03-19
 Platform: Auction.com Foreclosure
 
@@ -70,349 +70,9 @@ COST BREAKDOWN:
   Total:         $     175,897
 
 
-#3 - 61644 GEMINI WAY, BEND (Central Oregon), Oregon
-────────────────────────────────────────────────────────────────────────────────
-Property ID: AUCT-0004
-Auction Date: 2026-02-26
-Platform: Auction.com Foreclosure
-
-FORECLOSURE CONTEXT:
-  Foreclosing Entity:  Listed on Auction.com
-  Stage:               Auction Scheduled
-
-PRICING:
-  Auction Price:     $     306,828
-  Estimated Value:   $     613,655
-  Total Investment:  $     352,852
-  Profit Potential:  $     211,711
-
-METRICS:
-  Profit Margin:            34.5%
-  Deal Score:               78.6/100
-  Recommended:                  Yes
-
-PROPERTY DETAILS:
-  3 bed / 3.0 bath | 1,955 sqft | Built 2006
-  Neighborhood Score: 8/10
-
-COST BREAKDOWN:
-  Purchase:      $     306,828
-  Closing:       $       9,205
-  Holding:       $      36,819
-  Selling:       $      49,092
-  ────────────────────────────────────────
-  Total:         $     352,852
-
-
-#4 - 2875 STRASBURG STREET, MEDFORD (Southern Oregon), Oregon
-────────────────────────────────────────────────────────────────────────────────
-Property ID: AUCT-0010
-Auction Date: 2026-03-05
-Platform: Auction.com Foreclosure
-
-FORECLOSURE CONTEXT:
-  Foreclosing Entity:  Listed on Auction.com
-  Stage:               Auction Scheduled
-
-PRICING:
-  Auction Price:     $     231,324
-  Estimated Value:   $     462,648
-  Total Investment:  $     266,023
-  Profit Potential:  $     159,614
-
-METRICS:
-  Profit Margin:            34.5%
-  Deal Score:               78.6/100
-  Recommended:                  Yes
-
-PROPERTY DETAILS:
-  3 bed / 2.0 bath | 1,631 sqft | Built 2010
-  Neighborhood Score: 8/10
-
-COST BREAKDOWN:
-  Purchase:      $     231,324
-  Closing:       $       6,940
-  Holding:       $      27,759
-  Selling:       $      37,012
-  ────────────────────────────────────────
-  Total:         $     266,023
-
-
-#5 - 60539 SEVENTH MOUNTAIN DRIVE, BEND (Central Oregon), Oregon
-────────────────────────────────────────────────────────────────────────────────
-Property ID: AUCT-0005
-Auction Date: 2026-02-26
-Platform: Auction.com Foreclosure
-
-FORECLOSURE CONTEXT:
-  Foreclosing Entity:  Listed on Auction.com
-  Stage:               Auction Scheduled
-
-PRICING:
-  Auction Price:     $     440,766
-  Estimated Value:   $     881,533
-  Total Investment:  $     506,881
-  Profit Potential:  $     304,129
-
-METRICS:
-  Profit Margin:            34.5%
-  Deal Score:               76.6/100
-  Recommended:                  Yes
-
-PROPERTY DETAILS:
-  3 bed / 3.0 bath | 2,498 sqft | Built 2004
-  Neighborhood Score: 8/10
-
-COST BREAKDOWN:
-  Purchase:      $     440,766
-  Closing:       $      13,223
-  Holding:       $      52,892
-  Selling:       $      70,523
-  ────────────────────────────────────────
-  Total:         $     506,881
-
-
-#6 - 20490 HIGHWAY 62, SHADY COVE, Oregon
-────────────────────────────────────────────────────────────────────────────────
-Property ID: AUCT-0008
-Auction Date: 2026-02-16
-Platform: Auction.com Bank-Owned
-
-FORECLOSURE CONTEXT:
-  Foreclosing Entity:  Listed on Auction.com
-  Stage:               Auction Scheduled
-
-PRICING:
-  Auction Price:     $     125,000
-  Estimated Value:   $     320,567
-  Total Investment:  $     147,984
-  Profit Potential:  $     146,938
-
-METRICS:
-  Profit Margin:            45.8%
-  Deal Score:               76.0/100
-  Recommended:                  Yes
-
-PROPERTY DETAILS:
-  3 bed / 2.0 bath | 1,456 sqft | Built 1992
-  Neighborhood Score: 4/10
-
-COST BREAKDOWN:
-  Purchase:      $     125,000
-  Closing:       $       3,750
-  Holding:       $      19,234
-  Selling:       $      25,645
-  ────────────────────────────────────────
-  Total:         $     147,984
-
-
-#7 - 104 MONTEREY DR, MEDFORD (Southern Oregon), Oregon
-────────────────────────────────────────────────────────────────────────────────
-Property ID: AUCT-0009
-Auction Date: 2026-03-05
-Platform: Auction.com Foreclosure
-
-FORECLOSURE CONTEXT:
-  Foreclosing Entity:  Listed on Auction.com
-  Stage:               Auction Scheduled
-
-PRICING:
-  Auction Price:     $     469,704
-  Estimated Value:   $     939,409
-  Total Investment:  $     540,160
-  Profit Potential:  $     324,096
-
-METRICS:
-  Profit Margin:            34.5%
-  Deal Score:               74.6/100
-  Recommended:                  Yes
-
-PROPERTY DETAILS:
-  3 bed / 3.5 bath | 3,187 sqft | Built 2005
-  Neighborhood Score: 8/10
-
-COST BREAKDOWN:
-  Purchase:      $     469,704
-  Closing:       $      14,091
-  Holding:       $      56,365
-  Selling:       $      75,153
-  ────────────────────────────────────────
-  Total:         $     540,160
-
-
-#8 - 2185 SPRING STREET, MEDFORD (Southern Oregon), Oregon
-────────────────────────────────────────────────────────────────────────────────
-Property ID: AUCT-0013
-Auction Date: 2026-03-19
-Platform: Auction.com Foreclosure
-
-FORECLOSURE CONTEXT:
-  Foreclosing Entity:  Listed on Auction.com
-  Stage:               Auction Scheduled
-
-PRICING:
-  Auction Price:     $     202,988
-  Estimated Value:   $     405,975
-  Total Investment:  $     233,436
-  Profit Potential:  $     140,061
-
-METRICS:
-  Profit Margin:            34.5%
-  Deal Score:               72.6/100
-  Recommended:                  Yes
-
-PROPERTY DETAILS:
-  3 bed / 2.0 bath | 1,420 sqft | Built 1978
-  Neighborhood Score: 8/10
-
-COST BREAKDOWN:
-  Purchase:      $     202,988
-  Closing:       $       6,090
-  Holding:       $      24,358
-  Selling:       $      32,478
-  ────────────────────────────────────────
-  Total:         $     233,436
-
-
-#9 - 1111 SW OBSIDIAN AVE, REDMOND (Central Oregon), Oregon
-────────────────────────────────────────────────────────────────────────────────
-Property ID: AUCT-0006
-Auction Date: 2026-03-12
-Platform: Auction.com Foreclosure
-
-FORECLOSURE CONTEXT:
-  Foreclosing Entity:  Listed on Auction.com
-  Stage:               Auction Scheduled
-
-PRICING:
-  Auction Price:     $     223,094
-  Estimated Value:   $     446,188
-  Total Investment:  $     256,558
-  Profit Potential:  $     153,935
-
-METRICS:
-  Profit Margin:            34.5%
-  Deal Score:               71.6/100
-  Recommended:                  Yes
-
-PROPERTY DETAILS:
-  3 bed / 2.5 bath | 1,380 sqft | Built 1951
-  Neighborhood Score: 8/10
-
-COST BREAKDOWN:
-  Purchase:      $     223,094
-  Closing:       $       6,693
-  Holding:       $      26,771
-  Selling:       $      35,695
-  ────────────────────────────────────────
-  Total:         $     256,558
-
-
-#10 - 19580 RIVER WOODS DRIVE, BEND (Central Oregon), Oregon
-────────────────────────────────────────────────────────────────────────────────
-Property ID: AUCT-0007
-Auction Date: 2026-03-12
-Platform: Auction.com Foreclosure
-
-FORECLOSURE CONTEXT:
-  Foreclosing Entity:  Listed on Auction.com
-  Stage:               Auction Scheduled
-
-PRICING:
-  Auction Price:     $     212,784
-  Estimated Value:   $     425,567
-  Total Investment:  $     244,701
-  Profit Potential:  $     146,821
-
-METRICS:
-  Profit Margin:            34.5%
-  Deal Score:               71.6/100
-  Recommended:                  Yes
-
-PROPERTY DETAILS:
-  3 bed / 2.0 bath | 1,188 sqft | Built 1996
-  Neighborhood Score: 8/10
-
-COST BREAKDOWN:
-  Purchase:      $     212,784
-  Closing:       $       6,384
-  Holding:       $      25,534
-  Selling:       $      34,045
-  ────────────────────────────────────────
-  Total:         $     244,701
-
-
-#11 - 61015 MINARET CIRCLE, BEND (Central Oregon), Oregon
+#3 - 718 SW WESTHOLM AVE, GRANTS PASS (Southern Oregon), Oregon
 ────────────────────────────────────────────────────────────────────────────────
 Property ID: AUCT-0003
-Auction Date: 2026-02-26
-Platform: Auction.com Foreclosure
-
-FORECLOSURE CONTEXT:
-  Foreclosing Entity:  Listed on Auction.com
-  Stage:               Auction Scheduled
-
-PRICING:
-  Auction Price:     $     864,802
-  Estimated Value:   $   1,729,603
-  Total Investment:  $     994,522
-  Profit Potential:  $     596,713
-
-METRICS:
-  Profit Margin:            34.5%
-  Deal Score:               69.6/100
-  Recommended:                  Yes
-
-PROPERTY DETAILS:
-  3 bed / 3.5 bath | 3,741 sqft | Built 1981
-  Neighborhood Score: 8/10
-
-COST BREAKDOWN:
-  Purchase:      $     864,802
-  Closing:       $      25,944
-  Holding:       $     103,776
-  Selling:       $     138,368
-  ────────────────────────────────────────
-  Total:         $     994,522
-
-
-#12 - 3522 BELLINGER LN, MEDFORD (Southern Oregon), Oregon
-────────────────────────────────────────────────────────────────────────────────
-Property ID: AUCT-0014
-Auction Date: 2026-04-02
-Platform: Auction.com Foreclosure
-
-FORECLOSURE CONTEXT:
-  Foreclosing Entity:  Listed on Auction.com
-  Stage:               Auction Scheduled
-
-PRICING:
-  Auction Price:     $     329,750
-  Estimated Value:   $     659,499
-  Total Investment:  $     379,212
-  Profit Potential:  $     227,527
-
-METRICS:
-  Profit Margin:            34.5%
-  Deal Score:               69.6/100
-  Recommended:                  Yes
-
-PROPERTY DETAILS:
-  3 bed / 2.0 bath | 1,644 sqft | Built 1983
-  Neighborhood Score: 6/10
-
-COST BREAKDOWN:
-  Purchase:      $     329,750
-  Closing:       $       9,892
-  Holding:       $      39,570
-  Selling:       $      52,760
-  ────────────────────────────────────────
-  Total:         $     379,212
-
-
-#13 - 718 SW WESTHOLM AVE, GRANTS PASS (Southern Oregon), Oregon
-────────────────────────────────────────────────────────────────────────────────
-Property ID: AUCT-0015
 Auction Date: 2026-03-05
 Platform: Auction.com Foreclosure
 
@@ -422,13 +82,13 @@ FORECLOSURE CONTEXT:
 
 PRICING:
   Auction Price:     $     151,460
-  Estimated Value:   $     302,920
-  Total Investment:  $     174,179
-  Profit Potential:  $     104,507
+  Estimated Value:   $     307,500
+  Total Investment:  $     174,454
+  Profit Potential:  $     108,446
 
 METRICS:
-  Profit Margin:            34.5%
-  Deal Score:               62.6/100
+  Profit Margin:            35.3%
+  Deal Score:               62.8/100
   Recommended:                  Yes
 
 PROPERTY DETAILS:
@@ -438,13 +98,13 @@ PROPERTY DETAILS:
 COST BREAKDOWN:
   Purchase:      $     151,460
   Closing:       $       4,544
-  Holding:       $      18,175
-  Selling:       $      24,234
+  Holding:       $      18,450
+  Selling:       $      24,600
   ────────────────────────────────────────
-  Total:         $     174,179
+  Total:         $     174,454
 
 
-#14 - 1030 NW ROANOKE AVE UNIT 4, BEND (Central Oregon), Oregon
+#4 - 61015 MINARET CIRCLE, BEND (Central Oregon), Oregon
 ────────────────────────────────────────────────────────────────────────────────
 Property ID: AUCT-0002
 Auction Date: 2026-02-26
@@ -455,32 +115,32 @@ FORECLOSURE CONTEXT:
   Stage:               Auction Scheduled
 
 PRICING:
-  Auction Price:     $     201,007
-  Estimated Value:   $     338,884
-  Total Investment:  $     227,371
-  Profit Potential:  $      84,403
+  Auction Price:     $     864,802
+  Estimated Value:   $   1,390,600
+  Total Investment:  $     974,182
+  Profit Potential:  $     305,170
 
 METRICS:
-  Profit Margin:            24.9%
-  Deal Score:               62.1/100
+  Profit Margin:            21.9%
+  Deal Score:               58.4/100
   Recommended:                   No
 
 PROPERTY DETAILS:
-  3 bed / 2.0 bath | 680 sqft | Built 1966
+  3 bed / 3.5 bath | 3,741 sqft | Built 1981
   Neighborhood Score: 8/10
 
 COST BREAKDOWN:
-  Purchase:      $     201,007
-  Closing:       $       6,030
-  Holding:       $      20,333
-  Selling:       $      27,111
+  Purchase:      $     864,802
+  Closing:       $      25,944
+  Holding:       $      83,436
+  Selling:       $     111,248
   ────────────────────────────────────────
-  Total:         $     227,371
+  Total:         $     974,182
 
 
-#15 - 255 CHARLOTTE ANN RD, MEDFORD (Southern Oregon), Oregon
+#5 - 255 CHARLOTTE ANN RD, MEDFORD (Southern Oregon), Oregon
 ────────────────────────────────────────────────────────────────────────────────
-Property ID: AUCT-0011
+Property ID: AUCT-0004
 Auction Date: 2026-03-19
 Platform: Auction.com Foreclosure
 
@@ -490,13 +150,13 @@ FORECLOSURE CONTEXT:
 
 PRICING:
   Auction Price:     $     175,000
-  Estimated Value:   $     306,213
-  Total Investment:  $     198,623
-  Profit Potential:  $      83,093
+  Estimated Value:   $     298,700
+  Total Investment:  $     198,172
+  Profit Potential:  $      76,632
 
 METRICS:
-  Profit Margin:            27.1%
-  Deal Score:               51.9/100
+  Profit Margin:            25.7%
+  Deal Score:               50.1/100
   Recommended:                   No
 
 PROPERTY DETAILS:
@@ -506,9 +166,9 @@ PROPERTY DETAILS:
 COST BREAKDOWN:
   Purchase:      $     175,000
   Closing:       $       5,250
-  Holding:       $      18,373
-  Selling:       $      24,497
+  Holding:       $      17,922
+  Selling:       $      23,896
   ────────────────────────────────────────
-  Total:         $     198,623
+  Total:         $     198,172
 
 

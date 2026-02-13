@@ -2327,7 +2327,11 @@
                 // For real data, label which metrics are from the source vs estimated
                 var estTag = isRealData ? ' <span style="opacity:0.5;font-size:0.8em;">(est.)</span>' : '';
                 var priceLabel = isAuctionCom ? 'Opening Bid' : isSheriff ? 'Est. Value' : isRedfin ? 'Listing Price' : 'Auction Price';
-                var arvLabel = (isAuctionCom && prop.estimated_arv) ? 'Est. Resale (Auction.com)' : 'Est. Value';
+                var valSrc = prop.valuation_source || '';
+                var arvLabel = valSrc === 'zillow' ? 'Zestimate'
+                    : (isAuctionCom && prop.estimated_arv) ? 'Est. Resale (Auction.com)'
+                    : valSrc === 'attom_avm' ? 'AVM (ATTOM)'
+                    : 'Est. Value';
 
                 // Image thumbnail for Auction.com
                 var imageHtml = '';
