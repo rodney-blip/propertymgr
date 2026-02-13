@@ -6,8 +6,8 @@
     <title>Auction Property Analyzer - Dashboard</title>
     <style>
         :root {
-            --bg-gradient-start: #667eea;
-            --bg-gradient-end: #764ba2;
+            --bg-gradient-start: #2d3436;
+            --bg-gradient-end: #363c40;
             --card-bg: #ffffff;
             --card-text: #333333;
             --card-text-secondary: #666666;
@@ -285,6 +285,43 @@
             font-size: 1.1em;
         }
 
+        /* Collapsible info sections */
+        .collapsible-header {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            user-select: none;
+            margin-bottom: 0;
+        }
+        .collapsible-header .collapse-icon {
+            font-size: 0.85em;
+            color: var(--card-text-secondary);
+            transition: transform 0.25s;
+            margin-left: 10px;
+        }
+        .collapsible-header.collapsed .collapse-icon {
+            transform: rotate(-90deg);
+        }
+        .collapsible-header.collapsed {
+            margin-bottom: 0;
+        }
+        .collapsible-body {
+            overflow: hidden;
+            transition: max-height 0.3s ease, opacity 0.25s ease, margin 0.25s ease;
+            max-height: 1200px;
+            opacity: 1;
+            margin-top: 16px;
+        }
+        .collapsible-body.collapsed {
+            max-height: 0;
+            opacity: 0;
+            margin-top: 0;
+        }
+        .chart-card.collapsed-card {
+            padding-bottom: 15px;
+        }
+
         .methodology-content {
             display: flex;
             flex-direction: column;
@@ -327,7 +364,7 @@
 
         .alerts-section {
             background: var(--card-bg);
-            padding: 25px;
+            padding: 20px;
             border-radius: 12px;
             box-shadow: 0 5px 15px var(--shadow);
             margin-bottom: 30px;
@@ -335,25 +372,28 @@
 
         .alerts-section h2 {
             color: var(--section-heading);
-            margin-bottom: 20px;
+            margin-bottom: 16px;
             display: flex;
             align-items: center;
             gap: 10px;
+        }
+        .alerts-section h2.collapsible-header {
+            margin-bottom: 0;
         }
 
         .alert-item {
             background: linear-gradient(135deg, #ff6b6b, #ee5a6f);
             color: white;
-            padding: 20px;
-            border-radius: 10px;
-            margin-bottom: 15px;
+            padding: 12px 16px;
+            border-radius: 8px;
+            margin-bottom: 8px;
             cursor: pointer;
             transition: transform 0.2s;
             position: relative;
         }
 
         .alert-item:hover {
-            transform: scale(1.02);
+            transform: scale(1.01);
         }
 
         .alert-item.excellent {
@@ -366,16 +406,16 @@
 
         .alert-dismiss {
             position: absolute;
-            top: 10px;
-            right: 12px;
+            top: 8px;
+            right: 10px;
             background: rgba(255,255,255,0.25);
             border: none;
             color: white;
-            width: 28px;
-            height: 28px;
+            width: 22px;
+            height: 22px;
             border-radius: 50%;
-            font-size: 18px;
-            line-height: 26px;
+            font-size: 14px;
+            line-height: 20px;
             text-align: center;
             cursor: pointer;
             transition: background 0.2s;
@@ -387,25 +427,27 @@
         }
 
         .alert-level {
-            font-size: 1.2em;
+            font-size: 1em;
             font-weight: bold;
-            margin-bottom: 6px;
+            margin-bottom: 2px;
         }
 
         .alert-address {
-            margin-bottom: 4px;
+            margin-bottom: 2px;
+            font-size: 0.92em;
         }
 
         .alert-details {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 10px;
-            margin-top: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px 16px;
+            margin-top: 6px;
+            font-size: 0.88em;
         }
 
         .alert-cta {
-            margin-top: 10px;
-            font-size: 0.85em;
+            margin-top: 6px;
+            font-size: 0.82em;
             opacity: 0;
             transition: opacity 0.2s;
         }
@@ -1199,9 +1241,9 @@
         </div>
 
         <div class="charts-section" id="chartsSection" style="display:none;">
-            <div class="chart-card methodology-card">
-                <h3>&#x1F4D0; How Numbers Are Calculated</h3>
-                <div class="methodology-content">
+            <div class="chart-card methodology-card collapsed-card" id="methodologyCard">
+                <h3 class="collapsible-header collapsed" onclick="toggleCollapsible('methodology')">&#x1F4D0; How Numbers Are Calculated <span class="collapse-icon">▼</span></h3>
+                <div class="methodology-content collapsible-body collapsed" id="methodologyBody">
                     <div class="method-block">
                         <h4>Data Source &amp; Limitations</h4>
                         <p>Properties come from multiple sources:</p>
@@ -1240,9 +1282,9 @@
                     </div>
                 </div>
             </div>
-            <div class="chart-card">
-                <h3>&#x1F50D; Find Real Auctions</h3>
-                <div class="methodology-content">
+            <div class="chart-card collapsed-card" id="auctionLinksCard">
+                <h3 class="collapsible-header collapsed" onclick="toggleCollapsible('auctionLinks')">&#x1F50D; Find Real Auctions <span class="collapse-icon">▼</span></h3>
+                <div class="methodology-content collapsible-body collapsed" id="auctionLinksBody">
                     <div class="method-block">
                         <h4>Oregon</h4>
                         <p>
@@ -1293,9 +1335,11 @@
         </div>
 
         <div class="alerts-section" id="alertsSection" style="display:none;">
-            <h2>&#x1F6A8; High-Value Deal Alerts</h2>
+            <h2 class="collapsible-header" onclick="toggleCollapsible('alerts')" style="margin-bottom:0;">&#x1F6A8; High-Value Deal Alerts <span class="collapse-icon">▼</span></h2>
+            <div class="collapsible-body" id="alertsBody">
             <div id="alertsContainer"></div>
             <button class="alerts-toggle" id="alertsToggle" style="display:none;" onclick="toggleAlerts()">Show All</button>
+            </div><!-- /collapsible-body -->
         </div>
 
         <div class="filters">
@@ -1475,6 +1519,56 @@
         }
 
         initDarkMode();
+
+        // ─── Collapsible sections ───
+        var _collapsibleMap = {
+            methodology: { header: 'methodologyCard', body: 'methodologyBody' },
+            auctionLinks: { header: 'auctionLinksCard', body: 'auctionLinksBody' },
+            alerts: { header: null, body: 'alertsBody' }
+        };
+
+        function toggleCollapsible(key) {
+            var cfg = _collapsibleMap[key];
+            if (!cfg) return;
+            var body = document.getElementById(cfg.body);
+            // Find the header h2/h3 that was clicked
+            var header = body.previousElementSibling;
+            if (!header || !header.classList.contains('collapsible-header')) {
+                // alerts: header is the h2 itself; find it as the parent's first child
+                header = body.parentElement.querySelector('.collapsible-header');
+            }
+            var card = cfg.header ? document.getElementById(cfg.header) : null;
+
+            var isCollapsed = body.classList.contains('collapsed');
+            if (isCollapsed) {
+                body.classList.remove('collapsed');
+                header.classList.remove('collapsed');
+                if (card) card.classList.remove('collapsed-card');
+                localStorage.removeItem('collapse_' + key);
+            } else {
+                body.classList.add('collapsed');
+                header.classList.add('collapsed');
+                if (card) card.classList.add('collapsed-card');
+                localStorage.setItem('collapse_' + key, '1');
+            }
+        }
+
+        // Restore saved collapse state
+        Object.keys(_collapsibleMap).forEach(function(key) {
+            if (localStorage.getItem('collapse_' + key) === '1') {
+                var cfg = _collapsibleMap[key];
+                var body = document.getElementById(cfg.body);
+                if (body) {
+                    body.classList.add('collapsed');
+                    var header = body.parentElement.querySelector('.collapsible-header');
+                    if (header) header.classList.add('collapsed');
+                    if (cfg.header) {
+                        var card = document.getElementById(cfg.header);
+                        if (card) card.classList.add('collapsed-card');
+                    }
+                }
+            }
+        });
 
         // ─── Populate state dropdown dynamically ───
         function populateStateDropdown() {
