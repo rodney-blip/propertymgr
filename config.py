@@ -35,8 +35,8 @@ _local_keys = _load_local_keys()
 
 # Geographic targeting
 TARGET_STATES = [
-    "Oregon",
-    # "Texas", "Washington", "Florida", "Arizona",
+    "Oregon", "Washington",
+    # "Texas", "Florida", "Arizona",
     # "Georgia", "North Carolina", "Ohio", "Tennessee", "California",
 ]
 
@@ -101,9 +101,9 @@ MOCK_DATA_COUNT = 150
 # Set to a list of region names to restrict scanning to just those regions.
 # This is useful for concentrating API calls on your target market.
 ACTIVE_REGIONS = {
-    "Oregon": ["Central Oregon", "Southern Oregon"],  # Bend/Redmond + Medford
+    "Oregon": ["Central Oregon", "Southern Oregon", "Portland Metro / Gresham"],
     "Texas": ["Greater Austin"],
-    "Washington": ["Southern Washington / Vancouver"],
+    "Washington": ["Vancouver / Camas"],
     "Florida": [],          # Disabled
     "Arizona": [],          # Disabled
     "Georgia": [],          # Disabled
@@ -116,11 +116,15 @@ ACTIVE_REGIONS = {
 # Region definitions: state -> region_name -> list of (city, zip_code) tuples
 REGION_DEFINITIONS = {
     "Oregon": {
-        "Portland Metro": [
+        "Portland Metro / Gresham": [
+            ("Gresham", "97030"), ("Troutdale", "97060"), ("Fairview", "97024"),
+            ("Wood Village", "97060"), ("Happy Valley", "97086"),
+            ("Clackamas", "97015"), ("Milwaukie", "97222"),
+            ("Gladstone", "97027"), ("Oregon City", "97045"),
+            ("West Linn", "97068"), ("Estacada", "97023"),
             ("Portland", "97201"), ("Portland", "97209"), ("Portland", "97214"),
             ("Beaverton", "97005"), ("Hillsboro", "97123"),
-            ("Gresham", "97030"), ("Lake Oswego", "97034"), ("Tigard", "97223"),
-            ("Tualatin", "97062"), ("Oregon City", "97045"), ("West Linn", "97068"),
+            ("Lake Oswego", "97034"), ("Tigard", "97223"), ("Tualatin", "97062"),
         ],
         "Salem / Mid-Valley": [
             ("Salem", "97301"), ("Keizer", "97303"), ("Albany", "97321"),
@@ -168,10 +172,11 @@ REGION_DEFINITIONS = {
         ],
     },
     "Washington": {
-        "Southern Washington / Vancouver": [
-            ("Vancouver", "98660"), ("Camas", "98607"), ("Washougal", "98671"),
-            ("Battle Ground", "98604"), ("Ridgefield", "98642"), ("Woodland", "98674"),
-            ("Longview", "98632"), ("Kelso", "98626"),
+        "Vancouver / Camas": [
+            ("Vancouver", "98660"), ("Vancouver", "98661"), ("Vancouver", "98664"),
+            ("Camas", "98607"), ("Washougal", "98671"),
+            ("Battle Ground", "98604"), ("Brush Prairie", "98606"),
+            ("Ridgefield", "98642"),
         ],
     },
     "Florida": {
@@ -413,6 +418,14 @@ CITY_COORDINATES = {
     ("Grants Pass", "Oregon"): (42.4390, -123.3284),
     ("Klamath Falls", "Oregon"): (42.2249, -121.7817),
     ("Roseburg", "Oregon"): (43.2165, -123.3417),
+    ("Troutdale", "Oregon"): (45.5387, -122.3871),
+    ("Fairview", "Oregon"): (45.5390, -122.4339),
+    ("Wood Village", "Oregon"): (45.5335, -122.4186),
+    ("Happy Valley", "Oregon"): (45.4449, -122.5131),
+    ("Clackamas", "Oregon"): (45.4076, -122.5726),
+    ("Milwaukie", "Oregon"): (45.4428, -122.6393),
+    ("Gladstone", "Oregon"): (45.3807, -122.5957),
+    ("Estacada", "Oregon"): (45.2896, -122.3334),
     # Texas
     ("Austin", "Texas"): (30.2672, -97.7431),
     ("Round Rock", "Texas"): (30.5083, -97.6789),
@@ -456,10 +469,8 @@ CITY_COORDINATES = {
     ("Camas", "Washington"): (45.5871, -122.3998),
     ("Washougal", "Washington"): (45.5832, -122.3535),
     ("Battle Ground", "Washington"): (45.7807, -122.5337),
+    ("Brush Prairie", "Washington"): (45.7321, -122.4854),
     ("Ridgefield", "Washington"): (45.8151, -122.7429),
-    ("Woodland", "Washington"): (45.9054, -122.7751),
-    ("Longview", "Washington"): (46.1382, -122.9382),
-    ("Kelso", "Washington"): (46.1468, -122.9085),
     # Florida
     ("Tampa", "Florida"): (27.9506, -82.4572),
     ("St. Petersburg", "Florida"): (27.7676, -82.6403),
@@ -626,6 +637,8 @@ SHERIFF_USER_AGENT = (
 #   "jackson", "josephine", etc.
 SHERIFF_COUNTIES = [
     "deschutes",                          # Deschutes County (Bend area)
+    "multnomah",                          # Multnomah County (Portland/Gresham)
+    "clackamas",                          # Clackamas County (Oregon City/Happy Valley)
     # "crook", "jefferson",              # Central Oregon (expand later)
     # "jackson", "josephine", "douglas", # Southern Oregon / Medford (expand later)
     # "klamath", "lane",                 # Shared / extended (expand later)
@@ -642,6 +655,9 @@ AUCTIONCOM_STATES = ["Oregon"]  # States to search (fallback if no counties set)
 AUCTIONCOM_COUNTIES = [
     ("deschutes", "or"),   # Bend, Redmond, La Pine, Sisters
     ("jackson", "or"),     # Medford, Ashland, Central Point (within 15 mi)
+    ("multnomah", "or"),   # Portland, Gresham, Troutdale, Fairview
+    ("clackamas", "or"),   # Oregon City, Happy Valley, Milwaukie, Estacada
+    ("clark", "wa"),       # Vancouver, Camas, Washougal, Battle Ground
 
     # Future: expand Central Oregon (~50 mi of Bend)
     # ("crook", "or"),       # Prineville (~29 mi from Bend)

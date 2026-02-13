@@ -68,9 +68,9 @@ COUNTY_SLUGS = {
 # County → region mapping (matches config.REGION_DEFINITIONS for Oregon)
 COUNTY_TO_REGION = {
     "deschutes": "Central Oregon",
-    "multnomah": "Portland Metro",
-    "clackamas": "Portland Metro",
-    "washington": "Portland Metro",
+    "multnomah": "Portland Metro / Gresham",
+    "clackamas": "Portland Metro / Gresham",
+    "washington": "Portland Metro / Gresham",
     "marion": "Salem / Mid-Valley",
     "polk": "Salem / Mid-Valley",
     "lane": "Eugene / Lane County",
@@ -79,7 +79,7 @@ COUNTY_TO_REGION = {
     "douglas": "Southern Oregon",
     "benton": "Salem / Mid-Valley",
     "linn": "Salem / Mid-Valley",
-    "yamhill": "Portland Metro",
+    "yamhill": "Portland Metro / Gresham",
     "lincoln": "Eugene / Lane County",
     "klamath": "Southern Oregon",
     "jefferson": "Central Oregon",
