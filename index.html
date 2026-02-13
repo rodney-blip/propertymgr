@@ -628,7 +628,57 @@
         }
 
         /* Multi-select region dropdown */
-        /* (multi-select region dropdown removed — replaced by city select) */
+        .multi-select {
+            position: relative;
+        }
+        .multi-select-trigger {
+            padding: 10px;
+            border: 2px solid var(--input-border);
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--input-bg);
+            font-size: 1em;
+            transition: border-color 0.2s;
+            user-select: none;
+            color: var(--card-text);
+        }
+        .multi-select-trigger:hover {
+            border-color: var(--accent);
+        }
+        .multi-select-dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: var(--dropdown-bg);
+            border: 2px solid var(--accent);
+            border-radius: 8px;
+            margin-top: 4px;
+            max-height: 300px;
+            overflow-y: auto;
+            z-index: 100;
+            box-shadow: 0 5px 15px var(--shadow);
+        }
+        .multi-select-options label {
+            display: flex;
+            align-items: center;
+            padding: 8px 12px;
+            cursor: pointer;
+            gap: 8px;
+            font-size: 0.95em;
+            color: var(--card-text);
+        }
+        .multi-select-options label:hover {
+            background: var(--dropdown-hover);
+        }
+        .multi-select-options hr {
+            margin: 4px 0;
+            border: none;
+            border-top: 1px solid var(--divider);
+        }
 
         /* Status select */
         .status-select {
@@ -1299,10 +1349,16 @@
                     </select>
                 </div>
                 <div class="filter-group">
-                    <label>City</label>
-                    <select id="cityFilter">
-                        <option value="all">All Cities</option>
-                    </select>
+                    <label>Area</label>
+                    <div class="multi-select" id="areaMultiSelect">
+                        <div class="multi-select-trigger" onclick="toggleAreaDropdown()">
+                            <span id="areaSelectionText">All Areas</span>
+                            <span>&#9662;</span>
+                        </div>
+                        <div class="multi-select-dropdown" id="areaDropdown" style="display:none;">
+                            <div class="multi-select-options" id="areaOptions"></div>
+                        </div>
+                    </div>
                 </div>
                 <div class="filter-group">
                     <label>Price Range</label>
@@ -1382,7 +1438,7 @@
     <script>
         let allProperties = [];
         let currentProperties = [];
-        let selectedCity = 'all';
+        let selectedAreas = [];
         let allAlerts = [];
         let alertsExpanded = false;
         let comparisonSet = new Set();
@@ -1620,38 +1676,110 @@
             document.getElementById('priceRangeDisplay').textContent = fmt(minVal) + ' \u2013 ' + fmt(maxVal);
         }
 
-        // ─── City dropdown ───
-        function populateCityDropdown() {
-            var select = document.getElementById('cityFilter');
-            var state = document.getElementById('stateFilter').value;
-            select.innerHTML = '<option value="all">All Cities</option>';
+        // ─── Metro area multi-select ───
+        // Map metro area names → list of cities that belong to each
+        var METRO_AREAS = {
+            "Greater Bend": ["Bend", "Redmond", "Madras", "Prineville", "Sisters", "La Pine", "Sunriver"],
+            "Greater Medford": ["Medford", "Ashland", "Grants Pass", "Central Point", "Klamath Falls", "Roseburg", "Eagle Point", "Phoenix", "Talent", "White City", "Shady Cove", "Jacksonville", "Gold Hill", "Rogue River"],
+            "Greater Gresham": ["Gresham", "Troutdale", "Fairview", "Wood Village", "Happy Valley", "Clackamas", "Milwaukie", "Gladstone", "Oregon City", "West Linn", "Estacada", "Portland", "Beaverton", "Hillsboro", "Lake Oswego", "Tigard", "Tualatin"],
+            "Greater Vancouver": ["Vancouver", "Camas", "Washougal", "Battle Ground", "Brush Prairie", "Ridgefield"]
+        };
 
-            // Collect unique cities from loaded properties (real data, not config)
-            var cities = {};
-            allProperties.forEach(function(p) {
-                if (state !== 'all' && p.state !== state) return;
-                if (p.city) cities[p.city] = true;
+        // Build reverse lookup: city name → list of metro areas it belongs to
+        var _cityToAreas = {};
+        Object.keys(METRO_AREAS).forEach(function(area) {
+            METRO_AREAS[area].forEach(function(city) {
+                var key = city.toUpperCase();
+                if (!_cityToAreas[key]) _cityToAreas[key] = [];
+                _cityToAreas[key].push(area);
             });
-
-            Object.keys(cities).sort().forEach(function(city) {
-                var opt = document.createElement('option');
-                opt.value = city;
-                opt.textContent = city;
-                select.appendChild(opt);
-            });
-
-            selectedCity = 'all';
-            select.value = 'all';
-        }
-
-        document.getElementById('cityFilter').addEventListener('change', function() {
-            selectedCity = this.value;
-            applyFilters();
         });
 
-        // State filter change repopulates cities
+        function populateAreaCheckboxes() {
+            var container = document.getElementById('areaOptions');
+            container.innerHTML = '';
+
+            // "All Areas" master checkbox
+            var allLabel = document.createElement('label');
+            allLabel.innerHTML = '<input type="checkbox" id="areaAll" checked onchange="toggleAllAreas(this)"> <strong>All Areas</strong>';
+            container.appendChild(allLabel);
+            var hr = document.createElement('hr');
+            container.appendChild(hr);
+
+            // Only show areas that have properties in the current data
+            Object.keys(METRO_AREAS).forEach(function(area) {
+                var areaCities = METRO_AREAS[area].map(function(c) { return c.toUpperCase(); });
+                var count = allProperties.filter(function(p) {
+                    return areaCities.indexOf((p.city || '').toUpperCase()) !== -1;
+                }).length;
+                var label = document.createElement('label');
+                var countStr = count > 0 ? ' (' + count + ')' : '';
+                label.innerHTML = '<input type="checkbox" value="' + area + '" class="area-cb" checked onchange="updateAreaSelection()"> ' + area + countStr;
+                container.appendChild(label);
+            });
+
+            selectedAreas = [];
+            updateAreaDisplayText();
+        }
+
+        function toggleAllAreas(masterCb) {
+            var cbs = document.querySelectorAll('.area-cb');
+            cbs.forEach(function(cb) { cb.checked = masterCb.checked; });
+            updateAreaSelection();
+        }
+
+        function updateAreaSelection() {
+            var checkboxes = document.querySelectorAll('.area-cb');
+            var allChecked = Array.from(checkboxes).every(function(cb) { return cb.checked; });
+            var noneChecked = Array.from(checkboxes).every(function(cb) { return !cb.checked; });
+            document.getElementById('areaAll').checked = allChecked;
+            if (allChecked || noneChecked) {
+                selectedAreas = [];
+            } else {
+                selectedAreas = Array.from(checkboxes).filter(function(cb) { return cb.checked; }).map(function(cb) { return cb.value; });
+            }
+            updateAreaDisplayText();
+            applyFilters();
+        }
+
+        function updateAreaDisplayText() {
+            var text = document.getElementById('areaSelectionText');
+            if (selectedAreas.length === 0) {
+                text.textContent = 'All Areas';
+            } else if (selectedAreas.length <= 2) {
+                text.textContent = selectedAreas.join(', ');
+            } else {
+                text.textContent = selectedAreas.length + ' areas selected';
+            }
+        }
+
+        function toggleAreaDropdown() {
+            var dd = document.getElementById('areaDropdown');
+            dd.style.display = dd.style.display === 'none' ? 'block' : 'none';
+        }
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('#areaMultiSelect')) {
+                document.getElementById('areaDropdown').style.display = 'none';
+            }
+        });
+
+        // Check if a property's city belongs to any of the selected areas
+        function propertyMatchesAreas(prop) {
+            if (selectedAreas.length === 0) return true; // all areas
+            var cityKey = (prop.city || '').toUpperCase();
+            var areas = _cityToAreas[cityKey];
+            if (!areas) return false;
+            for (var i = 0; i < areas.length; i++) {
+                if (selectedAreas.indexOf(areas[i]) !== -1) return true;
+            }
+            return false;
+        }
+
+        // State filter change repopulates areas
         document.getElementById('stateFilter').addEventListener('change', function() {
-            populateCityDropdown();
+            populateAreaCheckboxes();
         });
 
         // ─── Status change handler ───
@@ -1970,7 +2098,7 @@
                 allAlerts = data.alerts || [];
 
                 updateStats(data);
-                populateCityDropdown();
+                populateAreaCheckboxes();
                 displayAlerts(allAlerts);
                 displayProperties(currentProperties);
                 updateCharts(currentProperties);
@@ -2381,7 +2509,7 @@
 
             currentProperties = allProperties.filter(function(prop) {
                 if (state !== 'all' && prop.state !== state) return false;
-                if (selectedCity !== 'all' && prop.city !== selectedCity) return false;
+                if (!propertyMatchesAreas(prop)) return false;
                 if (prop.profit_margin < minMargin) return false;
                 if (prop.auction_price < minAuctionPrice || prop.auction_price > maxAuctionPrice) return false;
                 if (prop.deal_score < minScore) return false;
